@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2AAD4F8-FC23-4A2B-B3C7-95D590925D45}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FAFOS</RootNamespace>
+    <AssemblyName>FAFOS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\SEdge2013\SystemApplication\Executable Application\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D43F500DB122F5562D5AE7D1562AADE13A4EB74A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FAFOS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSE.Windows.Forms">
+      <HintPath>.\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Map">
+      <HintPath>..\..\Map\Map\Map\obj\Debug\Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PdfLibrary">
+      <HintPath>..\..\..\Invoice\Invoice\PdfLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="tileNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\tileNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AddEditClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditClientForm.Designer.cs">
+      <DependentUpon>AddEditClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditContractForm.Designer.cs">
+      <DependentUpon>AddEditContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditRoomForm.Designer.cs">
+      <DependentUpon>AddEditRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditSrvAddrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditSrvAddrForm.Designer.cs">
+      <DependentUpon>AddEditSrvAddrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminUserForm.Designer.cs">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Background.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Background.Designer.cs">
+      <DependentUpon>Background.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HQUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HQUserForm.Designer.cs">
+      <DependentUpon>HQUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InspectionForm.Designer.cs">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InvoiceForm.designer.cs">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MaintainUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaintainUsersForm.Designer.cs">
+      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MapsForm.Designer.cs">
+      <DependentUpon>MapsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preview.designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PurchaseRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseRecords.Designer.cs">
+      <DependentUpon>PurchaseRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuoteForm.Designer.cs">
+      <DependentUpon>QuoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoyaltyFeeCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoyaltyFeeCollection.Designer.cs">
+      <DependentUpon>RoyaltyFeeCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sales Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sales Order.Designer.cs">
+      <DependentUpon>Sales Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Statements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Statements.Designer.cs">
+      <DependentUpon>Statements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryController.cs" />
+    <Compile Include="InvoiceController.cs" />
+    <Compile Include="MaintainClientController.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\ProgressBar\ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\BseColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\BseRenderer.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ColorTableBlack.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ColorTableBlue.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007BlackColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007BlueColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007Renderer.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\Office2007SilverColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\OfficeColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Renderer\ProfessionalColorTable.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Resources\Resources.Designer.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\Splitter\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\Splitter\Splitter.Designer.cs">
+      <DependentUpon>Splitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\BasePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\CaptionStyle.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\ColorScheme.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\ColorSchemeChangeEventArgs.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\Constants.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomColors.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomPanelColors.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\CustomXPanderPanelColors.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\DisplayInformation.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\HoverState.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\HoverStateChangeEventArgs.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\IPanel.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColors.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBlack.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBlue.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsBse.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Black.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Blue.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsOffice2007Silver.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelColorsRed.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelSettingsManager.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelStyle.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\PanelStyleChangeEventArgs.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\UseAntiAlias.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\UseClearTypeGridFit.cs" />
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.Designer.cs">
+      <DependentUpon>XPanderPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.Designer.cs">
+      <DependentUpon>XPanderPanelList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps\BSE.Windows.Forms\XPander\XPanderStateChangeEventArgs.cs" />
+    <Compile Include="Maps\CustomMarkers\GMapMarkerCircle.cs" />
+    <Compile Include="Maps\CustomMarkers\GMapMarkerRect.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\ClientContract.cs" />
+    <Compile Include="Models\ContractService.cs" />
+    <Compile Include="Models\Franchisee.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\InventoryTransaction.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemTransaction.cs" />
+    <Compile Include="Models\Itinerary.cs" />
+    <Compile Include="Models\MCity.cs" />
+    <Compile Include="Models\MClient.cs" />
+    <Compile Include="Models\MClientContract.cs" />
+    <Compile Include="Models\MContractServices.cs" />
+    <Compile Include="Models\MCountry.cs" />
+    <Compile Include="Models\MFranchise.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\MOpReg.cs" />
+    <Compile Include="Models\MProvState.cs" />
+    <Compile Include="Models\MQueryMetrics.cs" />
+    <Compile Include="Models\MRoom.cs" />
+    <Compile Include="Models\MService.cs" />
+    <Compile Include="Models\MServiceAddress.cs" />
+    <Compile Include="Models\MTimePeriods.cs" />
+    <Compile Include="Models\MUser.cs" />
+    <Compile Include="Models\OrderItems.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Period.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\QuoteItems.cs" />
+    <Compile Include="Models\RoyaltyFee.cs" />
+    <Compile Include="Models\SalesOrder.cs" />
+    <Compile Include="Models\ServiceAddress.cs" />
+    <Compile Include="Models\Services.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Term.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\WorkOrder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteController.cs" />
+    <Compile Include="ReportsController.cs" />
+    <Compile Include="Resources\PdfLibrary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesOrderController.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="UserController.cs" />
+    <EmbeddedResource Include="Forms\AddEditClientForm.resx">
+      <DependentUpon>AddEditClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditContractForm.resx">
+      <DependentUpon>AddEditContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditRoomForm.resx">
+      <DependentUpon>AddEditRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditSrvAddrForm.resx">
+      <DependentUpon>AddEditSrvAddrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\adminUserForm.resx">
+      <DependentUpon>AdminUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Background.resx">
+      <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HQUserForm.resx">
+      <DependentUpon>HQUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectionForm.resx">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoiceForm.resx">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaintainUsersForm.resx">
+      <DependentUpon>MaintainUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MapsForm.resx">
+      <DependentUpon>MapsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseRecords.resx">
+      <DependentUpon>PurchaseRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuoteForm.resx">
+      <DependentUpon>QuoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoyaltyFeeCollection.resx">
+      <DependentUpon>RoyaltyFeeCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sales Order.resx">
+      <DependentUpon>Sales Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Statements.resx">
+      <DependentUpon>Statements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maps\BSE.Windows.Forms\Resources\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\XPanderPanel.resx">
+      <DependentUpon>XPanderPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maps\BSE.Windows.Forms\XPander\XPanderPanelList.resx">
+      <DependentUpon>XPanderPanelList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="FAFOS_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\BackButton.psd" />
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDAOSP">
+      <Guid>{E0E270C2-C0BE-11D0-8FE4-00A0C90A6341}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>1033</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SSCE">
+      <Guid>{CE4AACFA-3CFD-4028-B2D9-F272314F07C8}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Report Viewer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronDown.png" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronLeft.png" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronRight.png" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\ChevronUp.png" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\closePanel.png" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse.jpg" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse_h.jpg" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\Expand.jpg" />
+    <Content Include="Maps\BSE.Windows.Forms\Resources\Expand_h.jpg" />
+    <Content Include="Resources\AddClient1.swf" />
+    <Content Include="Resources\AddContract1.swf" />
+    <Content Include="Resources\Back2.png" />
+    <Content Include="Resources\BackOver.png" />
+    <Content Include="Resources\CompanyLogo.png" />
+    <None Include="Resources\DefaultProPic.png" />
+    <Content Include="Resources\Payment1.swf" />
+    <Content Include="Resources\PurchaseRecord.swf" />
+    <Content Include="Resources\Quote1.swf" />
+    <Content Include="Resources\RevenueReports.swf" />
+    <Content Include="Resources\RoyaltyFee.swf" />
+    <Content Include="Resources\Statements.swf" />
+    <Content Include="Resources\TotalRevenue.swf" />
+    <None Include="Resources\Shades.jpg" />
+    <None Include="Resources\ListViewItemSorter.bmp" />
+    <Content Include="Resources\ConvertSalesOrder1.swf" />
+    <Content Include="Resources\CreateSalesOrder1.swf" />
+    <Content Include="Resources\EditClient1.swf" />
+    <Content Include="Resources\EditContract1.swf" />
+    <Content Include="Resources\EditQuote.swf" />
+    <Content Include="Resources\EditSalesOrder1.swf" />
+    <Content Include="Resources\EditUser.swf" />
+    <Content Include="Resources\Inspection.swf" />
+    <Content Include="Resources\Inventory1.swf" />
+    <Content Include="Resources\Invoice1.swf" />
+    <Content Include="Resources\Itinerary1.swf" />
+    <Content Include="Resources\JobReports.swf" />
+    <Content Include="Resources\logo.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="System.Data.SqlServerCe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
