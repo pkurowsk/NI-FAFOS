@@ -56,11 +56,11 @@ namespace FAFOS
             pnlLogin.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlLogin.Size.Width) / 2,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlLogin.Size.Height) / 2);
 
-            notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width)-20,
-               notificationPanel.Location.Y);
+            //notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width)-20,
+            //   notificationPanel.Location.Y);
 
-            pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
-              pnlUser.Location.Y);
+            //pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
+            //  pnlUser.Location.Y);
 
 
             this.quote.Enter += new System.EventHandler(Tile_Enter);
@@ -138,9 +138,10 @@ namespace FAFOS
             FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350,40);
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
-            Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
-
+            //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
+            //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
+            pnlOperation.Size = new Size(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - pnlOperation.Location.X, 
+                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - pnlOperation.Location.Y);
             
         }
 
@@ -305,6 +306,9 @@ namespace FAFOS
                 if (T.Name == "invoice")
                 {
                     InvoiceForm invoice_form = new InvoiceForm(userid);
+                    invoice_form.TopLevel = false;
+                    //invoice_form.AutoScroll = true;
+                    pnlOperation.Controls.Add(invoice_form);
                     invoice_form.Show();
                 }
                 else if (T.Name == "quote")
@@ -353,9 +357,11 @@ namespace FAFOS
                 }
                 else if (T.Name == "itinerary")
                 {
+                    //pnlOperation.Controls.Clear();
                     MapsForm form = new MapsForm(userid, orders, services);
-                    
-                   
+                    /*form.TopLevel = false;
+                    form.AutoScroll = true;
+                    pnlOperation.Controls.Add(form);/**/
                     form.Show();
                     
 
@@ -482,6 +488,7 @@ namespace FAFOS
                 notificationPanel.Visible = true;
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
+                pnlOperation.Visible = true;
 
                 
                 try

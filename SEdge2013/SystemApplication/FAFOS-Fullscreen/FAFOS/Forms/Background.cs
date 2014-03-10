@@ -17,7 +17,7 @@ namespace FAFOS
         public Background()
         {
             InitializeComponent();
-
+            /*
             this.button1.MouseEnter += new EventHandler(button1_MouseEnter);
             this.button1.MouseLeave += new EventHandler(button1_MouseLeave);
             this.button1.Location = new Point(65, 38);
@@ -34,7 +34,7 @@ namespace FAFOS
                 pnlUser.Size.Width - 15, pnlUser.Location.Y);
 
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
+                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);/**/
         }
 
         public void setup(String name, String title)

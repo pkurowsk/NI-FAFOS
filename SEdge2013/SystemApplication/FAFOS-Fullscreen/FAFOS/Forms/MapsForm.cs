@@ -671,6 +671,9 @@ namespace FAFOS
             GMapRoute rte = new GMapRoute("name");
 
             GDirections _dir;
+
+            if (pos == null)
+                pos = new PointLatLng();
             DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, false, true, true);
             if (_code == DirectionsStatusCode.OK)
             {

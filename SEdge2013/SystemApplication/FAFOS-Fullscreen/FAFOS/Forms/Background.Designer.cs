@@ -56,7 +56,7 @@
             // 
             // lblUserInfo
             // 
-            this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.Location = new System.Drawing.Point(52, 3);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(136, 50);
@@ -66,12 +66,13 @@
             // lblPageTitle
             // 
             this.lblPageTitle.AutoSize = true;
-            this.lblPageTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.Location = new System.Drawing.Point(140, 100);
             this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(129, 38);
+            this.lblPageTitle.Size = new System.Drawing.Size(105, 31);
             this.lblPageTitle.TabIndex = 37;
             this.lblPageTitle.Text = "FAFOS";
+            this.lblPageTitle.Visible = false;
             // 
             // profilePic
             // 
@@ -90,6 +91,7 @@
             this.SEdgeLogo.Name = "SEdgeLogo";
             this.SEdgeLogo.Size = new System.Drawing.Size(180, 71);
             this.SEdgeLogo.TabIndex = 35;
+            this.SEdgeLogo.Visible = false;
             // 
             // FireAlertLogo
             // 
@@ -112,13 +114,13 @@
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(213, 57);
             this.pnlUser.TabIndex = 39;
+            this.pnlUser.Visible = false;
             // 
             // Background
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 815);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.lblPageTitle);
