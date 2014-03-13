@@ -105,6 +105,7 @@
             this.FireAlertLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FireAlertLogo.TabIndex = 34;
             this.FireAlertLogo.TabStop = false;
+            this.FireAlertLogo.Visible = false;
             // 
             // pnlUser
             // 

@@ -570,13 +570,16 @@
     <Content Include="Resources\Back2.png" />
     <Content Include="Resources\BackOver.png" />
     <Content Include="Resources\CompanyLogo.png" />
+    <None Include="Resources\user-panel.png" />
     <None Include="Resources\DefaultProPic.png" />
+    <None Include="Resources\Logo-updated.png" />
     <Content Include="Resources\Payment1.swf" />
     <Content Include="Resources\PurchaseRecord.swf" />
     <Content Include="Resources\Quote1.swf" />
     <Content Include="Resources\RevenueReports.swf" />
     <Content Include="Resources\RoyaltyFee.swf" />
     <Content Include="Resources\Statements.swf" />
+    <None Include="Resources\team-logos.png" />
     <Content Include="Resources\TotalRevenue.swf" />
     <None Include="Resources\Shades.jpg" />
     <None Include="Resources\ListViewItemSorter.bmp" />

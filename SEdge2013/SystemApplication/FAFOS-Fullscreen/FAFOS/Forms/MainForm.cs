@@ -204,7 +204,7 @@ namespace FAFOS
 
 
 
-            this.Controls[_tile.Name].BringToFront();
+            pnlMenu.Controls[_tile.Name].BringToFront();
 
             _tile.timerStart();
 
@@ -493,6 +493,8 @@ namespace FAFOS
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
                 pnlOperation.Visible = true;
+                pnlMenu.Visible = true;
+                btnMenu.Visible = true;
 
                 
                 try
@@ -617,6 +619,8 @@ namespace FAFOS
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
+            pnlOperation.Controls.Clear();
+
             quote.Visible = false;
             editQuote.Visible = false;
             salesOrder.Visible = false;
@@ -650,16 +654,19 @@ namespace FAFOS
             label9.Visible = false;
             pnlUser.Visible = false;
 
+            pnlMenu.Visible = false;
+            btnMenu.Visible = false;
+
             lblUsername.Visible = true;
             txtUsername.Visible = true;
             lblPassword.Visible = true;
             txtPassword.Visible = true;
             pnlLogin.Visible = true;
 
-
             Login_btn.Visible = true;
             Logout_btn.Visible = false;
             userSettings.Visible = false;
+            Notifications_button.Visible = false;
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
@@ -679,6 +686,30 @@ namespace FAFOS
         private void Notifications_button_Click(object sender, EventArgs e)
         {
             notificationPanel.Visible = notificationPanel.Visible ? false : true;
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            if (pnlMenu.Visible)
+            {
+                pnlMenu.Visible = false;
+                pnlOperation.Location = new Point(0, pnlOperation.Location.Y);
+                pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
+                    pnlOperation.Size.Height);
+
+                btnMenu.Location = new Point(0, btnMenu.Location.Y);
+                btnMenu.Text = ">";
+            }
+            else
+            {
+                pnlMenu.Visible = true;
+                pnlOperation.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width + 10, 
+                    pnlOperation.Location.Y);
+                pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
+                    pnlOperation.Size.Height);
+                btnMenu.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width, btnMenu.Location.Y);
+                btnMenu.Text = "<";
+            }
         }
 
  

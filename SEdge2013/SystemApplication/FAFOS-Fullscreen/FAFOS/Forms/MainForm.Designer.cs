@@ -75,25 +75,33 @@
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.pbLogos = new System.Windows.Forms.PictureBox();
+            this.pbFALogoLogin = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
-            this.pnlOperation = new System.Windows.Forms.Panel();
             this.Notifications_button = new System.Windows.Forms.Button();
+            this.pnlOperation = new System.Windows.Forms.Panel();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pbFALogo = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).BeginInit();
             this.pnlUser.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).BeginInit();
             this.SuspendLayout();
             // 
             // Exit_btn
             // 
             this.Exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.Exit_btn.FlatAppearance.BorderSize = 0;
+            this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(184, 673);
+            this.Exit_btn.Location = new System.Drawing.Point(185, 546);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(80, 49);
@@ -107,13 +115,13 @@
             this.quote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.quote.BackColor = System.Drawing.Color.Transparent;
             this.quote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.quote.Location = new System.Drawing.Point(10, 348);
+            this.quote.Location = new System.Drawing.Point(5, 271);
             this.quote.Margin = new System.Windows.Forms.Padding(0);
             this.quote.Name = "quote";
             this.quote.Resize = new System.Drawing.Size(50, 50);
             this.quote.Size = new System.Drawing.Size(50, 50);
             this.quote.TabIndex = 9;
-            this.quote.tileHieght = 100;
+            this.quote.tileHieght = 50;
             this.quote.tileLocation = new System.Drawing.Point(0, 0);
             this.quote.tileSize = new System.Drawing.Size(50, 50);
             this.quote.tileTimer_Interval = 100D;
@@ -127,13 +135,13 @@
             this.invoice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.invoice.BackColor = System.Drawing.Color.Transparent;
             this.invoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.invoice.Location = new System.Drawing.Point(264, 348);
+            this.invoice.Location = new System.Drawing.Point(255, 271);
             this.invoice.Margin = new System.Windows.Forms.Padding(0);
             this.invoice.Name = "invoice";
             this.invoice.Resize = new System.Drawing.Size(50, 50);
             this.invoice.Size = new System.Drawing.Size(50, 50);
             this.invoice.TabIndex = 13;
-            this.invoice.tileHieght = 100;
+            this.invoice.tileHieght = 50;
             this.invoice.tileLocation = new System.Drawing.Point(133, 89);
             this.invoice.tileSize = new System.Drawing.Size(50, 50);
             this.invoice.tileTimer_Interval = 100D;
@@ -147,13 +155,13 @@
             this.salesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.salesOrder.BackColor = System.Drawing.Color.Transparent;
             this.salesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.salesOrder.Location = new System.Drawing.Point(110, 348);
+            this.salesOrder.Location = new System.Drawing.Point(105, 271);
             this.salesOrder.Margin = new System.Windows.Forms.Padding(0);
             this.salesOrder.Name = "salesOrder";
             this.salesOrder.Resize = new System.Drawing.Size(50, 50);
             this.salesOrder.Size = new System.Drawing.Size(50, 50);
             this.salesOrder.TabIndex = 14;
-            this.salesOrder.tileHieght = 100;
+            this.salesOrder.tileHieght = 50;
             this.salesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.salesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.salesOrder.tileTimer_Interval = 100D;
@@ -167,13 +175,13 @@
             this.inventory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inventory.BackColor = System.Drawing.Color.Transparent;
             this.inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inventory.Location = new System.Drawing.Point(114, 243);
+            this.inventory.Location = new System.Drawing.Point(100, 186);
             this.inventory.Margin = new System.Windows.Forms.Padding(0);
             this.inventory.Name = "inventory";
             this.inventory.Resize = new System.Drawing.Size(50, 50);
             this.inventory.Size = new System.Drawing.Size(50, 50);
             this.inventory.TabIndex = 15;
-            this.inventory.tileHieght = 100;
+            this.inventory.tileHieght = 50;
             this.inventory.tileLocation = new System.Drawing.Point(0, 0);
             this.inventory.tileSize = new System.Drawing.Size(50, 50);
             this.inventory.tileTimer_Interval = 100D;
@@ -184,18 +192,18 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(491, -2);
+            this.label2.Font = new System.Drawing.Font("Microsoft MHei", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(846, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(514, 31);
+            this.label2.Size = new System.Drawing.Size(479, 77);
             this.label2.TabIndex = 17;
-            this.label2.Text = "FAFOS Operational Management System";
+            this.label2.Text = "FAFOS  \r\nOperational Management System";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(17, 30);
+            this.txtUsername.Location = new System.Drawing.Point(17, 44);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.MinimumSize = new System.Drawing.Size(220, 30);
             this.txtUsername.Name = "txtUsername";
@@ -205,11 +213,12 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(13, 6);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(13, 20);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(73, 17);
+            this.lblUsername.Size = new System.Drawing.Size(79, 21);
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
@@ -218,7 +227,7 @@
             this.Login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Login_btn.FlatAppearance.BorderSize = 0;
             this.Login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_btn.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_btn.ForeColor = System.Drawing.Color.White;
             this.Login_btn.Location = new System.Drawing.Point(134, 151);
             this.Login_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -232,27 +241,29 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(17, 98);
+            this.txtPassword.Location = new System.Drawing.Point(17, 112);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 26);
+            this.txtPassword.Size = new System.Drawing.Size(220, 26);
             this.txtPassword.TabIndex = 22;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(13, 74);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(13, 88);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(69, 17);
+            this.lblPassword.Size = new System.Drawing.Size(75, 21);
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
             // 
             // lblUserInfo
             // 
-            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.Location = new System.Drawing.Point(72, 10);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
@@ -262,11 +273,11 @@
             // Logout_btn
             // 
             this.Logout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Logout_btn.FlatAppearance.BorderSize = 0;
+            this.Logout_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_btn.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout_btn.ForeColor = System.Drawing.Color.White;
-            this.Logout_btn.Location = new System.Drawing.Point(4, 68);
+            this.Logout_btn.Location = new System.Drawing.Point(10, 64);
             this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Logout_btn.Name = "Logout_btn";
             this.Logout_btn.Size = new System.Drawing.Size(90, 50);
@@ -285,6 +296,7 @@
             this.FireAlertLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FireAlertLogo.TabIndex = 26;
             this.FireAlertLogo.TabStop = false;
+            this.FireAlertLogo.Visible = false;
             // 
             // SEdgeLogo
             // 
@@ -300,13 +312,13 @@
             this.payment.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.payment.BackColor = System.Drawing.Color.Transparent;
             this.payment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.payment.Location = new System.Drawing.Point(214, 243);
+            this.payment.Location = new System.Drawing.Point(200, 186);
             this.payment.Margin = new System.Windows.Forms.Padding(0);
             this.payment.Name = "payment";
             this.payment.Resize = new System.Drawing.Size(50, 50);
             this.payment.Size = new System.Drawing.Size(50, 50);
             this.payment.TabIndex = 27;
-            this.payment.tileHieght = 100;
+            this.payment.tileHieght = 50;
             this.payment.tileLocation = new System.Drawing.Point(0, 0);
             this.payment.tileSize = new System.Drawing.Size(50, 50);
             this.payment.tileTimer_Interval = 100D;
@@ -320,13 +332,13 @@
             this.itinerary.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.itinerary.BackColor = System.Drawing.Color.Transparent;
             this.itinerary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.itinerary.Location = new System.Drawing.Point(9, 243);
+            this.itinerary.Location = new System.Drawing.Point(5, 186);
             this.itinerary.Margin = new System.Windows.Forms.Padding(0);
             this.itinerary.Name = "itinerary";
             this.itinerary.Resize = new System.Drawing.Size(50, 50);
             this.itinerary.Size = new System.Drawing.Size(50, 50);
             this.itinerary.TabIndex = 28;
-            this.itinerary.tileHieght = 100;
+            this.itinerary.tileHieght = 50;
             this.itinerary.tileLocation = new System.Drawing.Point(0, 0);
             this.itinerary.tileSize = new System.Drawing.Size(50, 50);
             this.itinerary.tileTimer_Interval = 100D;
@@ -340,13 +352,13 @@
             this.addClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addClient.BackColor = System.Drawing.Color.Transparent;
             this.addClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addClient.Location = new System.Drawing.Point(11, 460);
+            this.addClient.Location = new System.Drawing.Point(5, 366);
             this.addClient.Margin = new System.Windows.Forms.Padding(0);
             this.addClient.Name = "addClient";
             this.addClient.Resize = new System.Drawing.Size(50, 50);
             this.addClient.Size = new System.Drawing.Size(50, 50);
             this.addClient.TabIndex = 29;
-            this.addClient.tileHieght = 100;
+            this.addClient.tileHieght = 50;
             this.addClient.tileLocation = new System.Drawing.Point(0, 0);
             this.addClient.tileSize = new System.Drawing.Size(50, 50);
             this.addClient.tileTimer_Interval = 100D;
@@ -360,13 +372,13 @@
             this.editClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editClient.BackColor = System.Drawing.Color.Transparent;
             this.editClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editClient.Location = new System.Drawing.Point(111, 460);
+            this.editClient.Location = new System.Drawing.Point(105, 366);
             this.editClient.Margin = new System.Windows.Forms.Padding(0);
             this.editClient.Name = "editClient";
             this.editClient.Resize = new System.Drawing.Size(50, 50);
             this.editClient.Size = new System.Drawing.Size(50, 50);
             this.editClient.TabIndex = 30;
-            this.editClient.tileHieght = 100;
+            this.editClient.tileHieght = 50;
             this.editClient.tileLocation = new System.Drawing.Point(0, 0);
             this.editClient.tileSize = new System.Drawing.Size(50, 50);
             this.editClient.tileTimer_Interval = 100D;
@@ -380,13 +392,13 @@
             this.addContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addContract.BackColor = System.Drawing.Color.Transparent;
             this.addContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addContract.Location = new System.Drawing.Point(61, 460);
+            this.addContract.Location = new System.Drawing.Point(55, 366);
             this.addContract.Margin = new System.Windows.Forms.Padding(0);
             this.addContract.Name = "addContract";
             this.addContract.Resize = new System.Drawing.Size(50, 50);
             this.addContract.Size = new System.Drawing.Size(50, 50);
             this.addContract.TabIndex = 31;
-            this.addContract.tileHieght = 100;
+            this.addContract.tileHieght = 50;
             this.addContract.tileLocation = new System.Drawing.Point(0, 0);
             this.addContract.tileSize = new System.Drawing.Size(50, 50);
             this.addContract.tileTimer_Interval = 100D;
@@ -400,13 +412,13 @@
             this.editContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editContract.BackColor = System.Drawing.Color.Transparent;
             this.editContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editContract.Location = new System.Drawing.Point(161, 460);
+            this.editContract.Location = new System.Drawing.Point(155, 366);
             this.editContract.Margin = new System.Windows.Forms.Padding(0);
             this.editContract.Name = "editContract";
             this.editContract.Resize = new System.Drawing.Size(50, 50);
             this.editContract.Size = new System.Drawing.Size(50, 50);
             this.editContract.TabIndex = 32;
-            this.editContract.tileHieght = 100;
+            this.editContract.tileHieght = 50;
             this.editContract.tileLocation = new System.Drawing.Point(0, 0);
             this.editContract.tileSize = new System.Drawing.Size(50, 50);
             this.editContract.tileTimer_Interval = 100D;
@@ -420,13 +432,13 @@
             this.convertSalesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.convertSalesOrder.BackColor = System.Drawing.Color.Transparent;
             this.convertSalesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.convertSalesOrder.Location = new System.Drawing.Point(160, 348);
+            this.convertSalesOrder.Location = new System.Drawing.Point(155, 271);
             this.convertSalesOrder.Margin = new System.Windows.Forms.Padding(0);
             this.convertSalesOrder.Name = "convertSalesOrder";
             this.convertSalesOrder.Resize = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.Size = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.TabIndex = 34;
-            this.convertSalesOrder.tileHieght = 100;
+            this.convertSalesOrder.tileHieght = 50;
             this.convertSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.convertSalesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.tileTimer_Interval = 100D;
@@ -440,13 +452,13 @@
             this.editSalesOrder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editSalesOrder.BackColor = System.Drawing.Color.Transparent;
             this.editSalesOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editSalesOrder.Location = new System.Drawing.Point(214, 348);
+            this.editSalesOrder.Location = new System.Drawing.Point(205, 271);
             this.editSalesOrder.Margin = new System.Windows.Forms.Padding(0);
             this.editSalesOrder.Name = "editSalesOrder";
             this.editSalesOrder.Resize = new System.Drawing.Size(50, 50);
             this.editSalesOrder.Size = new System.Drawing.Size(50, 50);
             this.editSalesOrder.TabIndex = 35;
-            this.editSalesOrder.tileHieght = 100;
+            this.editSalesOrder.tileHieght = 50;
             this.editSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.editSalesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.editSalesOrder.tileTimer_Interval = 100D;
@@ -463,57 +475,57 @@
             this.notificationPanel.Controls.Add(this.label3);
             this.notificationPanel.Controls.Add(this.label4);
             this.notificationPanel.Controls.Add(this.label1);
-            this.notificationPanel.Location = new System.Drawing.Point(328, 32);
+            this.notificationPanel.Location = new System.Drawing.Point(330, 0);
             this.notificationPanel.Name = "notificationPanel";
-            this.notificationPanel.Size = new System.Drawing.Size(508, 167);
+            this.notificationPanel.Size = new System.Drawing.Size(510, 200);
             this.notificationPanel.TabIndex = 36;
             this.notificationPanel.Visible = false;
             // 
             // paymentNotification
             // 
-            this.paymentNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentNotification.Location = new System.Drawing.Point(275, 49);
             this.paymentNotification.Name = "paymentNotification";
-            this.paymentNotification.Size = new System.Drawing.Size(219, 89);
+            this.paymentNotification.Size = new System.Drawing.Size(219, 146);
             this.paymentNotification.TabIndex = 5;
             this.paymentNotification.Text = "None";
             // 
             // serviceNotification
             // 
-            this.serviceNotification.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serviceNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceNotification.Location = new System.Drawing.Point(17, 49);
             this.serviceNotification.Name = "serviceNotification";
-            this.serviceNotification.Size = new System.Drawing.Size(226, 90);
+            this.serviceNotification.Size = new System.Drawing.Size(226, 146);
             this.serviceNotification.TabIndex = 4;
             this.serviceNotification.Text = "None";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(275, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 15);
+            this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Payments Due:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Services:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(128, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
@@ -522,13 +534,13 @@
             this.statement.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.statement.BackColor = System.Drawing.Color.Transparent;
             this.statement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statement.Location = new System.Drawing.Point(12, 555);
+            this.statement.Location = new System.Drawing.Point(5, 456);
             this.statement.Margin = new System.Windows.Forms.Padding(0);
             this.statement.Name = "statement";
             this.statement.Resize = new System.Drawing.Size(50, 50);
             this.statement.Size = new System.Drawing.Size(50, 50);
             this.statement.TabIndex = 37;
-            this.statement.tileHieght = 100;
+            this.statement.tileHieght = 50;
             this.statement.tileLocation = new System.Drawing.Point(0, 0);
             this.statement.tileSize = new System.Drawing.Size(50, 50);
             this.statement.tileTimer_Interval = 100D;
@@ -542,13 +554,13 @@
             this.royaltyFee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.royaltyFee.BackColor = System.Drawing.Color.Transparent;
             this.royaltyFee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.royaltyFee.Location = new System.Drawing.Point(162, 555);
+            this.royaltyFee.Location = new System.Drawing.Point(155, 456);
             this.royaltyFee.Margin = new System.Windows.Forms.Padding(0);
             this.royaltyFee.Name = "royaltyFee";
             this.royaltyFee.Resize = new System.Drawing.Size(50, 50);
             this.royaltyFee.Size = new System.Drawing.Size(50, 50);
             this.royaltyFee.TabIndex = 38;
-            this.royaltyFee.tileHieght = 100;
+            this.royaltyFee.tileHieght = 50;
             this.royaltyFee.tileLocation = new System.Drawing.Point(0, 0);
             this.royaltyFee.tileSize = new System.Drawing.Size(50, 50);
             this.royaltyFee.tileTimer_Interval = 100D;
@@ -562,13 +574,13 @@
             this.jobReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.jobReport.BackColor = System.Drawing.Color.Transparent;
             this.jobReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.jobReport.Location = new System.Drawing.Point(62, 555);
+            this.jobReport.Location = new System.Drawing.Point(55, 456);
             this.jobReport.Margin = new System.Windows.Forms.Padding(0);
             this.jobReport.Name = "jobReport";
             this.jobReport.Resize = new System.Drawing.Size(50, 50);
             this.jobReport.Size = new System.Drawing.Size(50, 50);
             this.jobReport.TabIndex = 39;
-            this.jobReport.tileHieght = 100;
+            this.jobReport.tileHieght = 50;
             this.jobReport.tileLocation = new System.Drawing.Point(0, 0);
             this.jobReport.tileSize = new System.Drawing.Size(50, 50);
             this.jobReport.tileTimer_Interval = 100D;
@@ -582,13 +594,13 @@
             this.revenueReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.revenueReport.BackColor = System.Drawing.Color.Transparent;
             this.revenueReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.revenueReport.Location = new System.Drawing.Point(112, 555);
+            this.revenueReport.Location = new System.Drawing.Point(105, 456);
             this.revenueReport.Margin = new System.Windows.Forms.Padding(0);
             this.revenueReport.Name = "revenueReport";
             this.revenueReport.Resize = new System.Drawing.Size(50, 50);
             this.revenueReport.Size = new System.Drawing.Size(50, 50);
             this.revenueReport.TabIndex = 40;
-            this.revenueReport.tileHieght = 100;
+            this.revenueReport.tileHieght = 50;
             this.revenueReport.tileLocation = new System.Drawing.Point(0, 0);
             this.revenueReport.tileSize = new System.Drawing.Size(50, 50);
             this.revenueReport.tileTimer_Interval = 100D;
@@ -602,13 +614,13 @@
             this.editQuote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editQuote.BackColor = System.Drawing.Color.Transparent;
             this.editQuote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editQuote.Location = new System.Drawing.Point(60, 348);
+            this.editQuote.Location = new System.Drawing.Point(55, 271);
             this.editQuote.Margin = new System.Windows.Forms.Padding(0);
             this.editQuote.Name = "editQuote";
             this.editQuote.Resize = new System.Drawing.Size(50, 50);
             this.editQuote.Size = new System.Drawing.Size(50, 50);
             this.editQuote.TabIndex = 42;
-            this.editQuote.tileHieght = 100;
+            this.editQuote.tileHieght = 50;
             this.editQuote.tileLocation = new System.Drawing.Point(0, 0);
             this.editQuote.tileSize = new System.Drawing.Size(50, 50);
             this.editQuote.tileTimer_Interval = 100D;
@@ -622,13 +634,13 @@
             this.purchaseRecord.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.purchaseRecord.BackColor = System.Drawing.Color.Transparent;
             this.purchaseRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.purchaseRecord.Location = new System.Drawing.Point(164, 243);
+            this.purchaseRecord.Location = new System.Drawing.Point(150, 186);
             this.purchaseRecord.Margin = new System.Windows.Forms.Padding(0);
             this.purchaseRecord.Name = "purchaseRecord";
             this.purchaseRecord.Resize = new System.Drawing.Size(50, 50);
             this.purchaseRecord.Size = new System.Drawing.Size(50, 50);
             this.purchaseRecord.TabIndex = 43;
-            this.purchaseRecord.tileHieght = 100;
+            this.purchaseRecord.tileHieght = 50;
             this.purchaseRecord.tileLocation = new System.Drawing.Point(0, 0);
             this.purchaseRecord.tileSize = new System.Drawing.Size(50, 50);
             this.purchaseRecord.tileTimer_Interval = 100D;
@@ -640,10 +652,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 215);
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.label5.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(5, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 18);
+            this.label5.Size = new System.Drawing.Size(86, 21);
             this.label5.TabIndex = 45;
             this.label5.Text = "Operations";
             this.label5.Visible = false;
@@ -651,10 +665,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 310);
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.label6.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(5, 246);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 46;
             this.label6.Text = "Documents";
             this.label6.Visible = false;
@@ -662,10 +678,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 422);
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.label7.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(5, 336);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 18);
+            this.label7.Size = new System.Drawing.Size(57, 21);
             this.label7.TabIndex = 47;
             this.label7.Text = "Clients";
             this.label7.Visible = false;
@@ -673,10 +691,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 517);
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.label8.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(5, 426);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 18);
+            this.label8.Size = new System.Drawing.Size(62, 21);
             this.label8.TabIndex = 48;
             this.label8.Text = "Reports";
             this.label8.Visible = false;
@@ -684,11 +704,11 @@
             // userSettings
             // 
             this.userSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.userSettings.FlatAppearance.BorderSize = 0;
+            this.userSettings.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSettings.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userSettings.ForeColor = System.Drawing.Color.White;
-            this.userSettings.Location = new System.Drawing.Point(109, 68);
+            this.userSettings.Location = new System.Drawing.Point(115, 64);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4);
             this.userSettings.Name = "userSettings";
             this.userSettings.Size = new System.Drawing.Size(90, 50);
@@ -714,13 +734,13 @@
             this.inspection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inspection.BackColor = System.Drawing.Color.Transparent;
             this.inspection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inspection.Location = new System.Drawing.Point(62, 243);
+            this.inspection.Location = new System.Drawing.Point(50, 186);
             this.inspection.Margin = new System.Windows.Forms.Padding(0);
             this.inspection.Name = "inspection";
             this.inspection.Resize = new System.Drawing.Size(50, 50);
             this.inspection.Size = new System.Drawing.Size(50, 50);
             this.inspection.TabIndex = 51;
-            this.inspection.tileHieght = 100;
+            this.inspection.tileHieght = 50;
             this.inspection.tileLocation = new System.Drawing.Point(0, 0);
             this.inspection.tileSize = new System.Drawing.Size(50, 50);
             this.inspection.tileTimer_Interval = 100D;
@@ -732,10 +752,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 633);
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.label9.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 516);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 18);
+            this.label9.Size = new System.Drawing.Size(100, 21);
             this.label9.TabIndex = 52;
             this.label9.Text = "Sync Options";
             this.label9.Visible = false;
@@ -743,11 +765,11 @@
             // syncHQ
             // 
             this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.syncHQ.FlatAppearance.BorderSize = 0;
+            this.syncHQ.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(10, 671);
+            this.syncHQ.Location = new System.Drawing.Point(5, 546);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
             this.syncHQ.Size = new System.Drawing.Size(80, 51);
@@ -759,11 +781,11 @@
             // syncAndroid
             // 
             this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.syncAndroid.FlatAppearance.BorderSize = 0;
+            this.syncAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(98, 673);
+            this.syncAndroid.Location = new System.Drawing.Point(95, 546);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(80, 49);
@@ -774,44 +796,62 @@
             // 
             // pnlLogin
             // 
+            this.pnlLogin.BackColor = System.Drawing.Color.Black;
+            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlLogin.Controls.Add(this.pbLogos);
+            this.pnlLogin.Controls.Add(this.pbFALogoLogin);
             this.pnlLogin.Controls.Add(this.Login_btn);
             this.pnlLogin.Controls.Add(this.lblUsername);
             this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.txtPassword);
-            this.pnlLogin.Location = new System.Drawing.Point(627, 432);
+            this.pnlLogin.Location = new System.Drawing.Point(550, 250);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(274, 219);
+            this.pnlLogin.Size = new System.Drawing.Size(274, 442);
             this.pnlLogin.TabIndex = 55;
+            // 
+            // pbLogos
+            // 
+            this.pbLogos.Image = global::FAFOS.Properties.Resources.team_logos;
+            this.pbLogos.Location = new System.Drawing.Point(17, 334);
+            this.pbLogos.Name = "pbLogos";
+            this.pbLogos.Size = new System.Drawing.Size(243, 101);
+            this.pbLogos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogos.TabIndex = 57;
+            this.pbLogos.TabStop = false;
+            // 
+            // pbFALogoLogin
+            // 
+            this.pbFALogoLogin.Image = global::FAFOS.Properties.Resources.Logo_updated;
+            this.pbFALogoLogin.Location = new System.Drawing.Point(17, 208);
+            this.pbFALogoLogin.Name = "pbFALogoLogin";
+            this.pbFALogoLogin.Size = new System.Drawing.Size(243, 120);
+            this.pbFALogoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFALogoLogin.TabIndex = 56;
+            this.pbFALogoLogin.TabStop = false;
             // 
             // pnlUser
             // 
+            this.pnlUser.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
             this.pnlUser.Controls.Add(this.Notifications_button);
             this.pnlUser.Controls.Add(this.userSettings);
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
             this.pnlUser.Controls.Add(this.profilePic);
-            this.pnlUser.Location = new System.Drawing.Point(12, 32);
+            this.pnlUser.Location = new System.Drawing.Point(5, 5);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(310, 123);
+            this.pnlUser.Size = new System.Drawing.Size(320, 120);
             this.pnlUser.TabIndex = 56;
-            // 
-            // pnlOperation
-            // 
-            this.pnlOperation.Location = new System.Drawing.Point(348, 205);
-            this.pnlOperation.Name = "pnlOperation";
-            this.pnlOperation.Size = new System.Drawing.Size(975, 520);
-            this.pnlOperation.TabIndex = 57;
-            this.pnlOperation.Visible = false;
+            this.pnlUser.Visible = false;
             // 
             // Notifications_button
             // 
             this.Notifications_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Notifications_button.FlatAppearance.BorderSize = 0;
+            this.Notifications_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Notifications_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Notifications_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notifications_button.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notifications_button.ForeColor = System.Drawing.Color.White;
-            this.Notifications_button.Location = new System.Drawing.Point(212, 68);
+            this.Notifications_button.Location = new System.Drawing.Point(218, 64);
             this.Notifications_button.Margin = new System.Windows.Forms.Padding(4);
             this.Notifications_button.Name = "Notifications_button";
             this.Notifications_button.Size = new System.Drawing.Size(90, 50);
@@ -820,6 +860,76 @@
             this.Notifications_button.UseVisualStyleBackColor = false;
             this.Notifications_button.Visible = false;
             this.Notifications_button.Click += new System.EventHandler(this.Notifications_button_Click);
+            // 
+            // pnlOperation
+            // 
+            this.pnlOperation.Location = new System.Drawing.Point(350, 125);
+            this.pnlOperation.Name = "pnlOperation";
+            this.pnlOperation.Size = new System.Drawing.Size(975, 600);
+            this.pnlOperation.TabIndex = 57;
+            this.pnlOperation.Visible = false;
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.Controls.Add(this.pbFALogo);
+            this.pnlMenu.Controls.Add(this.label5);
+            this.pnlMenu.Controls.Add(this.Exit_btn);
+            this.pnlMenu.Controls.Add(this.quote);
+            this.pnlMenu.Controls.Add(this.syncAndroid);
+            this.pnlMenu.Controls.Add(this.salesOrder);
+            this.pnlMenu.Controls.Add(this.syncHQ);
+            this.pnlMenu.Controls.Add(this.addClient);
+            this.pnlMenu.Controls.Add(this.label9);
+            this.pnlMenu.Controls.Add(this.editClient);
+            this.pnlMenu.Controls.Add(this.inspection);
+            this.pnlMenu.Controls.Add(this.addContract);
+            this.pnlMenu.Controls.Add(this.royaltyFee);
+            this.pnlMenu.Controls.Add(this.editContract);
+            this.pnlMenu.Controls.Add(this.itinerary);
+            this.pnlMenu.Controls.Add(this.convertSalesOrder);
+            this.pnlMenu.Controls.Add(this.inventory);
+            this.pnlMenu.Controls.Add(this.editSalesOrder);
+            this.pnlMenu.Controls.Add(this.payment);
+            this.pnlMenu.Controls.Add(this.statement);
+            this.pnlMenu.Controls.Add(this.label8);
+            this.pnlMenu.Controls.Add(this.jobReport);
+            this.pnlMenu.Controls.Add(this.purchaseRecord);
+            this.pnlMenu.Controls.Add(this.revenueReport);
+            this.pnlMenu.Controls.Add(this.invoice);
+            this.pnlMenu.Controls.Add(this.editQuote);
+            this.pnlMenu.Controls.Add(this.label7);
+            this.pnlMenu.Controls.Add(this.label6);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(330, 768);
+            this.pnlMenu.TabIndex = 58;
+            this.pnlMenu.Visible = false;
+            // 
+            // pbFALogo
+            // 
+            this.pbFALogo.Image = global::FAFOS.Properties.Resources.Logo_updated;
+            this.pbFALogo.Location = new System.Drawing.Point(2, 604);
+            this.pbFALogo.Name = "pbFALogo";
+            this.pbFALogo.Size = new System.Drawing.Size(325, 160);
+            this.pbFALogo.TabIndex = 55;
+            this.pbFALogo.TabStop = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Location = new System.Drawing.Point(330, 125);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(21, 70);
+            this.btnMenu.TabIndex = 59;
+            this.btnMenu.Text = "<";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Visible = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // View
             // 
@@ -830,38 +940,13 @@
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
             this.Controls.Add(this.pnlUser);
-            this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.syncAndroid);
-            this.Controls.Add(this.syncHQ);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.inspection);
-            this.Controls.Add(this.royaltyFee);
-            this.Controls.Add(this.itinerary);
-            this.Controls.Add(this.inventory);
-            this.Controls.Add(this.payment);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.purchaseRecord);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.editQuote);
-            this.Controls.Add(this.revenueReport);
-            this.Controls.Add(this.jobReport);
-            this.Controls.Add(this.statement);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.notificationPanel);
-            this.Controls.Add(this.editSalesOrder);
-            this.Controls.Add(this.convertSalesOrder);
-            this.Controls.Add(this.editContract);
-            this.Controls.Add(this.addContract);
-            this.Controls.Add(this.editClient);
-            this.Controls.Add(this.addClient);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.salesOrder);
-            this.Controls.Add(this.invoice);
-            this.Controls.Add(this.quote);
-            this.Controls.Add(this.Exit_btn);
+            this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlOperation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -877,9 +962,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).EndInit();
             this.pnlUser.ResumeLayout(false);
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -890,7 +979,6 @@
         private tiles.tile invoice;
         private tiles.tile salesOrder;
         private tiles.tile inventory;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button Login_btn;
@@ -934,6 +1022,12 @@
         private System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.Panel pnlOperation;
         private System.Windows.Forms.Button Notifications_button;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.PictureBox pbFALogo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbFALogoLogin;
+        private System.Windows.Forms.PictureBox pbLogos;
 
     }
 }
