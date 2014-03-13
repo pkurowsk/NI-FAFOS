@@ -37,7 +37,6 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.saveRoute = new System.Windows.Forms.Button();
             this.workOrderTable = new System.Windows.Forms.DataGridView();
-            this.servicesTable = new System.Windows.Forms.DataGridView();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.issuedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@
             this.OrderProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Done = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.servicesTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@
             this.MainMap.GrayScaleMode = false;
             this.MainMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.MainMap.LevelsKeepInMemmory = 5;
-            this.MainMap.Location = new System.Drawing.Point(205, 454);
+            this.MainMap.Location = new System.Drawing.Point(66, 244);
             this.MainMap.MarkersEnabled = true;
             this.MainMap.MaxZoom = 2;
             this.MainMap.MinZoom = 2;
@@ -88,22 +88,22 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 248);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(62, 38);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 20);
+            this.label8.Size = new System.Drawing.Size(86, 17);
             this.label8.TabIndex = 46;
             this.label8.Text = "Work Order:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(540, 248);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(580, 38);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(152, 20);
+            this.label15.Size = new System.Drawing.Size(116, 17);
             this.label15.TabIndex = 47;
             this.label15.Text = "Service Contract:";
             // 
@@ -114,7 +114,7 @@
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(1191, 469);
+            this.generate_btn.Location = new System.Drawing.Point(931, 245);
             this.generate_btn.Margin = new System.Windows.Forms.Padding(4);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(132, 70);
@@ -125,7 +125,7 @@
             // 
             // lblUserInfo
             // 
-            this.lblUserInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.Location = new System.Drawing.Point(1628, 248);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
@@ -138,7 +138,7 @@
             this.saveRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveRoute.ForeColor = System.Drawing.Color.White;
-            this.saveRoute.Location = new System.Drawing.Point(1191, 547);
+            this.saveRoute.Location = new System.Drawing.Point(931, 323);
             this.saveRoute.Margin = new System.Windows.Forms.Padding(4);
             this.saveRoute.Name = "saveRoute";
             this.saveRoute.Size = new System.Drawing.Size(132, 70);
@@ -161,7 +161,7 @@
             this.OrderProvince,
             this.OrderCountry,
             this.Done});
-            this.workOrderTable.Location = new System.Drawing.Point(26, 277);
+            this.workOrderTable.Location = new System.Drawing.Point(66, 67);
             this.workOrderTable.Name = "workOrderTable";
             this.workOrderTable.RowHeadersVisible = false;
             this.workOrderTable.RowTemplate.Height = 24;
@@ -169,31 +169,6 @@
             this.workOrderTable.Size = new System.Drawing.Size(499, 171);
             this.workOrderTable.TabIndex = 54;
             this.workOrderTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
-            // 
-            // servicesTable
-            // 
-            this.servicesTable.AllowUserToAddRows = false;
-            this.servicesTable.AllowUserToDeleteRows = false;
-            this.servicesTable.AllowUserToResizeRows = false;
-            this.servicesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn1});
-            this.servicesTable.Location = new System.Drawing.Point(544, 277);
-            this.servicesTable.Name = "servicesTable";
-            this.servicesTable.RowHeadersVisible = false;
-            this.servicesTable.RowTemplate.Height = 24;
-            this.servicesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.servicesTable.Size = new System.Drawing.Size(779, 171);
-            this.servicesTable.TabIndex = 55;
-            this.servicesTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
             // orderID
             // 
@@ -256,6 +231,31 @@
             this.Done.HeaderText = "Completed";
             this.Done.Name = "Done";
             this.Done.Width = 90;
+            // 
+            // servicesTable
+            // 
+            this.servicesTable.AllowUserToAddRows = false;
+            this.servicesTable.AllowUserToDeleteRows = false;
+            this.servicesTable.AllowUserToResizeRows = false;
+            this.servicesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.servicesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewCheckBoxColumn1});
+            this.servicesTable.Location = new System.Drawing.Point(584, 67);
+            this.servicesTable.Name = "servicesTable";
+            this.servicesTable.RowHeadersVisible = false;
+            this.servicesTable.RowTemplate.Height = 24;
+            this.servicesTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.servicesTable.Size = new System.Drawing.Size(779, 171);
+            this.servicesTable.TabIndex = 55;
+            this.servicesTable.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,10 +341,10 @@
             // 
             // MapsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 886);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.servicesTable);
             this.Controls.Add(this.workOrderTable);
             this.Controls.Add(this.saveRoute);
@@ -353,7 +353,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.MainMap);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "MapsForm";
             this.Text = "MapsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MapsForm_FormClosing);

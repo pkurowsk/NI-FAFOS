@@ -62,7 +62,7 @@ namespace FAFOS
             //pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
             //  pnlUser.Location.Y);
 
-
+            /*
             this.quote.Enter += new System.EventHandler(Tile_Enter);
             this.editQuote.Enter += new System.EventHandler(Tile_Enter);
             this.salesOrder.Enter += new System.EventHandler(Tile_Enter);
@@ -74,7 +74,7 @@ namespace FAFOS
             this.payment.Enter += new System.EventHandler(Tile_Enter);
             this.itinerary.Enter += new System.EventHandler(Tile_Enter);
             this.inspection.Enter += new System.EventHandler(Tile_Enter);
-
+            */
             this.addClient.Enter += new System.EventHandler(Tile_Enter);
             this.editClient.Enter += new System.EventHandler(Tile_Enter);
             this.addContract.Enter += new System.EventHandler(Tile_Enter);
@@ -92,7 +92,7 @@ namespace FAFOS
             screenHeight = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height; 
             this.Size = new System.Drawing.Size((int)screenWidth, (int)screenHeight);
 
-            this.quote.tileTimer_Interval = 40;
+            /*this.quote.tileTimer_Interval = 40;
             this.quote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editQuote.tileTimer_Interval = 40;
             this.editQuote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
@@ -114,7 +114,7 @@ namespace FAFOS
             this.itinerary.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.inspection.tileTimer_Interval = 40;
             this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-
+            */
             this.addClient.tileTimer_Interval = 40;
             this.addClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editClient.tileTimer_Interval = 40;
@@ -445,7 +445,7 @@ namespace FAFOS
                // userid = 1;
                 pnlLogin.Visible = false;
                 this.Exit_btn.Focus();
-                quote.Visible = true;
+                /*quote.Visible = true;
                 editQuote.Visible = true;
                 salesOrder.Visible = true;
                 editSalesOrder.Visible = true;
@@ -456,7 +456,7 @@ namespace FAFOS
                 payment.Visible = true;
                 itinerary.Visible = true;
                 inspection.Visible = true;
-               
+                */
                 addClient.Visible = true;
                 addContract.Visible = true;
                 editClient.Visible = true;
@@ -514,20 +514,20 @@ namespace FAFOS
 
                     lblUserInfo.Text = "Welcome\n " + user.getName(userid);
 
-
+                /*
                 quote.tileLocation = quote.Location;
                 editQuote.tileLocation = editQuote.Location;
                 salesOrder.tileLocation = salesOrder.Location;
                 convertSalesOrder.tileLocation = convertSalesOrder.Location;
                 editSalesOrder.tileLocation = editSalesOrder.Location;
-
+                
                 invoice.tileLocation = invoice.Location;
                 inventory.tileLocation = inventory.Location;
                 purchaseRecord.tileLocation = purchaseRecord.Location;
                 payment.tileLocation = payment.Location;
                 itinerary.tileLocation = itinerary.Location;
                 inspection.tileLocation = inspection.Location;
-
+                */
                 addClient.tileLocation = addClient.Location;
                 editClient.tileLocation = editClient.Location;
                 addContract.tileLocation = addContract.Location;
@@ -540,7 +540,7 @@ namespace FAFOS
              //   allRevenue.tileLocation = allRevenue.Location;
                 
                 string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-
+                /*
                 quote.setMovie(path + "\\Resources\\Quote1.swf");
                 editQuote.setMovie(path + "\\Resources\\EditQuote.swf");
                 salesOrder.setMovie(path + "\\Resources\\CreateSalesOrder1.swf");
@@ -552,7 +552,7 @@ namespace FAFOS
                 payment.setMovie(path + "\\Resources\\payment1.swf");
                 itinerary.setMovie(path + "\\Resources\\itinerary1.swf");
                 inspection.setMovie(path + "\\Resources\\Inspection.swf");
-
+                */
                 addClient.setMovie(path + "\\Resources\\addClient1.swf");
                 addContract.setMovie(path + "\\Resources\\addContract1.swf");
                 editClient.setMovie(path + "\\Resources\\editClient1.swf");
@@ -620,20 +620,7 @@ namespace FAFOS
         private void Logout_btn_Click(object sender, EventArgs e)
         {
             pnlOperation.Controls.Clear();
-
-            quote.Visible = false;
-            editQuote.Visible = false;
-            salesOrder.Visible = false;
-            editSalesOrder.Visible = false;
-            convertSalesOrder.Visible = false;
-
-            invoice.Visible = false;
-            inventory.Visible = false;
-            purchaseRecord.Visible = false;
-            payment.Visible = false;
-            itinerary.Visible = false;
-            inspection.Visible = false;
-
+            
             addClient.Visible = false;
             addContract.Visible = false;
             editClient.Visible = false;
@@ -697,7 +684,7 @@ namespace FAFOS
                 pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlOperation.Size.Height);
 
-                btnMenu.Location = new Point(0, btnMenu.Location.Y);
+                //btnMenu.Location = new Point(0, btnMenu.Location.Y);
                 btnMenu.Text = ">";
             }
             else
@@ -707,13 +694,144 @@ namespace FAFOS
                     pnlOperation.Location.Y);
                 pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlOperation.Size.Height);
-                btnMenu.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width, btnMenu.Location.Y);
+                //btnMenu.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width, btnMenu.Location.Y);
                 btnMenu.Text = "<";
             }
         }
 
- 
+        #region Documents Panel
 
+        /// <summary>
+        /// Mouse hover for documents label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void label6_MouseHover(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = true;
+        }
+
+        private void label6_MouseLeave(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+        }
+
+        private void btnQuote_Click(object sender, EventArgs e)
+        {
+           pnlDocs.Visible = false;
+           QuoteController qc = new QuoteController(userid.ToString());
+           qc.quote(1, pnlOperation);
+        }
+
+        private void btnEditQuote_Click(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(2, pnlOperation);
+        }
+
+        private void btnCreateSO_Click(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(1, pnlOperation);
+        }
+
+        private void btnConvertSO_Click(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(2, pnlOperation);
+        }
+
+        private void btnEditSO_Click(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+            QuoteController qc = new QuoteController(userid.ToString());
+            qc.quote(3, pnlOperation);
+        }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            pnlDocs.Visible = false;
+            InvoiceForm invoice_form = new InvoiceForm(userid);
+            invoice_form.TopLevel = false;
+            pnlOperation.Controls.Add(invoice_form);
+            invoice_form.Show();
+        }
+
+        #endregion
+
+
+        #region Operations Panel
+
+        private void label5_MouseEnter(object sender, EventArgs e)
+        {
+            pnlOps.Visible = true;
+        }
+
+        private void label5_MouseLeave(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+        }
+
+        private void btnItinerary_Click(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+
+            MapsForm form = new MapsForm(userid, orders, services);
+            form.TopLevel = false;
+            pnlOperation.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnInspection_Click(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+
+            InspectionForm form = new InspectionForm(userid.ToString());
+            form.TopLevel = false;
+            pnlOperation.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+
+            InventoryForm form = new InventoryForm(userid);
+            form.TopLevel = false;
+            pnlOperation.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+
+            PurchaseRecord form = new PurchaseRecord(userid);
+            form.TopLevel = false;
+            pnlOperation.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            pnlOps.Visible = false;
+
+            PaymentForm payment_form = new PaymentForm(userid);
+            payment_form.TopLevel = false;
+            pnlOperation.Controls.Add(payment_form);
+            payment_form.Show();
+        }
+
+        #endregion
+
+        private void pnlOps_MouseHover(object sender, EventArgs e)
+        {
+            Panel s = (Panel)sender;
+            s.Visible = true;
+        }
 
     }
 }

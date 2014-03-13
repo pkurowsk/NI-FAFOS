@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             this.txtInvoice = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,20 +59,20 @@
             // 
             this.txtInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvoice.FormattingEnabled = true;
-            this.txtInvoice.Location = new System.Drawing.Point(147, 210);
+            this.txtInvoice.Location = new System.Drawing.Point(65, 59);
             this.txtInvoice.Name = "txtInvoice";
-            this.txtInvoice.Size = new System.Drawing.Size(214, 28);
+            this.txtInvoice.Size = new System.Drawing.Size(214, 25);
             this.txtInvoice.TabIndex = 34;
             this.txtInvoice.SelectedValueChanged += new System.EventHandler(this.txtInvoice_SelectedValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label1.Location = new System.Drawing.Point(144, 189);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.label1.Location = new System.Drawing.Point(62, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 20);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 33;
             this.label1.Text = "Unpaid Invoices";
             // 
@@ -86,8 +84,8 @@
             this.PaymentBox.Controls.Add(this.label9);
             this.PaymentBox.Controls.Add(this.txtAmount);
             this.PaymentBox.Controls.Add(this.label3);
-            this.PaymentBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.PaymentBox.Location = new System.Drawing.Point(147, 556);
+            this.PaymentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.PaymentBox.Location = new System.Drawing.Point(65, 405);
             this.PaymentBox.Name = "PaymentBox";
             this.PaymentBox.Size = new System.Drawing.Size(347, 145);
             this.PaymentBox.TabIndex = 35;
@@ -107,7 +105,7 @@
             "Debit"});
             this.txtType.Location = new System.Drawing.Point(96, 26);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(121, 28);
+            this.txtType.Size = new System.Drawing.Size(121, 25);
             this.txtType.TabIndex = 22;
             // 
             // label10
@@ -116,7 +114,7 @@
             this.label10.Location = new System.Drawing.Point(13, 89);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.Size = new System.Drawing.Size(64, 17);
             this.label10.TabIndex = 21;
             this.label10.Text = "Remarks";
             // 
@@ -137,7 +135,7 @@
             this.label9.Location = new System.Drawing.Point(13, 59);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 19;
             this.label9.Text = "Amount";
             // 
@@ -147,17 +145,17 @@
             this.txtAmount.Location = new System.Drawing.Point(98, 59);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(102, 27);
+            this.txtAmount.Size = new System.Drawing.Size(102, 23);
             this.txtAmount.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label3.Location = new System.Drawing.Point(13, 29);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Type";
             // 
@@ -169,8 +167,8 @@
             this.InvoiceBox.Controls.Add(this.label2);
             this.InvoiceBox.Controls.Add(this.label4);
             this.InvoiceBox.Controls.Add(this.label5);
-            this.InvoiceBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.InvoiceBox.Location = new System.Drawing.Point(148, 280);
+            this.InvoiceBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.InvoiceBox.Location = new System.Drawing.Point(66, 129);
             this.InvoiceBox.Name = "InvoiceBox";
             this.InvoiceBox.Size = new System.Drawing.Size(645, 251);
             this.InvoiceBox.TabIndex = 36;
@@ -182,28 +180,12 @@
             // 
             this.paymentTable.AllowUserToAddRows = false;
             this.paymentTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.paymentTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.paymentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.paymentTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
             this.Type,
             this.Amount,
             this.Remarks});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.paymentTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.paymentTable.Location = new System.Drawing.Point(110, 64);
             this.paymentTable.Name = "paymentTable";
             this.paymentTable.ReadOnly = true;
@@ -247,7 +229,7 @@
             this.txtBalance.Location = new System.Drawing.Point(110, 198);
             this.txtBalance.Margin = new System.Windows.Forms.Padding(4);
             this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(102, 27);
+            this.txtBalance.Size = new System.Drawing.Size(102, 23);
             this.txtBalance.TabIndex = 23;
             // 
             // txtTotal
@@ -257,7 +239,7 @@
             this.txtTotal.Location = new System.Drawing.Point(110, 26);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(102, 27);
+            this.txtTotal.Size = new System.Drawing.Size(102, 23);
             this.txtTotal.TabIndex = 22;
             // 
             // label2
@@ -266,7 +248,7 @@
             this.label2.Location = new System.Drawing.Point(13, 201);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
+            this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Balance";
             // 
@@ -282,11 +264,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.label5.Location = new System.Drawing.Point(13, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 17;
             this.label5.Text = "Total";
             // 
@@ -297,7 +279,7 @@
             this.Submit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Submit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Submit_btn.ForeColor = System.Drawing.Color.White;
-            this.Submit_btn.Location = new System.Drawing.Point(770, 631);
+            this.Submit_btn.Location = new System.Drawing.Point(688, 480);
             this.Submit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Submit_btn.Name = "Submit_btn";
             this.Submit_btn.Size = new System.Drawing.Size(127, 70);
@@ -309,17 +291,16 @@
             // 
             // PaymentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1244, 883);
+            this.ClientSize = new System.Drawing.Size(1244, 788);
             this.Controls.Add(this.Submit_btn);
             this.Controls.Add(this.InvoiceBox);
             this.Controls.Add(this.PaymentBox);
             this.Controls.Add(this.txtInvoice);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
             this.Controls.SetChildIndex(this.label1, 0);
