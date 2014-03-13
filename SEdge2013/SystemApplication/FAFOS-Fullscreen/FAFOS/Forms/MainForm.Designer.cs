@@ -40,20 +40,12 @@
             this.Logout_btn = new System.Windows.Forms.Button();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
             this.SEdgeLogo = new System.Windows.Forms.Label();
-            this.addClient = new tiles.tile();
-            this.editClient = new tiles.tile();
-            this.addContract = new tiles.tile();
-            this.editContract = new tiles.tile();
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.statement = new tiles.tile();
-            this.royaltyFee = new tiles.tile();
-            this.jobReport = new tiles.tile();
-            this.revenueReport = new tiles.tile();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,6 +65,7 @@
             this.pbFALogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDocs = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnEditSO = new System.Windows.Forms.Button();
             this.btnConvertSO = new System.Windows.Forms.Button();
@@ -80,11 +73,24 @@
             this.btnEditQuote = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.pnlOps = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnInspection = new System.Windows.Forms.Button();
             this.btnItinerary = new System.Windows.Forms.Button();
+            this.pnlClients = new System.Windows.Forms.Panel();
+            this.lblCClose = new System.Windows.Forms.Label();
+            this.btnEContract = new System.Windows.Forms.Button();
+            this.btnAContract = new System.Windows.Forms.Button();
+            this.btnEClient = new System.Windows.Forms.Button();
+            this.btnAClient = new System.Windows.Forms.Button();
+            this.pnlReports = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnRoyaltee = new System.Windows.Forms.Button();
+            this.btnRevenue = new System.Windows.Forms.Button();
+            this.btnJob = new System.Windows.Forms.Button();
+            this.btnStatement = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -96,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).BeginInit();
             this.pnlDocs.SuspendLayout();
             this.pnlOps.SuspendLayout();
+            this.pnlClients.SuspendLayout();
+            this.pnlReports.SuspendLayout();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -105,7 +113,7 @@
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(25, 598);
+            this.Exit_btn.Location = new System.Drawing.Point(25, 540);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(170, 49);
@@ -231,86 +239,6 @@
             this.SEdgeLogo.TabIndex = 25;
             this.SEdgeLogo.Visible = false;
             // 
-            // addClient
-            // 
-            this.addClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addClient.BackColor = System.Drawing.Color.Transparent;
-            this.addClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addClient.Location = new System.Drawing.Point(5, 347);
-            this.addClient.Margin = new System.Windows.Forms.Padding(0);
-            this.addClient.Name = "addClient";
-            this.addClient.Resize = new System.Drawing.Size(50, 50);
-            this.addClient.Size = new System.Drawing.Size(50, 50);
-            this.addClient.TabIndex = 29;
-            this.addClient.tileHieght = 50;
-            this.addClient.tileLocation = new System.Drawing.Point(0, 0);
-            this.addClient.tileSize = new System.Drawing.Size(50, 50);
-            this.addClient.tileTimer_Interval = 100D;
-            this.addClient.tileWidth = 50;
-            this.addClient.Visible = false;
-            this.addClient.XScale = 0;
-            this.addClient.YScale = 0;
-            // 
-            // editClient
-            // 
-            this.editClient.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editClient.BackColor = System.Drawing.Color.Transparent;
-            this.editClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editClient.Location = new System.Drawing.Point(105, 347);
-            this.editClient.Margin = new System.Windows.Forms.Padding(0);
-            this.editClient.Name = "editClient";
-            this.editClient.Resize = new System.Drawing.Size(50, 50);
-            this.editClient.Size = new System.Drawing.Size(50, 50);
-            this.editClient.TabIndex = 30;
-            this.editClient.tileHieght = 50;
-            this.editClient.tileLocation = new System.Drawing.Point(0, 0);
-            this.editClient.tileSize = new System.Drawing.Size(50, 50);
-            this.editClient.tileTimer_Interval = 100D;
-            this.editClient.tileWidth = 50;
-            this.editClient.Visible = false;
-            this.editClient.XScale = 0;
-            this.editClient.YScale = 0;
-            // 
-            // addContract
-            // 
-            this.addContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addContract.BackColor = System.Drawing.Color.Transparent;
-            this.addContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addContract.Location = new System.Drawing.Point(55, 347);
-            this.addContract.Margin = new System.Windows.Forms.Padding(0);
-            this.addContract.Name = "addContract";
-            this.addContract.Resize = new System.Drawing.Size(50, 50);
-            this.addContract.Size = new System.Drawing.Size(50, 50);
-            this.addContract.TabIndex = 31;
-            this.addContract.tileHieght = 50;
-            this.addContract.tileLocation = new System.Drawing.Point(0, 0);
-            this.addContract.tileSize = new System.Drawing.Size(50, 50);
-            this.addContract.tileTimer_Interval = 100D;
-            this.addContract.tileWidth = 50;
-            this.addContract.Visible = false;
-            this.addContract.XScale = 0;
-            this.addContract.YScale = 0;
-            // 
-            // editContract
-            // 
-            this.editContract.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.editContract.BackColor = System.Drawing.Color.Transparent;
-            this.editContract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editContract.Location = new System.Drawing.Point(155, 347);
-            this.editContract.Margin = new System.Windows.Forms.Padding(0);
-            this.editContract.Name = "editContract";
-            this.editContract.Resize = new System.Drawing.Size(50, 50);
-            this.editContract.Size = new System.Drawing.Size(50, 50);
-            this.editContract.TabIndex = 32;
-            this.editContract.tileHieght = 50;
-            this.editContract.tileLocation = new System.Drawing.Point(0, 0);
-            this.editContract.tileSize = new System.Drawing.Size(50, 50);
-            this.editContract.tileTimer_Interval = 100D;
-            this.editContract.tileWidth = 50;
-            this.editContract.Visible = false;
-            this.editContract.XScale = 0;
-            this.editContract.YScale = 0;
-            // 
             // notificationPanel
             // 
             this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -373,86 +301,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Day Notifications";
             // 
-            // statement
-            // 
-            this.statement.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.statement.BackColor = System.Drawing.Color.Transparent;
-            this.statement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statement.Location = new System.Drawing.Point(5, 442);
-            this.statement.Margin = new System.Windows.Forms.Padding(0);
-            this.statement.Name = "statement";
-            this.statement.Resize = new System.Drawing.Size(50, 50);
-            this.statement.Size = new System.Drawing.Size(50, 50);
-            this.statement.TabIndex = 37;
-            this.statement.tileHieght = 50;
-            this.statement.tileLocation = new System.Drawing.Point(0, 0);
-            this.statement.tileSize = new System.Drawing.Size(50, 50);
-            this.statement.tileTimer_Interval = 100D;
-            this.statement.tileWidth = 50;
-            this.statement.Visible = false;
-            this.statement.XScale = 0;
-            this.statement.YScale = 0;
-            // 
-            // royaltyFee
-            // 
-            this.royaltyFee.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.royaltyFee.BackColor = System.Drawing.Color.Transparent;
-            this.royaltyFee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.royaltyFee.Location = new System.Drawing.Point(155, 442);
-            this.royaltyFee.Margin = new System.Windows.Forms.Padding(0);
-            this.royaltyFee.Name = "royaltyFee";
-            this.royaltyFee.Resize = new System.Drawing.Size(50, 50);
-            this.royaltyFee.Size = new System.Drawing.Size(50, 50);
-            this.royaltyFee.TabIndex = 38;
-            this.royaltyFee.tileHieght = 50;
-            this.royaltyFee.tileLocation = new System.Drawing.Point(0, 0);
-            this.royaltyFee.tileSize = new System.Drawing.Size(50, 50);
-            this.royaltyFee.tileTimer_Interval = 100D;
-            this.royaltyFee.tileWidth = 50;
-            this.royaltyFee.Visible = false;
-            this.royaltyFee.XScale = 0;
-            this.royaltyFee.YScale = 0;
-            // 
-            // jobReport
-            // 
-            this.jobReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.jobReport.BackColor = System.Drawing.Color.Transparent;
-            this.jobReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.jobReport.Location = new System.Drawing.Point(55, 442);
-            this.jobReport.Margin = new System.Windows.Forms.Padding(0);
-            this.jobReport.Name = "jobReport";
-            this.jobReport.Resize = new System.Drawing.Size(50, 50);
-            this.jobReport.Size = new System.Drawing.Size(50, 50);
-            this.jobReport.TabIndex = 39;
-            this.jobReport.tileHieght = 50;
-            this.jobReport.tileLocation = new System.Drawing.Point(0, 0);
-            this.jobReport.tileSize = new System.Drawing.Size(50, 50);
-            this.jobReport.tileTimer_Interval = 100D;
-            this.jobReport.tileWidth = 50;
-            this.jobReport.Visible = false;
-            this.jobReport.XScale = 0;
-            this.jobReport.YScale = 0;
-            // 
-            // revenueReport
-            // 
-            this.revenueReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.revenueReport.BackColor = System.Drawing.Color.Transparent;
-            this.revenueReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.revenueReport.Location = new System.Drawing.Point(105, 442);
-            this.revenueReport.Margin = new System.Windows.Forms.Padding(0);
-            this.revenueReport.Name = "revenueReport";
-            this.revenueReport.Resize = new System.Drawing.Size(50, 50);
-            this.revenueReport.Size = new System.Drawing.Size(50, 50);
-            this.revenueReport.TabIndex = 40;
-            this.revenueReport.tileHieght = 50;
-            this.revenueReport.tileLocation = new System.Drawing.Point(0, 0);
-            this.revenueReport.tileSize = new System.Drawing.Size(50, 50);
-            this.revenueReport.tileTimer_Interval = 100D;
-            this.revenueReport.tileWidth = 50;
-            this.revenueReport.Visible = false;
-            this.revenueReport.XScale = 0;
-            this.revenueReport.YScale = 0;
-            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
@@ -486,26 +334,28 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.label7.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(5, 296);
+            this.label7.Location = new System.Drawing.Point(5, 300);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 50);
             this.label7.TabIndex = 47;
             this.label7.Text = "Clients";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Visible = false;
+            this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
             // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.label8.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(5, 386);
+            this.label8.Location = new System.Drawing.Point(5, 360);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 50);
             this.label8.TabIndex = 48;
             this.label8.Text = "Reports";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label8.Visible = false;
+            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
             // 
             // userSettings
             // 
@@ -537,15 +387,15 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.label9.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 516);
+            this.label9.Location = new System.Drawing.Point(5, 420);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 21);
+            this.label9.Size = new System.Drawing.Size(90, 50);
             this.label9.TabIndex = 52;
             this.label9.Text = "Sync Options";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Visible = false;
             // 
             // syncHQ
@@ -555,7 +405,7 @@
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(25, 541);
+            this.syncHQ.Location = new System.Drawing.Point(25, 480);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
             this.syncHQ.Size = new System.Drawing.Size(80, 50);
@@ -571,7 +421,7 @@
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(115, 541);
+            this.syncAndroid.Location = new System.Drawing.Point(115, 480);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(80, 50);
@@ -625,9 +475,9 @@
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
             this.pnlUser.Controls.Add(this.profilePic);
-            this.pnlUser.Location = new System.Drawing.Point(5, 5);
+            this.pnlUser.Location = new System.Drawing.Point(0, 0);
             this.pnlUser.Name = "pnlUser";
-            this.pnlUser.Size = new System.Drawing.Size(210, 170);
+            this.pnlUser.Size = new System.Drawing.Size(225, 170);
             this.pnlUser.TabIndex = 56;
             this.pnlUser.Visible = false;
             // 
@@ -664,16 +514,8 @@
             this.pnlMenu.Controls.Add(this.Exit_btn);
             this.pnlMenu.Controls.Add(this.syncAndroid);
             this.pnlMenu.Controls.Add(this.syncHQ);
-            this.pnlMenu.Controls.Add(this.addClient);
             this.pnlMenu.Controls.Add(this.label9);
-            this.pnlMenu.Controls.Add(this.editClient);
-            this.pnlMenu.Controls.Add(this.addContract);
-            this.pnlMenu.Controls.Add(this.royaltyFee);
-            this.pnlMenu.Controls.Add(this.editContract);
-            this.pnlMenu.Controls.Add(this.statement);
             this.pnlMenu.Controls.Add(this.label8);
-            this.pnlMenu.Controls.Add(this.jobReport);
-            this.pnlMenu.Controls.Add(this.revenueReport);
             this.pnlMenu.Controls.Add(this.label7);
             this.pnlMenu.Controls.Add(this.label6);
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
@@ -700,7 +542,7 @@
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(215, 5);
+            this.btnMenu.Location = new System.Drawing.Point(225, 0);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(20, 70);
             this.btnMenu.TabIndex = 59;
@@ -712,6 +554,7 @@
             // pnlDocs
             // 
             this.pnlDocs.BackColor = System.Drawing.Color.DimGray;
+            this.pnlDocs.Controls.Add(this.label10);
             this.pnlDocs.Controls.Add(this.btnInvoice);
             this.pnlDocs.Controls.Add(this.btnEditSO);
             this.pnlDocs.Controls.Add(this.btnConvertSO);
@@ -720,10 +563,20 @@
             this.pnlDocs.Controls.Add(this.btnQuote);
             this.pnlDocs.Location = new System.Drawing.Point(95, 240);
             this.pnlDocs.Name = "pnlDocs";
-            this.pnlDocs.Size = new System.Drawing.Size(450, 50);
+            this.pnlDocs.Size = new System.Drawing.Size(525, 50);
             this.pnlDocs.TabIndex = 56;
             this.pnlDocs.Visible = false;
-            this.pnlDocs.MouseHover += new System.EventHandler(this.pnlOps_MouseHover);
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(450, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 50);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "X";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.MouseEnter += new System.EventHandler(this.label6_MouseLeave);
             // 
             // btnInvoice
             // 
@@ -768,8 +621,8 @@
             // 
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateSO.Location = new System.Drawing.Point(150, 1);
+            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSO.Location = new System.Drawing.Point(150, 0);
             this.btnCreateSO.Name = "btnCreateSO";
             this.btnCreateSO.Size = new System.Drawing.Size(75, 50);
             this.btnCreateSO.TabIndex = 2;
@@ -806,6 +659,7 @@
             // pnlOps
             // 
             this.pnlOps.BackColor = System.Drawing.Color.DimGray;
+            this.pnlOps.Controls.Add(this.label11);
             this.pnlOps.Controls.Add(this.btnPayment);
             this.pnlOps.Controls.Add(this.btnPurchase);
             this.pnlOps.Controls.Add(this.btnInventory);
@@ -813,10 +667,21 @@
             this.pnlOps.Controls.Add(this.btnItinerary);
             this.pnlOps.Location = new System.Drawing.Point(95, 180);
             this.pnlOps.Name = "pnlOps";
-            this.pnlOps.Size = new System.Drawing.Size(375, 50);
+            this.pnlOps.Size = new System.Drawing.Size(450, 50);
             this.pnlOps.TabIndex = 57;
             this.pnlOps.Visible = false;
             this.pnlOps.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(375, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 50);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "X";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
             // 
             // btnPayment
             // 
@@ -888,6 +753,152 @@
             this.btnItinerary.Click += new System.EventHandler(this.btnItinerary_Click);
             this.btnItinerary.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
+            // pnlClients
+            // 
+            this.pnlClients.BackColor = System.Drawing.Color.DimGray;
+            this.pnlClients.Controls.Add(this.lblCClose);
+            this.pnlClients.Controls.Add(this.btnEContract);
+            this.pnlClients.Controls.Add(this.btnAContract);
+            this.pnlClients.Controls.Add(this.btnEClient);
+            this.pnlClients.Controls.Add(this.btnAClient);
+            this.pnlClients.Location = new System.Drawing.Point(95, 300);
+            this.pnlClients.Name = "pnlClients";
+            this.pnlClients.Size = new System.Drawing.Size(375, 50);
+            this.pnlClients.TabIndex = 60;
+            this.pnlClients.Visible = false;
+            // 
+            // lblCClose
+            // 
+            this.lblCClose.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCClose.Location = new System.Drawing.Point(300, 0);
+            this.lblCClose.Name = "lblCClose";
+            this.lblCClose.Size = new System.Drawing.Size(75, 50);
+            this.lblCClose.TabIndex = 9;
+            this.lblCClose.Text = "X";
+            this.lblCClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCClose.MouseEnter += new System.EventHandler(this.label7_MouseLeave);
+            // 
+            // btnEContract
+            // 
+            this.btnEContract.FlatAppearance.BorderSize = 0;
+            this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEContract.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEContract.Location = new System.Drawing.Point(225, 0);
+            this.btnEContract.Name = "btnEContract";
+            this.btnEContract.Size = new System.Drawing.Size(75, 50);
+            this.btnEContract.TabIndex = 8;
+            this.btnEContract.Text = "Edit Contract";
+            this.btnEContract.UseVisualStyleBackColor = true;
+            // 
+            // btnAContract
+            // 
+            this.btnAContract.FlatAppearance.BorderSize = 0;
+            this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAContract.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAContract.Location = new System.Drawing.Point(150, 0);
+            this.btnAContract.Name = "btnAContract";
+            this.btnAContract.Size = new System.Drawing.Size(75, 50);
+            this.btnAContract.TabIndex = 7;
+            this.btnAContract.Text = "Add Contract";
+            this.btnAContract.UseVisualStyleBackColor = true;
+            // 
+            // btnEClient
+            // 
+            this.btnEClient.FlatAppearance.BorderSize = 0;
+            this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEClient.Location = new System.Drawing.Point(75, 0);
+            this.btnEClient.Name = "btnEClient";
+            this.btnEClient.Size = new System.Drawing.Size(75, 50);
+            this.btnEClient.TabIndex = 6;
+            this.btnEClient.Text = "Edit Client";
+            this.btnEClient.UseVisualStyleBackColor = true;
+            // 
+            // btnAClient
+            // 
+            this.btnAClient.FlatAppearance.BorderSize = 0;
+            this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAClient.Location = new System.Drawing.Point(0, 0);
+            this.btnAClient.Name = "btnAClient";
+            this.btnAClient.Size = new System.Drawing.Size(75, 50);
+            this.btnAClient.TabIndex = 5;
+            this.btnAClient.Text = "Add Client";
+            this.btnAClient.UseVisualStyleBackColor = true;
+            // 
+            // pnlReports
+            // 
+            this.pnlReports.BackColor = System.Drawing.Color.DimGray;
+            this.pnlReports.Controls.Add(this.label12);
+            this.pnlReports.Controls.Add(this.btnRoyaltee);
+            this.pnlReports.Controls.Add(this.btnRevenue);
+            this.pnlReports.Controls.Add(this.btnJob);
+            this.pnlReports.Controls.Add(this.btnStatement);
+            this.pnlReports.Location = new System.Drawing.Point(95, 360);
+            this.pnlReports.Name = "pnlReports";
+            this.pnlReports.Size = new System.Drawing.Size(375, 50);
+            this.pnlReports.TabIndex = 61;
+            this.pnlReports.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(300, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 50);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "X";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.MouseEnter += new System.EventHandler(this.label8_MouseLeave);
+            // 
+            // btnRoyaltee
+            // 
+            this.btnRoyaltee.FlatAppearance.BorderSize = 0;
+            this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoyaltee.Location = new System.Drawing.Point(225, 0);
+            this.btnRoyaltee.Name = "btnRoyaltee";
+            this.btnRoyaltee.Size = new System.Drawing.Size(75, 50);
+            this.btnRoyaltee.TabIndex = 8;
+            this.btnRoyaltee.Text = "Royaltee Fee";
+            this.btnRoyaltee.UseVisualStyleBackColor = true;
+            // 
+            // btnRevenue
+            // 
+            this.btnRevenue.FlatAppearance.BorderSize = 0;
+            this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.Location = new System.Drawing.Point(150, 0);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Size = new System.Drawing.Size(75, 50);
+            this.btnRevenue.TabIndex = 7;
+            this.btnRevenue.Text = "Revenue Report";
+            this.btnRevenue.UseVisualStyleBackColor = true;
+            // 
+            // btnJob
+            // 
+            this.btnJob.FlatAppearance.BorderSize = 0;
+            this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJob.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJob.Location = new System.Drawing.Point(75, 0);
+            this.btnJob.Name = "btnJob";
+            this.btnJob.Size = new System.Drawing.Size(75, 50);
+            this.btnJob.TabIndex = 6;
+            this.btnJob.Text = "Job Report";
+            this.btnJob.UseVisualStyleBackColor = true;
+            // 
+            // btnStatement
+            // 
+            this.btnStatement.FlatAppearance.BorderSize = 0;
+            this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatement.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.Location = new System.Drawing.Point(0, 0);
+            this.btnStatement.Name = "btnStatement";
+            this.btnStatement.Size = new System.Drawing.Size(75, 50);
+            this.btnStatement.TabIndex = 5;
+            this.btnStatement.Text = "Statement";
+            this.btnStatement.UseVisualStyleBackColor = true;
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
@@ -896,6 +907,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlReports);
+            this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlOps);
             this.Controls.Add(this.pnlDocs);
             this.Controls.Add(this.pnlUser);
@@ -925,10 +938,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).EndInit();
             this.pnlUser.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).EndInit();
             this.pnlDocs.ResumeLayout(false);
             this.pnlOps.ResumeLayout(false);
+            this.pnlClients.ResumeLayout(false);
+            this.pnlReports.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -945,20 +959,12 @@
         private System.Windows.Forms.Button Logout_btn;
         private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
-        private tiles.tile addClient;
-        private tiles.tile editClient;
-        private tiles.tile addContract;
-        private tiles.tile editContract;
         private System.Windows.Forms.Panel notificationPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label paymentNotification;
         private System.Windows.Forms.Label serviceNotification;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private tiles.tile statement;
-        private tiles.tile royaltyFee;
-        private tiles.tile jobReport;
-        private tiles.tile revenueReport;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -991,6 +997,20 @@
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnInspection;
         private System.Windows.Forms.Button btnItinerary;
+        private System.Windows.Forms.Panel pnlClients;
+        private System.Windows.Forms.Label lblCClose;
+        private System.Windows.Forms.Button btnEContract;
+        private System.Windows.Forms.Button btnAContract;
+        private System.Windows.Forms.Button btnEClient;
+        private System.Windows.Forms.Button btnAClient;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel pnlReports;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnRoyaltee;
+        private System.Windows.Forms.Button btnRevenue;
+        private System.Windows.Forms.Button btnJob;
+        private System.Windows.Forms.Button btnStatement;
 
     }
 }

@@ -74,18 +74,18 @@ namespace FAFOS
             this.payment.Enter += new System.EventHandler(Tile_Enter);
             this.itinerary.Enter += new System.EventHandler(Tile_Enter);
             this.inspection.Enter += new System.EventHandler(Tile_Enter);
-            */
+            
             this.addClient.Enter += new System.EventHandler(Tile_Enter);
             this.editClient.Enter += new System.EventHandler(Tile_Enter);
             this.addContract.Enter += new System.EventHandler(Tile_Enter);
             this.editContract.Enter += new System.EventHandler(Tile_Enter);
-
+            
             this.statement.Enter += new System.EventHandler(Tile_Enter);
             this.jobReport.Enter += new System.EventHandler(Tile_Enter);
             this.royaltyFee.Enter += new System.EventHandler(Tile_Enter);
             this.revenueReport.Enter += new System.EventHandler(Tile_Enter);
           //  this.allRevenue.Enter += new System.EventHandler(Tile_Enter);
-
+            */
             user = new Users();
 
             screenWidth = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
@@ -114,7 +114,7 @@ namespace FAFOS
             this.itinerary.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.inspection.tileTimer_Interval = 40;
             this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            */
+            
             this.addClient.tileTimer_Interval = 40;
             this.addClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editClient.tileTimer_Interval = 40;
@@ -123,7 +123,7 @@ namespace FAFOS
             this.addContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.editContract.tileTimer_Interval = 40;
             this.editContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-
+            
             this.statement.tileTimer_Interval = 40;
             this.statement.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
             this.royaltyFee.tileTimer_Interval = 40;
@@ -134,7 +134,7 @@ namespace FAFOS
             this.revenueReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
           //  this.allRevenue.tileTimer_Interval = 40;
           //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-
+            */
             FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350,40);
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
@@ -456,12 +456,12 @@ namespace FAFOS
                 payment.Visible = true;
                 itinerary.Visible = true;
                 inspection.Visible = true;
-                */
+                
                 addClient.Visible = true;
                 addContract.Visible = true;
                 editClient.Visible = true;
                 editContract.Visible = true;
-
+                
                 statement.Visible = true;
                 jobReport.Visible = true;
                 revenueReport.Visible = true;
@@ -469,7 +469,7 @@ namespace FAFOS
                 if (!user.checkAdmin(userid))
                     royaltyFee.Visible = false;
              //   allRevenue.Visible = true;
-
+                */
                 syncAndroid.Visible = true;
                 syncHQ.Visible = true;
 
@@ -527,18 +527,18 @@ namespace FAFOS
                 payment.tileLocation = payment.Location;
                 itinerary.tileLocation = itinerary.Location;
                 inspection.tileLocation = inspection.Location;
-                */
+                
                 addClient.tileLocation = addClient.Location;
                 editClient.tileLocation = editClient.Location;
                 addContract.tileLocation = addContract.Location;
                 editContract.tileLocation = editContract.Location;
-
+                
                 statement.tileLocation = statement.Location;
                 jobReport.tileLocation = jobReport.Location;
                 revenueReport.tileLocation = revenueReport.Location;
                 royaltyFee.tileLocation = royaltyFee.Location;
              //   allRevenue.tileLocation = allRevenue.Location;
-                
+                */
                 string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
                 /*
                 quote.setMovie(path + "\\Resources\\Quote1.swf");
@@ -552,18 +552,18 @@ namespace FAFOS
                 payment.setMovie(path + "\\Resources\\payment1.swf");
                 itinerary.setMovie(path + "\\Resources\\itinerary1.swf");
                 inspection.setMovie(path + "\\Resources\\Inspection.swf");
-                */
+                
                 addClient.setMovie(path + "\\Resources\\addClient1.swf");
                 addContract.setMovie(path + "\\Resources\\addContract1.swf");
                 editClient.setMovie(path + "\\Resources\\editClient1.swf");
                 editContract.setMovie(path + "\\Resources\\editContract1.swf");
-
+                
                 statement.setMovie(path + "\\Resources\\Statements.swf");
                 jobReport.setMovie(path + "\\Resources\\JobReports.swf");
                 revenueReport.setMovie(path + "\\Resources\\RevenueReports.swf");
                 royaltyFee.setMovie(path + "\\Resources\\RoyaltyFee.swf");
               //  allRevenue.setMovie(path + "\\Resources\\TotalRevenue.swf");
-
+                */
                 Notifications();
             }
 
@@ -621,16 +621,6 @@ namespace FAFOS
         {
             pnlOperation.Controls.Clear();
             
-            addClient.Visible = false;
-            addContract.Visible = false;
-            editClient.Visible = false;
-            editContract.Visible = false;
-            statement.Visible = false;
-            jobReport.Visible = false;
-            revenueReport.Visible = false;
-            royaltyFee.Visible = false;
-           // allRevenue.Visible = false;
-
             syncAndroid.Visible = false;
             syncHQ.Visible = false;
 
@@ -827,11 +817,35 @@ namespace FAFOS
 
         #endregion
 
-        private void pnlOps_MouseHover(object sender, EventArgs e)
+        #region Clients Panel
+
+        private void label7_MouseEnter(object sender, EventArgs e)
         {
-            Panel s = (Panel)sender;
-            s.Visible = true;
+            pnlClients.Visible = true;
         }
+
+        
+
+        private void label7_MouseLeave(object sender, EventArgs e)
+        {
+            pnlClients.Visible = false;
+        }
+
+        #endregion
+
+        #region Reports Panel
+
+        private void label8_MouseEnter(object sender, EventArgs e)
+        {
+            pnlReports.Visible = true;
+        }
+
+        private void label8_MouseLeave(object sender, EventArgs e)
+        {
+            pnlReports.Visible = false;
+        }
+
+        #endregion
 
     }
 }
