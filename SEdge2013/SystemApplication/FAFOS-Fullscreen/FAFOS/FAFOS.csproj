@@ -573,6 +573,7 @@
     <None Include="Resources\user-panel.png" />
     <None Include="Resources\DefaultProPic.png" />
     <None Include="Resources\Logo-updated.png" />
+    <None Include="Resources\page-panel-back.png" />
     <Content Include="Resources\Payment1.swf" />
     <Content Include="Resources\PurchaseRecord.swf" />
     <Content Include="Resources\Quote1.swf" />

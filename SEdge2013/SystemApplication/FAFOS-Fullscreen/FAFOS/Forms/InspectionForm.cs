@@ -28,8 +28,8 @@ namespace FAFOS
             userid = id;
             setup(userid, "FAFOS Inspection Form");
 
-            panel1.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(panel1.Size.Width) / 2,
-            System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(panel1.Size.Height) / 2);
+            //pnlInspection.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlInspection.Size.Width) / 2,
+            //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlInspection.Size.Height) / 2);
 
             DataTable dt = new ServiceAddress().getAddresses();
             addressBox.DataSource = dt;

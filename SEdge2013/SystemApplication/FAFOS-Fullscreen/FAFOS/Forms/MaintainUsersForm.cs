@@ -24,7 +24,7 @@ namespace FAFOS
 
             this.Back_Button.MouseEnter += new EventHandler(button1_MouseEnter);
             this.Back_Button.MouseLeave += new EventHandler(button1_MouseLeave);
-            this.Back_Button.Location = new Point(15, 15);
+            //this.Back_Button.Location = new Point(15, 15);
             Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
             Back_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             Back_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -99,7 +99,7 @@ namespace FAFOS
         void button1_MouseLeave(object sender, EventArgs e)
         {
             this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
-            this.Back_Button.Location = new Point(15, 15);
+           // this.Back_Button.Location = new Point(15, 15);
             this.Back_Button.Size = new Size(45, 45);
             this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
         }
@@ -107,7 +107,7 @@ namespace FAFOS
         void button1_MouseEnter(object sender, EventArgs e)
         {
             this.Back_Button.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
-            this.Back_Button.Location = new Point(15, 15);
+            //this.Back_Button.Location = new Point(15, 15);
             this.Back_Button.Size = new Size(45, 45);
             this.Back_Button.ImageAlign = ContentAlignment.MiddleCenter;
         }
@@ -274,9 +274,9 @@ namespace FAFOS
             errProv.Clear();
         }
 
-        private void Back_Button_Click(object sender, EventArgs e)
+        private void MaintainUsersForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            my_controller.back_Button(sender, e);
         }
     }
 }

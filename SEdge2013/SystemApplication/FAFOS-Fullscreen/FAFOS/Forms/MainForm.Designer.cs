@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.Exit_btn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitleFAFOS = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.Login_btn = new System.Windows.Forms.Button();
@@ -43,16 +43,16 @@
             this.notificationPanel = new System.Windows.Forms.Panel();
             this.paymentNotification = new System.Windows.Forms.Label();
             this.serviceNotification = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblNPaymentsDue = new System.Windows.Forms.Label();
+            this.lblNServices = new System.Windows.Forms.Label();
+            this.lblTitleDayNotifications = new System.Windows.Forms.Label();
+            this.lblOperations = new System.Windows.Forms.Label();
+            this.lblDocs = new System.Windows.Forms.Label();
+            this.lblClients = new System.Windows.Forms.Label();
+            this.lblReports = new System.Windows.Forms.Label();
             this.userSettings = new System.Windows.Forms.Button();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblSyncOpts = new System.Windows.Forms.Label();
             this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
@@ -60,7 +60,7 @@
             this.pbFALogoLogin = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
             this.Notifications_button = new System.Windows.Forms.Button();
-            this.pnlOperation = new System.Windows.Forms.Panel();
+            this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pbFALogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -122,15 +122,17 @@
             this.Exit_btn.UseVisualStyleBackColor = false;
             this.Exit_btn.Click += new System.EventHandler(this.Exit_btn_Click);
             // 
-            // label2
+            // lblTitleFAFOS
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft MHei", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(846, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(479, 77);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "FAFOS  \r\nOperational Management System";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTitleFAFOS.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft MHei", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleFAFOS.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTitleFAFOS.Location = new System.Drawing.Point(815, 0);
+            this.lblTitleFAFOS.Name = "lblTitleFAFOS";
+            this.lblTitleFAFOS.Size = new System.Drawing.Size(554, 109);
+            this.lblTitleFAFOS.TabIndex = 17;
+            this.lblTitleFAFOS.Text = "FAFOS\r\nOperational Management System";
+            this.lblTitleFAFOS.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtUsername
             // 
@@ -242,120 +244,127 @@
             // notificationPanel
             // 
             this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.notificationPanel.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
+            this.notificationPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.notificationPanel.Controls.Add(this.paymentNotification);
             this.notificationPanel.Controls.Add(this.serviceNotification);
-            this.notificationPanel.Controls.Add(this.label3);
-            this.notificationPanel.Controls.Add(this.label4);
-            this.notificationPanel.Controls.Add(this.label1);
-            this.notificationPanel.Location = new System.Drawing.Point(225, 0);
+            this.notificationPanel.Controls.Add(this.lblNPaymentsDue);
+            this.notificationPanel.Controls.Add(this.lblNServices);
+            this.notificationPanel.Controls.Add(this.lblTitleDayNotifications);
+            this.notificationPanel.Location = new System.Drawing.Point(215, 0);
             this.notificationPanel.Name = "notificationPanel";
-            this.notificationPanel.Size = new System.Drawing.Size(510, 245);
+            this.notificationPanel.Size = new System.Drawing.Size(510, 170);
             this.notificationPanel.TabIndex = 36;
             this.notificationPanel.Visible = false;
             // 
             // paymentNotification
             // 
+            this.paymentNotification.BackColor = System.Drawing.Color.Transparent;
             this.paymentNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentNotification.Location = new System.Drawing.Point(275, 49);
             this.paymentNotification.Name = "paymentNotification";
-            this.paymentNotification.Size = new System.Drawing.Size(219, 146);
+            this.paymentNotification.Size = new System.Drawing.Size(219, 118);
             this.paymentNotification.TabIndex = 5;
             this.paymentNotification.Text = "None";
             // 
             // serviceNotification
             // 
+            this.serviceNotification.BackColor = System.Drawing.Color.Transparent;
             this.serviceNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceNotification.Location = new System.Drawing.Point(17, 49);
             this.serviceNotification.Name = "serviceNotification";
-            this.serviceNotification.Size = new System.Drawing.Size(226, 146);
+            this.serviceNotification.Size = new System.Drawing.Size(226, 118);
             this.serviceNotification.TabIndex = 4;
             this.serviceNotification.Text = "None";
             // 
-            // label3
+            // lblNPaymentsDue
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(275, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Payments Due:";
+            this.lblNPaymentsDue.AutoSize = true;
+            this.lblNPaymentsDue.BackColor = System.Drawing.Color.Transparent;
+            this.lblNPaymentsDue.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNPaymentsDue.Location = new System.Drawing.Point(275, 34);
+            this.lblNPaymentsDue.Name = "lblNPaymentsDue";
+            this.lblNPaymentsDue.Size = new System.Drawing.Size(86, 16);
+            this.lblNPaymentsDue.TabIndex = 3;
+            this.lblNPaymentsDue.Text = "Payments Due:";
             // 
-            // label4
+            // lblNServices
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Services:";
+            this.lblNServices.AutoSize = true;
+            this.lblNServices.BackColor = System.Drawing.Color.Transparent;
+            this.lblNServices.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNServices.Location = new System.Drawing.Point(12, 34);
+            this.lblNServices.Name = "lblNServices";
+            this.lblNServices.Size = new System.Drawing.Size(52, 16);
+            this.lblNServices.TabIndex = 2;
+            this.lblNServices.Text = "Services:";
             // 
-            // label1
+            // lblTitleDayNotifications
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Day Notifications";
+            this.lblTitleDayNotifications.AutoSize = true;
+            this.lblTitleDayNotifications.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleDayNotifications.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDayNotifications.Location = new System.Drawing.Point(11, 14);
+            this.lblTitleDayNotifications.Name = "lblTitleDayNotifications";
+            this.lblTitleDayNotifications.Size = new System.Drawing.Size(128, 21);
+            this.lblTitleDayNotifications.TabIndex = 0;
+            this.lblTitleDayNotifications.Text = "Day Notifications";
             // 
-            // label5
+            // lblOperations
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(5, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 50);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "Operations";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Visible = false;
-            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.lblOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblOperations.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperations.ForeColor = System.Drawing.Color.White;
+            this.lblOperations.Location = new System.Drawing.Point(5, 180);
+            this.lblOperations.Name = "lblOperations";
+            this.lblOperations.Size = new System.Drawing.Size(90, 50);
+            this.lblOperations.TabIndex = 45;
+            this.lblOperations.Text = "Operations";
+            this.lblOperations.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOperations.Visible = false;
+            this.lblOperations.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
-            // label6
+            // lblDocs
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(5, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 50);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Documents";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.Visible = false;
-            this.label6.MouseHover += new System.EventHandler(this.label6_MouseHover);
+            this.lblDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblDocs.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocs.ForeColor = System.Drawing.Color.White;
+            this.lblDocs.Location = new System.Drawing.Point(5, 230);
+            this.lblDocs.Name = "lblDocs";
+            this.lblDocs.Size = new System.Drawing.Size(90, 50);
+            this.lblDocs.TabIndex = 46;
+            this.lblDocs.Text = "Documents";
+            this.lblDocs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDocs.Visible = false;
+            this.lblDocs.MouseEnter += new System.EventHandler(this.label6_MouseHover);
             // 
-            // label7
+            // lblClients
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(5, 300);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 50);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Clients";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Visible = false;
-            this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
+            this.lblClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblClients.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClients.ForeColor = System.Drawing.Color.White;
+            this.lblClients.Location = new System.Drawing.Point(5, 280);
+            this.lblClients.Name = "lblClients";
+            this.lblClients.Size = new System.Drawing.Size(90, 50);
+            this.lblClients.TabIndex = 47;
+            this.lblClients.Text = "Clients";
+            this.lblClients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClients.Visible = false;
+            this.lblClients.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
             // 
-            // label8
+            // lblReports
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.label8.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(5, 360);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 50);
-            this.label8.TabIndex = 48;
-            this.label8.Text = "Reports";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Visible = false;
-            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
+            this.lblReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReports.ForeColor = System.Drawing.Color.White;
+            this.lblReports.Location = new System.Drawing.Point(5, 330);
+            this.lblReports.Name = "lblReports";
+            this.lblReports.Size = new System.Drawing.Size(90, 50);
+            this.lblReports.TabIndex = 48;
+            this.lblReports.Text = "Reports";
+            this.lblReports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReports.Visible = false;
+            this.lblReports.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
             // 
             // userSettings
             // 
@@ -376,7 +385,7 @@
             // 
             // profilePic
             // 
-            this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.profilePic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.profilePic.Location = new System.Drawing.Point(23, 10);
             this.profilePic.Name = "profilePic";
             this.profilePic.Size = new System.Drawing.Size(43, 50);
@@ -385,18 +394,19 @@
             this.profilePic.TabStop = false;
             this.profilePic.Visible = false;
             // 
-            // label9
+            // lblSyncOpts
             // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(5, 420);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 50);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "Sync Options";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Visible = false;
+            this.lblSyncOpts.AutoSize = true;
+            this.lblSyncOpts.BackColor = System.Drawing.Color.Transparent;
+            this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSyncOpts.ForeColor = System.Drawing.Color.White;
+            this.lblSyncOpts.Location = new System.Drawing.Point(5, 450);
+            this.lblSyncOpts.Name = "lblSyncOpts";
+            this.lblSyncOpts.Size = new System.Drawing.Size(100, 21);
+            this.lblSyncOpts.TabIndex = 52;
+            this.lblSyncOpts.Text = "Sync Options";
+            this.lblSyncOpts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSyncOpts.Visible = false;
             // 
             // syncHQ
             // 
@@ -465,6 +475,7 @@
             this.pbFALogoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFALogoLogin.TabIndex = 56;
             this.pbFALogoLogin.TabStop = false;
+            this.pbFALogoLogin.Click += new System.EventHandler(this.pbFALogoLogin_Click);
             // 
             // pnlUser
             // 
@@ -498,26 +509,30 @@
             this.Notifications_button.Visible = false;
             this.Notifications_button.Click += new System.EventHandler(this.Notifications_button_Click);
             // 
-            // pnlOperation
+            // pnlPage
             // 
-            this.pnlOperation.Location = new System.Drawing.Point(230, 125);
-            this.pnlOperation.Name = "pnlOperation";
-            this.pnlOperation.Size = new System.Drawing.Size(1095, 640);
-            this.pnlOperation.TabIndex = 57;
-            this.pnlOperation.Visible = false;
+            this.pnlPage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlPage.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPage.Location = new System.Drawing.Point(225, 170);
+            this.pnlPage.Name = "pnlPage";
+            this.pnlPage.Size = new System.Drawing.Size(1149, 600);
+            this.pnlPage.TabIndex = 57;
+            this.pnlPage.Visible = false;
+            this.pnlPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlPage_ControlAdded);
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
             this.pnlMenu.Controls.Add(this.pbFALogo);
-            this.pnlMenu.Controls.Add(this.label5);
+            this.pnlMenu.Controls.Add(this.lblOperations);
             this.pnlMenu.Controls.Add(this.Exit_btn);
             this.pnlMenu.Controls.Add(this.syncAndroid);
             this.pnlMenu.Controls.Add(this.syncHQ);
-            this.pnlMenu.Controls.Add(this.label9);
-            this.pnlMenu.Controls.Add(this.label8);
-            this.pnlMenu.Controls.Add(this.label7);
-            this.pnlMenu.Controls.Add(this.label6);
+            this.pnlMenu.Controls.Add(this.lblSyncOpts);
+            this.pnlMenu.Controls.Add(this.lblReports);
+            this.pnlMenu.Controls.Add(this.lblClients);
+            this.pnlMenu.Controls.Add(this.lblDocs);
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(225, 768);
@@ -533,6 +548,7 @@
             this.pbFALogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFALogo.TabIndex = 55;
             this.pbFALogo.TabStop = false;
+            this.pbFALogo.Click += new System.EventHandler(this.pbFALogoLogin_Click);
             // 
             // btnMenu
             // 
@@ -553,7 +569,7 @@
             // 
             // pnlDocs
             // 
-            this.pnlDocs.BackColor = System.Drawing.Color.DimGray;
+            this.pnlDocs.BackColor = System.Drawing.Color.Gray;
             this.pnlDocs.Controls.Add(this.label10);
             this.pnlDocs.Controls.Add(this.btnInvoice);
             this.pnlDocs.Controls.Add(this.btnEditSO);
@@ -561,7 +577,7 @@
             this.pnlDocs.Controls.Add(this.btnCreateSO);
             this.pnlDocs.Controls.Add(this.btnEditQuote);
             this.pnlDocs.Controls.Add(this.btnQuote);
-            this.pnlDocs.Location = new System.Drawing.Point(95, 240);
+            this.pnlDocs.Location = new System.Drawing.Point(95, 230);
             this.pnlDocs.Name = "pnlDocs";
             this.pnlDocs.Size = new System.Drawing.Size(525, 50);
             this.pnlDocs.TabIndex = 56;
@@ -569,6 +585,7 @@
             // 
             // label10
             // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(450, 0);
             this.label10.Name = "label10";
@@ -580,6 +597,7 @@
             // 
             // btnInvoice
             // 
+            this.btnInvoice.BackColor = System.Drawing.Color.Transparent;
             this.btnInvoice.FlatAppearance.BorderSize = 0;
             this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvoice.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -588,11 +606,12 @@
             this.btnInvoice.Size = new System.Drawing.Size(75, 50);
             this.btnInvoice.TabIndex = 5;
             this.btnInvoice.Text = "Invoice";
-            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.UseVisualStyleBackColor = false;
             this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // btnEditSO
             // 
+            this.btnEditSO.BackColor = System.Drawing.Color.Transparent;
             this.btnEditSO.FlatAppearance.BorderSize = 0;
             this.btnEditSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSO.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -601,11 +620,12 @@
             this.btnEditSO.Size = new System.Drawing.Size(75, 50);
             this.btnEditSO.TabIndex = 4;
             this.btnEditSO.Text = "Edit Sales Order";
-            this.btnEditSO.UseVisualStyleBackColor = true;
+            this.btnEditSO.UseVisualStyleBackColor = false;
             this.btnEditSO.Click += new System.EventHandler(this.btnEditSO_Click);
             // 
             // btnConvertSO
             // 
+            this.btnConvertSO.BackColor = System.Drawing.Color.Transparent;
             this.btnConvertSO.FlatAppearance.BorderSize = 0;
             this.btnConvertSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConvertSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -614,11 +634,12 @@
             this.btnConvertSO.Size = new System.Drawing.Size(75, 50);
             this.btnConvertSO.TabIndex = 3;
             this.btnConvertSO.Text = "Convert to Sales Order";
-            this.btnConvertSO.UseVisualStyleBackColor = true;
+            this.btnConvertSO.UseVisualStyleBackColor = false;
             this.btnConvertSO.Click += new System.EventHandler(this.btnConvertSO_Click);
             // 
             // btnCreateSO
             // 
+            this.btnCreateSO.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -627,11 +648,12 @@
             this.btnCreateSO.Size = new System.Drawing.Size(75, 50);
             this.btnCreateSO.TabIndex = 2;
             this.btnCreateSO.Text = "Create Sales Order";
-            this.btnCreateSO.UseVisualStyleBackColor = true;
+            this.btnCreateSO.UseVisualStyleBackColor = false;
             this.btnCreateSO.Click += new System.EventHandler(this.btnCreateSO_Click);
             // 
             // btnEditQuote
             // 
+            this.btnEditQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnEditQuote.FlatAppearance.BorderSize = 0;
             this.btnEditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -640,11 +662,12 @@
             this.btnEditQuote.Size = new System.Drawing.Size(75, 50);
             this.btnEditQuote.TabIndex = 1;
             this.btnEditQuote.Text = "Edit Quote";
-            this.btnEditQuote.UseVisualStyleBackColor = true;
+            this.btnEditQuote.UseVisualStyleBackColor = false;
             this.btnEditQuote.Click += new System.EventHandler(this.btnEditQuote_Click);
             // 
             // btnQuote
             // 
+            this.btnQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnQuote.FlatAppearance.BorderSize = 0;
             this.btnQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -653,7 +676,7 @@
             this.btnQuote.Size = new System.Drawing.Size(75, 50);
             this.btnQuote.TabIndex = 0;
             this.btnQuote.Text = "Create Quote";
-            this.btnQuote.UseVisualStyleBackColor = true;
+            this.btnQuote.UseVisualStyleBackColor = false;
             this.btnQuote.Click += new System.EventHandler(this.btnQuote_Click);
             // 
             // pnlOps
@@ -674,6 +697,7 @@
             // 
             // label11
             // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(375, 0);
             this.label11.Name = "label11";
@@ -685,6 +709,7 @@
             // 
             // btnPayment
             // 
+            this.btnPayment.BackColor = System.Drawing.Color.Transparent;
             this.btnPayment.FlatAppearance.BorderSize = 0;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -693,12 +718,13 @@
             this.btnPayment.Size = new System.Drawing.Size(75, 50);
             this.btnPayment.TabIndex = 9;
             this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = true;
+            this.btnPayment.UseVisualStyleBackColor = false;
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             this.btnPayment.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // btnPurchase
             // 
+            this.btnPurchase.BackColor = System.Drawing.Color.Transparent;
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchase.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -707,12 +733,13 @@
             this.btnPurchase.Size = new System.Drawing.Size(75, 50);
             this.btnPurchase.TabIndex = 8;
             this.btnPurchase.Text = "Record Purchase";
-            this.btnPurchase.UseVisualStyleBackColor = true;
+            this.btnPurchase.UseVisualStyleBackColor = false;
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             this.btnPurchase.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // btnInventory
             // 
+            this.btnInventory.BackColor = System.Drawing.Color.Transparent;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -721,12 +748,13 @@
             this.btnInventory.Size = new System.Drawing.Size(75, 50);
             this.btnInventory.TabIndex = 7;
             this.btnInventory.Text = "Inventory";
-            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.UseVisualStyleBackColor = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             this.btnInventory.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // btnInspection
             // 
+            this.btnInspection.BackColor = System.Drawing.Color.Transparent;
             this.btnInspection.FlatAppearance.BorderSize = 0;
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInspection.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -735,12 +763,13 @@
             this.btnInspection.Size = new System.Drawing.Size(75, 50);
             this.btnInspection.TabIndex = 6;
             this.btnInspection.Text = "Inspection";
-            this.btnInspection.UseVisualStyleBackColor = true;
+            this.btnInspection.UseVisualStyleBackColor = false;
             this.btnInspection.Click += new System.EventHandler(this.btnInspection_Click);
             this.btnInspection.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // btnItinerary
             // 
+            this.btnItinerary.BackColor = System.Drawing.Color.Transparent;
             this.btnItinerary.FlatAppearance.BorderSize = 0;
             this.btnItinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItinerary.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -749,19 +778,19 @@
             this.btnItinerary.Size = new System.Drawing.Size(75, 50);
             this.btnItinerary.TabIndex = 5;
             this.btnItinerary.Text = "Itinerary";
-            this.btnItinerary.UseVisualStyleBackColor = true;
+            this.btnItinerary.UseVisualStyleBackColor = false;
             this.btnItinerary.Click += new System.EventHandler(this.btnItinerary_Click);
             this.btnItinerary.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // pnlClients
             // 
-            this.pnlClients.BackColor = System.Drawing.Color.DimGray;
+            this.pnlClients.BackColor = System.Drawing.Color.DarkGray;
             this.pnlClients.Controls.Add(this.lblCClose);
             this.pnlClients.Controls.Add(this.btnEContract);
             this.pnlClients.Controls.Add(this.btnAContract);
             this.pnlClients.Controls.Add(this.btnEClient);
             this.pnlClients.Controls.Add(this.btnAClient);
-            this.pnlClients.Location = new System.Drawing.Point(95, 300);
+            this.pnlClients.Location = new System.Drawing.Point(95, 280);
             this.pnlClients.Name = "pnlClients";
             this.pnlClients.Size = new System.Drawing.Size(375, 50);
             this.pnlClients.TabIndex = 60;
@@ -769,6 +798,7 @@
             // 
             // lblCClose
             // 
+            this.lblCClose.BackColor = System.Drawing.Color.Transparent;
             this.lblCClose.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCClose.Location = new System.Drawing.Point(300, 0);
             this.lblCClose.Name = "lblCClose";
@@ -780,6 +810,7 @@
             // 
             // btnEContract
             // 
+            this.btnEContract.BackColor = System.Drawing.Color.Transparent;
             this.btnEContract.FlatAppearance.BorderSize = 0;
             this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEContract.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -788,10 +819,11 @@
             this.btnEContract.Size = new System.Drawing.Size(75, 50);
             this.btnEContract.TabIndex = 8;
             this.btnEContract.Text = "Edit Contract";
-            this.btnEContract.UseVisualStyleBackColor = true;
+            this.btnEContract.UseVisualStyleBackColor = false;
             // 
             // btnAContract
             // 
+            this.btnAContract.BackColor = System.Drawing.Color.Transparent;
             this.btnAContract.FlatAppearance.BorderSize = 0;
             this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAContract.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -800,10 +832,11 @@
             this.btnAContract.Size = new System.Drawing.Size(75, 50);
             this.btnAContract.TabIndex = 7;
             this.btnAContract.Text = "Add Contract";
-            this.btnAContract.UseVisualStyleBackColor = true;
+            this.btnAContract.UseVisualStyleBackColor = false;
             // 
             // btnEClient
             // 
+            this.btnEClient.BackColor = System.Drawing.Color.Transparent;
             this.btnEClient.FlatAppearance.BorderSize = 0;
             this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -812,10 +845,11 @@
             this.btnEClient.Size = new System.Drawing.Size(75, 50);
             this.btnEClient.TabIndex = 6;
             this.btnEClient.Text = "Edit Client";
-            this.btnEClient.UseVisualStyleBackColor = true;
+            this.btnEClient.UseVisualStyleBackColor = false;
             // 
             // btnAClient
             // 
+            this.btnAClient.BackColor = System.Drawing.Color.Transparent;
             this.btnAClient.FlatAppearance.BorderSize = 0;
             this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -824,17 +858,17 @@
             this.btnAClient.Size = new System.Drawing.Size(75, 50);
             this.btnAClient.TabIndex = 5;
             this.btnAClient.Text = "Add Client";
-            this.btnAClient.UseVisualStyleBackColor = true;
+            this.btnAClient.UseVisualStyleBackColor = false;
             // 
             // pnlReports
             // 
-            this.pnlReports.BackColor = System.Drawing.Color.DimGray;
+            this.pnlReports.BackColor = System.Drawing.Color.Silver;
             this.pnlReports.Controls.Add(this.label12);
             this.pnlReports.Controls.Add(this.btnRoyaltee);
             this.pnlReports.Controls.Add(this.btnRevenue);
             this.pnlReports.Controls.Add(this.btnJob);
             this.pnlReports.Controls.Add(this.btnStatement);
-            this.pnlReports.Location = new System.Drawing.Point(95, 360);
+            this.pnlReports.Location = new System.Drawing.Point(95, 330);
             this.pnlReports.Name = "pnlReports";
             this.pnlReports.Size = new System.Drawing.Size(375, 50);
             this.pnlReports.TabIndex = 61;
@@ -842,6 +876,7 @@
             // 
             // label12
             // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(300, 0);
             this.label12.Name = "label12";
@@ -853,6 +888,7 @@
             // 
             // btnRoyaltee
             // 
+            this.btnRoyaltee.BackColor = System.Drawing.Color.Transparent;
             this.btnRoyaltee.FlatAppearance.BorderSize = 0;
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -861,10 +897,11 @@
             this.btnRoyaltee.Size = new System.Drawing.Size(75, 50);
             this.btnRoyaltee.TabIndex = 8;
             this.btnRoyaltee.Text = "Royaltee Fee";
-            this.btnRoyaltee.UseVisualStyleBackColor = true;
+            this.btnRoyaltee.UseVisualStyleBackColor = false;
             // 
             // btnRevenue
             // 
+            this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
             this.btnRevenue.FlatAppearance.BorderSize = 0;
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -873,10 +910,11 @@
             this.btnRevenue.Size = new System.Drawing.Size(75, 50);
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Revenue Report";
-            this.btnRevenue.UseVisualStyleBackColor = true;
+            this.btnRevenue.UseVisualStyleBackColor = false;
             // 
             // btnJob
             // 
+            this.btnJob.BackColor = System.Drawing.Color.Transparent;
             this.btnJob.FlatAppearance.BorderSize = 0;
             this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJob.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -885,10 +923,11 @@
             this.btnJob.Size = new System.Drawing.Size(75, 50);
             this.btnJob.TabIndex = 6;
             this.btnJob.Text = "Job Report";
-            this.btnJob.UseVisualStyleBackColor = true;
+            this.btnJob.UseVisualStyleBackColor = false;
             // 
             // btnStatement
             // 
+            this.btnStatement.BackColor = System.Drawing.Color.Transparent;
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatement.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -897,7 +936,7 @@
             this.btnStatement.Size = new System.Drawing.Size(75, 50);
             this.btnStatement.TabIndex = 5;
             this.btnStatement.Text = "Statement";
-            this.btnStatement.UseVisualStyleBackColor = true;
+            this.btnStatement.UseVisualStyleBackColor = false;
             // 
             // View
             // 
@@ -907,18 +946,18 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlOps);
             this.Controls.Add(this.pnlDocs);
             this.Controls.Add(this.pnlUser);
-            this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTitleFAFOS);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.pnlOperation);
+            this.Controls.Add(this.pnlPage);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -938,6 +977,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).EndInit();
             this.pnlUser.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).EndInit();
             this.pnlDocs.ResumeLayout(false);
             this.pnlOps.ResumeLayout(false);
@@ -960,28 +1000,28 @@
         private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Panel notificationPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitleDayNotifications;
         private System.Windows.Forms.Label paymentNotification;
         private System.Windows.Forms.Label serviceNotification;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNPaymentsDue;
+        private System.Windows.Forms.Label lblNServices;
+        private System.Windows.Forms.Label lblOperations;
+        private System.Windows.Forms.Label lblDocs;
+        private System.Windows.Forms.Label lblClients;
+        private System.Windows.Forms.Label lblReports;
         private System.Windows.Forms.Button userSettings;
         private System.Windows.Forms.PictureBox profilePic;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblSyncOpts;
         private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;
-        private System.Windows.Forms.Panel pnlOperation;
+        private System.Windows.Forms.Panel pnlPage;
         private System.Windows.Forms.Button Notifications_button;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.PictureBox pbFALogo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTitleFAFOS;
         private System.Windows.Forms.PictureBox pbFALogoLogin;
         private System.Windows.Forms.PictureBox pbLogos;
         private System.Windows.Forms.Panel pnlDocs;

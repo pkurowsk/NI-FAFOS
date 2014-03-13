@@ -140,8 +140,8 @@ namespace FAFOS
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
             //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
             //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
-            pnlOperation.Size = new Size(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - pnlOperation.Location.X, 
-                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - pnlOperation.Location.Y);
+            pnlPage.Size = new Size(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - pnlPage.Location.X, 
+                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - pnlPage.Location.Y);
             
         }
 
@@ -304,39 +304,39 @@ namespace FAFOS
                 // replace the following line by calling a method in the controller with a parameter (T.Name + "_form")
                 // that method should has if statment to decide which form to be opened.
 
-                pnlOperation.Controls.Clear();
+                pnlPage.Controls.Clear();
 
                 if (T.Name == "invoice")
                 {
                     InvoiceForm invoice_form = new InvoiceForm(userid);
                     invoice_form.TopLevel = false;
                     //invoice_form.AutoScroll = true;
-                    pnlOperation.Controls.Add(invoice_form);
+                    pnlPage.Controls.Add(invoice_form);
                     invoice_form.Show();
                 }
                 else if (T.Name == "quote")
                 {
                     QuoteController qc = new QuoteController(userid.ToString());
-                    qc.quote(1, pnlOperation);
+                    qc.quote(1, pnlPage);
                 }
                 else if (T.Name == "editQuote")
                 {
                     QuoteController qc = new QuoteController(userid.ToString());
-                    qc.quote(2, pnlOperation);
+                    qc.quote(2, pnlPage);
                 }
                 else if (T.Name == "salesOrder")
                 {
-                    my_controller.salesOrder(1, pnlOperation);
+                    my_controller.salesOrder(1, pnlPage);
                     //payment_form.Show();
                 }
                 else if (T.Name == "convertSalesOrder")
                 {
-                    my_controller.salesOrder(2, pnlOperation);
+                    my_controller.salesOrder(2, pnlPage);
                     //payment_form.Show();
                 }
                 else if (T.Name == "editSalesOrder")
                 {
-                    my_controller.salesOrder(3, pnlOperation);
+                    my_controller.salesOrder(3, pnlPage);
                     //payment_form.Show();
                 }
                 else if (T.Name == "payment")
@@ -473,11 +473,11 @@ namespace FAFOS
                 syncAndroid.Visible = true;
                 syncHQ.Visible = true;
 
-                label5.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                label9.Visible = true;
+                lblOperations.Visible = true;
+                lblDocs.Visible = true;
+                lblClients.Visible = true;
+                lblReports.Visible = true;
+                lblSyncOpts.Visible = true;
 
                 
                 lblUsername.Visible = false;
@@ -492,7 +492,7 @@ namespace FAFOS
                 notificationPanel.Visible = false;
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
-                pnlOperation.Visible = true;
+                pnlPage.Visible = true;
                 pnlMenu.Visible = true;
                 btnMenu.Visible = true;
 
@@ -619,20 +619,25 @@ namespace FAFOS
 
         private void Logout_btn_Click(object sender, EventArgs e)
         {
-            pnlOperation.Controls.Clear();
+            pnlPage.Controls.Clear();
             
             syncAndroid.Visible = false;
             syncHQ.Visible = false;
 
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            label9.Visible = false;
+            lblOperations.Visible = false;
+            lblDocs.Visible = false;
+            lblClients.Visible = false;
+            lblReports.Visible = false;
+            lblSyncOpts.Visible = false;
             pnlUser.Visible = false;
 
             pnlMenu.Visible = false;
             btnMenu.Visible = false;
+
+            pnlOps.Visible = false;
+            pnlDocs.Visible = false;
+            pnlClients.Visible = false;
+            pnlReports.Visible = false;
 
             lblUsername.Visible = true;
             txtUsername.Visible = true;
@@ -665,28 +670,39 @@ namespace FAFOS
             notificationPanel.Visible = notificationPanel.Visible ? false : true;
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Hides the menu panel if it is visible
+        /// Shows the menu panel if it is invisible
+        /// </summary>
+        private void PanelHideShow()
         {
             if (pnlMenu.Visible)
             {
-                pnlMenu.Visible = false;
-                pnlOperation.Location = new Point(0, pnlOperation.Location.Y);
-                pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
-                    pnlOperation.Size.Height);
+                pnlOps.Visible = false;
+                pnlDocs.Visible = false;
+                pnlClients.Visible = false;
+                pnlReports.Visible = false;
 
-                //btnMenu.Location = new Point(0, btnMenu.Location.Y);
+                pnlMenu.Visible = false;
+                pnlPage.Location = new Point(0, pnlPage.Location.Y);
+                pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
+                    pnlPage.Size.Height);
                 btnMenu.Text = ">";
             }
             else
             {
                 pnlMenu.Visible = true;
-                pnlOperation.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width + 10, 
-                    pnlOperation.Location.Y);
-                pnlOperation.Size = new System.Drawing.Size(pnlOperation.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
-                    pnlOperation.Size.Height);
-                //btnMenu.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width, btnMenu.Location.Y);
+                pnlPage.Location = new Point(pnlMenu.Location.X + pnlMenu.Size.Width,
+                    pnlPage.Location.Y);
+                pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
+                    pnlPage.Size.Height);
                 btnMenu.Text = "<";
             }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            PanelHideShow();
         }
 
         #region Documents Panel
@@ -710,35 +726,35 @@ namespace FAFOS
         {
            pnlDocs.Visible = false;
            QuoteController qc = new QuoteController(userid.ToString());
-           qc.quote(1, pnlOperation);
+           qc.quote(1, pnlPage);
         }
 
         private void btnEditQuote_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
             QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(2, pnlOperation);
+            qc.quote(2, pnlPage);
         }
 
         private void btnCreateSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
             QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(1, pnlOperation);
+            qc.quote(1, pnlPage);
         }
 
         private void btnConvertSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
             QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(2, pnlOperation);
+            qc.quote(2, pnlPage);
         }
 
         private void btnEditSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
             QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(3, pnlOperation);
+            qc.quote(3, pnlPage);
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -746,7 +762,7 @@ namespace FAFOS
             pnlDocs.Visible = false;
             InvoiceForm invoice_form = new InvoiceForm(userid);
             invoice_form.TopLevel = false;
-            pnlOperation.Controls.Add(invoice_form);
+            pnlPage.Controls.Add(invoice_form);
             invoice_form.Show();
         }
 
@@ -767,11 +783,13 @@ namespace FAFOS
 
         private void btnItinerary_Click(object sender, EventArgs e)
         {
+            PanelHideShow();
+
             pnlOps.Visible = false;
 
             MapsForm form = new MapsForm(userid, orders, services);
             form.TopLevel = false;
-            pnlOperation.Controls.Add(form);
+            pnlPage.Controls.Add(form);
             form.Show();
         }
 
@@ -781,7 +799,7 @@ namespace FAFOS
 
             InspectionForm form = new InspectionForm(userid.ToString());
             form.TopLevel = false;
-            pnlOperation.Controls.Add(form);
+            pnlPage.Controls.Add(form);
             form.Show();
         }
 
@@ -791,7 +809,7 @@ namespace FAFOS
 
             InventoryForm form = new InventoryForm(userid);
             form.TopLevel = false;
-            pnlOperation.Controls.Add(form);
+            pnlPage.Controls.Add(form);
             form.Show();
         }
 
@@ -801,7 +819,7 @@ namespace FAFOS
 
             PurchaseRecord form = new PurchaseRecord(userid);
             form.TopLevel = false;
-            pnlOperation.Controls.Add(form);
+            pnlPage.Controls.Add(form);
             form.Show();
         }
 
@@ -811,7 +829,7 @@ namespace FAFOS
 
             PaymentForm payment_form = new PaymentForm(userid);
             payment_form.TopLevel = false;
-            pnlOperation.Controls.Add(payment_form);
+            pnlPage.Controls.Add(payment_form);
             payment_form.Show();
         }
 
@@ -846,6 +864,19 @@ namespace FAFOS
         }
 
         #endregion
+
+        private void pnlPage_ControlAdded(object sender, ControlEventArgs e)
+        {
+            // Remove the previous form that was loaded into the panel
+            if (pnlPage.Controls.Count > 1)
+                pnlPage.Controls.RemoveAt(0);
+        }
+
+        private void pbFALogoLogin_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.fire-alert.ca");
+        }
+
 
     }
 }

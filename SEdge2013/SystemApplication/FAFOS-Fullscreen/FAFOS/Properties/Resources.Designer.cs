@@ -279,6 +279,16 @@ namespace FAFOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap page_panel_back {
+            get {
+                object obj = ResourceManager.GetObject("page-panel-back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shades {
             get {
                 object obj = ResourceManager.GetObject("Shades", resourceCulture);

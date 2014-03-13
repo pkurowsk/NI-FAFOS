@@ -67,7 +67,7 @@
             this.MainMap.GrayScaleMode = false;
             this.MainMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.MainMap.LevelsKeepInMemmory = 5;
-            this.MainMap.Location = new System.Drawing.Point(66, 244);
+            this.MainMap.Location = new System.Drawing.Point(3, 206);
             this.MainMap.MarkersEnabled = true;
             this.MainMap.MaxZoom = 2;
             this.MainMap.MinZoom = 2;
@@ -89,7 +89,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(62, 38);
+            this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 17);
@@ -100,7 +100,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(580, 38);
+            this.label15.Location = new System.Drawing.Point(517, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(116, 17);
@@ -114,7 +114,7 @@
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(931, 245);
+            this.generate_btn.Location = new System.Drawing.Point(868, 207);
             this.generate_btn.Margin = new System.Windows.Forms.Padding(4);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(132, 70);
@@ -138,7 +138,7 @@
             this.saveRoute.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveRoute.ForeColor = System.Drawing.Color.White;
-            this.saveRoute.Location = new System.Drawing.Point(931, 323);
+            this.saveRoute.Location = new System.Drawing.Point(868, 285);
             this.saveRoute.Margin = new System.Windows.Forms.Padding(4);
             this.saveRoute.Name = "saveRoute";
             this.saveRoute.Size = new System.Drawing.Size(132, 70);
@@ -161,7 +161,7 @@
             this.OrderProvince,
             this.OrderCountry,
             this.Done});
-            this.workOrderTable.Location = new System.Drawing.Point(66, 67);
+            this.workOrderTable.Location = new System.Drawing.Point(3, 29);
             this.workOrderTable.Name = "workOrderTable";
             this.workOrderTable.RowHeadersVisible = false;
             this.workOrderTable.RowTemplate.Height = 24;
@@ -248,7 +248,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewCheckBoxColumn1});
-            this.servicesTable.Location = new System.Drawing.Point(584, 67);
+            this.servicesTable.Location = new System.Drawing.Point(521, 29);
             this.servicesTable.Name = "servicesTable";
             this.servicesTable.RowHeadersVisible = false;
             this.servicesTable.RowTemplate.Height = 24;
@@ -344,7 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1366, 788);
             this.Controls.Add(this.servicesTable);
             this.Controls.Add(this.workOrderTable);
             this.Controls.Add(this.saveRoute);
