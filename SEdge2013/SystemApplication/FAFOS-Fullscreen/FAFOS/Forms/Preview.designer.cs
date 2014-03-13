@@ -40,9 +40,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(811, 703);
+            this.btnClose.Location = new System.Drawing.Point(608, 571);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 63);
+            this.btnClose.Size = new System.Drawing.Size(80, 51);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -52,6 +53,7 @@
             // 
             this.axAcroPDF1.Enabled = true;
             this.axAcroPDF1.Location = new System.Drawing.Point(12, 12);
+            this.axAcroPDF1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
             this.axAcroPDF1.Size = new System.Drawing.Size(906, 685);
@@ -59,13 +61,15 @@
             // 
             // Preview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(925, 775);
+            this.ClientSize = new System.Drawing.Size(694, 609);
             this.Controls.Add(this.axAcroPDF1);
             this.Controls.Add(this.btnClose);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Preview";
             this.Text = "Preview";
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();

@@ -77,6 +77,7 @@
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
             this.pnlOperation = new System.Windows.Forms.Panel();
+            this.Notifications_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -112,7 +113,7 @@
             this.quote.Resize = new System.Drawing.Size(50, 50);
             this.quote.Size = new System.Drawing.Size(50, 50);
             this.quote.TabIndex = 9;
-            this.quote.tileHieght = 50;
+            this.quote.tileHieght = 100;
             this.quote.tileLocation = new System.Drawing.Point(0, 0);
             this.quote.tileSize = new System.Drawing.Size(50, 50);
             this.quote.tileTimer_Interval = 100D;
@@ -132,7 +133,7 @@
             this.invoice.Resize = new System.Drawing.Size(50, 50);
             this.invoice.Size = new System.Drawing.Size(50, 50);
             this.invoice.TabIndex = 13;
-            this.invoice.tileHieght = 50;
+            this.invoice.tileHieght = 100;
             this.invoice.tileLocation = new System.Drawing.Point(133, 89);
             this.invoice.tileSize = new System.Drawing.Size(50, 50);
             this.invoice.tileTimer_Interval = 100D;
@@ -152,7 +153,7 @@
             this.salesOrder.Resize = new System.Drawing.Size(50, 50);
             this.salesOrder.Size = new System.Drawing.Size(50, 50);
             this.salesOrder.TabIndex = 14;
-            this.salesOrder.tileHieght = 50;
+            this.salesOrder.tileHieght = 100;
             this.salesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.salesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.salesOrder.tileTimer_Interval = 100D;
@@ -172,7 +173,7 @@
             this.inventory.Resize = new System.Drawing.Size(50, 50);
             this.inventory.Size = new System.Drawing.Size(50, 50);
             this.inventory.TabIndex = 15;
-            this.inventory.tileHieght = 50;
+            this.inventory.tileHieght = 100;
             this.inventory.tileLocation = new System.Drawing.Point(0, 0);
             this.inventory.tileSize = new System.Drawing.Size(50, 50);
             this.inventory.tileTimer_Interval = 100D;
@@ -185,7 +186,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, -2);
+            this.label2.Location = new System.Drawing.Point(491, -2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(514, 31);
             this.label2.TabIndex = 17;
@@ -265,10 +266,10 @@
             this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout_btn.ForeColor = System.Drawing.Color.White;
-            this.Logout_btn.Location = new System.Drawing.Point(204, 10);
+            this.Logout_btn.Location = new System.Drawing.Point(4, 68);
             this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Logout_btn.Name = "Logout_btn";
-            this.Logout_btn.Size = new System.Drawing.Size(100, 50);
+            this.Logout_btn.Size = new System.Drawing.Size(90, 50);
             this.Logout_btn.TabIndex = 24;
             this.Logout_btn.Text = "Logout";
             this.Logout_btn.UseVisualStyleBackColor = false;
@@ -305,7 +306,7 @@
             this.payment.Resize = new System.Drawing.Size(50, 50);
             this.payment.Size = new System.Drawing.Size(50, 50);
             this.payment.TabIndex = 27;
-            this.payment.tileHieght = 50;
+            this.payment.tileHieght = 100;
             this.payment.tileLocation = new System.Drawing.Point(0, 0);
             this.payment.tileSize = new System.Drawing.Size(50, 50);
             this.payment.tileTimer_Interval = 100D;
@@ -325,7 +326,7 @@
             this.itinerary.Resize = new System.Drawing.Size(50, 50);
             this.itinerary.Size = new System.Drawing.Size(50, 50);
             this.itinerary.TabIndex = 28;
-            this.itinerary.tileHieght = 50;
+            this.itinerary.tileHieght = 100;
             this.itinerary.tileLocation = new System.Drawing.Point(0, 0);
             this.itinerary.tileSize = new System.Drawing.Size(50, 50);
             this.itinerary.tileTimer_Interval = 100D;
@@ -345,7 +346,7 @@
             this.addClient.Resize = new System.Drawing.Size(50, 50);
             this.addClient.Size = new System.Drawing.Size(50, 50);
             this.addClient.TabIndex = 29;
-            this.addClient.tileHieght = 50;
+            this.addClient.tileHieght = 100;
             this.addClient.tileLocation = new System.Drawing.Point(0, 0);
             this.addClient.tileSize = new System.Drawing.Size(50, 50);
             this.addClient.tileTimer_Interval = 100D;
@@ -365,7 +366,7 @@
             this.editClient.Resize = new System.Drawing.Size(50, 50);
             this.editClient.Size = new System.Drawing.Size(50, 50);
             this.editClient.TabIndex = 30;
-            this.editClient.tileHieght = 50;
+            this.editClient.tileHieght = 100;
             this.editClient.tileLocation = new System.Drawing.Point(0, 0);
             this.editClient.tileSize = new System.Drawing.Size(50, 50);
             this.editClient.tileTimer_Interval = 100D;
@@ -385,7 +386,7 @@
             this.addContract.Resize = new System.Drawing.Size(50, 50);
             this.addContract.Size = new System.Drawing.Size(50, 50);
             this.addContract.TabIndex = 31;
-            this.addContract.tileHieght = 50;
+            this.addContract.tileHieght = 100;
             this.addContract.tileLocation = new System.Drawing.Point(0, 0);
             this.addContract.tileSize = new System.Drawing.Size(50, 50);
             this.addContract.tileTimer_Interval = 100D;
@@ -405,7 +406,7 @@
             this.editContract.Resize = new System.Drawing.Size(50, 50);
             this.editContract.Size = new System.Drawing.Size(50, 50);
             this.editContract.TabIndex = 32;
-            this.editContract.tileHieght = 50;
+            this.editContract.tileHieght = 100;
             this.editContract.tileLocation = new System.Drawing.Point(0, 0);
             this.editContract.tileSize = new System.Drawing.Size(50, 50);
             this.editContract.tileTimer_Interval = 100D;
@@ -425,7 +426,7 @@
             this.convertSalesOrder.Resize = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.Size = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.TabIndex = 34;
-            this.convertSalesOrder.tileHieght = 50;
+            this.convertSalesOrder.tileHieght = 100;
             this.convertSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.convertSalesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.convertSalesOrder.tileTimer_Interval = 100D;
@@ -445,7 +446,7 @@
             this.editSalesOrder.Resize = new System.Drawing.Size(50, 50);
             this.editSalesOrder.Size = new System.Drawing.Size(50, 50);
             this.editSalesOrder.TabIndex = 35;
-            this.editSalesOrder.tileHieght = 50;
+            this.editSalesOrder.tileHieght = 100;
             this.editSalesOrder.tileLocation = new System.Drawing.Point(0, 0);
             this.editSalesOrder.tileSize = new System.Drawing.Size(50, 50);
             this.editSalesOrder.tileTimer_Interval = 100D;
@@ -527,7 +528,7 @@
             this.statement.Resize = new System.Drawing.Size(50, 50);
             this.statement.Size = new System.Drawing.Size(50, 50);
             this.statement.TabIndex = 37;
-            this.statement.tileHieght = 50;
+            this.statement.tileHieght = 100;
             this.statement.tileLocation = new System.Drawing.Point(0, 0);
             this.statement.tileSize = new System.Drawing.Size(50, 50);
             this.statement.tileTimer_Interval = 100D;
@@ -547,7 +548,7 @@
             this.royaltyFee.Resize = new System.Drawing.Size(50, 50);
             this.royaltyFee.Size = new System.Drawing.Size(50, 50);
             this.royaltyFee.TabIndex = 38;
-            this.royaltyFee.tileHieght = 50;
+            this.royaltyFee.tileHieght = 100;
             this.royaltyFee.tileLocation = new System.Drawing.Point(0, 0);
             this.royaltyFee.tileSize = new System.Drawing.Size(50, 50);
             this.royaltyFee.tileTimer_Interval = 100D;
@@ -567,7 +568,7 @@
             this.jobReport.Resize = new System.Drawing.Size(50, 50);
             this.jobReport.Size = new System.Drawing.Size(50, 50);
             this.jobReport.TabIndex = 39;
-            this.jobReport.tileHieght = 50;
+            this.jobReport.tileHieght = 100;
             this.jobReport.tileLocation = new System.Drawing.Point(0, 0);
             this.jobReport.tileSize = new System.Drawing.Size(50, 50);
             this.jobReport.tileTimer_Interval = 100D;
@@ -587,7 +588,7 @@
             this.revenueReport.Resize = new System.Drawing.Size(50, 50);
             this.revenueReport.Size = new System.Drawing.Size(50, 50);
             this.revenueReport.TabIndex = 40;
-            this.revenueReport.tileHieght = 50;
+            this.revenueReport.tileHieght = 100;
             this.revenueReport.tileLocation = new System.Drawing.Point(0, 0);
             this.revenueReport.tileSize = new System.Drawing.Size(50, 50);
             this.revenueReport.tileTimer_Interval = 100D;
@@ -607,7 +608,7 @@
             this.editQuote.Resize = new System.Drawing.Size(50, 50);
             this.editQuote.Size = new System.Drawing.Size(50, 50);
             this.editQuote.TabIndex = 42;
-            this.editQuote.tileHieght = 50;
+            this.editQuote.tileHieght = 100;
             this.editQuote.tileLocation = new System.Drawing.Point(0, 0);
             this.editQuote.tileSize = new System.Drawing.Size(50, 50);
             this.editQuote.tileTimer_Interval = 100D;
@@ -627,7 +628,7 @@
             this.purchaseRecord.Resize = new System.Drawing.Size(50, 50);
             this.purchaseRecord.Size = new System.Drawing.Size(50, 50);
             this.purchaseRecord.TabIndex = 43;
-            this.purchaseRecord.tileHieght = 50;
+            this.purchaseRecord.tileHieght = 100;
             this.purchaseRecord.tileLocation = new System.Drawing.Point(0, 0);
             this.purchaseRecord.tileSize = new System.Drawing.Size(50, 50);
             this.purchaseRecord.tileTimer_Interval = 100D;
@@ -687,10 +688,10 @@
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userSettings.ForeColor = System.Drawing.Color.White;
-            this.userSettings.Location = new System.Drawing.Point(204, 68);
+            this.userSettings.Location = new System.Drawing.Point(109, 68);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4);
             this.userSettings.Name = "userSettings";
-            this.userSettings.Size = new System.Drawing.Size(100, 50);
+            this.userSettings.Size = new System.Drawing.Size(90, 50);
             this.userSettings.TabIndex = 49;
             this.userSettings.Text = "User Settings";
             this.userSettings.UseVisualStyleBackColor = false;
@@ -719,7 +720,7 @@
             this.inspection.Resize = new System.Drawing.Size(50, 50);
             this.inspection.Size = new System.Drawing.Size(50, 50);
             this.inspection.TabIndex = 51;
-            this.inspection.tileHieght = 50;
+            this.inspection.tileHieght = 100;
             this.inspection.tileLocation = new System.Drawing.Point(0, 0);
             this.inspection.tileSize = new System.Drawing.Size(50, 50);
             this.inspection.tileTimer_Interval = 100D;
@@ -785,6 +786,7 @@
             // 
             // pnlUser
             // 
+            this.pnlUser.Controls.Add(this.Notifications_button);
             this.pnlUser.Controls.Add(this.userSettings);
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
@@ -798,9 +800,26 @@
             // 
             this.pnlOperation.Location = new System.Drawing.Point(348, 205);
             this.pnlOperation.Name = "pnlOperation";
-            this.pnlOperation.Size = new System.Drawing.Size(976, 517);
+            this.pnlOperation.Size = new System.Drawing.Size(975, 520);
             this.pnlOperation.TabIndex = 57;
             this.pnlOperation.Visible = false;
+            // 
+            // Notifications_button
+            // 
+            this.Notifications_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.Notifications_button.FlatAppearance.BorderSize = 0;
+            this.Notifications_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Notifications_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Notifications_button.ForeColor = System.Drawing.Color.White;
+            this.Notifications_button.Location = new System.Drawing.Point(212, 68);
+            this.Notifications_button.Margin = new System.Windows.Forms.Padding(4);
+            this.Notifications_button.Name = "Notifications_button";
+            this.Notifications_button.Size = new System.Drawing.Size(90, 50);
+            this.Notifications_button.TabIndex = 51;
+            this.Notifications_button.Text = "Notifications";
+            this.Notifications_button.UseVisualStyleBackColor = false;
+            this.Notifications_button.Visible = false;
+            this.Notifications_button.Click += new System.EventHandler(this.Notifications_button_Click);
             // 
             // View
             // 
@@ -914,6 +933,7 @@
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.Panel pnlOperation;
+        private System.Windows.Forms.Button Notifications_button;
 
     }
 }

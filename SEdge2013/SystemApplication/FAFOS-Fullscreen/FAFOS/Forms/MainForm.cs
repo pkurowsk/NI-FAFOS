@@ -303,6 +303,9 @@ namespace FAFOS
                 SalesOrderController my_controller = new SalesOrderController(userid.ToString());
                 // replace the following line by calling a method in the controller with a parameter (T.Name + "_form")
                 // that method should has if statment to decide which form to be opened.
+
+                pnlOperation.Controls.Clear();
+
                 if (T.Name == "invoice")
                 {
                     InvoiceForm invoice_form = new InvoiceForm(userid);
@@ -314,26 +317,26 @@ namespace FAFOS
                 else if (T.Name == "quote")
                 {
                     QuoteController qc = new QuoteController(userid.ToString());
-                    qc.quote(1);
+                    qc.quote(1, pnlOperation);
                 }
                 else if (T.Name == "editQuote")
                 {
                     QuoteController qc = new QuoteController(userid.ToString());
-                    qc.quote(2);
+                    qc.quote(2, pnlOperation);
                 }
                 else if (T.Name == "salesOrder")
                 {
-                    my_controller.salesOrder(1);
+                    my_controller.salesOrder(1, pnlOperation);
                     //payment_form.Show();
                 }
                 else if (T.Name == "convertSalesOrder")
                 {
-                    my_controller.salesOrder(2);
+                    my_controller.salesOrder(2, pnlOperation);
                     //payment_form.Show();
                 }
                 else if (T.Name == "editSalesOrder")
                 {
-                    my_controller.salesOrder(3);
+                    my_controller.salesOrder(3, pnlOperation);
                     //payment_form.Show();
                 }
                 else if (T.Name == "payment")
@@ -484,8 +487,9 @@ namespace FAFOS
                 Login_btn.Visible = false;
                 Logout_btn.Visible = true;
                 userSettings.Visible = true;
+                Notifications_button.Visible = true;
                 lblUserInfo.Visible = true;
-                notificationPanel.Visible = true;
+                notificationPanel.Visible = false;
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
                 pnlOperation.Visible = true;
@@ -670,6 +674,11 @@ namespace FAFOS
         {
             MaintainUsersForm form = new MaintainUsersForm(userid, MUser.GetPicID(userid.ToString()));
             form.Show();
+        }
+
+        private void Notifications_button_Click(object sender, EventArgs e)
+        {
+            notificationPanel.Visible = notificationPanel.Visible ? false : true;
         }
 
  

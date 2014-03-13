@@ -53,9 +53,9 @@
             this.btnPreview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnPreview.FlatAppearance.BorderSize = 0;
             this.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreview.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnPreview.ForeColor = System.Drawing.Color.White;
-            this.btnPreview.Location = new System.Drawing.Point(796, 726);
+            this.btnPreview.Location = new System.Drawing.Point(295, 417);
             this.btnPreview.Margin = new System.Windows.Forms.Padding(4);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(131, 57);
@@ -66,60 +66,60 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblTotal.Location = new System.Drawing.Point(922, 680);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblTotal.Location = new System.Drawing.Point(82, 455);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(51, 20);
+            this.lblTotal.Size = new System.Drawing.Size(40, 17);
             this.lblTotal.TabIndex = 52;
             this.lblTotal.Text = "Total";
             // 
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(995, 676);
+            this.txtTotal.Location = new System.Drawing.Point(155, 451);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(132, 27);
+            this.txtTotal.Size = new System.Drawing.Size(132, 23);
             this.txtTotal.TabIndex = 51;
             // 
             // txtHST
             // 
             this.txtHST.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHST.Location = new System.Drawing.Point(995, 637);
+            this.txtHST.Location = new System.Drawing.Point(155, 412);
             this.txtHST.Margin = new System.Windows.Forms.Padding(4);
             this.txtHST.Name = "txtHST";
-            this.txtHST.Size = new System.Drawing.Size(132, 27);
+            this.txtHST.Size = new System.Drawing.Size(132, 23);
             this.txtHST.TabIndex = 50;
             // 
             // lblHST
             // 
             this.lblHST.AutoSize = true;
-            this.lblHST.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblHST.Location = new System.Drawing.Point(925, 641);
+            this.lblHST.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblHST.Location = new System.Drawing.Point(85, 416);
             this.lblHST.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHST.Name = "lblHST";
-            this.lblHST.Size = new System.Drawing.Size(44, 20);
+            this.lblHST.Size = new System.Drawing.Size(36, 17);
             this.lblHST.TabIndex = 49;
             this.lblHST.Text = "HST";
             // 
             // txtSubtotal
             // 
             this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotal.Location = new System.Drawing.Point(995, 599);
+            this.txtSubtotal.Location = new System.Drawing.Point(155, 374);
             this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(132, 27);
+            this.txtSubtotal.Size = new System.Drawing.Size(132, 23);
             this.txtSubtotal.TabIndex = 48;
             // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblSubtotal.Location = new System.Drawing.Point(902, 601);
+            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblSubtotal.Location = new System.Drawing.Point(62, 376);
             this.lblSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(78, 20);
+            this.lblSubtotal.Size = new System.Drawing.Size(60, 17);
             this.lblSubtotal.TabIndex = 47;
             this.lblSubtotal.Text = "Subtotal";
             // 
@@ -128,9 +128,9 @@
             this.btnPullData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnPullData.FlatAppearance.BorderSize = 0;
             this.btnPullData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPullData.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnPullData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnPullData.ForeColor = System.Drawing.Color.White;
-            this.btnPullData.Location = new System.Drawing.Point(330, 243);
+            this.btnPullData.Location = new System.Drawing.Point(513, 57);
             this.btnPullData.Margin = new System.Windows.Forms.Padding(4);
             this.btnPullData.Name = "btnPullData";
             this.btnPullData.Size = new System.Drawing.Size(131, 57);
@@ -141,33 +141,33 @@
             // lblGetID
             // 
             this.lblGetID.AutoSize = true;
-            this.lblGetID.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblGetID.Location = new System.Drawing.Point(180, 212);
+            this.lblGetID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblGetID.Location = new System.Drawing.Point(345, 38);
             this.lblGetID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGetID.Name = "lblGetID";
-            this.lblGetID.Size = new System.Drawing.Size(0, 20);
+            this.lblGetID.Size = new System.Drawing.Size(0, 17);
             this.lblGetID.TabIndex = 44;
             this.lblGetID.Visible = false;
             // 
             // lblServiceAddress
             // 
             this.lblServiceAddress.AutoSize = true;
-            this.lblServiceAddress.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblServiceAddress.Location = new System.Drawing.Point(826, 243);
+            this.lblServiceAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblServiceAddress.Location = new System.Drawing.Point(62, 38);
             this.lblServiceAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblServiceAddress.Name = "lblServiceAddress";
-            this.lblServiceAddress.Size = new System.Drawing.Size(144, 20);
+            this.lblServiceAddress.Size = new System.Drawing.Size(111, 17);
             this.lblServiceAddress.TabIndex = 43;
             this.lblServiceAddress.Text = "Service Address";
             // 
             // lblClient
             // 
             this.lblClient.AutoSize = true;
-            this.lblClient.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.lblClient.Location = new System.Drawing.Point(146, 302);
+            this.lblClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.lblClient.Location = new System.Drawing.Point(345, 107);
             this.lblClient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(58, 20);
+            this.lblClient.Size = new System.Drawing.Size(43, 17);
             this.lblClient.TabIndex = 42;
             this.lblClient.Text = "Client";
             this.lblClient.Visible = false;
@@ -176,10 +176,10 @@
             // 
             this.ddlClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlClient.FormattingEnabled = true;
-            this.ddlClient.Location = new System.Drawing.Point(146, 324);
+            this.ddlClient.Location = new System.Drawing.Point(345, 129);
             this.ddlClient.Margin = new System.Windows.Forms.Padding(4);
             this.ddlClient.Name = "ddlClient";
-            this.ddlClient.Size = new System.Drawing.Size(160, 28);
+            this.ddlClient.Size = new System.Drawing.Size(160, 25);
             this.ddlClient.TabIndex = 41;
             this.ddlClient.Visible = false;
             // 
@@ -188,10 +188,10 @@
             this.ddlServiceAddress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlServiceAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlServiceAddress.FormattingEnabled = true;
-            this.ddlServiceAddress.Location = new System.Drawing.Point(826, 267);
+            this.ddlServiceAddress.Location = new System.Drawing.Point(62, 62);
             this.ddlServiceAddress.Margin = new System.Windows.Forms.Padding(4);
             this.ddlServiceAddress.Name = "ddlServiceAddress";
-            this.ddlServiceAddress.Size = new System.Drawing.Size(275, 28);
+            this.ddlServiceAddress.Size = new System.Drawing.Size(275, 25);
             this.ddlServiceAddress.TabIndex = 40;
             // 
             // btnSubmit
@@ -199,9 +199,9 @@
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(997, 726);
+            this.btnSubmit.Location = new System.Drawing.Point(434, 417);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(131, 57);
@@ -220,7 +220,7 @@
             this.Qty,
             this.Price,
             this.lineTotal});
-            this.dgvSalesOrder.Location = new System.Drawing.Point(130, 380);
+            this.dgvSalesOrder.Location = new System.Drawing.Point(65, 173);
             this.dgvSalesOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalesOrder.Name = "dgvSalesOrder";
             this.dgvSalesOrder.Size = new System.Drawing.Size(997, 185);
@@ -269,10 +269,10 @@
             // chkCompleted
             // 
             this.chkCompleted.AutoSize = true;
-            this.chkCompleted.Location = new System.Drawing.Point(950, 351);
+            this.chkCompleted.Location = new System.Drawing.Point(841, 137);
             this.chkCompleted.Margin = new System.Windows.Forms.Padding(4);
             this.chkCompleted.Name = "chkCompleted";
-            this.chkCompleted.Size = new System.Drawing.Size(172, 21);
+            this.chkCompleted.Size = new System.Drawing.Size(133, 17);
             this.chkCompleted.TabIndex = 54;
             this.chkCompleted.Text = "Completed Inspections";
             this.chkCompleted.UseVisualStyleBackColor = true;
@@ -280,18 +280,18 @@
             // txtGetID
             // 
             this.txtGetID.FormattingEnabled = true;
-            this.txtGetID.Location = new System.Drawing.Point(146, 257);
+            this.txtGetID.Location = new System.Drawing.Point(345, 62);
             this.txtGetID.Margin = new System.Windows.Forms.Padding(4);
             this.txtGetID.Name = "txtGetID";
-            this.txtGetID.Size = new System.Drawing.Size(160, 24);
+            this.txtGetID.Size = new System.Drawing.Size(160, 21);
             this.txtGetID.TabIndex = 55;
             this.txtGetID.Visible = false;
             // 
             // Sales_Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 815);
+            this.ClientSize = new System.Drawing.Size(975, 520);
             this.Controls.Add(this.txtGetID);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.lblTotal);
@@ -309,7 +309,6 @@
             this.Controls.Add(this.ddlServiceAddress);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.dgvSalesOrder);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Sales_Order";
             this.Text = "Sales_Order";
             this.Controls.SetChildIndex(this.dgvSalesOrder, 0);
