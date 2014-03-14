@@ -867,6 +867,12 @@ namespace FAFOS
 
         private void pnlPage_ControlAdded(object sender, ControlEventArgs e)
         {
+            // Set all panels invisible
+            pnlOps.Visible = 
+                pnlDocs.Visible = 
+                pnlReports.Visible = 
+                pnlClients.Visible = false;
+
             // Remove the previous form that was loaded into the panel
             if (pnlPage.Controls.Count > 1)
                 pnlPage.Controls.RemoveAt(0);

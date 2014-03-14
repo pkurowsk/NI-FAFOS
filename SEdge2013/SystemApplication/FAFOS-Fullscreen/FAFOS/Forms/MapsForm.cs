@@ -16,7 +16,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using System.Collections;
- 
+using System.Threading;
 
 namespace FAFOS
 {
@@ -49,6 +49,8 @@ namespace FAFOS
         ContractService[] service;
         bool prefetch;
 
+        public delegate void AsyncMapLoadCaller();
+
         public MapsForm(int id, object orders, object services)
         {
             InitializeComponent();
@@ -71,11 +73,11 @@ namespace FAFOS
 
 
             //Load the map
-            LoadMap();
+            AsyncMapLoadCaller asyncMapLoad = new AsyncMapLoadCaller(LoadMap);
+            asyncMapLoad.BeginInvoke(null, null);
+            //LoadMap();
 
         }
-
-
 
         private void dgv_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -191,7 +193,6 @@ namespace FAFOS
                 top.Markers.Add(currentMarker);
 
             }
-
         }
 
         #region -- map events --
@@ -504,7 +505,7 @@ namespace FAFOS
 
         private void buttonZoomDown_Click(object sender, EventArgs e)
         {
-            MainMap.Zoom = ((int)(MainMap.Zoom + 0.99)) - 1;
+
         }
 
 
@@ -626,7 +627,7 @@ namespace FAFOS
 
                 for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
                 {
-  MessageBox.Show(location[i].ToString());
+                    MessageBox.Show(location[i].ToString());
                     PointLatLng? pos1 = GMapProviders.GoogleMap.GetPoint(location[i].ToString(), out status);
                     if (pos1 != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                     {
@@ -638,7 +639,8 @@ namespace FAFOS
                     {
                         myWaypoints.Add(new PointLatLng(42.98252, -81.25397));
                         AddLocation(order++, location[i]);
-                        currentMarker.Position = new PointLatLng(42.98252, -81.25397);
+                        if (currentMarker != null)
+                            currentMarker.Position = new PointLatLng(42.98252, -81.25397);
                     }
                     
                     
@@ -851,6 +853,8 @@ namespace FAFOS
             }
 
         }
+
+
 
     }
 }

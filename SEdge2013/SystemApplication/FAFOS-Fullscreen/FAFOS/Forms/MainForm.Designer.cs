@@ -315,9 +315,9 @@
             this.lblOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.lblOperations.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperations.ForeColor = System.Drawing.Color.White;
-            this.lblOperations.Location = new System.Drawing.Point(5, 180);
+            this.lblOperations.Location = new System.Drawing.Point(0, 170);
             this.lblOperations.Name = "lblOperations";
-            this.lblOperations.Size = new System.Drawing.Size(90, 50);
+            this.lblOperations.Size = new System.Drawing.Size(226, 50);
             this.lblOperations.TabIndex = 45;
             this.lblOperations.Text = "Operations";
             this.lblOperations.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,9 +329,9 @@
             this.lblDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.lblDocs.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocs.ForeColor = System.Drawing.Color.White;
-            this.lblDocs.Location = new System.Drawing.Point(5, 230);
+            this.lblDocs.Location = new System.Drawing.Point(0, 220);
             this.lblDocs.Name = "lblDocs";
-            this.lblDocs.Size = new System.Drawing.Size(90, 50);
+            this.lblDocs.Size = new System.Drawing.Size(226, 50);
             this.lblDocs.TabIndex = 46;
             this.lblDocs.Text = "Documents";
             this.lblDocs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -343,9 +343,9 @@
             this.lblClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.lblClients.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClients.ForeColor = System.Drawing.Color.White;
-            this.lblClients.Location = new System.Drawing.Point(5, 280);
+            this.lblClients.Location = new System.Drawing.Point(0, 270);
             this.lblClients.Name = "lblClients";
-            this.lblClients.Size = new System.Drawing.Size(90, 50);
+            this.lblClients.Size = new System.Drawing.Size(226, 50);
             this.lblClients.TabIndex = 47;
             this.lblClients.Text = "Clients";
             this.lblClients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -357,9 +357,9 @@
             this.lblReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.lblReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReports.ForeColor = System.Drawing.Color.White;
-            this.lblReports.Location = new System.Drawing.Point(5, 330);
+            this.lblReports.Location = new System.Drawing.Point(0, 320);
             this.lblReports.Name = "lblReports";
-            this.lblReports.Size = new System.Drawing.Size(90, 50);
+            this.lblReports.Size = new System.Drawing.Size(226, 50);
             this.lblReports.TabIndex = 48;
             this.lblReports.Text = "Reports";
             this.lblReports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -443,7 +443,7 @@
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.Black;
-            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLogin.Controls.Add(this.pbLogos);
             this.pnlLogin.Controls.Add(this.pbFALogoLogin);
             this.pnlLogin.Controls.Add(this.Login_btn);
@@ -553,14 +553,16 @@
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.btnMenu.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Location = new System.Drawing.Point(225, 0);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(20, 70);
+            this.btnMenu.Size = new System.Drawing.Size(20, 170);
             this.btnMenu.TabIndex = 59;
             this.btnMenu.Text = "<";
             this.btnMenu.UseVisualStyleBackColor = false;
@@ -577,7 +579,7 @@
             this.pnlDocs.Controls.Add(this.btnCreateSO);
             this.pnlDocs.Controls.Add(this.btnEditQuote);
             this.pnlDocs.Controls.Add(this.btnQuote);
-            this.pnlDocs.Location = new System.Drawing.Point(95, 230);
+            this.pnlDocs.Location = new System.Drawing.Point(225, 220);
             this.pnlDocs.Name = "pnlDocs";
             this.pnlDocs.Size = new System.Drawing.Size(525, 50);
             this.pnlDocs.TabIndex = 56;
@@ -688,7 +690,7 @@
             this.pnlOps.Controls.Add(this.btnInventory);
             this.pnlOps.Controls.Add(this.btnInspection);
             this.pnlOps.Controls.Add(this.btnItinerary);
-            this.pnlOps.Location = new System.Drawing.Point(95, 180);
+            this.pnlOps.Location = new System.Drawing.Point(225, 170);
             this.pnlOps.Name = "pnlOps";
             this.pnlOps.Size = new System.Drawing.Size(450, 50);
             this.pnlOps.TabIndex = 57;
@@ -777,7 +779,7 @@
             this.btnItinerary.Name = "btnItinerary";
             this.btnItinerary.Size = new System.Drawing.Size(75, 50);
             this.btnItinerary.TabIndex = 5;
-            this.btnItinerary.Text = "Itinerary";
+            this.btnItinerary.Text = "Day Itinerary";
             this.btnItinerary.UseVisualStyleBackColor = false;
             this.btnItinerary.Click += new System.EventHandler(this.btnItinerary_Click);
             this.btnItinerary.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -790,7 +792,7 @@
             this.pnlClients.Controls.Add(this.btnAContract);
             this.pnlClients.Controls.Add(this.btnEClient);
             this.pnlClients.Controls.Add(this.btnAClient);
-            this.pnlClients.Location = new System.Drawing.Point(95, 280);
+            this.pnlClients.Location = new System.Drawing.Point(225, 270);
             this.pnlClients.Name = "pnlClients";
             this.pnlClients.Size = new System.Drawing.Size(375, 50);
             this.pnlClients.TabIndex = 60;
@@ -868,7 +870,7 @@
             this.pnlReports.Controls.Add(this.btnRevenue);
             this.pnlReports.Controls.Add(this.btnJob);
             this.pnlReports.Controls.Add(this.btnStatement);
-            this.pnlReports.Location = new System.Drawing.Point(95, 330);
+            this.pnlReports.Location = new System.Drawing.Point(225, 320);
             this.pnlReports.Name = "pnlReports";
             this.pnlReports.Size = new System.Drawing.Size(375, 50);
             this.pnlReports.TabIndex = 61;
