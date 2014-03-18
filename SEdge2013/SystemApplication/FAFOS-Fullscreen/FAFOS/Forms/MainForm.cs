@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows;
-using tiles;
+//using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -29,7 +29,7 @@ namespace FAFOS
         private DateTime t1;
         List<Bitmap> piclist = new List<Bitmap>();
 
-        delegate void SetSizeCallback(int w, int h, tile T);
+        //delegate void SetSizeCallback(int w, int h, tile T);
         private bool _Authenticated = false;
 
         public bool Authenticated
@@ -191,7 +191,7 @@ namespace FAFOS
 
         public void Tile_Enter(object sender, EventArgs e)
         {
-
+            /*
             tile _tile = (tile)sender;
             _tile.Tag = "0";
 
@@ -208,23 +208,23 @@ namespace FAFOS
 
             _tile.timerStart();
 
-
+            */
         }
 
 
         private void RaisetileTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            tile _tile = (tile)sender;
-            TileSizeControl(_tile.tileWidth + _tile.XScale, _tile.tileHieght + _tile.YScale, _tile);
+            //tile _tile = (tile)sender;
+            //TileSizeControl(_tile.tileWidth + _tile.XScale, _tile.tileHieght + _tile.YScale, _tile);
         }
 
-        public void TileSizeControl(int w, int h, tile T)
+        /*public void TileSizeControl(int w, int h, tile T)
         {
             SetSizeCallback d = new SetSizeCallback(SetSize);
             this.Invoke(d, new object[] { w, h, T });
-        }
+        }*/
 
-
+        /*
         public void SetSize(int w, int h, tile T)
         {
 
@@ -349,7 +349,7 @@ namespace FAFOS
                     InventoryForm form = new InventoryForm(userid);
                     form.Show();
                     /*MapsForm form = new MapsForm();
-                    form.Show();*/
+                    form.Show();
                 }
                 else if (T.Name == "purchaseRecord")
                 {
@@ -364,7 +364,7 @@ namespace FAFOS
                     MapsForm form = new MapsForm(userid, orders, services);
                     /*form.TopLevel = false;
                     form.AutoScroll = true;
-                    pnlOperation.Controls.Add(form);/**/
+                    pnlOperation.Controls.Add(form);/*
                     form.Show();
                     
 
@@ -412,7 +412,7 @@ namespace FAFOS
 
             }
         }
-
+        */
 
         public double formWidth
         {
@@ -885,12 +885,18 @@ namespace FAFOS
 
         private void btnAClient_Click(object sender, EventArgs e)
         {
-
+            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), false, userid); 
+            form.TopLevel = false; 
+            pnlPage.Controls.Add(form); 
+            form.Show();
         }
 
         private void btnEClient_Click(object sender, EventArgs e)
         {
-
+            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), true, userid);
+            form.TopLevel = false;
+            pnlPage.Controls.Add(form);
+            form.Show();
         }
 
         private void btnAContract_Click(object sender, EventArgs e)
@@ -913,7 +919,7 @@ namespace FAFOS
 
         private void btnJob_Click(object sender, EventArgs e)
         {
-            
+            //Reports
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)

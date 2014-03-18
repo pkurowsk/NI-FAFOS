@@ -41,7 +41,7 @@
             this.cbClients.FormattingEnabled = true;
             this.cbClients.Location = new System.Drawing.Point(14, 47);
             this.cbClients.Name = "cbClients";
-            this.cbClients.Size = new System.Drawing.Size(234, 31);
+            this.cbClients.Size = new System.Drawing.Size(234, 26);
             this.cbClients.TabIndex = 39;
             // 
             // pnlStatement
@@ -49,7 +49,7 @@
             this.pnlStatement.Controls.Add(this.label1);
             this.pnlStatement.Controls.Add(this.btnStatement);
             this.pnlStatement.Controls.Add(this.cbClients);
-            this.pnlStatement.Location = new System.Drawing.Point(527, 340);
+            this.pnlStatement.Location = new System.Drawing.Point(251, 134);
             this.pnlStatement.Name = "pnlStatement";
             this.pnlStatement.Size = new System.Drawing.Size(388, 124);
             this.pnlStatement.TabIndex = 41;
@@ -57,10 +57,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 20);
+            this.label1.Size = new System.Drawing.Size(151, 17);
             this.label1.TabIndex = 42;
             this.label1.Text = "Outstanding Accounts:";
             // 
@@ -69,7 +69,7 @@
             this.btnStatement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatement.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(257, 32);
             this.btnStatement.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -82,12 +82,11 @@
             // 
             // Statements
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1459, 814);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.pnlStatement);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Statements";
             this.Text = "Statements";
             this.Controls.SetChildIndex(this.pnlStatement, 0);

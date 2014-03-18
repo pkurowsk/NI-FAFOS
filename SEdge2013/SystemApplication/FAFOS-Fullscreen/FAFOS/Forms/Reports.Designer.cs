@@ -47,19 +47,19 @@
             // 
             // dtpStartDate
             // 
-            this.dtpStartDate.Location = new System.Drawing.Point(392, 196);
+            this.dtpStartDate.Location = new System.Drawing.Point(251, 22);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpStartDate.Size = new System.Drawing.Size(265, 20);
             this.dtpStartDate.TabIndex = 39;
             this.dtpStartDate.Value = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(667, 196);
+            this.dtpEndDate.Location = new System.Drawing.Point(526, 22);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(265, 22);
+            this.dtpEndDate.Size = new System.Drawing.Size(265, 20);
             this.dtpEndDate.TabIndex = 40;
             this.dtpEndDate.Value = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             // 
@@ -73,39 +73,39 @@
             "Revenue by Month",
             "Revenue by Quarter",
             "Revenue by Year"});
-            this.ddlPickReport.Location = new System.Drawing.Point(149, 196);
+            this.ddlPickReport.Location = new System.Drawing.Point(8, 22);
             this.ddlPickReport.Margin = new System.Windows.Forms.Padding(4);
             this.ddlPickReport.Name = "ddlPickReport";
-            this.ddlPickReport.Size = new System.Drawing.Size(233, 24);
+            this.ddlPickReport.Size = new System.Drawing.Size(233, 21);
             this.ddlPickReport.TabIndex = 41;
             // 
             // lblPickReport
             // 
             this.lblPickReport.AutoSize = true;
-            this.lblPickReport.Location = new System.Drawing.Point(149, 172);
+            this.lblPickReport.Location = new System.Drawing.Point(5, 5);
             this.lblPickReport.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPickReport.Name = "lblPickReport";
-            this.lblPickReport.Size = new System.Drawing.Size(81, 17);
+            this.lblPickReport.Size = new System.Drawing.Size(63, 13);
             this.lblPickReport.TabIndex = 42;
             this.lblPickReport.Text = "Pick Report";
             // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(392, 172);
+            this.lblStartDate.Location = new System.Drawing.Point(248, 5);
             this.lblStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(72, 17);
+            this.lblStartDate.Size = new System.Drawing.Size(55, 13);
             this.lblStartDate.TabIndex = 43;
             this.lblStartDate.Text = "Start Date";
             // 
             // lblEndDate
             // 
             this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Location = new System.Drawing.Point(667, 172);
+            this.lblEndDate.Location = new System.Drawing.Point(523, 5);
             this.lblEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(67, 17);
+            this.lblEndDate.Size = new System.Drawing.Size(52, 13);
             this.lblEndDate.TabIndex = 44;
             this.lblEndDate.Text = "End Date";
             // 
@@ -114,7 +114,7 @@
             this.dgvReport.AllowUserToAddRows = false;
             this.dgvReport.AllowUserToDeleteRows = false;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(97, 245);
+            this.dgvReport.Location = new System.Drawing.Point(8, 55);
             this.dgvReport.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.ReadOnly = true;
@@ -127,7 +127,7 @@
             this.chartReport.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartReport.Legends.Add(legend2);
-            this.chartReport.Location = new System.Drawing.Point(455, 245);
+            this.chartReport.Location = new System.Drawing.Point(366, 55);
             this.chartReport.Margin = new System.Windows.Forms.Padding(4);
             this.chartReport.Name = "chartReport";
             series3.ChartArea = "ChartArea1";
@@ -150,7 +150,7 @@
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generate_btn.ForeColor = System.Drawing.Color.White;
-            this.generate_btn.Location = new System.Drawing.Point(1017, 172);
+            this.generate_btn.Location = new System.Drawing.Point(827, 5);
             this.generate_btn.Margin = new System.Windows.Forms.Padding(4);
             this.generate_btn.Name = "generate_btn";
             this.generate_btn.Size = new System.Drawing.Size(182, 50);
@@ -161,9 +161,9 @@
             // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 815);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.generate_btn);
             this.Controls.Add(this.chartReport);
             this.Controls.Add(this.dgvReport);
@@ -173,7 +173,6 @@
             this.Controls.Add(this.ddlPickReport);
             this.Controls.Add(this.dtpEndDate);
             this.Controls.Add(this.dtpStartDate);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Reports";
             this.Text = "Reports";
