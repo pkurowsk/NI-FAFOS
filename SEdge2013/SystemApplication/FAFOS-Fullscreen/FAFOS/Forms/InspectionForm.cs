@@ -42,6 +42,7 @@ namespace FAFOS
             listenThread.IsBackground = true; // to stop all threads when application is terminated
             this.listenThread.Start();
            // ListenForClients();
+            //patrick is awesome
         }
 
         public void ListenForClients()
