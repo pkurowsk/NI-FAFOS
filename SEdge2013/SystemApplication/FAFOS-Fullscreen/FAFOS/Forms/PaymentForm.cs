@@ -156,7 +156,9 @@ namespace FAFOS
         private void Submit_btn_Click(object sender, EventArgs e)
         {
             //Add Payment
-            if (txtAmount.Text != "0" && txtAmount.Text != "" && txtAmount.Text != "$0.00")
+            //if (txtAmount.Text != "0" && txtAmount.Text != "" && txtAmount.Text != "$0.00")
+            
+            if(txtAmount.DecimalValue != 0)
             {
                 Payment pay = new Payment();
                 int payId;

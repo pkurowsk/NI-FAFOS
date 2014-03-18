@@ -104,7 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NumericTextBox.cs" />
+    <Compile Include="Forms\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\AddEditClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
