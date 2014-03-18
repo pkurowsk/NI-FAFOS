@@ -19,10 +19,12 @@ namespace FAFOS
             franchiseeId = new Users().getFranchiseeId(franchiseeUserID);
         }
 
-        public void report(int type)
+        public void report(int type, Panel pnl)
         {
             this.type = type;
             Reports newSalesOrder = new Reports(this, franchiseeUserId, type);
+            newSalesOrder.TopLevel = false;
+            pnl.Controls.Add(newSalesOrder);
             newSalesOrder.Show();
         }
 

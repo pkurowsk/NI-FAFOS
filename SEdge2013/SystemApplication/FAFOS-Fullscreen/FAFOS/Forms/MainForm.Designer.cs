@@ -822,6 +822,7 @@
             this.btnEContract.TabIndex = 8;
             this.btnEContract.Text = "Edit Contract";
             this.btnEContract.UseVisualStyleBackColor = false;
+            this.btnEContract.Click += new System.EventHandler(this.btnEContract_Click);
             // 
             // btnAContract
             // 
@@ -835,6 +836,7 @@
             this.btnAContract.TabIndex = 7;
             this.btnAContract.Text = "Add Contract";
             this.btnAContract.UseVisualStyleBackColor = false;
+            this.btnAContract.Click += new System.EventHandler(this.btnAContract_Click);
             // 
             // btnEClient
             // 
@@ -848,6 +850,7 @@
             this.btnEClient.TabIndex = 6;
             this.btnEClient.Text = "Edit Client";
             this.btnEClient.UseVisualStyleBackColor = false;
+            this.btnEClient.Click += new System.EventHandler(this.btnEClient_Click);
             // 
             // btnAClient
             // 
@@ -861,6 +864,7 @@
             this.btnAClient.TabIndex = 5;
             this.btnAClient.Text = "Add Client";
             this.btnAClient.UseVisualStyleBackColor = false;
+            this.btnAClient.Click += new System.EventHandler(this.btnAClient_Click);
             // 
             // pnlReports
             // 
@@ -900,6 +904,7 @@
             this.btnRoyaltee.TabIndex = 8;
             this.btnRoyaltee.Text = "Royaltee Fee";
             this.btnRoyaltee.UseVisualStyleBackColor = false;
+            this.btnRoyaltee.Click += new System.EventHandler(this.btnRoyaltee_Click);
             // 
             // btnRevenue
             // 
@@ -913,6 +918,7 @@
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Revenue Report";
             this.btnRevenue.UseVisualStyleBackColor = false;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
             // btnJob
             // 
@@ -926,6 +932,7 @@
             this.btnJob.TabIndex = 6;
             this.btnJob.Text = "Job Report";
             this.btnJob.UseVisualStyleBackColor = false;
+            this.btnJob.Click += new System.EventHandler(this.btnJob_Click);
             // 
             // btnStatement
             // 
@@ -939,6 +946,7 @@
             this.btnStatement.TabIndex = 5;
             this.btnStatement.Text = "Statement";
             this.btnStatement.UseVisualStyleBackColor = false;
+            this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
             // 
             // View
             // 

@@ -403,7 +403,7 @@ namespace FAFOS
                 else if (T.Name == "revenueReport")
                 {
                     ReportsController r = new ReportsController(userid.ToString());
-                    r.report(1) ;
+                    r.report(1, pnlPage);
                   //  Report form = new InspectionForm(userid.ToString());
                    // form.Show();
                 }
@@ -860,7 +860,7 @@ namespace FAFOS
 
         private void label8_MouseLeave(object sender, EventArgs e)
         {
-            pnlReports.Visible = false;
+            pnlReports.Visible = false; 
         }
 
         #endregion
@@ -881,6 +881,53 @@ namespace FAFOS
         private void pbFALogoLogin_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.fire-alert.ca");
+        }
+
+        private void btnAClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAContract_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEContract_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStatement_Click(object sender, EventArgs e)
+        {
+            Statements form = new Statements(userid);
+            form.TopLevel = false;
+            pnlPage.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnJob_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            ReportsController r = new ReportsController(userid.ToString());
+            r.report(1, pnlPage) ;
+        }
+
+        private void btnRoyaltee_Click(object sender, EventArgs e)
+        {
+            RoyaltyFeeCollection form = new RoyaltyFeeCollection(userid.ToString());
+            form.TopLevel = false;
+            pnlPage.Controls.Add(form);
+            form.Show();
         }
 
 
