@@ -155,10 +155,16 @@ namespace FAFOS
 
         private void Submit_btn_Click(object sender, EventArgs e)
         {
+            if (txtBalance.DecimalValue == 0)
+            {
+                new Invoice().update(txtInvoice.SelectedValue.ToString());
+                MessageBox.Show("Invoice has been fully paid.");
+                this.Close();
+            }
             //Add Payment
             //if (txtAmount.Text != "0" && txtAmount.Text != "" && txtAmount.Text != "$0.00")
             
-            if(txtAmount.DecimalValue != 0 && txtAmount.DecimalValue < txtBalance.DecimalValue && txtType.Text != "" && txtAmount.DecimalValue > 0)
+            if(txtAmount.DecimalValue != 0 && txtAmount.DecimalValue <= txtBalance.DecimalValue && txtType.Text != "" && txtAmount.DecimalValue > 0)
             {
                 Payment pay = new Payment();
                 int payId;
@@ -170,12 +176,14 @@ namespace FAFOS
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
 
                 //Check if all of invoice is paid off
+
              
                 if (txtAmount.DecimalValue == txtBalance.DecimalValue )
                 {
                     new Invoice().update(txtInvoice.SelectedValue.ToString());
                     MessageBox.Show("Invoice has been fully paid.");
                 }
+                
                 else
                     MessageBox.Show("Payment has been processed.");
                 this.Close();
