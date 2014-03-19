@@ -819,18 +819,16 @@ namespace FAFOS
 
         private void btnAClient_Click(object sender, EventArgs e)
         {
-            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), false, userid); 
-            form.TopLevel = false; 
-            pnlPage.Controls.Add(form); 
-            form.Show();
+            MaintainClientController c = new MaintainClientController();
+
+            c.New_client_button_Click(this, userid, pnlPage);
         }
 
         private void btnEClient_Click(object sender, EventArgs e)
         {
-            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), true, userid);
-            form.TopLevel = false;
-            pnlPage.Controls.Add(form);
-            form.Show();
+            MaintainClientController c = new MaintainClientController();
+
+            c.Edit_Client_Button_Click(this, userid, pnlPage);
         }
 
         private void btnAContract_Click(object sender, EventArgs e)
