@@ -49,7 +49,7 @@
             this.pnlStatement.Controls.Add(this.label1);
             this.pnlStatement.Controls.Add(this.btnStatement);
             this.pnlStatement.Controls.Add(this.cbClients);
-            this.pnlStatement.Location = new System.Drawing.Point(251, 134);
+            this.pnlStatement.Location = new System.Drawing.Point(65, 38);
             this.pnlStatement.Name = "pnlStatement";
             this.pnlStatement.Size = new System.Drawing.Size(388, 124);
             this.pnlStatement.TabIndex = 41;
