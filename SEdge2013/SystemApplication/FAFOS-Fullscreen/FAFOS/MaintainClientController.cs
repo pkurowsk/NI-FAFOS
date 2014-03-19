@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
-using tiles;
+//using tiles;
 
 namespace FAFOS
 {
@@ -32,7 +32,7 @@ namespace FAFOS
 
 /************************* Main Form Events ****************************************************/
  
-        public void New_client_button_Click(tile sender, int id)
+       /* public void New_client_button_Click(tile sender, int id)
         {
             userID = id;
             NewClient();
@@ -41,9 +41,9 @@ namespace FAFOS
             _clientForm = new AddEditClientForm(this, false, userID);
             _clientForm.Activate();
             _clientForm.Show();
-        }
+        }*/
 
-        public void Edit_Client_Button_Click(tile sender, int id)
+        /*public void Edit_Client_Button_Click(tile sender, int id)
         {
             _mainForm = (View)sender.FindForm();
             _clientForm = new AddEditClientForm(this, true,id);
@@ -68,7 +68,7 @@ namespace FAFOS
             userID = id;
             _contractForm = new AddEditContractForm(this, true, userID, "0");
             _contractForm.Show();
-        }
+        }*/
 
 /************************* Add Edit Client Form Events *****************************************/
 
