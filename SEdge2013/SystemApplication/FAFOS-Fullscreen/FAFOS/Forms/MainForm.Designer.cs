@@ -65,7 +65,7 @@
             this.pbFALogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDocs = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCloseDocs = new System.Windows.Forms.Label();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnEditSO = new System.Windows.Forms.Button();
             this.btnConvertSO = new System.Windows.Forms.Button();
@@ -73,20 +73,20 @@
             this.btnEditQuote = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.pnlOps = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblCloseOps = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnInspection = new System.Windows.Forms.Button();
             this.btnItinerary = new System.Windows.Forms.Button();
             this.pnlClients = new System.Windows.Forms.Panel();
-            this.lblCClose = new System.Windows.Forms.Label();
+            this.lblCloseClients = new System.Windows.Forms.Label();
             this.btnEContract = new System.Windows.Forms.Button();
             this.btnAContract = new System.Windows.Forms.Button();
             this.btnEClient = new System.Windows.Forms.Button();
             this.btnAClient = new System.Windows.Forms.Button();
             this.pnlReports = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblCloseReports = new System.Windows.Forms.Label();
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnJob = new System.Windows.Forms.Button();
@@ -572,7 +572,7 @@
             // pnlDocs
             // 
             this.pnlDocs.BackColor = System.Drawing.Color.Gray;
-            this.pnlDocs.Controls.Add(this.label10);
+            this.pnlDocs.Controls.Add(this.lblCloseDocs);
             this.pnlDocs.Controls.Add(this.btnInvoice);
             this.pnlDocs.Controls.Add(this.btnEditSO);
             this.pnlDocs.Controls.Add(this.btnConvertSO);
@@ -581,21 +581,22 @@
             this.pnlDocs.Controls.Add(this.btnQuote);
             this.pnlDocs.Location = new System.Drawing.Point(225, 220);
             this.pnlDocs.Name = "pnlDocs";
-            this.pnlDocs.Size = new System.Drawing.Size(525, 50);
+            this.pnlDocs.Size = new System.Drawing.Size(485, 50);
             this.pnlDocs.TabIndex = 56;
             this.pnlDocs.Visible = false;
+            this.pnlDocs.VisibleChanged += new System.EventHandler(this.pnlDocs_VisibleChanged);
             // 
-            // label10
+            // lblCloseDocs
             // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(450, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 50);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "X";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.MouseEnter += new System.EventHandler(this.label6_MouseLeave);
+            this.lblCloseDocs.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseDocs.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseDocs.Location = new System.Drawing.Point(450, 0);
+            this.lblCloseDocs.Name = "lblCloseDocs";
+            this.lblCloseDocs.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseDocs.TabIndex = 10;
+            this.lblCloseDocs.Text = "X";
+            this.lblCloseDocs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseDocs.MouseEnter += new System.EventHandler(this.label6_MouseLeave);
             // 
             // btnInvoice
             // 
@@ -684,7 +685,7 @@
             // pnlOps
             // 
             this.pnlOps.BackColor = System.Drawing.Color.DimGray;
-            this.pnlOps.Controls.Add(this.label11);
+            this.pnlOps.Controls.Add(this.lblCloseOps);
             this.pnlOps.Controls.Add(this.btnPayment);
             this.pnlOps.Controls.Add(this.btnPurchase);
             this.pnlOps.Controls.Add(this.btnInventory);
@@ -692,22 +693,23 @@
             this.pnlOps.Controls.Add(this.btnItinerary);
             this.pnlOps.Location = new System.Drawing.Point(225, 170);
             this.pnlOps.Name = "pnlOps";
-            this.pnlOps.Size = new System.Drawing.Size(450, 50);
+            this.pnlOps.Size = new System.Drawing.Size(410, 50);
             this.pnlOps.TabIndex = 57;
             this.pnlOps.Visible = false;
+            this.pnlOps.VisibleChanged += new System.EventHandler(this.pnlOps_VisibleChanged);
             this.pnlOps.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
-            // label11
+            // lblCloseOps
             // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(375, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 50);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "X";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
+            this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseOps.Location = new System.Drawing.Point(375, 0);
+            this.lblCloseOps.Name = "lblCloseOps";
+            this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseOps.TabIndex = 10;
+            this.lblCloseOps.Text = "X";
+            this.lblCloseOps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseOps.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
             // 
             // btnPayment
             // 
@@ -787,28 +789,29 @@
             // pnlClients
             // 
             this.pnlClients.BackColor = System.Drawing.Color.DarkGray;
-            this.pnlClients.Controls.Add(this.lblCClose);
+            this.pnlClients.Controls.Add(this.lblCloseClients);
             this.pnlClients.Controls.Add(this.btnEContract);
             this.pnlClients.Controls.Add(this.btnAContract);
             this.pnlClients.Controls.Add(this.btnEClient);
             this.pnlClients.Controls.Add(this.btnAClient);
             this.pnlClients.Location = new System.Drawing.Point(225, 270);
             this.pnlClients.Name = "pnlClients";
-            this.pnlClients.Size = new System.Drawing.Size(375, 50);
+            this.pnlClients.Size = new System.Drawing.Size(335, 50);
             this.pnlClients.TabIndex = 60;
             this.pnlClients.Visible = false;
+            this.pnlClients.VisibleChanged += new System.EventHandler(this.pnlClients_VisibleChanged);
             // 
-            // lblCClose
+            // lblCloseClients
             // 
-            this.lblCClose.BackColor = System.Drawing.Color.Transparent;
-            this.lblCClose.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCClose.Location = new System.Drawing.Point(300, 0);
-            this.lblCClose.Name = "lblCClose";
-            this.lblCClose.Size = new System.Drawing.Size(75, 50);
-            this.lblCClose.TabIndex = 9;
-            this.lblCClose.Text = "X";
-            this.lblCClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCClose.MouseEnter += new System.EventHandler(this.label7_MouseLeave);
+            this.lblCloseClients.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseClients.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseClients.Location = new System.Drawing.Point(300, 0);
+            this.lblCloseClients.Name = "lblCloseClients";
+            this.lblCloseClients.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseClients.TabIndex = 9;
+            this.lblCloseClients.Text = "X";
+            this.lblCloseClients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseClients.MouseEnter += new System.EventHandler(this.label7_MouseLeave);
             // 
             // btnEContract
             // 
@@ -869,28 +872,29 @@
             // pnlReports
             // 
             this.pnlReports.BackColor = System.Drawing.Color.Silver;
-            this.pnlReports.Controls.Add(this.label12);
+            this.pnlReports.Controls.Add(this.lblCloseReports);
             this.pnlReports.Controls.Add(this.btnRoyaltee);
             this.pnlReports.Controls.Add(this.btnRevenue);
             this.pnlReports.Controls.Add(this.btnJob);
             this.pnlReports.Controls.Add(this.btnStatement);
             this.pnlReports.Location = new System.Drawing.Point(225, 320);
             this.pnlReports.Name = "pnlReports";
-            this.pnlReports.Size = new System.Drawing.Size(375, 50);
+            this.pnlReports.Size = new System.Drawing.Size(335, 50);
             this.pnlReports.TabIndex = 61;
             this.pnlReports.Visible = false;
+            this.pnlReports.VisibleChanged += new System.EventHandler(this.pnlReports_VisibleChanged);
             // 
-            // label12
+            // lblCloseReports
             // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(300, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 50);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "X";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.MouseEnter += new System.EventHandler(this.label8_MouseLeave);
+            this.lblCloseReports.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseReports.Location = new System.Drawing.Point(300, 0);
+            this.lblCloseReports.Name = "lblCloseReports";
+            this.lblCloseReports.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseReports.TabIndex = 9;
+            this.lblCloseReports.Text = "X";
+            this.lblCloseReports.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseReports.MouseEnter += new System.EventHandler(this.label8_MouseLeave);
             // 
             // btnRoyaltee
             // 
@@ -964,11 +968,11 @@
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
-            this.Controls.Add(this.lblTitleFAFOS);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlPage);
             this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.lblTitleFAFOS);
+            this.Controls.Add(this.btnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1048,15 +1052,15 @@
         private System.Windows.Forms.Button btnInspection;
         private System.Windows.Forms.Button btnItinerary;
         private System.Windows.Forms.Panel pnlClients;
-        private System.Windows.Forms.Label lblCClose;
+        private System.Windows.Forms.Label lblCloseClients;
         private System.Windows.Forms.Button btnEContract;
         private System.Windows.Forms.Button btnAContract;
         private System.Windows.Forms.Button btnEClient;
         private System.Windows.Forms.Button btnAClient;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCloseDocs;
+        private System.Windows.Forms.Label lblCloseOps;
         private System.Windows.Forms.Panel pnlReports;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCloseReports;
         private System.Windows.Forms.Button btnRoyaltee;
         private System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnJob;

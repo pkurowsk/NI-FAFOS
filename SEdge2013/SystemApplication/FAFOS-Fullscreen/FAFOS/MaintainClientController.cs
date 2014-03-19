@@ -51,22 +51,26 @@ namespace FAFOS
             _clientForm.Show();
         }
 
-        public void Add_contract_Button_Click(tile sender, int id)
+        public void Add_contract_Button_Click(View sender, int id, Panel pnl)
         {
-            _mainForm = (View)sender.FindForm();
+            _mainForm = sender;
             userID = id;
             NewContract();
             _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
             _contractForm.Activate();
+            _contractForm.TopLevel = false;
+            pnl.Controls.Add(_contractForm);
             _contractForm.Show(); 
 
 
         }
-        public void Edit_contract_Button_Click(tile sender, int id)
+        public void Edit_contract_Button_Click(View sender, int id, Panel pnl)
         {
-            _mainForm = (View)sender.FindForm();
+            _mainForm = sender;
             userID = id;
             _contractForm = new AddEditContractForm(this, true, userID, "0");
+            _contractForm.TopLevel = false;
+            pnl.Controls.Add(_contractForm);
             _contractForm.Show();
         }
 

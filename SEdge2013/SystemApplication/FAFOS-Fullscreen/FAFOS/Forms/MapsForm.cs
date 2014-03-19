@@ -74,9 +74,18 @@ namespace FAFOS
 
             //Load the map
             AsyncMapLoadCaller asyncMapLoad = new AsyncMapLoadCaller(LoadMap);
-            asyncMapLoad.BeginInvoke(null, null);
+            asyncMapLoad.BeginInvoke(new AsyncCallback(MapLoaded), null);
             //LoadMap();
 
+        }
+
+        public void MapLoaded(IAsyncResult result)
+        {
+            generate_btn.BeginInvoke((MethodInvoker)delegate()
+                {
+                    generate_btn.Enabled = true;
+                });
+            
         }
 
         private void dgv_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
