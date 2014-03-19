@@ -158,7 +158,7 @@ namespace FAFOS
             //Add Payment
             //if (txtAmount.Text != "0" && txtAmount.Text != "" && txtAmount.Text != "$0.00")
             
-            if(txtAmount.DecimalValue != 0)
+            if(txtAmount.DecimalValue != 0 && txtAmount.DecimalValue < txtBalance.DecimalValue && txtType.Text != "" && txtAmount.DecimalValue > 0)
             {
                 Payment pay = new Payment();
                 int payId;
@@ -170,7 +170,8 @@ namespace FAFOS
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
 
                 //Check if all of invoice is paid off
-                if (txtAmount.Text == txtBalance.Text)
+             
+                if (txtAmount.DecimalValue == txtBalance.DecimalValue )
                 {
                     new Invoice().update(txtInvoice.SelectedValue.ToString());
                     MessageBox.Show("Invoice has been fully paid.");
@@ -179,9 +180,17 @@ namespace FAFOS
                     MessageBox.Show("Payment has been processed.");
                 this.Close();
             }
-            else
+            else if (txtAmount.DecimalValue <= 0)
             {
                 MessageBox.Show("The payment amount must be greater than 0.");
+            }
+            else if (txtType.Text == "")
+            {
+                MessageBox.Show("A payment type was not selected");
+            }
+            else
+            {
+                MessageBox.Show("The payment was greater than the remaining Balance");
             }
         }
     }
