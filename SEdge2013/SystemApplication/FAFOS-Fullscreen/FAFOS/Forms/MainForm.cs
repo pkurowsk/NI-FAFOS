@@ -739,22 +739,22 @@ namespace FAFOS
         private void btnCreateSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(1, pnlPage);
+            SalesOrderController sc = new SalesOrderController(userid.ToString());
+            sc.salesOrder(1, pnlPage);
         }
 
         private void btnConvertSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(2, pnlPage);
+            SalesOrderController qc = new SalesOrderController(userid.ToString());
+            qc.salesOrder(2, pnlPage);
         }
 
         private void btnEditSO_Click(object sender, EventArgs e)
         {
             pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(3, pnlPage);
+            SalesOrderController qc = new SalesOrderController(userid.ToString());
+            qc.salesOrder(3, pnlPage);
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
