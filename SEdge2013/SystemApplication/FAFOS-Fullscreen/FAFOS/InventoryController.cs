@@ -72,8 +72,8 @@ namespace FAFOS
                 {
                     try
                     {
-                        dataGridView.Rows.RemoveAt(dataGridView.SelectedCells[0].OwningRow.Index);
                         franchisee_inventory.deleteProduct(dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString());
+                        dataGridView.Rows.RemoveAt(dataGridView.SelectedCells[0].OwningRow.Index);
                         fillProductcombo();
                     }
                     catch
@@ -92,8 +92,8 @@ namespace FAFOS
                 {
                     try
                     {
-                        dataGridView.Rows.RemoveAt(dataGridView.SelectedCells[0].OwningRow.Index);
                         franchisee_inventory.deleteService(dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[2].Value.ToString());
+                        dataGridView.Rows.RemoveAt(dataGridView.SelectedCells[0].OwningRow.Index);
                         fillServicecombo();
                     }
                     catch
