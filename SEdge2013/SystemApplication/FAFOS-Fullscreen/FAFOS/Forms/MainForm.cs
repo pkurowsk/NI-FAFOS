@@ -669,23 +669,20 @@ namespace FAFOS
 
         private void btnCreateSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(1, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(1, pnlPage);
         }
 
         private void btnConvertSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(2, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(2, pnlPage);
         }
 
         private void btnEditSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            QuoteController qc = new QuoteController(userid.ToString());
-            qc.quote(3, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(3, pnlPage);
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -749,8 +746,6 @@ namespace FAFOS
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            pnlOps.Visible = false;
-
             PurchaseRecord form = new PurchaseRecord(userid);
             form.TopLevel = false;
             pnlPage.Controls.Add(form);
@@ -759,8 +754,6 @@ namespace FAFOS
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            pnlOps.Visible = false;
-
             PaymentForm payment_form = new PaymentForm(userid);
             payment_form.TopLevel = false;
             pnlPage.Controls.Add(payment_form);

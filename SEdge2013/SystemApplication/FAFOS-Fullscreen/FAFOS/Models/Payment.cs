@@ -29,6 +29,7 @@ namespace FAFOS
             con.Close();
 
             con.Open();
+            Console.WriteLine("Arg: " + arg);
             command = new SqlCommand("INSERT INTO Payment VALUES (" + id + "," + arg + ")", con);
             try
             {
@@ -36,7 +37,7 @@ namespace FAFOS
             }
             catch (SqlException ef)
             {
-                MessageBox.Show("Could not save the following payment.");
+                MessageBox.Show("Could not save the following payment." + ef.ToString());
             }
             con.Close();
 

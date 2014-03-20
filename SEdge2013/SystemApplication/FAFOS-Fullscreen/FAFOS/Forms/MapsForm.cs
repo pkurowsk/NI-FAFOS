@@ -685,7 +685,7 @@ namespace FAFOS
 
             if (pos == null)
                 pos = new PointLatLng();
-            DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, false, true, true);
+            DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, true, true);
             if (_code == DirectionsStatusCode.OK)
             {
                 foreach (GDirectionStep _step in _dir.Steps)
