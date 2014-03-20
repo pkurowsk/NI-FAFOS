@@ -138,9 +138,10 @@ namespace FAFOS
 
         public void setTotal(double total, double tax)
         {
-            txtSubtotal.Text = "$" + total.ToString();
-            txtHST.Text = "$" + (Math.Round(total * tax, 2)).ToString();
-            txtTotal.Text = "$" + (Math.Round(total * (1 + tax), 2)).ToString();
+            txtSubtotal.Text = "$" + String.Format("{0:0.00}", Math.Round(total, 2));
+            txtHST.Text = "$" + String.Format("{0:0.00}", Math.Round(total * tax, 2));
+            txtTotal.Text = "$" + String.Format("{0:0.00}", Math.Round(total * (1 + tax), 2));
+            
         }
 
         public string getSubtotal()
