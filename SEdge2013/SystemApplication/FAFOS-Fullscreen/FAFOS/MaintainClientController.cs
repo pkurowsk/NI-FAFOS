@@ -63,6 +63,7 @@ namespace FAFOS
             _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
             _contractForm.Activate();
             _contractForm.TopLevel = false;
+            _contractForm.FormBorderStyle = FormBorderStyle.None;
             pnl.Controls.Add(_contractForm);
             _contractForm.Show(); 
 
@@ -74,6 +75,7 @@ namespace FAFOS
             userID = id;
             _contractForm = new AddEditContractForm(this, true, userID, "0");
             _contractForm.TopLevel = false;
+            _contractForm.FormBorderStyle = FormBorderStyle.None;
             pnl.Controls.Add(_contractForm);
             _contractForm.Show();
         }
@@ -120,6 +122,7 @@ namespace FAFOS
         public void Client_Contract_Button_Click(object sender, EventArgs e)
         {
             String id = _client.GetContract();
+            _contractForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             if ((id == null)|| id == "")
             {
                 NewContract();

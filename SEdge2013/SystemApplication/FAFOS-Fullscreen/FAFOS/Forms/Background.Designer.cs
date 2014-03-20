@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.lblUserInfo = new System.Windows.Forms.Label();
-            this.lblPageTitle = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.SEdgeLogo = new System.Windows.Forms.Label();
             this.FireAlertLogo = new System.Windows.Forms.PictureBox();
@@ -40,20 +38,6 @@
             this.pnlUser.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(65, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 60);
-            this.button1.TabIndex = 30;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lblUserInfo
             // 
             this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,17 +46,6 @@
             this.lblUserInfo.Size = new System.Drawing.Size(136, 50);
             this.lblUserInfo.TabIndex = 36;
             this.lblUserInfo.Text = "Welcome ";
-            // 
-            // lblPageTitle
-            // 
-            this.lblPageTitle.AutoSize = true;
-            this.lblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageTitle.Location = new System.Drawing.Point(140, 100);
-            this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(105, 31);
-            this.lblPageTitle.TabIndex = 37;
-            this.lblPageTitle.Text = "FAFOS";
-            this.lblPageTitle.Visible = false;
             // 
             // profilePic
             // 
@@ -125,10 +98,8 @@
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
             this.Controls.Add(this.pnlUser);
-            this.Controls.Add(this.lblPageTitle);
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.FireAlertLogo);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -141,17 +112,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).EndInit();
             this.pnlUser.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox FireAlertLogo;
         private System.Windows.Forms.Label SEdgeLogo;
         private System.Windows.Forms.Label lblUserInfo;
-        private System.Windows.Forms.Label lblPageTitle;
         private System.Windows.Forms.PictureBox profilePic;
         private System.Windows.Forms.Panel pnlUser;
     }

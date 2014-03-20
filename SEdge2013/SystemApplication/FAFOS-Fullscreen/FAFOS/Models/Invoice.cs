@@ -180,7 +180,7 @@ namespace FAFOS
             }
             catch (SqlException ef)
             {
-                MessageBox.Show("The invoice could not be saved into the system");
+                MessageBox.Show("The invoice could not be saved into the system: \n" + arg + "\n" + ef.Message);
             }
             con.Close();
             return id;

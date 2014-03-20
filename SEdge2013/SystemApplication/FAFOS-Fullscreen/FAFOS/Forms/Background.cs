@@ -43,7 +43,7 @@ namespace FAFOS
             //user = new Users();
             //userid = id;
             lblUserInfo.Text = "Welcome\n " + new Users().getName(Convert.ToInt32(name));
-            lblPageTitle.Text = title;
+            //lblPageTitle.Text = title;
 
 
             List<Bitmap> piclist = MUser.LoadImages();
@@ -56,18 +56,18 @@ namespace FAFOS
 
         void button1_MouseLeave(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
+            /*this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.Back2));
             this.button1.Location = new Point(65, 38);
             this.button1.Size = new Size(60, 60);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
+            this.button1.ImageAlign = ContentAlignment.MiddleCenter;*/
         }
 
         void button1_MouseEnter(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
+            /*this.button1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.BackOver));
             this.button1.Location = new Point(65, 38);
             this.button1.Size = new Size(60, 60);
-            this.button1.ImageAlign = ContentAlignment.MiddleCenter;
+            this.button1.ImageAlign = ContentAlignment.MiddleCenter;*/
         }
 
         public void button1_Click(object sender, EventArgs e)

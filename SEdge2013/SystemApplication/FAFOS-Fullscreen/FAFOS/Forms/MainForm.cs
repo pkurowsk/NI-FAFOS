@@ -802,7 +802,9 @@ namespace FAFOS
 
             // Remove the previous form that was loaded into the panel
             if (pnlPage.Controls.Count > 1)
-                pnlPage.Controls.RemoveAt(0);
+            {
+                pnlPage.Controls[0].Dispose();
+            }
         }
 
         private void pbFALogoLogin_Click(object sender, EventArgs e)
