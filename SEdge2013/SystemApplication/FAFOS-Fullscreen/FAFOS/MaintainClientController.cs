@@ -122,11 +122,11 @@ namespace FAFOS
         public void Client_Contract_Button_Click(object sender, EventArgs e)
         {
             String id = _client.GetContract();
-            _contractForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             if ((id == null)|| id == "")
             {
                 NewContract();
                 _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
+                _contractForm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 _contractForm.ClientLinked(_clientForm.GetName());
                 _contract.SetClient(_client.FindID());
                 _contractForm.ShowDialog();
