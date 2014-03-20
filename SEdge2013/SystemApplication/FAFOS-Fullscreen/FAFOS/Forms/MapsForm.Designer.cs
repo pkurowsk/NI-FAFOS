@@ -110,6 +110,7 @@
             // generate_btn
             // 
             this.generate_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.generate_btn.Enabled = false;
             this.generate_btn.FlatAppearance.BorderSize = 0;
             this.generate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generate_btn.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

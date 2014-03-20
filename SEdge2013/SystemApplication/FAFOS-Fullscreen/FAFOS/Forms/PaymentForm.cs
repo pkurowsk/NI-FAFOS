@@ -174,6 +174,7 @@ namespace FAFOS
                             new ClientContract().getClient(new SalesOrder().getSAddress(new Invoice().getSalesOrderID(txtInvoice.SelectedValue.ToString()).ToString())));
 
                 pay.setIP(txtInvoice.SelectedValue.ToString() + "," + payId);
+                
 
                 //Check if all of invoice is paid off
 

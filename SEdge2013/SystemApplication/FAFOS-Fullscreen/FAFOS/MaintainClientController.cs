@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
-//using tiles;
+using tiles;
 
 namespace FAFOS
 {
@@ -32,43 +32,53 @@ namespace FAFOS
 
 /************************* Main Form Events ****************************************************/
  
-       /* public void New_client_button_Click(tile sender, int id)
+        public void New_client_button_Click(View sender, int id, Panel pnl)
         {
             userID = id;
             NewClient();
-            _mainForm = (View)sender.FindForm();
+            _mainForm = sender;
 
             _clientForm = new AddEditClientForm(this, false, userID);
             _clientForm.Activate();
-            _clientForm.Show();
-        }*/
-
-        /*public void Edit_Client_Button_Click(tile sender, int id)
-        {
-            _mainForm = (View)sender.FindForm();
-            _clientForm = new AddEditClientForm(this, true,id);
-            _clientForm.Activate();
+            _clientForm.TopLevel = false;
+            pnl.Controls.Add(_clientForm);
             _clientForm.Show();
         }
 
-        public void Add_contract_Button_Click(tile sender, int id)
+        public void Edit_Client_Button_Click(View sender, int id, Panel pnl)
         {
-            _mainForm = (View)sender.FindForm();
+            _mainForm = sender;
+            _clientForm = new AddEditClientForm(this, true,id);
+            _clientForm.Activate();
+            _clientForm.TopLevel = false;
+            pnl.Controls.Add(_clientForm);
+            _clientForm.Show();
+        }
+
+        public void Add_contract_Button_Click(View sender, int id, Panel pnl)
+        {
+            _mainForm = sender;
             userID = id;
             NewContract();
             _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
             _contractForm.Activate();
+            _contractForm.TopLevel = false;
+            _contractForm.FormBorderStyle = FormBorderStyle.None;
+            pnl.Controls.Add(_contractForm);
             _contractForm.Show(); 
 
 
         }
-        public void Edit_contract_Button_Click(tile sender, int id)
+        public void Edit_contract_Button_Click(View sender, int id, Panel pnl)
         {
-            _mainForm = (View)sender.FindForm();
+            _mainForm = sender;
             userID = id;
             _contractForm = new AddEditContractForm(this, true, userID, "0");
+            _contractForm.TopLevel = false;
+            _contractForm.FormBorderStyle = FormBorderStyle.None;
+            pnl.Controls.Add(_contractForm);
             _contractForm.Show();
-        }*/
+        }
 
 /************************* Add Edit Client Form Events *****************************************/
 
@@ -116,6 +126,7 @@ namespace FAFOS
             {
                 NewContract();
                 _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
+                _contractForm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 _contractForm.ClientLinked(_clientForm.GetName());
                 _contract.SetClient(_client.FindID());
                 _contractForm.ShowDialog();

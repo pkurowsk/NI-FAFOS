@@ -56,90 +56,21 @@ namespace FAFOS
             pnlLogin.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width / 2 - Convert.ToInt32(pnlLogin.Size.Width) / 2,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height / 2 - Convert.ToInt32(pnlLogin.Size.Height) / 2);
 
-            //notificationPanel.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(notificationPanel.Size.Width)-20,
-            //   notificationPanel.Location.Y);
+            pnlMenu.Size = new System.Drawing.Size(pnlMenu.Size.Width, 
+                System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height);
+            lblTitleFAFOS.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - lblTitleFAFOS.Size.Width,
+                lblTitleFAFOS.Location.Y);
 
-            //pnlUser.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - Convert.ToInt32(pnlUser.Size.Width) - 15,
-            //  pnlUser.Location.Y);
-
-            /*
-            this.quote.Enter += new System.EventHandler(Tile_Enter);
-            this.editQuote.Enter += new System.EventHandler(Tile_Enter);
-            this.salesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.editSalesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.convertSalesOrder.Enter += new System.EventHandler(Tile_Enter);
-            this.invoice.Enter += new System.EventHandler(Tile_Enter);
-            this.inventory.Enter += new System.EventHandler(Tile_Enter);
-            this.purchaseRecord.Enter += new System.EventHandler(Tile_Enter);
-            this.payment.Enter += new System.EventHandler(Tile_Enter);
-            this.itinerary.Enter += new System.EventHandler(Tile_Enter);
-            this.inspection.Enter += new System.EventHandler(Tile_Enter);
-            
-            this.addClient.Enter += new System.EventHandler(Tile_Enter);
-            this.editClient.Enter += new System.EventHandler(Tile_Enter);
-            this.addContract.Enter += new System.EventHandler(Tile_Enter);
-            this.editContract.Enter += new System.EventHandler(Tile_Enter);
-            
-            this.statement.Enter += new System.EventHandler(Tile_Enter);
-            this.jobReport.Enter += new System.EventHandler(Tile_Enter);
-            this.royaltyFee.Enter += new System.EventHandler(Tile_Enter);
-            this.revenueReport.Enter += new System.EventHandler(Tile_Enter);
-          //  this.allRevenue.Enter += new System.EventHandler(Tile_Enter);
-            */
             user = new Users();
 
             screenWidth = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;
             screenHeight = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height; 
             this.Size = new System.Drawing.Size((int)screenWidth, (int)screenHeight);
 
-            /*this.quote.tileTimer_Interval = 40;
-            this.quote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editQuote.tileTimer_Interval = 40;
-            this.editQuote.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.salesOrder.tileTimer_Interval = 40;
-            this.salesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editSalesOrder.tileTimer_Interval = 40;
-            this.editSalesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.convertSalesOrder.tileTimer_Interval = 40;
-            this.convertSalesOrder.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.invoice.tileTimer_Interval = 40;
-            this.invoice.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.inventory.tileTimer_Interval = 40;
-            this.inventory.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.purchaseRecord.tileTimer_Interval = 40;
-            this.purchaseRecord.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.payment.tileTimer_Interval = 40;
-            this.payment.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.itinerary.tileTimer_Interval = 40;
-            this.itinerary.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.inspection.tileTimer_Interval = 40;
-            this.inspection.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            
-            this.addClient.tileTimer_Interval = 40;
-            this.addClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editClient.tileTimer_Interval = 40;
-            this.editClient.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.addContract.tileTimer_Interval = 40;
-            this.addContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.editContract.tileTimer_Interval = 40;
-            this.editContract.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            
-            this.statement.tileTimer_Interval = 40;
-            this.statement.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.royaltyFee.tileTimer_Interval = 40;
-            this.royaltyFee.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.jobReport.tileTimer_Interval = 40;
-            this.jobReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            this.revenueReport.tileTimer_Interval = 40;
-            this.revenueReport.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-          //  this.allRevenue.tileTimer_Interval = 40;
-          //  this.allRevenue.RaisetileTimer_Elapsed += new System.Timers.ElapsedEventHandler(RaisetileTimer_Elapsed);
-            */
             FireAlertLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 350,40);
             SEdgeLogo.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 250,
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 100);
-            //Exit_btn.Location = new Point(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - 430,
-            //    System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - 160);
+
             pnlPage.Size = new Size(System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width - pnlPage.Location.X, 
                 System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height - pnlPage.Location.Y);
             
@@ -738,23 +669,20 @@ namespace FAFOS
 
         private void btnCreateSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            SalesOrderController sc = new SalesOrderController(userid.ToString());
-            sc.salesOrder(1, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(1, pnlPage);
         }
 
         private void btnConvertSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            SalesOrderController qc = new SalesOrderController(userid.ToString());
-            qc.salesOrder(2, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(2, pnlPage);
         }
 
         private void btnEditSO_Click(object sender, EventArgs e)
         {
-            pnlDocs.Visible = false;
-            SalesOrderController qc = new SalesOrderController(userid.ToString());
-            qc.salesOrder(3, pnlPage);
+            SalesOrderController my_controller = new SalesOrderController(userid.ToString());
+            my_controller.salesOrder(3, pnlPage);
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -774,11 +702,14 @@ namespace FAFOS
         private void label5_MouseEnter(object sender, EventArgs e)
         {
             pnlOps.Visible = true;
+            System.Diagnostics.Debug.Print("Enter");
         }
 
         private void label5_MouseLeave(object sender, EventArgs e)
         {
             pnlOps.Visible = false;
+
+            System.Diagnostics.Debug.Print("Leave");
         }
 
         private void btnItinerary_Click(object sender, EventArgs e)
@@ -815,8 +746,6 @@ namespace FAFOS
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            pnlOps.Visible = false;
-
             PurchaseRecord form = new PurchaseRecord(userid);
             form.TopLevel = false;
             pnlPage.Controls.Add(form);
@@ -825,8 +754,6 @@ namespace FAFOS
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            pnlOps.Visible = false;
-
             PaymentForm payment_form = new PaymentForm(userid);
             payment_form.TopLevel = false;
             pnlPage.Controls.Add(payment_form);
@@ -875,7 +802,9 @@ namespace FAFOS
 
             // Remove the previous form that was loaded into the panel
             if (pnlPage.Controls.Count > 1)
-                pnlPage.Controls.RemoveAt(0);
+            {
+                pnlPage.Controls[0].Dispose();
+            }
         }
 
         private void pbFALogoLogin_Click(object sender, EventArgs e)
@@ -885,28 +814,30 @@ namespace FAFOS
 
         private void btnAClient_Click(object sender, EventArgs e)
         {
-            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), false, userid); 
-            form.TopLevel = false; 
-            pnlPage.Controls.Add(form); 
-            form.Show();
+            MaintainClientController c = new MaintainClientController();
+
+            c.New_client_button_Click(this, userid, pnlPage);
         }
 
         private void btnEClient_Click(object sender, EventArgs e)
         {
-            AddEditClientForm form = new AddEditClientForm(new MaintainClientController(), true, userid);
-            form.TopLevel = false;
-            pnlPage.Controls.Add(form);
-            form.Show();
+            MaintainClientController c = new MaintainClientController();
+
+            c.Edit_Client_Button_Click(this, userid, pnlPage);
         }
 
         private void btnAContract_Click(object sender, EventArgs e)
         {
+            MaintainClientController c = new MaintainClientController();
 
+            c.Add_contract_Button_Click(this, userid, pnlPage);
         }
 
         private void btnEContract_Click(object sender, EventArgs e)
         {
+            MaintainClientController c = new MaintainClientController();
 
+            c.Edit_contract_Button_Click(this, userid, pnlPage);
         }
 
         private void btnStatement_Click(object sender, EventArgs e)
@@ -919,7 +850,7 @@ namespace FAFOS
 
         private void btnJob_Click(object sender, EventArgs e)
         {
-            //Reports
+            // ???
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
@@ -936,6 +867,36 @@ namespace FAFOS
             form.Show();
         }
 
+        #region Menu panels opening
+
+        private void pnlOps_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((Panel)(sender)).Visible)
+                pnlDocs.Visible = pnlReports.Visible = pnlClients.Visible = false;
+        }
+
+        private void pnlClients_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((Panel)(sender)).Visible)
+                pnlDocs.Visible = pnlReports.Visible = pnlOps.Visible = false;
+
+        }
+
+        private void pnlDocs_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((Panel)(sender)).Visible)
+                pnlOps.Visible = pnlReports.Visible = pnlClients.Visible = false;
+
+        }
+
+        private void pnlReports_VisibleChanged(object sender, EventArgs e)
+        {
+            if (((Panel)(sender)).Visible)
+                pnlDocs.Visible = pnlOps.Visible = pnlClients.Visible = false;
+
+        }
+
+        #endregion
 
     }
 }

@@ -103,7 +103,7 @@ namespace FAFOS
         }
         public String GetIssuedText()
         {
-            return this.Issued.Value.ToShortDateString();
+            return Issued.Value.ToString("yyyy-MM-ddTHH:mm:ss");
         }
         public String GetTotalText()
         {

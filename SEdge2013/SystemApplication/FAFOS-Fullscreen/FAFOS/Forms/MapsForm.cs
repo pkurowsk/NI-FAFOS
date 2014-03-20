@@ -74,9 +74,18 @@ namespace FAFOS
 
             //Load the map
             AsyncMapLoadCaller asyncMapLoad = new AsyncMapLoadCaller(LoadMap);
-            asyncMapLoad.BeginInvoke(null, null);
+            asyncMapLoad.BeginInvoke(new AsyncCallback(MapLoaded), null);
             //LoadMap();
 
+        }
+
+        public void MapLoaded(IAsyncResult result)
+        {
+            generate_btn.BeginInvoke((MethodInvoker)delegate()
+                {
+                    generate_btn.Enabled = true;
+                });
+            
         }
 
         private void dgv_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -676,7 +685,7 @@ namespace FAFOS
 
             if (pos == null)
                 pos = new PointLatLng();
-            DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, false, true, true);
+            DirectionsStatusCode _code = GMapProviders.GoogleMap.GetDirections(out _dir, pos.Value, myWaypoints, false, false, false, true, true);
             if (_code == DirectionsStatusCode.OK)
             {
                 foreach (GDirectionStep _step in _dir.Steps)

@@ -92,6 +92,7 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             String address="";
             con.Open();
+            // BREAKS HERE
             SqlCommand command = new SqlCommand("SELECT service_address_id FROM Sales_Order WHERE sales_order_id = " + id, con);
             try
             {

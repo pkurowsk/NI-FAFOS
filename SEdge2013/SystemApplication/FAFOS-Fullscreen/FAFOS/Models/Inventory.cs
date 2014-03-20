@@ -88,12 +88,13 @@ namespace FAFOS
             {
                 for (int j = 0; j < size; j++)
                 {
-                    commandArray[j].ExecuteNonQuery();
+                    if (commandArray[j] != null)
+                        commandArray[j].ExecuteNonQuery();
                 }
             }
             catch (SqlException ef)
             {
-                MessageBox.Show("Could not update the quantities for hte following items in the invoice form.");
+                MessageBox.Show("Could not update the quantities for the following items in the invoice form.");
             }
 
             con.Close();
