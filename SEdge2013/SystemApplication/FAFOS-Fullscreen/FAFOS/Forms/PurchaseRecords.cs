@@ -50,7 +50,8 @@ namespace FAFOS
         }
         public string getDate()
         {
-            return date.Value.ToString();
+            string selectDateAsString = date.Value.ToString("yyyyMMdd");
+            return selectDateAsString;
         }
         public DataGridView getPurchaseRecords()
         {

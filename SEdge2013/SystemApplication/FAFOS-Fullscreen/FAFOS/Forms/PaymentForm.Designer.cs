@@ -36,7 +36,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.NumericTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.InvoiceBox = new System.Windows.Forms.GroupBox();
             this.paymentTable = new System.Windows.Forms.DataGridView();
@@ -44,7 +44,7 @@
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBalance = new System.Windows.Forms.TextBox();
+            this.txtBalance = new System.Windows.Forms.NumericTextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -327,10 +327,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.NumericTextBox txtAmount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox InvoiceBox;
-        private System.Windows.Forms.TextBox txtBalance;
+        private System.Windows.Forms.NumericTextBox txtBalance;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
