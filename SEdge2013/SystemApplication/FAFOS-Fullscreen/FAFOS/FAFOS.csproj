@@ -572,8 +572,6 @@
     <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse_h.jpg" />
     <Content Include="Maps\BSE.Windows.Forms\Resources\Expand.jpg" />
     <Content Include="Maps\BSE.Windows.Forms\Resources\Expand_h.jpg" />
-    <Content Include="Resources\AddClient1.swf" />
-    <Content Include="Resources\AddContract1.swf" />
     <Content Include="Resources\Back2.png" />
     <Content Include="Resources\BackOver.png" />
     <Content Include="Resources\CompanyLogo.png" />
@@ -581,39 +579,20 @@
     <None Include="Resources\DefaultProPic.png" />
     <None Include="Resources\Logo-updated.png" />
     <None Include="Resources\page-panel-back.png" />
-    <Content Include="Resources\Payment1.swf" />
-    <Content Include="Resources\PurchaseRecord.swf" />
-    <Content Include="Resources\Quote1.swf" />
-    <Content Include="Resources\RevenueReports.swf" />
-    <Content Include="Resources\RoyaltyFee.swf" />
-    <Content Include="Resources\Statements.swf" />
     <None Include="Resources\team-logos.png" />
-    <Content Include="Resources\TotalRevenue.swf" />
     <None Include="Resources\Shades.jpg" />
     <None Include="Resources\ListViewItemSorter.bmp" />
-    <Content Include="Resources\ConvertSalesOrder1.swf" />
-    <Content Include="Resources\CreateSalesOrder1.swf" />
-    <Content Include="Resources\EditClient1.swf" />
-    <Content Include="Resources\EditContract1.swf" />
-    <Content Include="Resources\EditQuote.swf" />
-    <Content Include="Resources\EditSalesOrder1.swf" />
-    <Content Include="Resources\EditUser.swf" />
-    <Content Include="Resources\Inspection.swf" />
-    <Content Include="Resources\Inventory1.swf" />
-    <Content Include="Resources\Invoice1.swf" />
-    <Content Include="Resources\Itinerary1.swf" />
-    <Content Include="Resources\JobReports.swf" />
     <Content Include="Resources\logo.JPG" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="System.Data.SqlServerCe">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
