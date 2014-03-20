@@ -63,7 +63,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(957, 509);
+            this.Ok_Button.Location = new System.Drawing.Point(1009, 530);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(131, 57);
@@ -76,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Location = new System.Drawing.Point(62, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
@@ -85,7 +85,7 @@
             // 
             // StartDatePicker
             // 
-            this.StartDatePicker.Location = new System.Drawing.Point(9, 83);
+            this.StartDatePicker.Location = new System.Drawing.Point(61, 104);
             this.StartDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(168, 20);
@@ -93,7 +93,7 @@
             // 
             // EndDatePicker
             // 
-            this.EndDatePicker.Location = new System.Drawing.Point(187, 83);
+            this.EndDatePicker.Location = new System.Drawing.Point(239, 104);
             this.EndDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(168, 20);
@@ -104,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 63);
+            this.label2.Location = new System.Drawing.Point(61, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
@@ -116,7 +116,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(181, 63);
+            this.label3.Location = new System.Drawing.Point(233, 84);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
@@ -128,7 +128,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 121);
+            this.label4.Location = new System.Drawing.Point(57, 142);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
@@ -137,7 +137,7 @@
             // 
             // TermsBox
             // 
-            this.TermsBox.Location = new System.Drawing.Point(9, 141);
+            this.TermsBox.Location = new System.Drawing.Point(61, 162);
             this.TermsBox.Margin = new System.Windows.Forms.Padding(4);
             this.TermsBox.Multiline = true;
             this.TermsBox.Name = "TermsBox";
@@ -151,7 +151,7 @@
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(13, 509);
+            this.delete_Button.Location = new System.Drawing.Point(65, 530);
             this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(131, 57);
@@ -161,7 +161,7 @@
             // 
             // contractNameBox
             // 
-            this.contractNameBox.Location = new System.Drawing.Point(13, 27);
+            this.contractNameBox.Location = new System.Drawing.Point(65, 48);
             this.contractNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.contractNameBox.Name = "contractNameBox";
             this.contractNameBox.Size = new System.Drawing.Size(151, 20);
@@ -170,7 +170,7 @@
             // linkableClientBox
             // 
             this.linkableClientBox.FormattingEnabled = true;
-            this.linkableClientBox.Location = new System.Drawing.Point(511, 25);
+            this.linkableClientBox.Location = new System.Drawing.Point(563, 46);
             this.linkableClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.linkableClientBox.Name = "linkableClientBox";
             this.linkableClientBox.Size = new System.Drawing.Size(160, 21);
@@ -184,7 +184,7 @@
             this.new_Client_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.new_Client_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.new_Client_Button.ForeColor = System.Drawing.Color.White;
-            this.new_Client_Button.Location = new System.Drawing.Point(707, 18);
+            this.new_Client_Button.Location = new System.Drawing.Point(759, 39);
             this.new_Client_Button.Margin = new System.Windows.Forms.Padding(4);
             this.new_Client_Button.Name = "new_Client_Button";
             this.new_Client_Button.Size = new System.Drawing.Size(145, 37);
@@ -211,7 +211,7 @@
             this.roomButton,
             this.editButton,
             this.deleteAddr});
-            this.ServiceAddrGridView.Location = new System.Drawing.Point(13, 242);
+            this.ServiceAddrGridView.Location = new System.Drawing.Point(65, 263);
             this.ServiceAddrGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ServiceAddrGridView.Name = "ServiceAddrGridView";
             this.ServiceAddrGridView.Size = new System.Drawing.Size(1075, 245);
@@ -300,7 +300,7 @@
             this.Add_Row_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_Row_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.Add_Row_Button.ForeColor = System.Drawing.Color.White;
-            this.Add_Row_Button.Location = new System.Drawing.Point(943, 197);
+            this.Add_Row_Button.Location = new System.Drawing.Point(995, 218);
             this.Add_Row_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Add_Row_Button.Name = "Add_Row_Button";
             this.Add_Row_Button.Size = new System.Drawing.Size(145, 37);
