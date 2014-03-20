@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
-using tiles;
+//using tiles;
 
 namespace FAFOS
 {
@@ -126,7 +126,6 @@ namespace FAFOS
             {
                 NewContract();
                 _contractForm = new AddEditContractForm(this, false, userID, _contract.FindID());
-                _contractForm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 _contractForm.ClientLinked(_clientForm.GetName());
                 _contract.SetClient(_client.FindID());
                 _contractForm.ShowDialog();
@@ -309,8 +308,11 @@ namespace FAFOS
 
         public void Contract_New_Client_ButtonPress(object sender, EventArgs e)
         {
+
             NewClient();
             _clientForm = new AddEditClientForm(this, false, userID);
+            _clientForm.FormBorderStyle = FormBorderStyle.FixedSingle;
+            _clientForm.StartPosition = FormStartPosition.CenterScreen;
             _clientForm.Activate();
             _clientForm.DisableContract(_contractForm.GetContractText());
             _clientForm.ShowDialog();

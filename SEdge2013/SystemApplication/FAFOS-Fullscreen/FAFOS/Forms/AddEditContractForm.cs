@@ -340,7 +340,7 @@ namespace FAFOS
             if (isShown)
             {
                 linkableClientBox.Visible = true;
-                DataTable clients = MClient.GetUnLinked();
+                DataTable clients = MClient.GetList();
 
                 DataTable dt = new DataTable();
                 dt = clients.Clone();

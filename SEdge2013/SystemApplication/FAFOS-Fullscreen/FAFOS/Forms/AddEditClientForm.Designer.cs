@@ -75,7 +75,7 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(643, 531);
+            this.Ok_Button.Location = new System.Drawing.Point(695, 559);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(131, 57);
@@ -88,7 +88,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Location = new System.Drawing.Point(62, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 17);
@@ -100,7 +100,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label2.Location = new System.Drawing.Point(9, 71);
+            this.label2.Location = new System.Drawing.Point(61, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 17);
@@ -350,7 +350,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label14.Location = new System.Drawing.Point(349, 71);
+            this.label14.Location = new System.Drawing.Point(401, 99);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 17);
@@ -364,7 +364,7 @@
             this.delete_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.delete_Button.ForeColor = System.Drawing.Color.White;
-            this.delete_Button.Location = new System.Drawing.Point(18, 531);
+            this.delete_Button.Location = new System.Drawing.Point(70, 559);
             this.delete_Button.Margin = new System.Windows.Forms.Padding(4);
             this.delete_Button.Name = "delete_Button";
             this.delete_Button.Size = new System.Drawing.Size(131, 57);
@@ -385,7 +385,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.PrimContactTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.groupBox1.Location = new System.Drawing.Point(10, 321);
+            this.groupBox1.Location = new System.Drawing.Point(62, 349);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -409,7 +409,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.groupBox2.Location = new System.Drawing.Point(10, 132);
+            this.groupBox2.Location = new System.Drawing.Point(62, 160);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -421,7 +421,7 @@
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxtBox.Location = new System.Drawing.Point(13, 31);
+            this.nameTxtBox.Location = new System.Drawing.Point(65, 59);
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(217, 23);
@@ -434,7 +434,7 @@
             this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.contract_Button.ForeColor = System.Drawing.Color.White;
-            this.contract_Button.Location = new System.Drawing.Point(353, 95);
+            this.contract_Button.Location = new System.Drawing.Point(405, 123);
             this.contract_Button.Margin = new System.Windows.Forms.Padding(4);
             this.contract_Button.Name = "contract_Button";
             this.contract_Button.Size = new System.Drawing.Size(187, 42);
@@ -451,7 +451,7 @@
             "Commercial & Industrial",
             "Government (Provincial & Federal)",
             "Municipal"});
-            this.typeTextBox.Location = new System.Drawing.Point(13, 95);
+            this.typeTextBox.Location = new System.Drawing.Point(65, 123);
             this.typeTextBox.Name = "typeTextBox";
             this.typeTextBox.Size = new System.Drawing.Size(312, 25);
             this.typeTextBox.TabIndex = 40;
