@@ -143,6 +143,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 30);
             this.txtUsername.TabIndex = 20;
+            this.txtUsername.Text = "bob";
             // 
             // lblUsername
             // 
@@ -181,6 +182,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(220, 26);
             this.txtPassword.TabIndex = 22;
+            this.txtPassword.Text = "pass";
             // 
             // lblPassword
             // 

@@ -100,7 +100,7 @@ namespace FAFOS
 
             }
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-              + "\\Resources\\"+inspectionType.Text+"_" + DateTime.Today.ToShortDateString() + ".pdf");
+              + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToString("yyyy-MM-dd") + ".pdf");
             testDialog.ShowDialog(this);
 
           //  clientThread.Abort();
@@ -150,7 +150,7 @@ namespace FAFOS
 
                 //Create a utility object
                 Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_"+DateTime.Today.ToShortDateString()+".pdf";
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_"+DateTime.Today.ToString("yyyy-MM-dd") +".pdf";
 
                 //Open a file specifying the file name as the output pdf file
                 //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";

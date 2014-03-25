@@ -373,7 +373,6 @@ namespace FAFOS
 
             if (Login())
             {
-               // userid = 1;
                 pnlLogin.Visible = false;
                 this.Exit_btn.Focus();
                 /*quote.Visible = true;
@@ -539,7 +538,6 @@ namespace FAFOS
 
         private bool UserAuthenticated(string p, string p_2)
         {
-           
             if (user.check(p, p_2))
             {
                 userid = user.getId(p);

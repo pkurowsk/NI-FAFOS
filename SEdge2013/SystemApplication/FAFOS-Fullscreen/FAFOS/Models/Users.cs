@@ -53,6 +53,9 @@ namespace FAFOS
         }
         public bool check(String user, String password )
         {
+            // For testing
+            return true;
+
            //  String connString = FAFOS.Properties.Settings.Default.FAFOS;
             String connString = FAFOS.Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
