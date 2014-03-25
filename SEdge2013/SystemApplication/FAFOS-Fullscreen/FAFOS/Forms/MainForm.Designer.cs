@@ -91,6 +91,7 @@
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnJob = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
+            this.pbSNILogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -104,6 +105,7 @@
             this.pnlOps.SuspendLayout();
             this.pnlClients.SuspendLayout();
             this.pnlReports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).BeginInit();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -113,7 +115,7 @@
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(25, 540);
+            this.Exit_btn.Location = new System.Drawing.Point(26, 492);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
             this.Exit_btn.Size = new System.Drawing.Size(170, 49);
@@ -402,7 +404,7 @@
             this.lblSyncOpts.BackColor = System.Drawing.Color.Transparent;
             this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSyncOpts.ForeColor = System.Drawing.Color.White;
-            this.lblSyncOpts.Location = new System.Drawing.Point(5, 450);
+            this.lblSyncOpts.Location = new System.Drawing.Point(6, 402);
             this.lblSyncOpts.Name = "lblSyncOpts";
             this.lblSyncOpts.Size = new System.Drawing.Size(100, 21);
             this.lblSyncOpts.TabIndex = 52;
@@ -417,7 +419,7 @@
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(25, 480);
+            this.syncHQ.Location = new System.Drawing.Point(26, 432);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
             this.syncHQ.Size = new System.Drawing.Size(80, 50);
@@ -433,7 +435,7 @@
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(115, 480);
+            this.syncAndroid.Location = new System.Drawing.Point(116, 432);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
             this.syncAndroid.Size = new System.Drawing.Size(80, 50);
@@ -526,6 +528,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.Controls.Add(this.pbSNILogo);
             this.pnlMenu.Controls.Add(this.pbFALogo);
             this.pnlMenu.Controls.Add(this.lblOperations);
             this.pnlMenu.Controls.Add(this.Exit_btn);
@@ -954,6 +957,16 @@
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
             // 
+            // pbSNILogo
+            // 
+            this.pbSNILogo.Image = global::FAFOS.Properties.Resources.team_logos;
+            this.pbSNILogo.Location = new System.Drawing.Point(0, 559);
+            this.pbSNILogo.Name = "pbSNILogo";
+            this.pbSNILogo.Size = new System.Drawing.Size(222, 90);
+            this.pbSNILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSNILogo.TabIndex = 58;
+            this.pbSNILogo.TabStop = false;
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
@@ -999,6 +1012,7 @@
             this.pnlOps.ResumeLayout(false);
             this.pnlClients.ResumeLayout(false);
             this.pnlReports.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1067,6 +1081,7 @@
         private System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnJob;
         private System.Windows.Forms.Button btnStatement;
+        private System.Windows.Forms.PictureBox pbSNILogo;
 
     }
 }
