@@ -62,6 +62,7 @@
             this.Notifications_button = new System.Windows.Forms.Button();
             this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pbSNILogo = new System.Windows.Forms.PictureBox();
             this.pbFALogo = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDocs = new System.Windows.Forms.Panel();
@@ -91,7 +92,6 @@
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnJob = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
-            this.pbSNILogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -100,12 +100,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).BeginInit();
             this.pnlUser.SuspendLayout();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).BeginInit();
             this.pnlDocs.SuspendLayout();
             this.pnlOps.SuspendLayout();
             this.pnlClients.SuspendLayout();
             this.pnlReports.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).BeginInit();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -524,6 +524,7 @@
             this.pnlPage.TabIndex = 57;
             this.pnlPage.Visible = false;
             this.pnlPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnlPage_ControlAdded);
+            this.pnlPage.MouseEnter += new System.EventHandler(this.pnlPage_MouseEnter);
             // 
             // pnlMenu
             // 
@@ -543,6 +544,16 @@
             this.pnlMenu.Size = new System.Drawing.Size(225, 768);
             this.pnlMenu.TabIndex = 58;
             this.pnlMenu.Visible = false;
+            // 
+            // pbSNILogo
+            // 
+            this.pbSNILogo.Image = global::FAFOS.Properties.Resources.team_logos;
+            this.pbSNILogo.Location = new System.Drawing.Point(0, 559);
+            this.pbSNILogo.Name = "pbSNILogo";
+            this.pbSNILogo.Size = new System.Drawing.Size(222, 90);
+            this.pbSNILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSNILogo.TabIndex = 58;
+            this.pbSNILogo.TabStop = false;
             // 
             // pbFALogo
             // 
@@ -609,6 +620,7 @@
             this.btnInvoice.FlatAppearance.BorderSize = 0;
             this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInvoice.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.Location = new System.Drawing.Point(375, 0);
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.Size = new System.Drawing.Size(75, 50);
@@ -623,6 +635,7 @@
             this.btnEditSO.FlatAppearance.BorderSize = 0;
             this.btnEditSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSO.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSO.ForeColor = System.Drawing.Color.White;
             this.btnEditSO.Location = new System.Drawing.Point(300, 0);
             this.btnEditSO.Name = "btnEditSO";
             this.btnEditSO.Size = new System.Drawing.Size(75, 50);
@@ -637,6 +650,7 @@
             this.btnConvertSO.FlatAppearance.BorderSize = 0;
             this.btnConvertSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConvertSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertSO.ForeColor = System.Drawing.Color.White;
             this.btnConvertSO.Location = new System.Drawing.Point(225, 0);
             this.btnConvertSO.Name = "btnConvertSO";
             this.btnConvertSO.Size = new System.Drawing.Size(75, 50);
@@ -651,6 +665,7 @@
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSO.ForeColor = System.Drawing.Color.White;
             this.btnCreateSO.Location = new System.Drawing.Point(150, 0);
             this.btnCreateSO.Name = "btnCreateSO";
             this.btnCreateSO.Size = new System.Drawing.Size(75, 50);
@@ -665,6 +680,7 @@
             this.btnEditQuote.FlatAppearance.BorderSize = 0;
             this.btnEditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuote.ForeColor = System.Drawing.Color.White;
             this.btnEditQuote.Location = new System.Drawing.Point(75, 0);
             this.btnEditQuote.Name = "btnEditQuote";
             this.btnEditQuote.Size = new System.Drawing.Size(75, 50);
@@ -679,6 +695,7 @@
             this.btnQuote.FlatAppearance.BorderSize = 0;
             this.btnQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuote.ForeColor = System.Drawing.Color.White;
             this.btnQuote.Location = new System.Drawing.Point(0, 0);
             this.btnQuote.Name = "btnQuote";
             this.btnQuote.Size = new System.Drawing.Size(75, 50);
@@ -722,6 +739,7 @@
             this.btnPayment.FlatAppearance.BorderSize = 0;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.Location = new System.Drawing.Point(300, 0);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.Size = new System.Drawing.Size(75, 50);
@@ -737,6 +755,7 @@
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchase.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchase.ForeColor = System.Drawing.Color.White;
             this.btnPurchase.Location = new System.Drawing.Point(225, 0);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(75, 50);
@@ -752,6 +771,7 @@
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Location = new System.Drawing.Point(150, 0);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(75, 50);
@@ -767,6 +787,7 @@
             this.btnInspection.FlatAppearance.BorderSize = 0;
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInspection.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInspection.ForeColor = System.Drawing.Color.White;
             this.btnInspection.Location = new System.Drawing.Point(75, 0);
             this.btnInspection.Name = "btnInspection";
             this.btnInspection.Size = new System.Drawing.Size(75, 50);
@@ -782,6 +803,7 @@
             this.btnItinerary.FlatAppearance.BorderSize = 0;
             this.btnItinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItinerary.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItinerary.ForeColor = System.Drawing.Color.White;
             this.btnItinerary.Location = new System.Drawing.Point(0, 0);
             this.btnItinerary.Name = "btnItinerary";
             this.btnItinerary.Size = new System.Drawing.Size(75, 50);
@@ -824,6 +846,7 @@
             this.btnEContract.FlatAppearance.BorderSize = 0;
             this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEContract.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEContract.ForeColor = System.Drawing.Color.White;
             this.btnEContract.Location = new System.Drawing.Point(225, 0);
             this.btnEContract.Name = "btnEContract";
             this.btnEContract.Size = new System.Drawing.Size(75, 50);
@@ -838,6 +861,7 @@
             this.btnAContract.FlatAppearance.BorderSize = 0;
             this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAContract.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAContract.ForeColor = System.Drawing.Color.White;
             this.btnAContract.Location = new System.Drawing.Point(150, 0);
             this.btnAContract.Name = "btnAContract";
             this.btnAContract.Size = new System.Drawing.Size(75, 50);
@@ -852,6 +876,7 @@
             this.btnEClient.FlatAppearance.BorderSize = 0;
             this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEClient.ForeColor = System.Drawing.Color.White;
             this.btnEClient.Location = new System.Drawing.Point(75, 0);
             this.btnEClient.Name = "btnEClient";
             this.btnEClient.Size = new System.Drawing.Size(75, 50);
@@ -866,6 +891,7 @@
             this.btnAClient.FlatAppearance.BorderSize = 0;
             this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAClient.ForeColor = System.Drawing.Color.White;
             this.btnAClient.Location = new System.Drawing.Point(0, 0);
             this.btnAClient.Name = "btnAClient";
             this.btnAClient.Size = new System.Drawing.Size(75, 50);
@@ -907,6 +933,7 @@
             this.btnRoyaltee.FlatAppearance.BorderSize = 0;
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoyaltee.ForeColor = System.Drawing.Color.White;
             this.btnRoyaltee.Location = new System.Drawing.Point(225, 0);
             this.btnRoyaltee.Name = "btnRoyaltee";
             this.btnRoyaltee.Size = new System.Drawing.Size(75, 50);
@@ -921,6 +948,7 @@
             this.btnRevenue.FlatAppearance.BorderSize = 0;
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.ForeColor = System.Drawing.Color.White;
             this.btnRevenue.Location = new System.Drawing.Point(150, 0);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(75, 50);
@@ -935,6 +963,7 @@
             this.btnJob.FlatAppearance.BorderSize = 0;
             this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJob.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJob.ForeColor = System.Drawing.Color.White;
             this.btnJob.Location = new System.Drawing.Point(75, 0);
             this.btnJob.Name = "btnJob";
             this.btnJob.Size = new System.Drawing.Size(75, 50);
@@ -949,6 +978,7 @@
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatement.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(0, 0);
             this.btnStatement.Name = "btnStatement";
             this.btnStatement.Size = new System.Drawing.Size(75, 50);
@@ -956,16 +986,6 @@
             this.btnStatement.Text = "Statement";
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
-            // 
-            // pbSNILogo
-            // 
-            this.pbSNILogo.Image = global::FAFOS.Properties.Resources.team_logos;
-            this.pbSNILogo.Location = new System.Drawing.Point(0, 559);
-            this.pbSNILogo.Name = "pbSNILogo";
-            this.pbSNILogo.Size = new System.Drawing.Size(222, 90);
-            this.pbSNILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSNILogo.TabIndex = 58;
-            this.pbSNILogo.TabStop = false;
             // 
             // View
             // 
@@ -1007,12 +1027,12 @@
             this.pnlUser.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).EndInit();
             this.pnlDocs.ResumeLayout(false);
             this.pnlOps.ResumeLayout(false);
             this.pnlClients.ResumeLayout(false);
             this.pnlReports.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).EndInit();
             this.ResumeLayout(false);
 
         }

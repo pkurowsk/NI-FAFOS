@@ -896,5 +896,14 @@ namespace FAFOS
 
         #endregion
 
+        private void pnlPage_MouseEnter(object sender, EventArgs e)
+        {
+            // Set all panels invisible
+            pnlOps.Visible =
+                pnlDocs.Visible =
+                pnlReports.Visible =
+                pnlClients.Visible = false;
+        }
+
     }
 }

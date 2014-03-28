@@ -78,6 +78,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Map">
       <HintPath>..\..\Map\Map\Map\obj\Debug\Map.dll</HintPath>
     </Reference>

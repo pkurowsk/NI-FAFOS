@@ -49,8 +49,8 @@ namespace FAFOS
             List<Bitmap> piclist = MUser.LoadImages();
 
 
-            this.profilePic.BackgroundImage = piclist[MUser.GetPicID(name.ToString())];// FAFOS.Properties.Resources.Shades;
-            this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
+            //this.profilePic.BackgroundImage = piclist[MUser.GetPicID(name.ToString())];// FAFOS.Properties.Resources.Shades;
+            //this.profilePic.BackgroundImageLayout = ImageLayout.Stretch;
               
         }
 

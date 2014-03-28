@@ -14,6 +14,9 @@ using System.IO;
 
 using InvoicePDF;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace FAFOS
 {
     public partial class InspectionForm : Background
@@ -22,6 +25,13 @@ namespace FAFOS
         TCPModel _TCPModel = null;
         Thread clientThread;
         string userid;
+
+        Document document;
+
+        private iTextSharp.text.Font Times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD);
+        private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
+        
+
         public InspectionForm(string id)
         {
             InitializeComponent();
@@ -172,7 +182,7 @@ namespace FAFOS
                 //also holds the dictionary objects for font, images etc.
                 //A4 595,842
                 //Letter 612,792
-                PageSize pSize = new PageSize(612, 792); //A4 paper portrait in 1/72" measurements
+                InvoicePDF.PageSize pSize = new InvoicePDF.PageSize(612, 792); //A4 paper portrait in 1/72" measurements
                 pSize.SetMargins(10, 10, 10, 10);
 
                 //create the page main details
@@ -219,7 +229,7 @@ namespace FAFOS
                 //Add text to the page
                 textAndtable.AddText(60, 70, "Report of Inspection/Test", 16, "T3", Align.LeftAlign);
                 textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
-                string format = "MMMM d, yyyy";
+                string format = "MMMM dd, yyyy";
                 textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
                 textAndtable.AddText(65, 130, ad[0], 10, "T4", Align.LeftAlign);
@@ -294,12 +304,12 @@ namespace FAFOS
                 textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
 
                 //create the reference to an image and the data that represents it
-                String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
-                ImageDict I1 = new ImageDict();                     //new image dictionary object
-                I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
-                page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
+                //String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
+                //ImageDict I1 = new ImageDict();                     //new image dictionary object
+                //I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
+                //page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
                 //describes the image when we want to draw it on the page
-
+                
                 /*
                  * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
                  * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
@@ -413,7 +423,7 @@ namespace FAFOS
                 file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
 
                 //write image dict
-                 file.Write(I1.GetImageDict(file.Length, out size), 0, size);
+                 //file.Write(I1.GetImageDict(file.Length, out size), 0, size);
                  file.Write(I2.GetImageDict(file.Length, out size), 0, size);
 
                 file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
@@ -428,9 +438,69 @@ namespace FAFOS
             }
         }
 
+        private void createHeader(PdfPTable table)
+        {
+            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Inspection - Service", 1, 9, 0, BaseColor.RED, WhiteTimes);
+            addCell(table, "Hydro Test", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "6 Year Insep", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Weight", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Bracket", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Gauge", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Pull Pin", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Signage", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Collar", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Hose", 1, 1, 90, BaseColor.RED, WhiteTimes);
+
+        }
+
+        private void addDataRow(PdfPTable table)
+        {
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+
+        }
+
+
+        private void addCell(PdfPTable table, string text, int rowspan, int colpan, int rotate, BaseColor backgroundColor, iTextSharp.text.Font font)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text, font));
+            cell.Rowspan = rowspan;
+            cell.Colspan = colpan;
+            cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+            cell.Rotation = rotate;
+            cell.BackgroundColor = backgroundColor;
+            //cell.BorderColor = BaseColor.GRAY;
+            table.AddCell(cell);
+        }
+
 
 
     }
+
+
+
     class ClientModel
     {
         private Socket ClientSocket;
