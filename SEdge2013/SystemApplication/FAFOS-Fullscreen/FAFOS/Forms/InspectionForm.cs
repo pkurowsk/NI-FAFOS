@@ -12,8 +12,6 @@ using System.Net;
 using System.Xml;
 using System.IO;
 
-using InvoicePDF;
-
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
@@ -29,6 +27,8 @@ namespace FAFOS
         Document document;
 
         private iTextSharp.text.Font Times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD);
+        private iTextSharp.text.Font TimesRegular = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.NORMAL);
+        private iTextSharp.text.Font TimesTitle = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 20, iTextSharp.text.Font.BOLD);
         private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
         
 
@@ -103,11 +103,7 @@ namespace FAFOS
         {
             if (inspectionType.Text == "Extinguisher Report")
             {
-                
-
                 generateExtinguisher();
-
-
             }
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
               + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToString("yyyy-MM-dd") + ".pdf");
@@ -118,261 +114,157 @@ namespace FAFOS
             
 
         }
+
         private void generateExtinguisher()
         {
             try
             {
-               
+                document = new Document(PageSize.LETTER);
+                
+                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToString("yyyy-MM-dd") +".pdf";
 
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FilePath, FileMode.OpenOrCreate));
+                document.Open();
+                
+                document.AddTitle("Report");
+                document.AddSubject("Extinguisher");
+                document.AddKeywords("Csharp, PDF, iText");
+                document.AddAuthor("");
+                document.AddCreator("");
 
-                //start creating the PDF
+                iTextSharp.text.Image pdfLogo = iTextSharp.text.Image.GetInstance(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\" + "logo.JPG");
 
-                //Create a Catalog Dictionary
-                CatalogDict catalogDict = new CatalogDict();
+                pdfLogo.Alignment = iTextSharp.text.Image.ALIGN_RIGHT;
+                pdfLogo.ScaleAbsolute(150, 85);
 
-                //Create a Page Tree Dictionary
-                PageTreeDict pageTreeDict = new PageTreeDict();
-
-                //Create a Font Dictionary - Only the standard fonts Time, Helvetica and courier etc can be created by this method.
-                //See Adobe doco for more info on other fonts
-                FontDict TimesRoman = new FontDict();
-                FontDict TimesItalic = new FontDict();
-                FontDict TimesBold = new FontDict();
-                FontDict Courier = new FontDict();
-
-                //Create the info Dictionary
-                InfoDict infoDict = new InfoDict();
-                Invoice invoice = new Invoice();
-                //Create the font called Times Roman
-                TimesRoman.CreateFontDict("T1", "Times-Roman");
-
-                //Create the font called Times Italic
-                TimesItalic.CreateFontDict("T2", "Times-Italic");
-
-                //Create the font called Times Bold
-                TimesBold.CreateFontDict("T3", "Times-Bold");
-
-                //Create the font called Courier
-                Courier.CreateFontDict("T4", "Times-Roman");
-
-                //Set the info Dictionary. xxx will be the invoice number
-                infoDict.SetInfo( inspectionType.Text, "System Generated", "Fire-Alert");
-
-                //Create a utility object
-                Utility pdfUtility = new Utility();
-                String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_"+DateTime.Today.ToString("yyyy-MM-dd") +".pdf";
-
-                //Open a file specifying the file name as the output pdf file
-                //String FilePath = @"C:\Users\Hassan\Desktop\Preview.pdf";
-
-                FileStream file = new FileStream(FilePath, FileMode.Create);
-                int size = 0;
-                file.Write(pdfUtility.GetHeader("1.5", out size), 0, size);
-                file.Close();
-
-                //Finished the first step
-
-
-
-                //Create a Page Dictionary , this represents a visible page
-                PageDict page = new PageDict();
-                ContentDict content = new ContentDict();
-
-                //The page size object will hold all the page size information
-                //also holds the dictionary objects for font, images etc.
-                //A4 595,842
-                //Letter 612,792
-                InvoicePDF.PageSize pSize = new InvoicePDF.PageSize(612, 792); //A4 paper portrait in 1/72" measurements
-                pSize.SetMargins(10, 10, 10, 10);
-
-                //create the page main details
-                page.CreatePage(pageTreeDict.objectNum, pSize);
-
-                //add a page
-                pageTreeDict.AddPage(page.objectNum);
-
-                //add the fonts to this page
-                page.AddResource(TimesRoman, content.objectNum);
-                page.AddResource(TimesItalic, content.objectNum);
-                page.AddResource(TimesBold, content.objectNum);
-                page.AddResource(Courier, content.objectNum);
-
-                //Create a Text And Table Object that presents the text elements in the page
-                TextAndTables textAndtable = new TextAndTables(pSize);
-
-
-                //create the reference to an image and the data that represents it
-                String ImagePath2 = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\logo.jpg";   //file path to image source
-                ImageDict I2 = new ImageDict();                     //new image dictionary object
-                I2.CreateImageDict("I2", ImagePath2);                //create the object which describes the image
-                page.AddImageResource(I2.PDFImageName, I2, content.objectNum);  //create a reference where the PDF can identify which object
-                //describes the image when we want to draw it on the page
-
-                /*
-                 * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
-                 * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
-                 */
-                PageImages pi2 = new PageImages();
-                content.SetStream(pi2.ShowImage("I2", 400, 680, 155, 85));   //tell the PDF we want to draw an image called 'I1', where and what size
-
-
+                document.Add(pdfLogo);
+                Paragraph preface = new Paragraph();
+                
+                preface.Add(new Paragraph("Report of Inpection/Test", TimesTitle));
+                preface.Add(new Paragraph("Extinguisher", Times));
+                preface.Add(new Paragraph(DateTime.Now.ToString("MMMM d, yyyy"), Times));
+                preface.Add(new Paragraph("\n", Times));
 
                 String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
                 String[] ad = new String[6];
                 ad = address.Split(',');
 
-             //   client.get(contract.getClient(sales_order.getSAddress(_view.GetText())))
                 String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
                 String[] client = new String[9];
                 client = clientInfo.Split(',');
-
-                //Add text to the page
-                textAndtable.AddText(60, 70, "Report of Inspection/Test", 16, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 85, "Extinguisher", 10, "T3", Align.LeftAlign);
-                string format = "MMMM dd, yyyy";
-                textAndtable.AddText(60, 100, DateTime.Today.ToString(format), 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 115, "Property", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(65, 130, ad[0], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 140, ad[3]+", "+ad[4], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 150, ad[5]+ " "+ad[1], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 180, ad[2], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(65, 190, "N/A", 10, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(200, 115, "Owner/Agent", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(205, 130, client[0], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 140, client[1], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 150, client[6]+", "+client[7], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 180, client[5], 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(205, 190, client[3], 10, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(370, 160, "Conducted by:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(370, 170, "Inspection Ref:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(370, 180, "Contact:", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(450, 160, new Users().getName(Convert.ToInt32(userid)), 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(450, 170, "456", 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(450, 180, "N/A", 10, "T4", Align.LeftAlign);
-
-
-
-                //create the colours for the round rectangles
-                ColorSpec rrBorder = new ColorSpec(0, 0, 0);        //main border colour
-                ColorSpec rrMainBG = new ColorSpec(204, 204, 204);  //background colour of the round rectangle
-                ColorSpec rrTBBG = new ColorSpec(255, 255, 255);    //background colour of the rectangle on top of the round rectangle
-
-
-                //create a new round rectangle object
-                RoundRectangle rr = new RoundRectangle();
-
-                //initialise special graphics state (graphics cursor)
-                content.SetStream("q\r\n");
-
-
-                content.SetStream(rr.DrawRoundRectangle(55, 460, 510, 130, 5, 0.55, 20, 90, 1, rrBorder, rrMainBG, rrTBBG));
-
-                //begin drawing any required lines inside the round rectangle
-
-
-                StraightLine line = new StraightLine();             //new straight line object
-                ColorSpec vline = new ColorSpec(0, 0, 0);     //line colour - in this case Red
-
-                //draw the line
-                content.SetStream(line.DrawLine(180, 570, 180, 480, 1, vline));
-                content.SetStream(line.DrawLine(320, 570, 320, 480, 1, vline));
-                content.SetStream(line.DrawLine(390, 570, 390, 480, 1, vline));
-
-                content.SetStream(line.DrawLine(55, 525, 565, 525, 1, vline));
-               
-                //close the graphics cursor in PDF
-                content.SetStream("Q\r\n");
-
-                //add in box headers and contents
-                textAndtable.AddText(65, 215, "Signatures", 11, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 232, "Inspector - Printed", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(60, 245, new Users().getName(Convert.ToInt32(userid)), 8, "T3", Align.LeftAlign);
-                textAndtable.AddText(60, 275, "Owner - Printed", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(60, 288, client[5], 8, "T3", Align.LeftAlign);
-
-                textAndtable.AddText(181, 232, "Inspector - Signature", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(181, 275, "Owner - Signature", 8, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(321, 232, "Date", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(321, 275, "Date", 8, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(391, 232, "Conditions", 8, "T4", Align.LeftAlign);
-                textAndtable.AddText(391, 275, "Conditions", 8, "T4", Align.LeftAlign);
-
-                textAndtable.AddText(65, 350, "Fire Extinguisher Inspection List", 11, "T3", Align.LeftAlign);
-
-                //create the reference to an image and the data that represents it
-                //String ImagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\Columns.jpg";   //file path to image source
-                //ImageDict I1 = new ImageDict();                     //new image dictionary object
-                //I1.CreateImageDict("I1", ImagePath);                //create the object which describes the image
-                //page.AddImageResource(I1.PDFImageName, I1, content.objectNum);  //create a reference where the PDF can identify which object
-                //describes the image when we want to draw it on the page
                 
-                /*
-                 * draw the image to page (add the instruction to the content stream which says draw the image called I1 starting
-                 * at X = 269, Y = 20 and with an ACTUAL image size on the page of w = 144 and h = 100)
-                 */
-                PageImages pi = new PageImages();
-                content.SetStream(pi.ShowImage("I1", 58, 355, 510, 78));   //tell the PDF we want to draw an image called 'I1', where and what size
+                PdfPTable addrTable = new PdfPTable(3);
+                addrTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                addrTable.TotalWidth = 530f;
+                addrTable.LockedWidth = true;
+                
+                float[] addrWidths = new float[] {100f, 100f, 100f};
+                addrTable.SetWidths(addrWidths);
 
-                //Specify the color for the cell and the line
-                ColorSpec cellColor = new ColorSpec(255, 255, 255);
-                ColorSpec lineColor = new ColorSpec(0, 0, 0);
+                addCell(addrTable, "Property", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(addrTable, "Owner/Agent", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(addrTable, " ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
 
+                addCell(addrTable, ad[0] + "\n" +
+                                   ad[3] + ", " + ad[4] + "\n" +
+                                   ad[5] + ", " + ad[1] + "\n"
+                                   , 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
-           //     textAndtable.AddText(50, 275, "Page:    1", 10, "T4", Align.LeftAlign);
-                Align[] alignC1 = new Align[16];
-                alignC1[0] = Align.LeftAlign;
-                alignC1[1] = Align.LeftAlign;
-                alignC1[2] = Align.LeftAlign;
-                alignC1[3] = Align.LeftAlign;
-                alignC1[4] = Align.CenterAlign;
-                alignC1[5] = Align.LeftAlign;
-                alignC1[6] = Align.LeftAlign;
-                alignC1[7] = Align.CenterAlign;
-                alignC1[8] = Align.CenterAlign;
-                alignC1[9] = Align.CenterAlign;
-                alignC1[10] = Align.CenterAlign;
-                alignC1[11] = Align.CenterAlign;
-                alignC1[12] = Align.CenterAlign;
-                alignC1[13] = Align.CenterAlign;
-                alignC1[14] = Align.CenterAlign;
-                alignC1[15] = Align.CenterAlign;
+                addCell(addrTable, client[0] + "\n" +
+                                   client[1] + "\n" +
+                                   client[6] + ", " + client[7] + "\n"
+                                   , 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
-               
+                addCell(addrTable, " ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
 
-                string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
-                   + "\\Resources\\inspection.xml";
+                addCell(addrTable, ad[2] + "\n" +
+                                   "N/A \n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(addrTable, client[5] + "\n" +
+                                   client[3], 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(addrTable, "Conducted by: " + new Users().getName(Convert.ToInt32(userid)) + "\n" +
+                                    "Inspection Ref: " + "456" + "\n" + 
+                                    "Contact: " + "N/A", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+
+                for (int i = 0; i < addrTable.Rows.Count; i++)
+                    for (int j = 0; j < addrTable.Rows[i].GetCells().Length; j++)
+                    {
+                        if (addrTable.Rows[i].GetCells()[j] != null)
+                            addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    }
+
+                document.Add(preface);
+
+                document.Add(addrTable);
+                document.Add(new Paragraph(" "));
+                
+                PdfPTable sigHead = new PdfPTable(1);
+                sigHead.HorizontalAlignment = 0;
+                sigHead.TotalWidth = 530f;
+                sigHead.LockedWidth = true;
+                float[] sigWidths = new float[] { 530f };
+                sigHead.SetWidths(sigWidths);
+
+                addCell(sigHead, "Signatures", 2, 1, 0, BaseColor.GRAY, Times, PdfPCell.ALIGN_LEFT);
+                document.Add(sigHead);
+                
+                PdfPTable signaturesTable = new PdfPTable(4);
+                signaturesTable.HorizontalAlignment = 0;
+                signaturesTable.TotalWidth = 530f;
+                signaturesTable.LockedWidth = true;
+                float[] signaWidths = new float[] { 80f, 80f, 80f, 80f};
+                signaturesTable.SetWidths(signaWidths);
+
+                addCell(signaturesTable, "Inspector - Printed\n" + new Users().getName(Convert.ToInt32(userid)) + "\n\n\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(signaturesTable, "Inspector - Signature\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+                addCell(signaturesTable, "Date", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+                addCell(signaturesTable, "Conditions", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+
+                addCell(signaturesTable, "Owner - Printed\n" + client[5] + "\n\n\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
+                addCell(signaturesTable, "Owner - Signature\n" + "", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+                addCell(signaturesTable, "Date", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+                addCell(signaturesTable, "Conditions", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
+
+                document.Add(signaturesTable);
+
+                sigHead.GetRow(0).GetCells()[0].Phrase = new Phrase("");
+                document.Add(sigHead);
+                document.Add(new Paragraph(" "));
+                
+                #region Inspection table
+
+                PdfPTable table = new PdfPTable(16);
+                table.HorizontalAlignment = 0;
+                table.TotalWidth = 530f;
+                table.LockedWidth = true;
+                float[] widths = new float[] { 15f, 35f, 50f, 15f, 20f, 40f, 25f, 10f, 10f, 10f, 10f, 10f, 10f, 10f, 10f, 10f };
+                table.SetWidths(widths);
+
+                createHeader(table);
+                
+                string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\inspection.xml";
                 XmlDocument doc = new System.Xml.XmlDocument();
                 doc.Load(url);
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
                 String floor="";
-                uint height = 0 ;
                 XmlNode start = docElement.FirstChild;
                 foreach (XmlNode c1 in start)//contract
                 {
                     XmlNode addresses = c1.FirstChild;
                     foreach (XmlNode c2 in addresses.ChildNodes)//address
                     {
+                        int i = Convert.ToInt32(c2.Attributes["id"].InnerText);
+                        int j = Convert.ToInt32(addressBox.SelectedValue);
+
                         if (Convert.ToInt32(c2.Attributes["id"].InnerText) == Convert.ToInt32(addressBox.SelectedValue))
                         {
                             XmlNode floors = c2.FirstChild;
                             foreach (XmlNode c3 in floors.ChildNodes)
                             {
-                                //Fill in the parameters for the table
-                                TableParams table2 = new TableParams(16, 25, 60, 80, 25, 30, 80, 55,
-                                                                17, 17, 17, 17, 17, 17, 17, 17, 17);
-                                table2.yPos = 340 - height;
-                                table2.xPos = 49;
-                                table2.rowHeight = 15;
-                                textAndtable.SetParams(table2, cellColor, Align.LeftAlign, 3);
-
                                 floor = Convert.ToInt32(c3.Attributes["id"].InnerText).ToString();
                                 XmlNode rooms = c3.FirstChild;
+
                                 foreach (XmlNode c4 in rooms.ChildNodes)
                                 {
                                     XmlNode items = c4.FirstChild;
@@ -380,56 +272,24 @@ namespace FAFOS
                                     {
                                         if (c5.Attributes["class"].InnerText == "com.sedge.fireinspectionapp.Extinguisher")
                                         {
-                                            textAndtable.AddRow(false, 10, "T3", alignC1, false, floor, c5.Attributes["id"].InnerText,
-                                                c5.Attributes["location"].InnerText, c5.Attributes["size"].InnerText,
-                                                c5.Attributes["type"].InnerText, c5.Attributes["model"].InnerText, "", c5.Attributes["t1"].InnerText,
-                                                c5.Attributes["t2"].InnerText, c5.Attributes["t3"].InnerText, c5.Attributes["t4"].InnerText, c5.Attributes["t5"].InnerText,
-                                                c5.Attributes["t6"].InnerText, c5.Attributes["t7"].InnerText, c5.Attributes["t8"].InnerText, c5.Attributes["t9"].InnerText);
-                                            height += table2.rowHeight;
+                                            addDataRow(table, c5.Attributes);
+                                            break;
                                         }
-                                        //After drawing table and text add them to the page 
-                                       
-
                                     }
                                 }
-                                height += 20;
-                                content.SetStream(textAndtable.EndTable(lineColor, true));
                             }
                         }
                     }
                 }
-                textAndtable.AddText(65, 720, "Print ", 10, "T3", Align.LeftAlign);
-                textAndtable.AddText(125, 720, DateTime.Now.ToString("dd/MM/yyyy"), 10, "T4", Align.LeftAlign);
-                textAndtable.AddText(500, 720, "Page 1 of 1", 10, "T3", Align.LeftAlign);
-               
-          
-                content.SetStream(textAndtable.EndText());
+                document.Add(table);
 
+                #endregion
 
-                //All done - send the information to the PDF file
+                Paragraph footer = new Paragraph(document.RightMargin, "Print \t" + DateTime.Now.ToString("dd/MM/yyyy") + "\t Page 1 of 1", Times);
 
-                size = 0;
-                file = new FileStream(FilePath, FileMode.Append);
-                file.Write(page.GetPageDict(file.Length, out size), 0, size);
-                file.Write(content.GetContentDict(file.Length, out size), 0, size);
-                file.Close();
+                document.Add(footer);
 
-                file = new FileStream(FilePath, FileMode.Append);
-                file.Write(catalogDict.GetCatalogDict(pageTreeDict.objectNum, file.Length, out size), 0, size);
-                file.Write(pageTreeDict.GetPageTree(file.Length, out size), 0, size);
-                file.Write(TimesRoman.GetFontDict(file.Length, out size), 0, size);
-                file.Write(TimesItalic.GetFontDict(file.Length, out size), 0, size);
-                file.Write(TimesBold.GetFontDict(file.Length, out size), 0, size);
-                file.Write(Courier.GetFontDict(file.Length, out size), 0, size);
-
-                //write image dict
-                 //file.Write(I1.GetImageDict(file.Length, out size), 0, size);
-                 file.Write(I2.GetImageDict(file.Length, out size), 0, size);
-
-                file.Write(infoDict.GetInfoDict(file.Length, out size), 0, size);
-                file.Write(pdfUtility.CreateXrefTable(file.Length, out size), 0, size);
-                file.Write(pdfUtility.GetTrailer(catalogDict.objectNum, infoDict.objectNum, out size), 0, size);
-                file.Close();
+                document.Close();
 
             }
             catch (Exception ex)
@@ -437,66 +297,64 @@ namespace FAFOS
                 MessageBox.Show("Could not display the document because " + ex.ToString());
             }
         }
-
+       
+        
         private void createHeader(PdfPTable table)
         {
-            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Inspection - Service", 1, 9, 0, BaseColor.RED, WhiteTimes);
-            addCell(table, "Hydro Test", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "6 Year Insep", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Weight", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Bracket", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Gauge", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Pull Pin", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Signage", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Collar", 1, 1, 90, BaseColor.RED, WhiteTimes);
-            addCell(table, "Hose", 1, 1, 90, BaseColor.RED, WhiteTimes);
+            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Inspection - Service", 1, 9, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Hydro Test", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "6 Year Insep", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Weight", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Bracket", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Gauge", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Pull Pin", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Signage", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Collar", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            addCell(table, "Hose", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
 
         }
 
-        private void addDataRow(PdfPTable table)
+        private void addDataRow(PdfPTable table, XmlAttributeCollection attrs)
         {
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
-            addCell(table, " ", 1, 1, 0, BaseColor.WHITE, Times);
+            addCell(table, "item #", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["id"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["location"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["size"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["type"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["model"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, "serial #", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t1"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t2"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t3"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t4"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t5"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t6"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t7"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t8"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            addCell(table, attrs["t9"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
 
         }
 
 
-        private void addCell(PdfPTable table, string text, int rowspan, int colpan, int rotate, BaseColor backgroundColor, iTextSharp.text.Font font)
+        private void addCell(PdfPTable table, string text, int rowspan, int colpan, int rotate, BaseColor backgroundColor, iTextSharp.text.Font font, int hAlignment)
         {
             PdfPCell cell = new PdfPCell(new Phrase(text, font));
             cell.Rowspan = rowspan;
             cell.Colspan = colpan;
-            cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            cell.HorizontalAlignment = hAlignment;
             cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
             cell.Rotation = rotate;
             cell.BackgroundColor = backgroundColor;
-            //cell.BorderColor = BaseColor.GRAY;
             table.AddCell(cell);
         }
-
-
-
+        
     }
 
 
