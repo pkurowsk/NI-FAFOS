@@ -51,9 +51,10 @@ namespace FAFOS
         public String[,] GetExtinguishers(int index)
         {
             int n = extViews[index].Rows.Count;
-            String[,] extinguishers = new String[n, 7];
+            int m = extViews[index].Columns.Count - 1;
+            String[,] extinguishers = new String[n, m];
             for (int i = 0; i < n; i++)
-                for(int j = 0; j < 7;j++)
+                for(int j = 0; j < m;j++)
                 {
                     try { extinguishers[i, j] = extViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { extinguishers[i, j] = null; }
@@ -64,9 +65,10 @@ namespace FAFOS
         public String[,] GetHoses(int index)
         {
             int n = hoseViews[index].Rows.Count;
-            String[,] hoses = new String[n, 4];
+            int m = hoseViews[index].Columns.Count - 1;
+            String[,] hoses = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < m; j++)
                 {
                     try { hoses[i, j] = hoseViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { hoses[i, j] = null; }
@@ -77,9 +79,10 @@ namespace FAFOS
         public String[,] GetLights(int index)
         {
             int n = lightViews[index].Rows.Count;
-            String[,] lights = new String[n, 10];
+            int m = lightViews[index].Columns.Count - 1;
+            String[,] lights = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < m; j++)
                 {
                     try { lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { lights[i, j] = null; }
@@ -117,10 +120,11 @@ namespace FAFOS
         {
 
             int n = extinguishers.Rows.Count;
+            int m = extinguishers.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddExtinguisher(index);
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < m; j++)
                 {
                     extViews[index].Rows[i].Cells[j].Value = extinguishers.Rows[i][j];
                 }
@@ -130,10 +134,11 @@ namespace FAFOS
         {
 
             int n = hoses.Rows.Count;
+            int m = hoses.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddHose(index);
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < m; j++)
                 {
                     hoseViews[index].Rows[i].Cells[j].Value = hoses.Rows[i][j];
                 }
@@ -143,10 +148,11 @@ namespace FAFOS
         {
 
             int n = lights.Rows.Count;
+            int m = lights.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddLight(index);
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < m; j++)
                 {
                     lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
                 }
@@ -248,7 +254,7 @@ namespace FAFOS
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 DecMetric("extinguisher", currentRow);
                 my_controller.ExtinguisherView_CellClick(sender, e);
@@ -257,7 +263,7 @@ namespace FAFOS
         public void hoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 4) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
             {
                 DecMetric("hose", currentRow);
                 my_controller.HoseView_CellClick(sender, e);
@@ -266,7 +272,7 @@ namespace FAFOS
         public void lightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 10) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
             {
                 DecMetric("light", currentRow);
                 my_controller.LightView_CellClick(sender, e);
@@ -349,6 +355,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn eTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn eDel = new DataGridViewButtonColumn();
 
             eIDCol.HeaderText = "ID";
@@ -380,6 +388,14 @@ namespace FAFOS
             eSerial.Name = "eSerial";
             eSerial.Width = 150;
 
+            eBarCode.HeaderText = "Bar Code";
+            eBarCode.Name = "eBarCode";
+            eBarCode.Width = 80;
+
+            eManDate.HeaderText = "Manufacturing Date";
+            eManDate.Name = "eManDate";
+            eManDate.Width = 150;
+
             eDel.HeaderText = "Delete";
             eDel.Name = "eDel";
             eDel.Width = 40;
@@ -398,11 +414,13 @@ namespace FAFOS
             eModel,
             eSerial,
             eRoom,
+            eBarCode,
+            eManDate,
             eDel});
 
             ExtinguisherView.Location = new System.Drawing.Point(5, 220);
             ExtinguisherView.Name = "ExtinguisherView";
-            ExtinguisherView.Size = new System.Drawing.Size(525, 150);
+            ExtinguisherView.Size = new System.Drawing.Size(AddItemButton.Location.X - ExtinguisherView.Location.X - 10, 150);
             ExtinguisherView.TabIndex = 61;
             ExtinguisherView.Visible = false;
             
@@ -418,6 +436,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn hRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn hLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn hSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn hBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn hManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn hDel = new DataGridViewButtonColumn();
             
             hID.HeaderText = "ID";
@@ -436,6 +456,12 @@ namespace FAFOS
             hDel.HeaderText = "Delete";
             hDel.Name = "hDel";
             hDel.Width = 40;
+            hBarCode.HeaderText = "Bar Code";
+            hBarCode.Name = "hBarCode";
+            hBarCode.Width = 80;
+            hManDate.HeaderText = "Manufacturing Date";
+            hManDate.Name = "hManDate";
+            hManDate.Width = 150;
             #endregion
 
             HoseView.AllowUserToAddRows = false;
@@ -446,11 +472,13 @@ namespace FAFOS
             hLoc,
             hSerial,
             hRoom,
+            hBarCode,
+            hManDate,
             hDel});
 
             HoseView.Location = new System.Drawing.Point(5, 220);
             HoseView.Name = "HoseView";
-            HoseView.Size = new System.Drawing.Size(320, 150);
+            HoseView.Size = new System.Drawing.Size(AddItemButton.Location.X - HoseView.Location.X - 10, 150);
             HoseView.TabIndex = 65;
             HoseView.Visible = false;
 
@@ -472,6 +500,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn lVolts= new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewCheckBoxColumn lReqServ = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             DataGridViewTextBoxColumn lSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn lBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn lManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn lDel = new DataGridViewButtonColumn();
 
             lid.HeaderText = "ID";
@@ -505,6 +535,12 @@ namespace FAFOS
             lRoom.Name = "lRoom";
             lRoom.Visible = false;
             lRoom.Width = 60;
+            lBarCode.HeaderText = "Bar Code";
+            lBarCode.Name = "Bar Code";
+            lBarCode.Width = 80;
+            lManDate.HeaderText = "Manufacturing Date";
+            lManDate.Name = "lManDate";
+            lManDate.Width = 150;
             lDel.HeaderText = "Delete";
             lDel.Name = "lDel";
             lDel.Width = 40;
@@ -524,11 +560,13 @@ namespace FAFOS
             lReqServ,
             lSerial,
             lRoom,
+            lBarCode,
+            lManDate,
             lDel});
 
             LightView.Location = new System.Drawing.Point(5, 220);
             LightView.Name = "LightView";
-            LightView.Size = new System.Drawing.Size(710, 150);
+            LightView.Size = new System.Drawing.Size(AddItemButton.Location.X - LightView.Location.X - 10, 150);
             LightView.TabIndex = 66;
             LightView.Visible = false;
 

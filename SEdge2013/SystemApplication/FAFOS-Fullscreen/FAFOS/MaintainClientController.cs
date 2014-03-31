@@ -583,7 +583,7 @@ namespace FAFOS
         public void ExtinguisherView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -602,7 +602,7 @@ namespace FAFOS
         public void HoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            if ((e.ColumnIndex == 4) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -621,7 +621,7 @@ namespace FAFOS
         public void LightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if ((e.ColumnIndex == 10) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try

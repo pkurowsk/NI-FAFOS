@@ -44,7 +44,7 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
-            int nExt = (values.Length / 7);
+            int nExt = (values.Length / 9);
             con.Open();
             for (int i = 0; i < nExt; i++)
             {
@@ -60,7 +60,9 @@ namespace FAFOS
                                                                            "','" + values[i, 3] +
                                                                            "','" + values[i, 4] +
                                                                             "'," + values[i, 5] +
-                                                                             "," + values[i, 6] + ")", con);
+                                                                             "," + values[i, 6] +
+                                                                             "," + values[i, 7] +
+                                                                             ",'" + values[i, 8] + "')", con);
                 }
 
                 else
@@ -71,7 +73,9 @@ namespace FAFOS
                                                           "', model = '" + values[i, 4] +
                                                           "', serial = " + values[i, 5] +
                                                            ", room_id = " + values[i, 6] +
-                                                      " WHERE extinguisher_id = " + values[i, 0], con);
+                                                           ", bar_code = " + values[i, 7] +
+                                                           ", manufacture_date = '" + values[i, 8] +
+                                                      "' WHERE extinguisher_id = " + values[i, 0], con);
                 }
                 command.ExecuteNonQuery();
 
@@ -97,7 +101,9 @@ namespace FAFOS
                     command = new SqlCommand("INSERT INTO Hose VALUES (" + values[i, 0] +
                                                                      ",'" + values[i, 1] +
                                                                     "'," + values[i, 2] +
-                                                                     "," + values[i, 3] + ")", con);
+                                                                     "," + values[i, 3] +
+                                                                     "," + values[i, 4] +
+                                                                      ",'" + values[i, 5] + "')", con);
                 }
 
                 else
@@ -105,6 +111,8 @@ namespace FAFOS
                     command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
                                                           "', serial = " + values[i, 2] +
                                                            ", room_id = " + values[i, 3] +
+                                                           ", bar_code = " + values[i, 4] +
+                                                           ", manufacture_date = '" + values[i, 5] +
                                                       " WHERE hose_id = " + values[i, 0], con);                   
                 }
                 command.ExecuteNonQuery();
@@ -136,7 +144,9 @@ namespace FAFOS
                                                           "','" + values[i, 6] +
                                                           "','" + values[i, 7] +
                                                            "'," + values[i, 8] +
-                                                            "," + values[i, 9] + ")", con);
+                                                            "," + values[i, 9] +
+                                                            "," + values[i, 10] +
+                                                            ",'" + values[i, 11] + "')", con);
                 }
                 else
                 {
@@ -150,6 +160,8 @@ namespace FAFOS
                                                           "', require_service = '" + values[i, 7] +
                                                           "', serial = " + values[i, 8] +
                                                            ", room_id = " + values[i, 9] +
+                                                           ", bar_code = " + values[i, 10] +
+                                                           ", manufacture_date = '" + values[i, 11] +
                                                       " WHERE light_id = " + values[i, 0], con);
                 }
 
