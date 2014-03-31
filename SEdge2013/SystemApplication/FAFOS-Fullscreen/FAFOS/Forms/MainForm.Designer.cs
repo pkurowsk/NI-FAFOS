@@ -59,7 +59,6 @@
             this.pbLogos = new System.Windows.Forms.PictureBox();
             this.pbFALogoLogin = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
-            this.Notifications_button = new System.Windows.Forms.Button();
             this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pbSNILogo = new System.Windows.Forms.PictureBox();
@@ -115,10 +114,10 @@
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(26, 492);
+            this.Exit_btn.Location = new System.Drawing.Point(27, 518);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
-            this.Exit_btn.Size = new System.Drawing.Size(170, 49);
+            this.Exit_btn.Size = new System.Drawing.Size(170, 40);
             this.Exit_btn.TabIndex = 7;
             this.Exit_btn.Text = "Exit";
             this.Exit_btn.UseVisualStyleBackColor = false;
@@ -215,10 +214,10 @@
             this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Logout_btn.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout_btn.ForeColor = System.Drawing.Color.White;
-            this.Logout_btn.Location = new System.Drawing.Point(10, 115);
+            this.Logout_btn.Location = new System.Drawing.Point(23, 62);
             this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Logout_btn.Name = "Logout_btn";
-            this.Logout_btn.Size = new System.Drawing.Size(90, 45);
+            this.Logout_btn.Size = new System.Drawing.Size(174, 45);
             this.Logout_btn.TabIndex = 24;
             this.Logout_btn.Text = "Logout";
             this.Logout_btn.UseVisualStyleBackColor = false;
@@ -374,13 +373,14 @@
             // 
             this.userSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.userSettings.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.userSettings.FlatAppearance.BorderSize = 0;
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userSettings.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSettings.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userSettings.ForeColor = System.Drawing.Color.White;
-            this.userSettings.Location = new System.Drawing.Point(10, 64);
+            this.userSettings.Location = new System.Drawing.Point(0, 370);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4);
             this.userSettings.Name = "userSettings";
-            this.userSettings.Size = new System.Drawing.Size(90, 45);
+            this.userSettings.Size = new System.Drawing.Size(226, 50);
             this.userSettings.TabIndex = 49;
             this.userSettings.Text = "User Settings";
             this.userSettings.UseVisualStyleBackColor = false;
@@ -404,7 +404,7 @@
             this.lblSyncOpts.BackColor = System.Drawing.Color.Transparent;
             this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSyncOpts.ForeColor = System.Drawing.Color.White;
-            this.lblSyncOpts.Location = new System.Drawing.Point(6, 402);
+            this.lblSyncOpts.Location = new System.Drawing.Point(7, 445);
             this.lblSyncOpts.Name = "lblSyncOpts";
             this.lblSyncOpts.Size = new System.Drawing.Size(100, 21);
             this.lblSyncOpts.TabIndex = 52;
@@ -419,10 +419,10 @@
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(26, 432);
+            this.syncHQ.Location = new System.Drawing.Point(27, 470);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(80, 50);
+            this.syncHQ.Size = new System.Drawing.Size(80, 40);
             this.syncHQ.TabIndex = 53;
             this.syncHQ.Text = "To HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
@@ -435,10 +435,10 @@
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(116, 432);
+            this.syncAndroid.Location = new System.Drawing.Point(117, 470);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
-            this.syncAndroid.Size = new System.Drawing.Size(80, 50);
+            this.syncAndroid.Size = new System.Drawing.Size(80, 40);
             this.syncAndroid.TabIndex = 54;
             this.syncAndroid.Text = "To Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
@@ -485,8 +485,7 @@
             // 
             this.pnlUser.BackColor = System.Drawing.Color.Transparent;
             this.pnlUser.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
-            this.pnlUser.Controls.Add(this.Notifications_button);
-            this.pnlUser.Controls.Add(this.userSettings);
+            this.pnlUser.Controls.Add(this.btnMenu);
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
             this.pnlUser.Controls.Add(this.profilePic);
@@ -495,23 +494,6 @@
             this.pnlUser.Size = new System.Drawing.Size(225, 170);
             this.pnlUser.TabIndex = 56;
             this.pnlUser.Visible = false;
-            // 
-            // Notifications_button
-            // 
-            this.Notifications_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.Notifications_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.Notifications_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Notifications_button.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Notifications_button.ForeColor = System.Drawing.Color.White;
-            this.Notifications_button.Location = new System.Drawing.Point(107, 115);
-            this.Notifications_button.Margin = new System.Windows.Forms.Padding(4);
-            this.Notifications_button.Name = "Notifications_button";
-            this.Notifications_button.Size = new System.Drawing.Size(90, 45);
-            this.Notifications_button.TabIndex = 51;
-            this.Notifications_button.Text = "Notifications";
-            this.Notifications_button.UseVisualStyleBackColor = false;
-            this.Notifications_button.Visible = false;
-            this.Notifications_button.Click += new System.EventHandler(this.Notifications_button_Click);
             // 
             // pnlPage
             // 
@@ -530,6 +512,7 @@
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
             this.pnlMenu.Controls.Add(this.pbSNILogo);
+            this.pnlMenu.Controls.Add(this.userSettings);
             this.pnlMenu.Controls.Add(this.pbFALogo);
             this.pnlMenu.Controls.Add(this.lblOperations);
             this.pnlMenu.Controls.Add(this.Exit_btn);
@@ -548,7 +531,7 @@
             // pbSNILogo
             // 
             this.pbSNILogo.Image = global::FAFOS.Properties.Resources.team_logos;
-            this.pbSNILogo.Location = new System.Drawing.Point(0, 559);
+            this.pbSNILogo.Location = new System.Drawing.Point(0, 568);
             this.pbSNILogo.Name = "pbSNILogo";
             this.pbSNILogo.Size = new System.Drawing.Size(222, 90);
             this.pbSNILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -568,26 +551,26 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.btnMenu.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Location = new System.Drawing.Point(225, 0);
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Location = new System.Drawing.Point(0, 146);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(20, 170);
+            this.btnMenu.Size = new System.Drawing.Size(226, 24);
             this.btnMenu.TabIndex = 59;
-            this.btnMenu.Text = "<";
+            this.btnMenu.Text = "Hide";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Visible = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pnlDocs
             // 
-            this.pnlDocs.BackColor = System.Drawing.Color.Gray;
+            this.pnlDocs.BackColor = System.Drawing.Color.DimGray;
             this.pnlDocs.Controls.Add(this.lblCloseDocs);
             this.pnlDocs.Controls.Add(this.btnInvoice);
             this.pnlDocs.Controls.Add(this.btnEditSO);
@@ -815,7 +798,7 @@
             // 
             // pnlClients
             // 
-            this.pnlClients.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlClients.BackColor = System.Drawing.Color.DimGray;
             this.pnlClients.Controls.Add(this.lblCloseClients);
             this.pnlClients.Controls.Add(this.btnEContract);
             this.pnlClients.Controls.Add(this.btnAContract);
@@ -902,7 +885,7 @@
             // 
             // pnlReports
             // 
-            this.pnlReports.BackColor = System.Drawing.Color.Silver;
+            this.pnlReports.BackColor = System.Drawing.Color.DimGray;
             this.pnlReports.Controls.Add(this.lblCloseReports);
             this.pnlReports.Controls.Add(this.btnRoyaltee);
             this.pnlReports.Controls.Add(this.btnRevenue);
@@ -1007,7 +990,6 @@
             this.Controls.Add(this.pnlPage);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.lblTitleFAFOS);
-            this.Controls.Add(this.btnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1067,7 +1049,6 @@
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.Panel pnlPage;
-        private System.Windows.Forms.Button Notifications_button;
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.PictureBox pbFALogo;

@@ -417,7 +417,6 @@ namespace FAFOS
                 Login_btn.Visible = false;
                 Logout_btn.Visible = true;
                 userSettings.Visible = true;
-                Notifications_button.Visible = true;
                 lblUserInfo.Visible = true;
                 notificationPanel.Visible = false;
                 profilePic.Visible = true;
@@ -577,7 +576,6 @@ namespace FAFOS
             Login_btn.Visible = true;
             Logout_btn.Visible = false;
             userSettings.Visible = false;
-            Notifications_button.Visible = false;
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
@@ -616,7 +614,7 @@ namespace FAFOS
                 pnlPage.Location = new Point(0, pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = ">";
+                btnMenu.Text = "Show";
             }
             else
             {
@@ -625,7 +623,7 @@ namespace FAFOS
                     pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = "<";
+                btnMenu.Text = "Hide";
             }
         }
 
