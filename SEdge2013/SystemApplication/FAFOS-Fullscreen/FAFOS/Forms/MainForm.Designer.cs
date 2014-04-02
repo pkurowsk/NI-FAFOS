@@ -90,6 +90,7 @@
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
+            this.btnSyncFromAndroid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -113,10 +114,10 @@
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(27, 518);
+            this.Exit_btn.Location = new System.Drawing.Point(117, 521);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
-            this.Exit_btn.Size = new System.Drawing.Size(170, 40);
+            this.Exit_btn.Size = new System.Drawing.Size(94, 40);
             this.Exit_btn.TabIndex = 7;
             this.Exit_btn.Text = "Exit";
             this.Exit_btn.UseVisualStyleBackColor = false;
@@ -418,10 +419,10 @@
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(27, 470);
+            this.syncHQ.Location = new System.Drawing.Point(117, 473);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
             this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(80, 40);
+            this.syncHQ.Size = new System.Drawing.Size(94, 40);
             this.syncHQ.TabIndex = 53;
             this.syncHQ.Text = "To HQ";
             this.syncHQ.UseVisualStyleBackColor = false;
@@ -434,10 +435,10 @@
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(117, 470);
+            this.syncAndroid.Location = new System.Drawing.Point(11, 473);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
-            this.syncAndroid.Size = new System.Drawing.Size(80, 40);
+            this.syncAndroid.Size = new System.Drawing.Size(101, 40);
             this.syncAndroid.TabIndex = 54;
             this.syncAndroid.Text = "To Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
@@ -530,6 +531,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.Controls.Add(this.btnSyncFromAndroid);
             this.pnlMenu.Controls.Add(this.pbSNILogo);
             this.pnlMenu.Controls.Add(this.userSettings);
             this.pnlMenu.Controls.Add(this.pbFALogo);
@@ -954,6 +956,23 @@
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
             // 
+            // btnSyncFromAndroid
+            // 
+            this.btnSyncFromAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.btnSyncFromAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSyncFromAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.White;
+            this.btnSyncFromAndroid.Location = new System.Drawing.Point(11, 521);
+            this.btnSyncFromAndroid.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSyncFromAndroid.Name = "btnSyncFromAndroid";
+            this.btnSyncFromAndroid.Size = new System.Drawing.Size(101, 40);
+            this.btnSyncFromAndroid.TabIndex = 59;
+            this.btnSyncFromAndroid.Text = "From Android";
+            this.btnSyncFromAndroid.UseVisualStyleBackColor = false;
+            this.btnSyncFromAndroid.Visible = false;
+            this.btnSyncFromAndroid.Click += new System.EventHandler(this.btnSyncFromAndroid_Click);
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
@@ -1066,6 +1085,7 @@
         private System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnStatement;
         private System.Windows.Forms.PictureBox pbSNILogo;
+        private System.Windows.Forms.Button btnSyncFromAndroid;
 
     }
 }

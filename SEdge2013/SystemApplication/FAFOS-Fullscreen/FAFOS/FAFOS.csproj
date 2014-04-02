@@ -113,8 +113,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FromMobileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FromMobileView.designer.cs">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InspectionData.cs" />
     <Compile Include="Forms\NumericTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="syncController.cs" />
+    <Compile Include="Forms\SyncView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SyncView.designer.cs">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TCP_Model.cs" />
+    <Compile Include="Forms\ToMobileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToMobileView.designer.cs">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
     </Compile>
     <Compile Include="NumericTextBox.cs">
       <SubType>Component</SubType>
@@ -396,6 +417,9 @@
     <EmbeddedResource Include="Forms\Background.resx">
       <DependentUpon>Background.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FromMobileView.resx">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HQUserForm.resx">
       <DependentUpon>HQUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -440,6 +464,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Statements.resx">
       <DependentUpon>Statements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SyncView.resx">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToMobileView.resx">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maps\BSE.Windows.Forms\Resources\Resources.resx">
       <SubType>Designer</SubType>

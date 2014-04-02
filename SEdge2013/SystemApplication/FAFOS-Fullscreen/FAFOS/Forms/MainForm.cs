@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows;
-//using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -401,6 +400,7 @@ namespace FAFOS
              //   allRevenue.Visible = true;
                 */
                 syncAndroid.Visible = true;
+                btnSyncFromAndroid.Visible = true;
                 syncHQ.Visible = true;
 
                 lblOperations.Visible = true;
@@ -550,6 +550,7 @@ namespace FAFOS
             pnlPage.Controls.Clear();
             
             syncAndroid.Visible = false;
+            btnSyncFromAndroid.Visible = false;
             syncHQ.Visible = false;
 
             lblOperations.Visible = false;
@@ -905,7 +906,15 @@ namespace FAFOS
 
         private void syncAndroid_Click(object sender, EventArgs e)
         {
+            syncController my_sync_controller = new syncController(userid);
+            my_sync_controller.syncToAndroid_Click(sender, e);
 
+        }
+
+        private void btnSyncFromAndroid_Click(object sender, EventArgs e)
+        {
+            syncController my_sync_controller = new syncController(userid);
+            my_sync_controller.syncFromAndroid_Click(sender, e);
         }
 
     }
