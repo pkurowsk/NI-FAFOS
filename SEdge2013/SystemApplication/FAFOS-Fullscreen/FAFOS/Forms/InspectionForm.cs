@@ -28,8 +28,10 @@ namespace FAFOS
 
         private iTextSharp.text.Font Times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD);
         private iTextSharp.text.Font TimesRegular = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.NORMAL);
+        private iTextSharp.text.Font TimesSmall = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 8, iTextSharp.text.Font.NORMAL);
         private iTextSharp.text.Font TimesTitle = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 20, iTextSharp.text.Font.BOLD);
-        private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 10, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
+        
+        private iTextSharp.text.Font WhiteTimes = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 8, iTextSharp.text.Font.BOLD, BaseColor.WHITE);
         
 
         public InspectionForm(string id)
@@ -101,10 +103,11 @@ namespace FAFOS
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
-            if (inspectionType.Text == "Extinguisher Report")
+            if (inspectionType.Text != "")
             {
-                generateExtinguisher();
+                generateReport();
             }
+
             Preview testDialog = new Preview(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory)
               + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToString("yyyy-MM-dd") + ".pdf");
             testDialog.ShowDialog(this);
@@ -115,10 +118,12 @@ namespace FAFOS
 
         }
 
-        private void generateExtinguisher()
+        private void generateReport()
         {
             try
             {
+                String equipmentName = "";
+                
                 document = new Document(PageSize.LETTER);
                 
                 String FilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\" + inspectionType.Text + "_" + DateTime.Today.ToString("yyyy-MM-dd") +".pdf";
@@ -127,7 +132,7 @@ namespace FAFOS
                 document.Open();
                 
                 document.AddTitle("Report");
-                document.AddSubject("Extinguisher");
+                document.AddSubject("Equipment Report");
                 document.AddKeywords("Csharp, PDF, iText");
                 document.AddAuthor("");
                 document.AddCreator("");
@@ -138,156 +143,157 @@ namespace FAFOS
                 pdfLogo.ScaleAbsolute(150, 85);
 
                 document.Add(pdfLogo);
-                Paragraph preface = new Paragraph();
-                
-                preface.Add(new Paragraph("Report of Inpection/Test", TimesTitle));
-                preface.Add(new Paragraph("Extinguisher", Times));
-                preface.Add(new Paragraph(DateTime.Now.ToString("MMMM d, yyyy"), Times));
-                preface.Add(new Paragraph("\n", Times));
+                Paragraph preface = new Paragraph("Fire-Alert" + "\n" + "Report of " + inspectionType.Text + "\n", TimesTitle);
 
-                String address = new ServiceAddress().get(addressBox.SelectedValue.ToString());
-                String[] ad = new String[6];
-                ad = address.Split(',');
-
-                String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
-                String[] client = new String[9];
-                client = clientInfo.Split(',');
-                
-                PdfPTable addrTable = new PdfPTable(3);
-                addrTable.HorizontalAlignment = Element.ALIGN_LEFT;
-                addrTable.TotalWidth = 530f;
-                addrTable.LockedWidth = true;
-                
-                float[] addrWidths = new float[] {100f, 100f, 100f};
-                addrTable.SetWidths(addrWidths);
-
-                addCell(addrTable, "Property", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(addrTable, "Owner/Agent", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(addrTable, " ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-
-                addCell(addrTable, ad[0] + "\n" +
-                                   ad[3] + ", " + ad[4] + "\n" +
-                                   ad[5] + ", " + ad[1] + "\n"
-                                   , 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-
-                addCell(addrTable, client[0] + "\n" +
-                                   client[1] + "\n" +
-                                   client[6] + ", " + client[7] + "\n"
-                                   , 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-
-                addCell(addrTable, " ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-
-                addCell(addrTable, ad[2] + "\n" +
-                                   "N/A \n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(addrTable, client[5] + "\n" +
-                                   client[3], 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(addrTable, "Conducted by: " + new Users().getName(Convert.ToInt32(userid)) + "\n" +
-                                    "Inspection Ref: " + "456" + "\n" + 
-                                    "Contact: " + "N/A", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-
-                for (int i = 0; i < addrTable.Rows.Count; i++)
-                    for (int j = 0; j < addrTable.Rows[i].GetCells().Length; j++)
-                    {
-                        if (addrTable.Rows[i].GetCells()[j] != null)
-                            addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.NO_BORDER;
-                    }
+                preface.Alignment = Element.ALIGN_CENTER;
 
                 document.Add(preface);
-
-                document.Add(addrTable);
                 document.Add(new Paragraph(" "));
-                
-                PdfPTable sigHead = new PdfPTable(1);
-                sigHead.HorizontalAlignment = 0;
-                sigHead.TotalWidth = 530f;
-                sigHead.LockedWidth = true;
-                float[] sigWidths = new float[] { 530f };
-                sigHead.SetWidths(sigWidths);
 
-                addCell(sigHead, "Signatures", 2, 1, 0, BaseColor.GRAY, Times, PdfPCell.ALIGN_LEFT);
-                document.Add(sigHead);
-                
-                PdfPTable signaturesTable = new PdfPTable(4);
-                signaturesTable.HorizontalAlignment = 0;
-                signaturesTable.TotalWidth = 530f;
-                signaturesTable.LockedWidth = true;
-                float[] signaWidths = new float[] { 80f, 80f, 80f, 80f};
-                signaturesTable.SetWidths(signaWidths);
-
-                addCell(signaturesTable, "Inspector - Printed\n" + new Users().getName(Convert.ToInt32(userid)) + "\n\n\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(signaturesTable, "Inspector - Signature\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-                addCell(signaturesTable, "Date", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-                addCell(signaturesTable, "Conditions", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-
-                addCell(signaturesTable, "Owner - Printed\n" + client[5] + "\n\n\n", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_LEFT);
-                addCell(signaturesTable, "Owner - Signature\n" + "", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-                addCell(signaturesTable, "Date", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-                addCell(signaturesTable, "Conditions", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_TOP);
-
-                document.Add(signaturesTable);
-
-                sigHead.GetRow(0).GetCells()[0].Phrase = new Phrase("");
-                document.Add(sigHead);
-                document.Add(new Paragraph(" "));
-                
                 #region Inspection table
 
-                PdfPTable table = new PdfPTable(16);
-                table.HorizontalAlignment = 0;
-                table.TotalWidth = 530f;
-                table.LockedWidth = true;
-                float[] widths = new float[] { 15f, 35f, 50f, 15f, 20f, 40f, 25f, 10f, 10f, 10f, 10f, 10f, 10f, 10f, 10f, 10f };
-                table.SetWidths(widths);
+                PdfPTable inspectionTable = new PdfPTable(1);
 
-                createHeader(table);
+                if (inspectionType.Text.Contains("Extinguisher"))
+                    equipmentName = "Extinguisher";
+                else if (inspectionType.Text.Contains("Hose"))
+                    equipmentName = "FireHoseCabinet";
+                else if (inspectionType.Text.Contains("Light"))
+                    equipmentName = "EmergencyLight";
                 
+                // Load XML inspection file from resources
                 string url = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + "\\Resources\\inspection.xml";
                 XmlDocument doc = new System.Xml.XmlDocument();
                 doc.Load(url);
                 XmlElement docElement = doc.DocumentElement;
 
                 // loop through all childNodes
-                String floor="";
-                XmlNode start = docElement.FirstChild;
-                foreach (XmlNode c1 in start)//contract
+                XmlNode start = docElement.FirstChild;              // franchisee
+                foreach (XmlNode c1 in start)                       // contracts
                 {
-                    XmlNode addresses = c1.FirstChild;
-                    foreach (XmlNode c2 in addresses.ChildNodes)//address
+                    foreach (XmlNode c2 in c1.ChildNodes)        // addresses
                     {
-                        int i = Convert.ToInt32(c2.Attributes["id"].InnerText);
-                        int j = Convert.ToInt32(addressBox.SelectedValue);
 
+                        // Skip if not matching contract ID  
                         if (Convert.ToInt32(c2.Attributes["id"].InnerText) == Convert.ToInt32(addressBox.SelectedValue))
                         {
-                            XmlNode floors = c2.FirstChild;
-                            foreach (XmlNode c3 in floors.ChildNodes)
-                            {
-                                floor = Convert.ToInt32(c3.Attributes["id"].InnerText).ToString();
-                                XmlNode rooms = c3.FirstChild;
+                            Console.WriteLine(Convert.ToInt32(c1.Attributes["id"].InnerText));
+                            Console.WriteLine(Convert.ToInt32(addressBox.SelectedValue));
 
-                                foreach (XmlNode c4 in rooms.ChildNodes)
+                            #region Address info table
+
+                            PdfPTable addrTable = new PdfPTable(4);
+                            addrTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                            addrTable.TotalWidth = 530f;
+                            addrTable.LockedWidth = true;
+
+                            float[] addrWidths = new float[] { 50f, 100f, 50f, 100f };
+                            addrTable.SetWidths(addrWidths);
+
+                            XmlAttributeCollection billTo = c1.ParentNode.Attributes;
+                            XmlAttributeCollection location = c2.Attributes;
+
+                            string[] ad = billTo["address"].InnerText.Split(',');
+
+                            addCell(addrTable, "Bill To:", 4, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, billTo["name"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, "Location:", 4, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+
+                            addCell(addrTable, location["contact"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, ad[0], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, location["address"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, ad[2] + "," + ad[1], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, location["city"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, ad[3], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, location["postalCode"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, "Tel:", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, new Franchisee().getAddress(Convert.ToInt32(start.Attributes["id"].InnerText))[0], 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            String clientInfo = new Client().get(new ClientContract().getClient(addressBox.SelectedValue.ToString()));
+                            String[] client = new String[9];
+                            client = clientInfo.Split(',');
+
+                            addCell(addrTable, "Contact:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, client[5], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, "Tel:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, client[3], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, " ", 4, 4, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, "Technician: ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, new Users().getName(Convert.ToInt32(userid)), 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            addCell(addrTable, "Date: ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, DateTime.Now.ToString("MMMM d, yyyy"), 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+
+                            for (int i = 0; i < addrTable.Rows.Count; i++)
+                                for (int j = 0; j < addrTable.Rows[i].GetCells().Length; j++)
                                 {
-                                    XmlNode items = c4.FirstChild;
-                                    foreach (XmlNode c5 in items.ChildNodes)
+                                    if (addrTable.Rows[i].GetCells()[j] == null)
+                                        continue;
+
+                                    if (j % 2 != 0)
+                                        addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.BOTTOM_BORDER;
+                                    else
+                                        addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.NO_BORDER;
+                                }
+
+                            #endregion
+
+                            document.Add(addrTable);
+
+                            foreach (XmlNode c3 in c2.ChildNodes)   // floors 
+                            {
+                                foreach (XmlNode c4 in c3.ChildNodes)    //rooms
+                                {
+                                    bool first = true;
+                                    int itemNum = 1;
+                                    foreach (XmlNode c5 in c4.ChildNodes)    // equipment
                                     {
-                                        if (c5.Attributes["class"].InnerText == "com.sedge.fireinspectionapp.Extinguisher")
+                                        if (c5.Name.Equals(equipmentName))
                                         {
-                                            addDataRow(table, c5.Attributes);
-                                            break;
+                                            if (first)
+                                            {
+                                                first = false;
+
+                                                inspectionTable = new PdfPTable(c5.Attributes.Count + c5.ChildNodes.Count + 1);
+                                                inspectionTable.HorizontalAlignment = 0;
+                                                inspectionTable.TotalWidth = 530f;
+                                                inspectionTable.LockedWidth = true;
+                                                float []iWidths = new float[c5.Attributes.Count + c5.ChildNodes.Count + 1];
+
+                                                iWidths[0] = 20f;
+                                                for (int i = 1; i < iWidths.Length; i++)
+                                                {
+                                                    if (i < c5.Attributes.Count + 1)
+                                                        iWidths[i] = 35f;
+                                                    else
+                                                        iWidths[i] = 20f;
+                                                }
+                                                inspectionTable.SetWidths(iWidths);
+
+                                                createHeader(inspectionTable, c5);
+                                            }
+
+                                            addEquipmentRow(inspectionTable, c5, itemNum);
+                                            itemNum++;
                                         }
+
                                     }
                                 }
                             }
                         }
                     }
                 }
-                document.Add(table);
+                document.Add(new Paragraph(" "));
+                document.Add(inspectionTable);
 
                 #endregion
-
-                Paragraph footer = new Paragraph(document.RightMargin, "Print \t" + DateTime.Now.ToString("dd/MM/yyyy") + "\t Page 1 of 1", Times);
-
-                document.Add(footer);
 
                 document.Close();
 
@@ -297,51 +303,71 @@ namespace FAFOS
                 MessageBox.Show("Could not display the document because " + ex.ToString());
             }
         }
-       
-        
-        private void createHeader(PdfPTable table)
+        private void createHeader(PdfPTable table, XmlNode equipment)
         {
-            addCell(table, "Item\n#", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Equip ID", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Location", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Size", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Type", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Manufacturer\nModel", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Serial #", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Inspection - Service", 1, 9, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Hydro Test", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "6 Year Insep", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Weight", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Bracket", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Gauge", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Pull Pin", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Signage", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Collar", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
-            addCell(table, "Hose", 1, 1, 90, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            // Equipment info titles
+            addCell(table, "Item #", 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+            for (int i = 0; i < equipment.Attributes.Count; i++)
+                addCell(table, formatTitle(equipment.Attributes[i].Name), 2, 1, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+
+            // Add cell header for extinguisher 
+            int rotation = 0, 
+                rowSpan = 2;
+            if (equipment.Name.Equals("Extinguisher"))
+            {
+                addCell(table, "Inspection - Service", 1, equipment.ChildNodes.Count, 0, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
+                rotation = 90;
+                rowSpan = 1;
+            }
+
+            // Inspection titles
+            foreach (XmlNode inspection in equipment.ChildNodes)
+                addCell(table, inspection.Attributes["name"].InnerText, rowSpan, 1, rotation, BaseColor.RED, WhiteTimes, PdfPCell.ALIGN_CENTER);
 
         }
 
-        private void addDataRow(PdfPTable table, XmlAttributeCollection attrs)
+        /// <summary>
+        /// Formats a string to that there are spaces before capital letters
+        /// </summary>
+        /// <param name="title">The string to be formatted</param>
+        /// <returns>The formatted string</returns>
+        private string formatTitle(string title)
         {
-            addCell(table, "item #", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["id"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["location"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["size"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["type"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["model"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, "serial #", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t1"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t2"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t3"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t4"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t5"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t6"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t7"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t8"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
-            addCell(table, attrs["t9"].InnerText, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            string formatted = "";
 
+            formatted = "" + Char.ToUpper(title[0]);
+
+            for (int i = 1; i < title.Length; i++)
+            {
+                if (Char.IsUpper(title[i])) 
+                    formatted += " ";
+
+                formatted += title[i];
+            }
+
+            return formatted;
+                 
         }
 
+
+        private void addEquipmentRow(PdfPTable table, XmlNode equip, int itemNum)
+        {
+            // Add equipment info cells
+            addCell(table, "" + itemNum, 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_CENTER);
+            for (int i = 0; i < equip.Attributes.Count; i++ )
+                addCell(table, equip.Attributes[i].InnerText, 1, 1, 0, BaseColor.WHITE, TimesSmall, PdfPCell.ALIGN_CENTER);
+
+            // Add cells for test results
+            XmlNodeList inspections = equip.ChildNodes;
+            foreach (XmlNode inspection in inspections)
+                addCell(table, inspection.Attributes["testResult"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesSmall, PdfPCell.ALIGN_CENTER);
+            
+            // Add cells for mistakes
+            foreach (XmlNode inspection in inspections)
+                if (inspection.Attributes["testNote"].InnerText != "")
+                    addCell(table, inspection.Attributes["testNote"].InnerText, 1, table.NumberOfColumns, 0, BaseColor.WHITE, TimesSmall, PdfPCell.ALIGN_CENTER);
+            
+        }
 
         private void addCell(PdfPTable table, string text, int rowspan, int colpan, int rotate, BaseColor backgroundColor, iTextSharp.text.Font font, int hAlignment)
         {

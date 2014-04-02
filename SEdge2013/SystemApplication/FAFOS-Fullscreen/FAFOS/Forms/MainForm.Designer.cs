@@ -59,11 +59,11 @@
             this.pbLogos = new System.Windows.Forms.PictureBox();
             this.pbFALogoLogin = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pbSNILogo = new System.Windows.Forms.PictureBox();
             this.pbFALogo = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.pnlDocs = new System.Windows.Forms.Panel();
             this.lblCloseDocs = new System.Windows.Forms.Label();
             this.btnInvoice = new System.Windows.Forms.Button();
@@ -89,7 +89,6 @@
             this.lblCloseReports = new System.Windows.Forms.Label();
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
-            this.btnJob = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
@@ -254,7 +253,7 @@
             this.notificationPanel.Controls.Add(this.lblNPaymentsDue);
             this.notificationPanel.Controls.Add(this.lblNServices);
             this.notificationPanel.Controls.Add(this.lblTitleDayNotifications);
-            this.notificationPanel.Location = new System.Drawing.Point(215, 0);
+            this.notificationPanel.Location = new System.Drawing.Point(225, 0);
             this.notificationPanel.Name = "notificationPanel";
             this.notificationPanel.Size = new System.Drawing.Size(510, 170);
             this.notificationPanel.TabIndex = 36;
@@ -443,6 +442,7 @@
             this.syncAndroid.Text = "To Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
+            this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
             // 
             // pnlLogin
             // 
@@ -494,6 +494,25 @@
             this.pnlUser.Size = new System.Drawing.Size(225, 170);
             this.pnlUser.TabIndex = 56;
             this.pnlUser.Visible = false;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Location = new System.Drawing.Point(0, 146);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(226, 24);
+            this.btnMenu.TabIndex = 59;
+            this.btnMenu.Text = "Hide";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Visible = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pnlPage
             // 
@@ -548,25 +567,6 @@
             this.pbFALogo.TabIndex = 55;
             this.pbFALogo.TabStop = false;
             this.pbFALogo.Click += new System.EventHandler(this.pbFALogoLogin_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenu.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Location = new System.Drawing.Point(0, 146);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(226, 24);
-            this.btnMenu.TabIndex = 59;
-            this.btnMenu.Text = "Hide";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Visible = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // pnlDocs
             // 
@@ -889,11 +889,10 @@
             this.pnlReports.Controls.Add(this.lblCloseReports);
             this.pnlReports.Controls.Add(this.btnRoyaltee);
             this.pnlReports.Controls.Add(this.btnRevenue);
-            this.pnlReports.Controls.Add(this.btnJob);
             this.pnlReports.Controls.Add(this.btnStatement);
             this.pnlReports.Location = new System.Drawing.Point(225, 320);
             this.pnlReports.Name = "pnlReports";
-            this.pnlReports.Size = new System.Drawing.Size(335, 50);
+            this.pnlReports.Size = new System.Drawing.Size(265, 50);
             this.pnlReports.TabIndex = 61;
             this.pnlReports.Visible = false;
             this.pnlReports.VisibleChanged += new System.EventHandler(this.pnlReports_VisibleChanged);
@@ -902,7 +901,7 @@
             // 
             this.lblCloseReports.BackColor = System.Drawing.Color.Transparent;
             this.lblCloseReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseReports.Location = new System.Drawing.Point(300, 0);
+            this.lblCloseReports.Location = new System.Drawing.Point(225, 0);
             this.lblCloseReports.Name = "lblCloseReports";
             this.lblCloseReports.Size = new System.Drawing.Size(35, 50);
             this.lblCloseReports.TabIndex = 9;
@@ -917,7 +916,7 @@
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoyaltee.ForeColor = System.Drawing.Color.White;
-            this.btnRoyaltee.Location = new System.Drawing.Point(225, 0);
+            this.btnRoyaltee.Location = new System.Drawing.Point(150, 0);
             this.btnRoyaltee.Name = "btnRoyaltee";
             this.btnRoyaltee.Size = new System.Drawing.Size(75, 50);
             this.btnRoyaltee.TabIndex = 8;
@@ -932,28 +931,13 @@
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
-            this.btnRevenue.Location = new System.Drawing.Point(150, 0);
+            this.btnRevenue.Location = new System.Drawing.Point(75, 0);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(75, 50);
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Revenue Report";
             this.btnRevenue.UseVisualStyleBackColor = false;
             this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
-            // 
-            // btnJob
-            // 
-            this.btnJob.BackColor = System.Drawing.Color.Transparent;
-            this.btnJob.FlatAppearance.BorderSize = 0;
-            this.btnJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJob.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJob.ForeColor = System.Drawing.Color.White;
-            this.btnJob.Location = new System.Drawing.Point(75, 0);
-            this.btnJob.Name = "btnJob";
-            this.btnJob.Size = new System.Drawing.Size(75, 50);
-            this.btnJob.TabIndex = 6;
-            this.btnJob.Text = "Job Report";
-            this.btnJob.UseVisualStyleBackColor = false;
-            this.btnJob.Click += new System.EventHandler(this.btnJob_Click);
             // 
             // btnStatement
             // 
@@ -978,12 +962,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.notificationPanel);
             this.Controls.Add(this.pnlReports);
             this.Controls.Add(this.pnlClients);
             this.Controls.Add(this.pnlOps);
             this.Controls.Add(this.pnlDocs);
-            this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.FireAlertLogo);
             this.Controls.Add(this.SEdgeLogo);
             this.Controls.Add(this.pnlLogin);
@@ -1080,7 +1064,6 @@
         private System.Windows.Forms.Label lblCloseReports;
         private System.Windows.Forms.Button btnRoyaltee;
         private System.Windows.Forms.Button btnRevenue;
-        private System.Windows.Forms.Button btnJob;
         private System.Windows.Forms.Button btnStatement;
         private System.Windows.Forms.PictureBox pbSNILogo;
 

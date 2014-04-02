@@ -418,7 +418,7 @@ namespace FAFOS
                 Logout_btn.Visible = true;
                 userSettings.Visible = true;
                 lblUserInfo.Visible = true;
-                notificationPanel.Visible = false;
+                notificationPanel.Visible = true;
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
                 pnlPage.Visible = true;
@@ -901,6 +901,11 @@ namespace FAFOS
                 pnlDocs.Visible =
                 pnlReports.Visible =
                 pnlClients.Visible = false;
+        }
+
+        private void syncAndroid_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
