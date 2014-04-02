@@ -218,6 +218,9 @@ namespace FAFOS
                             String[] client = new String[9];
                             client = clientInfo.Split(',');
 
+                            if (client.Length < 6)
+                                client = new String[6] {"", "", "", "", "", "No client found" };
+
                             addCell(addrTable, "Contact:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, client[5], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
                             addCell(addrTable, "Tel:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
