@@ -334,8 +334,15 @@ namespace FAFOS
 
         public void Contract_Delete_Button_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want Delete this client?\nThis will delete Service Addresses connected to is as well", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Are you sure you want Delete this contract?\nThis will delete Service Addresses connected to is as well", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                if (_contract.getClientID() == null)
+                {
+                    _contractForm.Close();
+                    return;
+                }
+
+                    
                 _contract.RemoveFromClient();
                 _contract.Delete();
               //  _mainForm.SetContractsBox(MClientContract.GetList());
@@ -395,6 +402,8 @@ namespace FAFOS
 
         public void Contract_Closing(object sender, EventArgs e)
         {
+            return;
+
             if (!okDone && _contractForm.GetSelectedContract()!="")
             {
                 String name;
@@ -647,6 +656,12 @@ namespace FAFOS
             else
             {
                 String[,] rooms = _roomForm.GetRooms();
+                if (rooms == null)
+                {
+                    MessageBox.Show("Please fill in all room details");
+                    return;
+                }
+
                 int nRooms = rooms.Length/4;
 
                 bool okToSubmit = true;
@@ -663,9 +678,8 @@ namespace FAFOS
                             ext = _roomForm.GetExtinguishers(i);
                             hoses = _roomForm.GetHoses(i);
                             lights = _roomForm.GetLights(i);
-                            /*
-                            * Validate....okToSubmit = False;
-                            */
+
+
                             if (okToSubmit)
                             {
                                 MRoom.SetExtinguishers(ext);

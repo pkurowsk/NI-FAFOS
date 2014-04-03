@@ -41,6 +41,11 @@ namespace FAFOS
             String[,] rooms = new String[n,4];
             for (int i = 0; i < n; i++)
             {
+                if (RoomGridView.Rows[i].Cells["idCol"].Value == null ||
+                    RoomGridView.Rows[i].Cells["roomNum"].Value == null ||
+                    RoomGridView.Rows[i].Cells["floor"].Value == null)
+                    return null;
+
                 rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
                 rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
                 rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
@@ -154,7 +159,10 @@ namespace FAFOS
                 AddLight(index);
                 for (int j = 0; j < m; j++)
                 {
-                    lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+                    if (j == 7)
+                        lights.Rows[i][j] = lights.Rows[i][j].Equals("T") ? lightViews[index].Rows[i].Cells[j].Value = "True" : lightViews[index].Rows[i].Cells[j].Value = "False";
+                    else
+                        lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
                 }
             }
         }
@@ -183,6 +191,7 @@ namespace FAFOS
         private int AddExtinguisher(int viewIndex)
         {
             int eI = extViews[viewIndex].Rows.Add();
+
             extViews[viewIndex].Rows[eI].Cells["eRoom"].Value =
                 RoomGridView.Rows[viewIndex].Cells["idCol"].Value;
 
@@ -193,6 +202,12 @@ namespace FAFOS
             noChanges = false;
             return n;
         }
+
+        private void AddEditRoomForm_CellEndEdit(Object sender, EventArgs e)
+        {
+            noChanges = false;
+        }
+
         private int AddHose(int viewIndex)
         {
             int hI = hoseViews[viewIndex].Rows.Add();
@@ -403,6 +418,7 @@ namespace FAFOS
 
             DataGridView ExtinguisherView = new DataGridView();
             ExtinguisherView.CellClick +=new DataGridViewCellEventHandler(extView_CellClick);
+            ExtinguisherView.CellEndEdit += new DataGridViewCellEventHandler(AddEditRoomForm_CellEndEdit);
             ExtinguisherView.AllowUserToAddRows = false;
             ExtinguisherView.AllowUserToDeleteRows = false;
             ExtinguisherView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -431,6 +447,8 @@ namespace FAFOS
         {
             DataGridView HoseView= new System.Windows.Forms.DataGridView();
             HoseView.CellClick +=new DataGridViewCellEventHandler(hoseView_CellClick);
+            HoseView.CellEndEdit += new DataGridViewCellEventHandler(AddEditRoomForm_CellEndEdit);
+
             #region Columns
             DataGridViewTextBoxColumn hID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn hRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -488,7 +506,7 @@ namespace FAFOS
         {
             DataGridView LightView = new System.Windows.Forms.DataGridView();
             LightView.CellClick +=new DataGridViewCellEventHandler(lightView_CellClick);
-
+            LightView.CellEndEdit +=new DataGridViewCellEventHandler(AddEditRoomForm_CellEndEdit);
             #region Colums
             DataGridViewTextBoxColumn lid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn lRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
