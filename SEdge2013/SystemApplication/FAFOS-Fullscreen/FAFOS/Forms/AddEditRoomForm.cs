@@ -84,7 +84,11 @@ namespace FAFOS
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
                 {
-                    try { lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString(); }
+                    try
+                    {
+                        lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString();
+                          
+                    }
                     catch (NullReferenceException) { lights[i, j] = null; }
                 }
 
@@ -154,6 +158,8 @@ namespace FAFOS
                 AddLight(index);
                 for (int j = 0; j < m; j++)
                 {
+                    if (j == 7)
+                        lights.Rows[i][j] = lights.Rows[i][j].Equals("T") ? lightViews[index].Rows[i].Cells[j].Value = "true" : lightViews[index].Rows[i].Cells[j].Value = "False";
                     lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
                 }
             }

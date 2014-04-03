@@ -18,19 +18,62 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
 
             con.Open();
-            SqlCommand command = new SqlCommand("UPDATE Service_Address SET address = '" + values[1] +
-                                                                    "', postal_code = '" + values[2] +
-                                                                    "', on_site_contact = '" + values[3] +
-                                                                    "', country_id = " + values[4] +
-                                                                    ", province_id = " + values[5] +
-                                                                    ", city_id = " + values[6] +                                                                    
-                                                                    ", num_floors = " + values[7] +
-                                                                    ", num_rooms = " + values[8] +
-                                                                    ", client_contract_id = " + values[9] +
-                                                                    " WHERE service_address_id = " + values[0], con);
+            int temp = 1;
+            if (values[1] == null)
+            {
+                temp = 0;
+            }
+            if (values[2] == null)
+            {
+                temp = 0;
+            }
+            if (values[4] == null)
+            {
+                temp = 0;
+            }
+            if (values[5] == null)
+            {
+                temp = 0;
+            }
+            if (values[6] == null)
+            {
+                temp = 0;
+            }
+            if (values[7] == null)
+            {
+                temp = 0;
+            }
+            if (values[8] == null)
+            {
+                temp = 0;
+            }
+            if (values[9] == null)
+            {
+                temp = 0;
+            }
+            if (values[0] == null)
+            {
+                temp = 0;
+            }
+            if(temp == 0){
+                MessageBox.Show("please enter all required fields");
+            }
+            else if (temp == 1)
+            {
+                SqlCommand command = new SqlCommand("UPDATE Service_Address SET address = '" + values[1] +
+                                                                        "', postal_code = '" + values[2] +
+                                                                        "', on_site_contact = '" + values[3] +
+                                                                        "', country_id = " + values[4] +
+                                                                        ", province_id = " + values[5] +
+                                                                        ", city_id = " + values[6] +
+                                                                        ", num_floors = " + values[7] +
+                                                                        ", num_rooms = " + values[8] +
+                                                                        ", client_contract_id = " + values[9] +
+                                                                        " WHERE service_address_id = " + values[0], con);
 
 
-            command.ExecuteNonQuery();            
+                command.ExecuteNonQuery();
+            }
             con.Close();
             return;
         }

@@ -134,7 +134,7 @@ namespace FAFOS
                 {
                     MClient.SetContract(_client.FindID(), _contract.FindID());
                     _client.changeContract(_contract.FindID());
-                    _clientForm.SetContractButton(MClientContract.GetName(_contract.FindID()));
+                   // _clientForm.SetContractButton(MClientContract.GetName(_contract.FindID()));
                 }
 
             }
@@ -314,7 +314,7 @@ namespace FAFOS
             _clientForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             _clientForm.StartPosition = FormStartPosition.CenterScreen;
             _clientForm.Activate();
-            _clientForm.DisableContract(_contractForm.GetContractText());
+          //  _clientForm.DisableContract(_contractForm.GetContractText());
             _clientForm.ShowDialog();
 
             if (_client.GetID() == null)
@@ -345,21 +345,25 @@ namespace FAFOS
 
         public void Contract_Ok_Button_Click(object sender, EventArgs e)
         {
+            bool okToSubmit = true;
             if (_contractForm.noChanges)
+            {
                 _contractForm.Close();
-            
+               
+            }
             else
             {
+
                 if (_contract.getClientID() == "")
                 {
                     MessageBox.Show("A contract requires a Client to be created");
-                    return;
+
                 }
 
                 String[] values = _contractForm.GetInputs();
                 String[,] srvAddrs = _contractForm.GetViewInputs();
 
-                bool okToSubmit = true;
+
                 for (int i = 0; i < values.Length; i++)
                     if (values[i] == "Fail")
                         okToSubmit = false;
@@ -370,8 +374,8 @@ namespace FAFOS
                     {
                         _contract.Set(values);// if we are good, submit changes to dataBase
                         NewSrvAddr();
-                        String[] row; 
-                        for (int i = 0; i < (srvAddrs.Length/10);i++)
+                        String[] row;
+                        for (int i = 0; i < (srvAddrs.Length / 10); i++)
                         {
                             row = new String[10];
                             for (int j = 0; j < 10; j++)
@@ -380,7 +384,7 @@ namespace FAFOS
                             _srvAddr.Set(row);
                         }
                         OldClient(_contract.getClientID());
-                        MClient.SetContract(_contract.getClientID(),_contract.FindID());
+                        MClient.SetContract(_contract.getClientID(), _contract.FindID());
                         okDone = true;
                         _contractForm.Close();
 
@@ -395,7 +399,7 @@ namespace FAFOS
 
         public void Contract_Closing(object sender, EventArgs e)
         {
-            if (!okDone && _contractForm.GetSelectedContract()!="")
+           /* if (!okDone && _contractForm.GetSelectedContract()!="")
             {
                 String name;
                 if (_contractForm.GetSelectedContract() != null)
@@ -422,7 +426,7 @@ namespace FAFOS
                     // _contractForm.Close(); 
                 }
             }
-            okDone = false;      
+            okDone = false;*/      
         }//make Cascade
 
         private void Populate_AddrGridView(String contractID)

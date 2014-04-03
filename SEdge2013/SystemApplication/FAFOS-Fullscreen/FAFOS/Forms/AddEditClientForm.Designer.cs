@@ -56,12 +56,10 @@
             this.PrimContactTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.ErrProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label14 = new System.Windows.Forms.Label();
             this.delete_Button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.contract_Button = new System.Windows.Forms.Button();
             this.typeTextBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,9 +89,9 @@
             this.label1.Location = new System.Drawing.Point(10, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 17);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Client Name:";
+            this.label1.Text = "Client Name*:";
             // 
             // label2
             // 
@@ -103,9 +101,9 @@
             this.label2.Location = new System.Drawing.Point(9, 71);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Type:";
+            this.label2.Text = "Type*:";
             // 
             // label3
             // 
@@ -115,9 +113,9 @@
             this.label3.Location = new System.Drawing.Point(21, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Address:";
+            this.label3.Text = "Address*:";
             // 
             // addrTextBox
             // 
@@ -166,9 +164,9 @@
             this.label4.Location = new System.Drawing.Point(241, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 17);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Country:";
+            this.label4.Text = "Country*:";
             // 
             // label5
             // 
@@ -178,9 +176,9 @@
             this.label5.Location = new System.Drawing.Point(387, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 17);
+            this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Province/State:";
+            this.label5.Text = "Province/State*:";
             // 
             // label6
             // 
@@ -190,9 +188,9 @@
             this.label6.Location = new System.Drawing.Point(559, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 17);
+            this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 13;
-            this.label6.Text = "City:";
+            this.label6.Text = "City*:";
             // 
             // postalCodeTextBox
             // 
@@ -211,9 +209,9 @@
             this.label7.Location = new System.Drawing.Point(21, 101);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 17);
+            this.label7.Size = new System.Drawing.Size(93, 17);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Postal Code:";
+            this.label7.Text = "Postal Code*:";
             // 
             // mainPhoneTxtBox
             // 
@@ -232,9 +230,9 @@
             this.label8.Location = new System.Drawing.Point(39, 105);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 17);
+            this.label8.Size = new System.Drawing.Size(92, 17);
             this.label8.TabIndex = 17;
-            this.label8.Text = "Main Phone:";
+            this.label8.Text = "Main Phone*:";
             // 
             // label9
             // 
@@ -307,9 +305,9 @@
             this.label12.Location = new System.Drawing.Point(183, 100);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 17);
+            this.label12.Size = new System.Drawing.Size(113, 17);
             this.label12.TabIndex = 24;
-            this.label12.Text = "Post Office Box:";
+            this.label12.Text = "Post Office Box*:";
             // 
             // PoBoxTextBox
             // 
@@ -337,25 +335,13 @@
             this.label13.Location = new System.Drawing.Point(37, 43);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 17);
+            this.label13.Size = new System.Drawing.Size(117, 17);
             this.label13.TabIndex = 27;
-            this.label13.Text = "Primary Contact:";
+            this.label13.Text = "Primary Contact*:";
             // 
             // ErrProvider
             // 
             this.ErrProvider.ContainerControl = this;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label14.Location = new System.Drawing.Point(349, 71);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 17);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Contract:";
             // 
             // delete_Button
             // 
@@ -427,21 +413,6 @@
             this.nameTxtBox.Size = new System.Drawing.Size(217, 23);
             this.nameTxtBox.TabIndex = 38;
             // 
-            // contract_Button
-            // 
-            this.contract_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.contract_Button.FlatAppearance.BorderSize = 0;
-            this.contract_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contract_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.contract_Button.ForeColor = System.Drawing.Color.White;
-            this.contract_Button.Location = new System.Drawing.Point(353, 95);
-            this.contract_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.contract_Button.Name = "contract_Button";
-            this.contract_Button.Size = new System.Drawing.Size(187, 42);
-            this.contract_Button.TabIndex = 39;
-            this.contract_Button.Text = "<Click to Add>";
-            this.contract_Button.UseVisualStyleBackColor = false;
-            // 
             // typeTextBox
             // 
             this.typeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -464,12 +435,10 @@
             this.ClientSize = new System.Drawing.Size(801, 633);
             this.ControlBox = true;
             this.Controls.Add(this.typeTextBox);
-            this.Controls.Add(this.contract_Button);
             this.Controls.Add(this.nameTxtBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.delete_Button);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ok_Button);
@@ -480,12 +449,10 @@
             this.Controls.SetChildIndex(this.Ok_Button, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label14, 0);
             this.Controls.SetChildIndex(this.delete_Button, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.nameTxtBox, 0);
-            this.Controls.SetChildIndex(this.contract_Button, 0);
             this.Controls.SetChildIndex(this.typeTextBox, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -525,12 +492,11 @@
         private System.Windows.Forms.TextBox PrimContactTextBox;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ErrorProvider ErrProvider;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button delete_Button;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox nameTxtBox;
-        private System.Windows.Forms.Button contract_Button;
+       // private System.Windows.Forms.Button contract_Button;
         private System.Windows.Forms.ComboBox typeTextBox;
     }
 }
