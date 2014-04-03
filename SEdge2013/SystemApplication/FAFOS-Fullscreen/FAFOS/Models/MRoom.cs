@@ -26,15 +26,39 @@ namespace FAFOS
             con.Open();
             for (int i = 0; i < nRooms; i++)
             {
+                int temp = 1;
+                if (rooms[i, 1] == null)
+                {
+                    temp = 0;
+                }
+                if (rooms[i, 2] == null)
+                {
+                    temp = 0;
+                }
+                if (rooms[i, 3] == null)
+                {
+                    temp = 0;
+                }
+                if (rooms[i, 0] == null)
+                {
+                    temp = 0;
+                }
 
-                command = new SqlCommand("UPDATE Room SET room_num = '" + rooms[i,1] +
-                                                      "', floor = '" + rooms[i, 2] +
-                                                      "', service_addr_id = " + rooms[i, 3] +
-                                                  " WHERE room_id = " + rooms[i, 0], con);
+                if (temp == 0)
+                {
+                    MessageBox.Show("please fill in all fields");
+                }
+                else if (temp == 1)
+                {
+
+                    command = new SqlCommand("UPDATE Room SET room_num = '" + rooms[i, 1] +
+                                                          "', floor = '" + rooms[i, 2] +
+                                                          "', service_addr_id = " + rooms[i, 3] +
+                                                      " WHERE room_id = " + rooms[i, 0], con);
 
 
-                command.ExecuteNonQuery();
-                
+                    command.ExecuteNonQuery();
+                }
             }
             con.Close();
         }
@@ -53,31 +77,120 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("extinguisher_id", "Extinguisher");
+                    int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 6] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 7] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 8] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
 
-                    command = new SqlCommand("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
-                                                                            ",'" + values[i, 1] +
-                                                                           "','" + values[i, 2] +
-                                                                           "','" + values[i, 3] +
-                                                                           "','" + values[i, 4] +
-                                                                            "'," + values[i, 5] +
-                                                                             "," + values[i, 6] +
-                                                                             "," + values[i, 7] +
-                                                                             ",'" + values[i, 8] + "')", con);
+                        command = new SqlCommand("INSERT INTO Extinguisher VALUES (" + values[i, 0] +
+                                                                                ",'" + values[i, 1] +
+                                                                               "','" + values[i, 2] +
+                                                                               "','" + values[i, 3] +
+                                                                               "','" + values[i, 4] +
+                                                                                "'," + values[i, 5] +
+                                                                                 "," + values[i, 6] +
+                                                                                 "," + values[i, 7] +
+                                                                                 ",'" + values[i, 8] + "')", con);
+                        command.ExecuteNonQuery();
+                    }
                 }
-
                 else
                 {
-                    command = new SqlCommand("UPDATE Extinguisher SET location = '" + values[i, 1] +
-                                                          "', size = '" + values[i, 2] +
-                                                          "', type = '" + values[i, 3] +
-                                                          "', model = '" + values[i, 4] +
-                                                          "', serial = " + values[i, 5] +
-                                                           ", room_id = " + values[i, 6] +
-                                                           ", bar_code = " + values[i, 7] +
-                                                           ", manufacture_date = '" + values[i, 8] +
-                                                      "' WHERE extinguisher_id = " + values[i, 0], con);
+                    int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 6] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 7] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 8] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
+                        command = new SqlCommand("UPDATE Extinguisher SET location = '" + values[i, 1] +
+                                                              "', size = '" + values[i, 2] +
+                                                              "', type = '" + values[i, 3] +
+                                                              "', model = '" + values[i, 4] +
+                                                              "', serial = " + values[i, 5] +
+                                                               ", room_id = " + values[i, 6] +
+                                                               ", bar_code = " + values[i, 7] +
+                                                               ", manufacture_date = '" + values[i, 8] +
+                                                          "' WHERE extinguisher_id = " + values[i, 0], con);
+                        command.ExecuteNonQuery();
+                    }
                 }
-                command.ExecuteNonQuery();
+              
 
             }
             con.Close();
@@ -89,7 +202,6 @@ namespace FAFOS
             SqlCommand command;
 
             int nHose = (values.Length / 6);
-
             con.Open();
             for (int i = 0; i < nHose; i++)
             {
@@ -98,25 +210,89 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("hose_id", "Hose");
-
-                    command = new SqlCommand("INSERT INTO Hose VALUES (" + values[i, 0] +
-                                                                     ",'" + values[i, 1] +
-                                                                    "'," + values[i, 2] +
-                                                                     "," + values[i, 3] +
-                                                                     "," + values[i, 4] +
-                                                                      ",'" + values[i, 5] + "')", con);
+                    int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
+                        command = new SqlCommand("INSERT INTO Hose VALUES (" + values[i, 0] +
+                                                                         ",'" + values[i, 1] +
+                                                                        "'," + values[i, 2] +
+                                                                         "," + values[i, 3] +
+                                                                         "," + values[i, 4] +
+                                                                          ",'" + values[i, 5] + "')", con);
+                        command.ExecuteNonQuery();
+                    }
                 }
 
                 else
-                {
-                    command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
-                                                          "', serial = " + values[i, 2] +
-                                                           ", room_id = " + values[i, 3] +
-                                                           ", bar_code = " + values[i, 4] +
-                                                           ", manufacture_date = '" + values[i, 5] +
-                                                      "' WHERE hose_id = " + values[i, 0], con);                   
+                { int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
+                        command = new SqlCommand("UPDATE Hose SET location = '" + values[i, 1] +
+                                                              "', serial = " + values[i, 2] +
+                                                               ", room_id = " + values[i, 3] +
+                                                               ", bar_code = " + values[i, 4] +
+                                                               ", manufacture_date = '" + values[i, 5] +
+                                                          "' WHERE hose_id = " + values[i, 0], con);
+                       command.ExecuteNonQuery();
+                    }
                 }
-                command.ExecuteNonQuery();
+                
 
             }
             con.Close();
@@ -136,37 +312,144 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("light_id", "Light");
-                    command = new SqlCommand("INSERT INTO Light VALUES (" + values[i, 0] +
-                                                           ",'" + values[i, 1] +
-                                                          "','" + values[i, 2] +
-                                                          "','" + values[i, 3] +
-                                                          "','" + values[i, 4] +
-                                                          "','" + values[i, 5] +
-                                                          "','" + values[i, 6] +
-                                                          "','" + values[i, 7][0] +
-                                                           "'," + values[i, 8] +
-                                                            "," + values[i, 9] +
-                                                            "," + values[i, 10] +
-                                                            ",'" + values[i, 11] + "')", con);
+                    int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 6] == null)
+                    {
+                        temp = 0;
+                    }
+                    
+                    if (values[i, 8] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 9] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 10] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 11] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
+                        command = new SqlCommand("INSERT INTO Light VALUES (" + values[i, 0] +
+                                                               ",'" + values[i, 1] +
+                                                              "','" + values[i, 2] +
+                                                              "','" + values[i, 3] +
+                                                              "','" + values[i, 4] +
+                                                              "','" + values[i, 5] +
+                                                              "','" + values[i, 6] +
+                                                              "','" + values[i, 7][0] +
+                                                               "'," + values[i, 8] +
+                                                                "," + values[i, 9] +
+                                                                "," + values[i, 10] +
+                                                                ",'" + values[i, 11] + "')", con);
+                        command.ExecuteNonQuery();
+                    }
                 }
                 else
                 {
-                    command = new SqlCommand("UPDATE Light SET location = '" + values[i, 1] +
-                                                          "', model = '" + values[i, 2] +
-                                                          "', make = '" + values[i, 3] +
-                                                          "', heads = '" + values[i, 4] +
-                                                          "', power = '" + values[i, 5] +
-                                                          "', voltage = '" + values[i, 6] +
-                                                          "', require_service = '" + values[i, 7][0] +
-                                                          "', serial = " + values[i, 8] +
-                                                           ", room_id = " + values[i, 9] +
-                                                           ", bar_code = " + values[i, 10] +
-                                                           ", manufacture_date = '" + values[i, 11] +
-                                                      "' WHERE light_id = " + values[i, 0], con);
+                    int temp = 1;
+                    if (values[i, 0] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 1] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 2] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 3] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 4] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 5] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 6] == null)
+                    {
+                        temp = 0;
+                    }
+                   
+                    if (values[i, 8] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 9] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 10] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (values[i, 11] == null)
+                    {
+                        temp = 0;
+                    }
+                    if (temp == 0)
+                    {
+                        MessageBox.Show("please fill in all fields");
+                    }
+                    else if (temp == 1)
+                    {
+                        command = new SqlCommand("UPDATE Light SET location = '" + values[i, 1] +
+                                                              "', model = '" + values[i, 2] +
+                                                              "', make = '" + values[i, 3] +
+                                                              "', heads = '" + values[i, 4] +
+                                                              "', power = '" + values[i, 5] +
+                                                              "', voltage = '" + values[i, 6] +
+                                                              "', require_service = '" + values[i, 7][0] +
+                                                              "', serial = " + values[i, 8] +
+                                                               ", room_id = " + values[i, 9] +
+                                                               ", bar_code = " + values[i, 10] +
+                                                               ", manufacture_date = '" + values[i, 11] +
+                                                          "' WHERE light_id = " + values[i, 0], con);
+                        command.ExecuteNonQuery();
+                    }
+
                 }
-
-
-                command.ExecuteNonQuery();
+                
 
             }
             con.Close();
