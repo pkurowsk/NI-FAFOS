@@ -341,10 +341,7 @@ namespace FAFOS
                     {
                         temp = 0;
                     }
-                    if (values[i, 7] == null)
-                    {
-                        temp = 0;
-                    }
+                    
                     if (values[i, 8] == null)
                     {
                         temp = 0;
@@ -413,10 +410,7 @@ namespace FAFOS
                     {
                         temp = 0;
                     }
-                    if (values[i, 7] == null)
-                    {
-                        temp = 0;
-                    }
+                   
                     if (values[i, 8] == null)
                     {
                         temp = 0;
