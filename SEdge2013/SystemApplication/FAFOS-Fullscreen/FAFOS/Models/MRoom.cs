@@ -341,7 +341,7 @@ namespace FAFOS
                     {
                         temp = 0;
                     }
-                    
+               
                     if (values[i, 8] == null)
                     {
                         temp = 0;
@@ -364,6 +364,9 @@ namespace FAFOS
                     }
                     else if (temp == 1)
                     {
+                        if (values[i, 7] == null)
+                            values[i, 7] = "F";
+
                         command = new SqlCommand("INSERT INTO Light VALUES (" + values[i, 0] +
                                                                ",'" + values[i, 1] +
                                                               "','" + values[i, 2] +
@@ -433,6 +436,8 @@ namespace FAFOS
                     }
                     else if (temp == 1)
                     {
+                        if (values[i, 7] == null)
+                            values[i, 7] = "F";
                         command = new SqlCommand("UPDATE Light SET location = '" + values[i, 1] +
                                                               "', model = '" + values[i, 2] +
                                                               "', make = '" + values[i, 3] +
