@@ -158,7 +158,7 @@ namespace FAFOS
                 AddLight(index);
                 for (int j = 0; j < m; j++)
                 {
-                    if (j == 7)
+                    if (j == 7) // Requires Service
                         lights.Rows[i][j] = lights.Rows[i][j].Equals("T") ? lightViews[index].Rows[i].Cells[j].Value = "true" : lightViews[index].Rows[i].Cells[j].Value = "False";
                     lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
                 }

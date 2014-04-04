@@ -124,6 +124,7 @@ namespace FAFOS
                 }
                 else if (temp == 1)
                 {
+                    if (contractID == null || contractID == "") contractID = "NULL";
                     SqlCommand command = new SqlCommand("UPDATE Client SET account_name = '" + values[1] +
                                                                           "', type = '" + values[2] +
                                                                           "', address = '" + values[3] +

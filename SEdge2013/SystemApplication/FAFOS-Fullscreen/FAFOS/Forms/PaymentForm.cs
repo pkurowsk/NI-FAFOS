@@ -147,7 +147,7 @@ namespace FAFOS
                     paymentTable.DataSource = dt;
                     for (int i = 0; i < dt.Rows.Count; i++)
                         paid += Convert.ToDouble(dt.Rows[i][2]);
-                    txtBalance.Text = (Convert.ToDouble(drv["Total"].ToString()) - paid).ToString();
+                    txtBalance.Text = (Convert.ToDouble(drv["Total"].ToString()) - paid).ToString("#.##");
                 }
             }
             

@@ -62,6 +62,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnSyncFromAndroid = new System.Windows.Forms.Button();
             this.pbSNILogo = new System.Windows.Forms.PictureBox();
             this.pbFALogo = new System.Windows.Forms.PictureBox();
             this.pnlDocs = new System.Windows.Forms.Panel();
@@ -90,7 +91,6 @@
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
-            this.btnSyncFromAndroid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -127,7 +127,7 @@
             // 
             this.lblTitleFAFOS.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft MHei", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleFAFOS.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTitleFAFOS.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitleFAFOS.Location = new System.Drawing.Point(815, 0);
             this.lblTitleFAFOS.Name = "lblTitleFAFOS";
             this.lblTitleFAFOS.Size = new System.Drawing.Size(554, 109);
@@ -201,6 +201,7 @@
             // 
             this.lblUserInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblUserInfo.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblUserInfo.Location = new System.Drawing.Point(72, 10);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
@@ -246,8 +247,7 @@
             // 
             // notificationPanel
             // 
-            this.notificationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.notificationPanel.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
+            this.notificationPanel.BackColor = System.Drawing.Color.Black;
             this.notificationPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.notificationPanel.Controls.Add(this.paymentNotification);
             this.notificationPanel.Controls.Add(this.serviceNotification);
@@ -264,6 +264,7 @@
             // 
             this.paymentNotification.BackColor = System.Drawing.Color.Transparent;
             this.paymentNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.paymentNotification.Location = new System.Drawing.Point(275, 49);
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 118);
@@ -274,6 +275,7 @@
             // 
             this.serviceNotification.BackColor = System.Drawing.Color.Transparent;
             this.serviceNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serviceNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.serviceNotification.Location = new System.Drawing.Point(17, 49);
             this.serviceNotification.Name = "serviceNotification";
             this.serviceNotification.Size = new System.Drawing.Size(226, 118);
@@ -285,6 +287,7 @@
             this.lblNPaymentsDue.AutoSize = true;
             this.lblNPaymentsDue.BackColor = System.Drawing.Color.Transparent;
             this.lblNPaymentsDue.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNPaymentsDue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNPaymentsDue.Location = new System.Drawing.Point(275, 34);
             this.lblNPaymentsDue.Name = "lblNPaymentsDue";
             this.lblNPaymentsDue.Size = new System.Drawing.Size(86, 16);
@@ -296,6 +299,7 @@
             this.lblNServices.AutoSize = true;
             this.lblNServices.BackColor = System.Drawing.Color.Transparent;
             this.lblNServices.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNServices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNServices.Location = new System.Drawing.Point(12, 34);
             this.lblNServices.Name = "lblNServices";
             this.lblNServices.Size = new System.Drawing.Size(52, 16);
@@ -307,6 +311,7 @@
             this.lblTitleDayNotifications.AutoSize = true;
             this.lblTitleDayNotifications.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleDayNotifications.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDayNotifications.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitleDayNotifications.Location = new System.Drawing.Point(11, 14);
             this.lblTitleDayNotifications.Name = "lblTitleDayNotifications";
             this.lblTitleDayNotifications.Size = new System.Drawing.Size(128, 21);
@@ -484,8 +489,7 @@
             // 
             // pnlUser
             // 
-            this.pnlUser.BackColor = System.Drawing.Color.Transparent;
-            this.pnlUser.BackgroundImage = global::FAFOS.Properties.Resources.user_panel;
+            this.pnlUser.BackColor = System.Drawing.Color.Black;
             this.pnlUser.Controls.Add(this.btnMenu);
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
@@ -548,6 +552,23 @@
             this.pnlMenu.Size = new System.Drawing.Size(225, 768);
             this.pnlMenu.TabIndex = 58;
             this.pnlMenu.Visible = false;
+            // 
+            // btnSyncFromAndroid
+            // 
+            this.btnSyncFromAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.btnSyncFromAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSyncFromAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.White;
+            this.btnSyncFromAndroid.Location = new System.Drawing.Point(11, 521);
+            this.btnSyncFromAndroid.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSyncFromAndroid.Name = "btnSyncFromAndroid";
+            this.btnSyncFromAndroid.Size = new System.Drawing.Size(101, 40);
+            this.btnSyncFromAndroid.TabIndex = 59;
+            this.btnSyncFromAndroid.Text = "From Android";
+            this.btnSyncFromAndroid.UseVisualStyleBackColor = false;
+            this.btnSyncFromAndroid.Visible = false;
+            this.btnSyncFromAndroid.Click += new System.EventHandler(this.btnSyncFromAndroid_Click);
             // 
             // pbSNILogo
             // 
@@ -955,23 +976,6 @@
             this.btnStatement.Text = "Statement";
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
-            // 
-            // btnSyncFromAndroid
-            // 
-            this.btnSyncFromAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.btnSyncFromAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSyncFromAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.White;
-            this.btnSyncFromAndroid.Location = new System.Drawing.Point(11, 521);
-            this.btnSyncFromAndroid.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSyncFromAndroid.Name = "btnSyncFromAndroid";
-            this.btnSyncFromAndroid.Size = new System.Drawing.Size(101, 40);
-            this.btnSyncFromAndroid.TabIndex = 59;
-            this.btnSyncFromAndroid.Text = "From Android";
-            this.btnSyncFromAndroid.UseVisualStyleBackColor = false;
-            this.btnSyncFromAndroid.Visible = false;
-            this.btnSyncFromAndroid.Click += new System.EventHandler(this.btnSyncFromAndroid_Click);
             // 
             // View
             // 

@@ -165,6 +165,9 @@ namespace FAFOS
                 String[] franchisee = new String[6];
                 franchisee = franchiseeInfo.Split(',');
 
+                if (franchisee.Length < 6)
+                    franchisee = new String[6] { "", "", "", "", "", "" };
+
                 String userInfo = new Users().get(userid.ToString());
                 String[] user = new String[4];
                 user = userInfo.Split(',');
@@ -238,7 +241,7 @@ namespace FAFOS
                 alignC2[4] = Align.CenterAlign;
 
                 //Fill in the parameters for the table
-                TableParams table2 = new TableParams(5, 120,100,100,100,40);
+                TableParams table2 = new TableParams(5, 150,90,90,90,40);
                 table2.yPos = 510;
                 table2.xPos = 37;
                 table2.rowHeight = 15;
@@ -268,12 +271,13 @@ namespace FAFOS
                         between3160 += Convert.ToDouble(cells[2]);
                     if (Convert.ToDateTime(cells[0]) < DateTime.Today.Date.AddDays(-60))
                         over60 += Convert.ToDouble(cells[2]);
-                    textAndtable.AddRow(false, 10, "T4", alignC2, false, cells[0], cells[1], cells[2], total.ToString(), "");
+                    Console.WriteLine(cells[0] + " " + cells[1]);
+                    textAndtable.AddRow(false, 10, "T4", alignC2, false, cells[0], cells[1], "$" + cells[2], "$" + total.ToString(), "");
                 }
                 interest = interestTotal * 0.02;
                 total += interest;
                 below30 += interest;
-                textAndtable.AddRow(false, 10, "T4", alignC2, false, "2% interest on balance over 30 days", "", (interest).ToString(), total.ToString(), "");
+                textAndtable.AddRow(false, 10, "T4", alignC2, false, "2% interest on balance over 30 days", "", "$" + (interest).ToString(), "$" + total.ToString(), "");
 
                 //After drawing table and text add them to the page 
                 content.SetStream(textAndtable.EndTable(lineColor, true));

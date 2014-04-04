@@ -368,7 +368,7 @@ namespace FAFOS
             // Add cells for mistakes
             foreach (XmlNode inspection in inspections)
                 if (inspection.Attributes["testNote"].InnerText != "")
-                    addCell(table, inspection.Attributes["testNote"].InnerText, 1, table.NumberOfColumns, 0, BaseColor.WHITE, TimesSmall, PdfPCell.ALIGN_CENTER);
+                    addCell(table,inspection.Attributes["name"].InnerText + ": " + inspection.Attributes["testNote"].InnerText, 1, table.NumberOfColumns, 0, BaseColor.WHITE, TimesSmall, PdfPCell.ALIGN_LEFT);
             
         }
 

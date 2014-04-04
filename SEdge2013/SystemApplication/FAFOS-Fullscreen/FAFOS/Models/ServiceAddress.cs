@@ -95,8 +95,12 @@ namespace FAFOS
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                dataTable.Rows.Add(new String[] { reader[0].ToString(), reader[1].ToString()+", "+
+                try
+                {
+                    dataTable.Rows.Add(new String[] { reader[0].ToString(), reader[1].ToString()+", "+
                     new Address().getCity(reader[2].ToString())});
+                }
+                catch (Exception e)  {}
             }
             con.Close();
             return dataTable;
