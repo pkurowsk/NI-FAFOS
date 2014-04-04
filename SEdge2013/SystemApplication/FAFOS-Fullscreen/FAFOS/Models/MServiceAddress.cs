@@ -12,7 +12,12 @@ namespace FAFOS
     class MServiceAddress : Model
     {
         String srvAddrID;
+
         public override void Set(string[] values)
+        {
+            throw new NotImplementedException();
+        }
+        public int Set1(string[] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
@@ -75,7 +80,7 @@ namespace FAFOS
                 command.ExecuteNonQuery();
             }
             con.Close();
-            return;
+            return temp;
         }
 
         public string AddBlank()

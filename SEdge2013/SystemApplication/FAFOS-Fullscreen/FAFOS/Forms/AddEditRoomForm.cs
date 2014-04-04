@@ -35,16 +35,51 @@ namespace FAFOS
 
         }        
 /**************************************** Gets *******************************************/
+        public int GetRoomIndex()
+        {
+            int n = RoomGridView.Rows.Count;
+            return n;
+        }
+        
         public String[,] GetRooms()
         {
             int n = RoomGridView.Rows.Count;
+            
             String[,] rooms = new String[n,4];
             for (int i = 0; i < n; i++)
             {
-                rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
-                rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
-                rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
-                rooms[i, 3] = AddressID;
+                if (RoomGridView.Rows[i].Cells["idCol"].Value.ToString() == null)
+                {
+                    rooms[i, 0] = "null";
+                }
+                else
+                {
+                    rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
+                }
+                if (RoomGridView.Rows[i].Cells["roomNum"].Value.ToString() == null)
+                {
+                    rooms[i,1] = "null";
+                }
+                else
+                {
+                    rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
+                }
+                if (RoomGridView.Rows[i].Cells["floor"].Equals(null))
+                {
+                    rooms[i, 2] = "null";
+                }
+                else
+                {
+                    rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
+                }
+                if (AddressID == null)
+                {
+                    rooms[i, 3] = "null";
+                }
+                else
+                {
+                    rooms[i, 3] = AddressID;
+                }
             }
             return rooms;
         }
@@ -170,6 +205,7 @@ namespace FAFOS
         {
             int i = RoomGridView.Rows.Add();
             MRoom.AddBlank();
+            RoomGridView.Rows[i].Cells["floor"].Value = "";
             RoomGridView.Rows[i].Cells["idCol"].Value = MRoom.AddBlank();
             RoomGridView.Rows[i].Cells["extCol"].Value = "0";
             RoomGridView.Rows[i].Cells["hoseCol"].Value = "0";

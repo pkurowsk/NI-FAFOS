@@ -204,9 +204,9 @@ namespace FAFOS
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase        
 
-                        _client.Set(values);
+                        int test = _client.Set1(values);
                         // _mainForm.SetClientBox(MClient.GetList());
-                       
+                       if(test == 1)
                         _clientForm.Close();
                     }
                 }
@@ -357,6 +357,7 @@ namespace FAFOS
                 if (_contract.getClientID() == "")
                 {
                     MessageBox.Show("A contract requires a Client to be created");
+                    okToSubmit = false;
 
                 }
 
@@ -368,6 +369,7 @@ namespace FAFOS
                     if (values[i] == "Fail")
                         okToSubmit = false;
 
+
                 if (okToSubmit)
                 {
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -375,17 +377,19 @@ namespace FAFOS
                         _contract.Set(values);// if we are good, submit changes to dataBase
                         NewSrvAddr();
                         String[] row;
+                        int test = 1;
                         for (int i = 0; i < (srvAddrs.Length / 10); i++)
                         {
                             row = new String[10];
                             for (int j = 0; j < 10; j++)
                                 row[j] = srvAddrs[i, j];
 
-                            _srvAddr.Set(row);
+                            test = _srvAddr.Set1(row);
                         }
                         OldClient(_contract.getClientID());
                         MClient.SetContract(_contract.getClientID(), _contract.FindID());
                         okDone = true;
+                        if(test==1)
                         _contractForm.Close();
 
 
@@ -643,6 +647,9 @@ namespace FAFOS
 
         public void Room_Ok_Button_Click(object sender, EventArgs e)
         {
+            int test1=0;
+            int test2=0;
+            int test3=0;
             if (_roomForm.noChanges)
             {
                 _roomForm.Close();
@@ -650,8 +657,9 @@ namespace FAFOS
             }
             else
             {
-                String[,] rooms = _roomForm.GetRooms();
-                int nRooms = rooms.Length/4;
+               // String[,] rooms = _roomForm.GetRooms();
+               // int nRooms = rooms.Length/4;
+                int nRooms = _roomForm.GetRoomIndex();
 
                 bool okToSubmit = true;
                 /*
@@ -672,17 +680,24 @@ namespace FAFOS
                             */
                             if (okToSubmit)
                             {
-                                MRoom.SetExtinguishers(ext);
-                                MRoom.SetHoses(hoses);
-                                MRoom.SetLights(lights);
+                               test1 = MRoom.SetExtinguishers(ext);
+                               test2 = MRoom.SetHoses(hoses);
+                               test3 = MRoom.SetLights(lights);
+                              
+                                  
                             }
                             else
                                 return;
                         }
 
-                        MRoom.SetMany(rooms);
-                        _contractForm.noChanges = false;
-                        _roomForm.Close();
+                        if (okToSubmit)
+                        {
+                            String[,] rooms = _roomForm.GetRooms();
+                            int test4 = MRoom.SetMany(rooms);
+                            _contractForm.noChanges = false;
+                            if (test1 == 1 && test2 == 1 && test3 == 1 && test4 == 1)
+                                _roomForm.Close();
+                        }
                     }
                     else
                         return;                    

@@ -16,30 +16,30 @@ namespace FAFOS
         {
             throw new NotImplementedException();
         }
-        public static void SetMany(string[,] rooms)
+        public static int SetMany(string[,] rooms)
         {
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
-
+            int temp = 1;
             int nRooms = (rooms.Length / 4);
             con.Open();
             for (int i = 0; i < nRooms; i++)
             {
-                int temp = 1;
-                if (rooms[i, 1] == null)
+                
+                if (rooms[i, 1] == "")
                 {
                     temp = 0;
                 }
-                if (rooms[i, 2] == null)
+                if (rooms[i, 2] == "")
                 {
                     temp = 0;
                 }
-                if (rooms[i, 3] == null)
+                if (rooms[i, 3] == "")
                 {
                     temp = 0;
                 }
-                if (rooms[i, 0] == null)
+                if (rooms[i, 0] == "")
                 {
                     temp = 0;
                 }
@@ -61,13 +61,15 @@ namespace FAFOS
                 }
             }
             con.Close();
+            return temp;
         }
-        public static void SetExtinguishers(String[,] values)
+        public static int SetExtinguishers(String[,] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
+            int temp = 1;
             int nExt = (values.Length / 9);
             con.Open();
             for (int i = 0; i < nExt; i++)
@@ -77,7 +79,7 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("extinguisher_id", "Extinguisher");
-                    int temp = 1;
+                   
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -135,7 +137,7 @@ namespace FAFOS
                 }
                 else
                 {
-                    int temp = 1;
+                    
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -194,13 +196,16 @@ namespace FAFOS
 
             }
             con.Close();
+            return temp;
+            
         }
-        public static void SetHoses(String[,] values)
+        public static int SetHoses(String[,] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
 
+            int temp = 1;
             int nHose = (values.Length / 6);
             con.Open();
             for (int i = 0; i < nHose; i++)
@@ -210,7 +215,7 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("hose_id", "Hose");
-                    int temp = 1;
+                    
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -252,7 +257,7 @@ namespace FAFOS
                 }
 
                 else
-                { int temp = 1;
+                {
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -296,12 +301,14 @@ namespace FAFOS
 
             }
             con.Close();
+            return temp;
         }
-        public static void SetLights(String[,] values)
+        public static int SetLights(String[,] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
+            int temp = 1;
 
             int nLight = (values.Length / 12);
             MRoom r;
@@ -312,7 +319,7 @@ namespace FAFOS
                 {
                     r = new MRoom();
                     values[i, 0] = r.getNewID("light_id", "Light");
-                    int temp = 1;
+                    
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -384,7 +391,7 @@ namespace FAFOS
                 }
                 else
                 {
-                    int temp = 1;
+                    
                     if (values[i, 0] == null)
                     {
                         temp = 0;
@@ -458,6 +465,7 @@ namespace FAFOS
 
             }
             con.Close();
+            return temp;
         }
 
         public override string FindID()

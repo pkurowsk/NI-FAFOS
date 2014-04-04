@@ -49,7 +49,13 @@ namespace FAFOS
             cityID = null;
             contractID = null;
             Get();
-        }      
+        }
+
+        public override void Set(string[] values)
+        {
+            MessageBox.Show("change this to set 1");
+            throw new NotImplementedException();
+        }
 
         public override String[] Get() 
         {
@@ -66,12 +72,12 @@ namespace FAFOS
             else return null;
         }
 
-        public override void Set(String[] values)
+        public int Set1(String[] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(connString);
-            
+            int temp = 1;
             
             for (int i = 0; i < values.Length;i++ )
                 if (values[i] == null)
@@ -81,7 +87,7 @@ namespace FAFOS
             con.Open();
             if (old)
             {
-                int temp = 1;
+                //int temp = 1;
                 if (values[1] == null)
                 {
                     temp = 0;
@@ -150,7 +156,7 @@ namespace FAFOS
                 clientID = FindID();
                 if (contractID == null) contractID = "NULL";
 
-                int temp = 1;
+                
                 if (values[1] == null)
                 {
                     temp = 0;
@@ -213,7 +219,7 @@ namespace FAFOS
                 }
             }
             con.Close();
-            return;
+            return temp;
         }
         public static void SetContract(String cliID, String conID)
         {
