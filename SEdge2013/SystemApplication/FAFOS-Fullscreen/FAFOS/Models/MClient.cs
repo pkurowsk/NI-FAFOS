@@ -230,8 +230,8 @@ namespace FAFOS
             con.Open();
             SqlCommand command = new SqlCommand("UPDATE Client SET  client_contract_id = " + conID +
                                                                      " WHERE client_id = " + cliID, con);
-            SqlCommand command2 = new SqlCommand("UPDATE Client_Contract SET  client_id = " + conID +
-                                                                     " WHERE client_contract_id = " + cliID, con);
+            SqlCommand command2 = new SqlCommand("UPDATE Client_Contract SET  client_id = " + cliID +
+                                                                     " WHERE client_contract_id = " + conID, con);
 
             command.ExecuteNonQuery();
             command2.ExecuteNonQuery();

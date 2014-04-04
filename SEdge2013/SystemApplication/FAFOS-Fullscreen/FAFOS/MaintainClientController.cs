@@ -511,6 +511,7 @@ namespace FAFOS
 
         public void SrvAddr_Ok_Button_Click(object sender, EventArgs e)
         {
+            int test = 1;
             if (_srvAddrForm.noChanges)
             {
                 _srvAddrForm.Close();
@@ -529,9 +530,10 @@ namespace FAFOS
                         MContractServices cs = new MContractServices();
                         try {
                             
-                            cs.SetMany(values, userID, _contractForm.GetEndDate()); 
+                            test = cs.SetMany(values, userID, _contractForm.GetEndDate()); 
                         }
                         catch (Exception) { MessageBox.Show("Error Updating Database"); }
+                        if(test == 1)
                         _srvAddrForm.Close();
 
 

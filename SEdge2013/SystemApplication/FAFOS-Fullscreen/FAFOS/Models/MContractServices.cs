@@ -11,7 +11,7 @@ namespace FAFOS
 {
     class MContractServices : Model
     {
-        public void SetMany(String[,] cells,int userid,DateTime end)
+        public int SetMany(String[,] cells,int userid,DateTime end)
         {
 
             String connString = Properties.Settings.Default.FAFOS;
@@ -19,48 +19,102 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             SqlCommand command;
             con.Open();
+            int test = 1;
             for (int i = 0; i < (cells.Length / 6); i++)
             {
                 if (cells[i, 0] == null)//---------------------------Insert new
                 {
                     cells[i, 0] = getNewID("con_serv_id", "Contract_Services");
-                    command = new SqlCommand("INSERT INTO Contract_Services VALUES (" + cells[i, 0] + ", "
-                                                                                      + cells[i, 1] + ", "
-                                                                                      + cells[i, 2] + ", '"
-                                                                                      + cells[i, 3] + "', '"
-                                                                                      + cells[i, 4] + "', "
-                                                                                      + cells[i, 5]  + ")", con);
+                    if (cells[i, 0] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 1] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 2] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 3] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 5] == null)
+                    {
+                        test = 0;
+                    }
+                    if (test == 0)
+                    {
+                        MessageBox.Show("please fill in all required fields");
+                    }
+                    else if (test == 1)
+                    {
+                        command = new SqlCommand("INSERT INTO Contract_Services VALUES (" + cells[i, 0] + ", "
+                                                                                          + cells[i, 1] + ", "
+                                                                                          + cells[i, 2] + ", '"
+                                                                                          + cells[i, 3] + "', '"
+                                                                                          + cells[i, 4] + "', "
+                                                                                          + cells[i, 5] + ")", con);
+                        command.ExecuteNonQuery();
 
+                        DateTime dueDate = Convert.ToDateTime(cells[i, 3]).AddDays(365 /
+                            new Period().getPerYear(new Period().getName(cells[i, 2])));
 
-                DateTime dueDate = Convert.ToDateTime(cells[i, 3]).AddDays(365 / 
-                    new Period().getPerYear(new Period().getName(cells[i, 2])));
+                        //Set end dates
+                        DateTime endDate = end;//new ClientContract().getEndDate(new ServiceAddress().getContractID(cells[i,5]), userid);
 
-                //Set end dates
-                DateTime endDate = end;//new ClientContract().getEndDate(new ServiceAddress().getContractID(cells[i,5]), userid);
-
-                while (dueDate <= endDate)
-                {
-                    new Itinerary().set(Convert.ToInt32(cells[i, 0]), 0, userid, dueDate.ToShortDateString());
-                    dueDate = Convert.ToDateTime(dueDate).AddDays(365 /
-                    new Period().getPerYear(new Period().getName(cells[i, 2])));
-                }
-
+                        while (dueDate <= endDate)
+                        {
+                            new Itinerary().set(Convert.ToInt32(cells[i, 0]), 0, userid, dueDate.ToShortDateString());
+                            dueDate = Convert.ToDateTime(dueDate).AddDays(365 /
+                            new Period().getPerYear(new Period().getName(cells[i, 2])));
+                        }
+                    }
                 }
                 else//-----------------------------------------------update old
                 {
-                    command = new SqlCommand("UPDATE Contract_Services SET service_id = " + cells[i, 1] +
-                                                                    ", period_id = " + cells[i, 2] +
-                                                                    ", date = '" + cells[i, 3] +
-                                                                    "', notes = '" + cells[i, 4] +
-                                                                    "', service_addr_id = " + cells[i, 5] +
-                                                                    " WHERE con_serv_id = " + cells[i, 0], con);
+                    if (cells[i, 0] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 1] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 2] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 3] == null)
+                    {
+                        test = 0;
+                    }
+                    if (cells[i, 5] == null)
+                    {
+                        test = 0;
+                    }
+                    if (test == 0)
+                    {
+                        MessageBox.Show("please fill in all required fields");
+                    }
+                    else if (test == 1)
+                    {
+                        command = new SqlCommand("UPDATE Contract_Services SET service_id = " + cells[i, 1] +
+                                                                        ", period_id = " + cells[i, 2] +
+                                                                        ", date = '" + cells[i, 3] +
+                                                                        "', notes = '" + cells[i, 4] +
+                                                                        "', service_addr_id = " + cells[i, 5] +
+                                                                        " WHERE con_serv_id = " + cells[i, 0], con);
 
-
+                        command.ExecuteNonQuery();
+                    }
                 }
-                command.ExecuteNonQuery();  
+                  
             }              
             con.Close();
-            return;
+            return test;
         }
         public static DataTable GetAll(String srvAddrId)
         {
