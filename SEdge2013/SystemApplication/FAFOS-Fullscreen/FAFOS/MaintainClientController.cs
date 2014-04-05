@@ -345,6 +345,7 @@ namespace FAFOS
 
         public void Contract_Ok_Button_Click(object sender, EventArgs e)
         {
+            
             bool okToSubmit = true;
             if (_contractForm.noChanges)
             {
@@ -398,7 +399,7 @@ namespace FAFOS
                     else
                         return;
                 }
-            }
+            } _mainForm.Notifications();
         }
 
         public void Contract_Closing(object sender, EventArgs e)

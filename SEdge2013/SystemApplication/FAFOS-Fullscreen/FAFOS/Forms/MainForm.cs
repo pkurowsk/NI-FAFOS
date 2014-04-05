@@ -417,6 +417,7 @@ namespace FAFOS
                 txtPassword.Visible = false;
                 Login_btn.Visible = false;
                 Logout_btn.Visible = true;
+                noteHideButton.Visible = true;
                 userSettings.Visible = true;
                 lblUserInfo.Visible = true;
                 notificationPanel.Visible = true;

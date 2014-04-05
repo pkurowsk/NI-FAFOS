@@ -91,6 +91,7 @@
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
+            this.noteHideButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -112,7 +113,7 @@
             this.Exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit_btn.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.ForeColor = System.Drawing.Color.White;
             this.Exit_btn.Location = new System.Drawing.Point(117, 521);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -126,7 +127,7 @@
             // lblTitleFAFOS
             // 
             this.lblTitleFAFOS.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft MHei", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleFAFOS.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitleFAFOS.Location = new System.Drawing.Point(815, 0);
             this.lblTitleFAFOS.Name = "lblTitleFAFOS";
@@ -149,12 +150,12 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(13, 20);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(79, 21);
+            this.lblUsername.Size = new System.Drawing.Size(83, 20);
             this.lblUsername.TabIndex = 19;
             this.lblUsername.Text = "Username";
             // 
@@ -163,7 +164,7 @@
             this.Login_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Login_btn.FlatAppearance.BorderSize = 0;
             this.Login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login_btn.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_btn.ForeColor = System.Drawing.Color.White;
             this.Login_btn.Location = new System.Drawing.Point(134, 151);
             this.Login_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -188,19 +189,19 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
             this.lblPassword.Location = new System.Drawing.Point(13, 88);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 21);
+            this.lblPassword.Size = new System.Drawing.Size(78, 20);
             this.lblPassword.TabIndex = 21;
             this.lblPassword.Text = "Password";
             // 
             // lblUserInfo
             // 
             this.lblUserInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft MHei", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblUserInfo.Location = new System.Drawing.Point(72, 10);
             this.lblUserInfo.Name = "lblUserInfo";
@@ -213,7 +214,7 @@
             this.Logout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.Logout_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_btn.Font = new System.Drawing.Font("Microsoft MHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logout_btn.ForeColor = System.Drawing.Color.White;
             this.Logout_btn.Location = new System.Drawing.Point(23, 62);
             this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -263,34 +264,32 @@
             // paymentNotification
             // 
             this.paymentNotification.BackColor = System.Drawing.Color.Transparent;
-            this.paymentNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paymentNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.paymentNotification.Location = new System.Drawing.Point(275, 49);
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 118);
             this.paymentNotification.TabIndex = 5;
-            this.paymentNotification.Text = "";
             // 
             // serviceNotification
             // 
             this.serviceNotification.BackColor = System.Drawing.Color.Transparent;
-            this.serviceNotification.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serviceNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.serviceNotification.Location = new System.Drawing.Point(17, 49);
             this.serviceNotification.Name = "serviceNotification";
             this.serviceNotification.Size = new System.Drawing.Size(226, 118);
             this.serviceNotification.TabIndex = 4;
-            this.serviceNotification.Text = "";
             // 
             // lblNPaymentsDue
             // 
             this.lblNPaymentsDue.AutoSize = true;
             this.lblNPaymentsDue.BackColor = System.Drawing.Color.Transparent;
-            this.lblNPaymentsDue.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNPaymentsDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNPaymentsDue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNPaymentsDue.Location = new System.Drawing.Point(275, 34);
             this.lblNPaymentsDue.Name = "lblNPaymentsDue";
-            this.lblNPaymentsDue.Size = new System.Drawing.Size(86, 16);
+            this.lblNPaymentsDue.Size = new System.Drawing.Size(90, 15);
             this.lblNPaymentsDue.TabIndex = 3;
             this.lblNPaymentsDue.Text = "Payments Due:";
             // 
@@ -298,11 +297,11 @@
             // 
             this.lblNServices.AutoSize = true;
             this.lblNServices.BackColor = System.Drawing.Color.Transparent;
-            this.lblNServices.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNServices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNServices.Location = new System.Drawing.Point(12, 34);
             this.lblNServices.Name = "lblNServices";
-            this.lblNServices.Size = new System.Drawing.Size(52, 16);
+            this.lblNServices.Size = new System.Drawing.Size(56, 15);
             this.lblNServices.TabIndex = 2;
             this.lblNServices.Text = "Services:";
             // 
@@ -310,18 +309,18 @@
             // 
             this.lblTitleDayNotifications.AutoSize = true;
             this.lblTitleDayNotifications.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleDayNotifications.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDayNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleDayNotifications.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitleDayNotifications.Location = new System.Drawing.Point(11, 14);
             this.lblTitleDayNotifications.Name = "lblTitleDayNotifications";
-            this.lblTitleDayNotifications.Size = new System.Drawing.Size(128, 21);
+            this.lblTitleDayNotifications.Size = new System.Drawing.Size(134, 20);
             this.lblTitleDayNotifications.TabIndex = 0;
             this.lblTitleDayNotifications.Text = "Daily Notifications";
             // 
             // lblOperations
             // 
             this.lblOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.lblOperations.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperations.ForeColor = System.Drawing.Color.White;
             this.lblOperations.Location = new System.Drawing.Point(0, 170);
             this.lblOperations.Name = "lblOperations";
@@ -335,7 +334,7 @@
             // lblDocs
             // 
             this.lblDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.lblDocs.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocs.ForeColor = System.Drawing.Color.White;
             this.lblDocs.Location = new System.Drawing.Point(0, 220);
             this.lblDocs.Name = "lblDocs";
@@ -349,7 +348,7 @@
             // lblClients
             // 
             this.lblClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.lblClients.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClients.ForeColor = System.Drawing.Color.White;
             this.lblClients.Location = new System.Drawing.Point(0, 270);
             this.lblClients.Name = "lblClients";
@@ -363,7 +362,7 @@
             // lblReports
             // 
             this.lblReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.lblReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReports.ForeColor = System.Drawing.Color.White;
             this.lblReports.Location = new System.Drawing.Point(0, 320);
             this.lblReports.Name = "lblReports";
@@ -380,7 +379,7 @@
             this.userSettings.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.userSettings.FlatAppearance.BorderSize = 0;
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userSettings.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userSettings.ForeColor = System.Drawing.Color.White;
             this.userSettings.Location = new System.Drawing.Point(0, 370);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4);
@@ -407,11 +406,11 @@
             // 
             this.lblSyncOpts.AutoSize = true;
             this.lblSyncOpts.BackColor = System.Drawing.Color.Transparent;
-            this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSyncOpts.ForeColor = System.Drawing.Color.White;
             this.lblSyncOpts.Location = new System.Drawing.Point(7, 445);
             this.lblSyncOpts.Name = "lblSyncOpts";
-            this.lblSyncOpts.Size = new System.Drawing.Size(100, 21);
+            this.lblSyncOpts.Size = new System.Drawing.Size(103, 20);
             this.lblSyncOpts.TabIndex = 52;
             this.lblSyncOpts.Text = "Sync Options";
             this.lblSyncOpts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -422,7 +421,7 @@
             this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncHQ.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncHQ.ForeColor = System.Drawing.Color.White;
             this.syncHQ.Location = new System.Drawing.Point(117, 473);
             this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
@@ -438,7 +437,7 @@
             this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.syncAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syncAndroid.ForeColor = System.Drawing.Color.White;
             this.syncAndroid.Location = new System.Drawing.Point(11, 473);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
@@ -490,6 +489,7 @@
             // pnlUser
             // 
             this.pnlUser.BackColor = System.Drawing.Color.Black;
+            this.pnlUser.Controls.Add(this.noteHideButton);
             this.pnlUser.Controls.Add(this.btnMenu);
             this.pnlUser.Controls.Add(this.lblUserInfo);
             this.pnlUser.Controls.Add(this.Logout_btn);
@@ -508,7 +508,7 @@
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
             this.btnMenu.Location = new System.Drawing.Point(0, 146);
             this.btnMenu.Name = "btnMenu";
@@ -558,7 +558,7 @@
             this.btnSyncFromAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
             this.btnSyncFromAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSyncFromAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.White;
             this.btnSyncFromAndroid.Location = new System.Drawing.Point(11, 521);
             this.btnSyncFromAndroid.Margin = new System.Windows.Forms.Padding(4);
@@ -611,7 +611,7 @@
             // lblCloseDocs
             // 
             this.lblCloseDocs.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseDocs.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseDocs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseDocs.Location = new System.Drawing.Point(450, 0);
             this.lblCloseDocs.Name = "lblCloseDocs";
             this.lblCloseDocs.Size = new System.Drawing.Size(35, 50);
@@ -625,7 +625,7 @@
             this.btnInvoice.BackColor = System.Drawing.Color.Transparent;
             this.btnInvoice.FlatAppearance.BorderSize = 0;
             this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvoice.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.Location = new System.Drawing.Point(375, 0);
             this.btnInvoice.Name = "btnInvoice";
@@ -640,7 +640,7 @@
             this.btnEditSO.BackColor = System.Drawing.Color.Transparent;
             this.btnEditSO.FlatAppearance.BorderSize = 0;
             this.btnEditSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSO.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditSO.ForeColor = System.Drawing.Color.White;
             this.btnEditSO.Location = new System.Drawing.Point(300, 0);
             this.btnEditSO.Name = "btnEditSO";
@@ -655,7 +655,7 @@
             this.btnConvertSO.BackColor = System.Drawing.Color.Transparent;
             this.btnConvertSO.FlatAppearance.BorderSize = 0;
             this.btnConvertSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertSO.ForeColor = System.Drawing.Color.White;
             this.btnConvertSO.Location = new System.Drawing.Point(225, 0);
             this.btnConvertSO.Name = "btnConvertSO";
@@ -670,7 +670,7 @@
             this.btnCreateSO.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateSO.ForeColor = System.Drawing.Color.White;
             this.btnCreateSO.Location = new System.Drawing.Point(150, 0);
             this.btnCreateSO.Name = "btnCreateSO";
@@ -685,7 +685,7 @@
             this.btnEditQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnEditQuote.FlatAppearance.BorderSize = 0;
             this.btnEditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditQuote.ForeColor = System.Drawing.Color.White;
             this.btnEditQuote.Location = new System.Drawing.Point(75, 0);
             this.btnEditQuote.Name = "btnEditQuote";
@@ -700,7 +700,7 @@
             this.btnQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnQuote.FlatAppearance.BorderSize = 0;
             this.btnQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuote.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuote.ForeColor = System.Drawing.Color.White;
             this.btnQuote.Location = new System.Drawing.Point(0, 0);
             this.btnQuote.Name = "btnQuote";
@@ -730,7 +730,7 @@
             // lblCloseOps
             // 
             this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseOps.Location = new System.Drawing.Point(375, 0);
             this.lblCloseOps.Name = "lblCloseOps";
             this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
@@ -744,7 +744,7 @@
             this.btnPayment.BackColor = System.Drawing.Color.Transparent;
             this.btnPayment.FlatAppearance.BorderSize = 0;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.Location = new System.Drawing.Point(300, 0);
             this.btnPayment.Name = "btnPayment";
@@ -760,7 +760,7 @@
             this.btnPurchase.BackColor = System.Drawing.Color.Transparent;
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchase.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPurchase.ForeColor = System.Drawing.Color.White;
             this.btnPurchase.Location = new System.Drawing.Point(225, 0);
             this.btnPurchase.Name = "btnPurchase";
@@ -776,7 +776,7 @@
             this.btnInventory.BackColor = System.Drawing.Color.Transparent;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Location = new System.Drawing.Point(150, 0);
             this.btnInventory.Name = "btnInventory";
@@ -792,7 +792,7 @@
             this.btnInspection.BackColor = System.Drawing.Color.Transparent;
             this.btnInspection.FlatAppearance.BorderSize = 0;
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInspection.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInspection.ForeColor = System.Drawing.Color.White;
             this.btnInspection.Location = new System.Drawing.Point(75, 0);
             this.btnInspection.Name = "btnInspection";
@@ -808,7 +808,7 @@
             this.btnItinerary.BackColor = System.Drawing.Color.Transparent;
             this.btnItinerary.FlatAppearance.BorderSize = 0;
             this.btnItinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItinerary.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItinerary.ForeColor = System.Drawing.Color.White;
             this.btnItinerary.Location = new System.Drawing.Point(0, 0);
             this.btnItinerary.Name = "btnItinerary";
@@ -837,7 +837,7 @@
             // lblCloseClients
             // 
             this.lblCloseClients.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseClients.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseClients.Location = new System.Drawing.Point(300, 0);
             this.lblCloseClients.Name = "lblCloseClients";
             this.lblCloseClients.Size = new System.Drawing.Size(35, 50);
@@ -851,7 +851,7 @@
             this.btnEContract.BackColor = System.Drawing.Color.Transparent;
             this.btnEContract.FlatAppearance.BorderSize = 0;
             this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEContract.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEContract.ForeColor = System.Drawing.Color.White;
             this.btnEContract.Location = new System.Drawing.Point(225, 0);
             this.btnEContract.Name = "btnEContract";
@@ -866,7 +866,7 @@
             this.btnAContract.BackColor = System.Drawing.Color.Transparent;
             this.btnAContract.FlatAppearance.BorderSize = 0;
             this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAContract.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAContract.ForeColor = System.Drawing.Color.White;
             this.btnAContract.Location = new System.Drawing.Point(150, 0);
             this.btnAContract.Name = "btnAContract";
@@ -881,7 +881,7 @@
             this.btnEClient.BackColor = System.Drawing.Color.Transparent;
             this.btnEClient.FlatAppearance.BorderSize = 0;
             this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEClient.ForeColor = System.Drawing.Color.White;
             this.btnEClient.Location = new System.Drawing.Point(75, 0);
             this.btnEClient.Name = "btnEClient";
@@ -896,7 +896,7 @@
             this.btnAClient.BackColor = System.Drawing.Color.Transparent;
             this.btnAClient.FlatAppearance.BorderSize = 0;
             this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAClient.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAClient.ForeColor = System.Drawing.Color.White;
             this.btnAClient.Location = new System.Drawing.Point(0, 0);
             this.btnAClient.Name = "btnAClient";
@@ -923,7 +923,7 @@
             // lblCloseReports
             // 
             this.lblCloseReports.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseReports.Font = new System.Drawing.Font("Microsoft MHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloseReports.Location = new System.Drawing.Point(225, 0);
             this.lblCloseReports.Name = "lblCloseReports";
             this.lblCloseReports.Size = new System.Drawing.Size(35, 50);
@@ -937,7 +937,7 @@
             this.btnRoyaltee.BackColor = System.Drawing.Color.Transparent;
             this.btnRoyaltee.FlatAppearance.BorderSize = 0;
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft MHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoyaltee.ForeColor = System.Drawing.Color.White;
             this.btnRoyaltee.Location = new System.Drawing.Point(150, 0);
             this.btnRoyaltee.Name = "btnRoyaltee";
@@ -952,7 +952,7 @@
             this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
             this.btnRevenue.FlatAppearance.BorderSize = 0;
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenue.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
             this.btnRevenue.Location = new System.Drawing.Point(75, 0);
             this.btnRevenue.Name = "btnRevenue";
@@ -967,7 +967,7 @@
             this.btnStatement.BackColor = System.Drawing.Color.Transparent;
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatement.Font = new System.Drawing.Font("Microsoft MHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(0, 0);
             this.btnStatement.Name = "btnStatement";
@@ -977,13 +977,30 @@
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
             // 
+            // noteHideButton
+            // 
+            this.noteHideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.noteHideButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.noteHideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noteHideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteHideButton.ForeColor = System.Drawing.Color.White;
+            this.noteHideButton.Location = new System.Drawing.Point(117, 115);
+            this.noteHideButton.Margin = new System.Windows.Forms.Padding(4);
+            this.noteHideButton.Name = "noteHideButton";
+            this.noteHideButton.Size = new System.Drawing.Size(80, 24);
+            this.noteHideButton.TabIndex = 60;
+            this.noteHideButton.Text = "Hide Notifications";
+            this.noteHideButton.UseVisualStyleBackColor = false;
+            this.noteHideButton.Visible = false;
+            this.noteHideButton.Click += new System.EventHandler(this.Notifications_button_Click);
+            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.ControlBox = false;
             this.Controls.Add(this.pnlUser);
             this.Controls.Add(this.notificationPanel);
@@ -1090,6 +1107,7 @@
         private System.Windows.Forms.Button btnStatement;
         private System.Windows.Forms.PictureBox pbSNILogo;
         private System.Windows.Forms.Button btnSyncFromAndroid;
+        private System.Windows.Forms.Button noteHideButton;
 
     }
 }
