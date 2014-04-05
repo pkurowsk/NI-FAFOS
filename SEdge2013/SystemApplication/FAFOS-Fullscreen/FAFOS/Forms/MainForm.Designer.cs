@@ -269,7 +269,7 @@
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 118);
             this.paymentNotification.TabIndex = 5;
-            this.paymentNotification.Text = "None";
+            this.paymentNotification.Text = "";
             // 
             // serviceNotification
             // 
@@ -280,7 +280,7 @@
             this.serviceNotification.Name = "serviceNotification";
             this.serviceNotification.Size = new System.Drawing.Size(226, 118);
             this.serviceNotification.TabIndex = 4;
-            this.serviceNotification.Text = "None";
+            this.serviceNotification.Text = "";
             // 
             // lblNPaymentsDue
             // 
@@ -316,7 +316,7 @@
             this.lblTitleDayNotifications.Name = "lblTitleDayNotifications";
             this.lblTitleDayNotifications.Size = new System.Drawing.Size(128, 21);
             this.lblTitleDayNotifications.TabIndex = 0;
-            this.lblTitleDayNotifications.Text = "Day Notifications";
+            this.lblTitleDayNotifications.Text = "Daily Notifications";
             // 
             // lblOperations
             // 

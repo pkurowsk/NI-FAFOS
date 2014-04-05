@@ -47,8 +47,11 @@ namespace FAFOS
                 con.Close();
             }
             
+
            // return id;
         }
+
+
 
         //public bool checkExists(int id, string date)
         //{
@@ -86,7 +89,10 @@ namespace FAFOS
             con.Close();
         }
 
+        public void clearItinerary()
+        {
 
+        }
 
 
     }

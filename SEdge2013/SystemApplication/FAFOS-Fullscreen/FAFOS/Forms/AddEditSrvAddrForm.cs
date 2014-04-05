@@ -38,15 +38,19 @@ namespace FAFOS
         public void setFields(DataTable values)
         {
             int rowIndex;
+          
            
             for (int i = 0; i < values.Rows.Count; i++)
             {
+                
                 rowIndex = Add_Service();
-                try
+               try
                 {
+                   
+                   
                     TermsView.Rows[rowIndex].Cells[0].Value = values.Rows[i][0];
-                    TermsView.Rows[rowIndex].Cells[1].Value = values.Rows[i][1];
-                    TermsView.Rows[rowIndex].Cells[2].Value = values.Rows[i][2];
+                    TermsView.Rows[rowIndex].Cells[1].Value = values.Rows[i][1].ToString();
+                    TermsView.Rows[rowIndex].Cells[2].Value = values.Rows[i][2].ToString();
                     TermsView.Rows[rowIndex].Cells[3].Value = values.Rows[i][3];
                     TermsView.Rows[rowIndex].Cells[4].Value = values.Rows[i][4];
                 }
@@ -80,13 +84,13 @@ namespace FAFOS
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    try { cells[i, j] = TermsView.Rows[i].Cells[j].Value.ToString(); }
+                    try {cells[i, j] = TermsView.Rows[i].Cells[j].Value.ToString();}
                     catch (NullReferenceException) { }
                 }
                 cells[i, 5] = addressId;
             }
 
-            
+            //Application.Run(new View());
             return cells;
         }
 

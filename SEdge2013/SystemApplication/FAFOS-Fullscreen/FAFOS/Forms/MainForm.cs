@@ -78,24 +78,25 @@ namespace FAFOS
         public void Notifications()
         {
             DataTable dt2 = new ClientContract().getServices(userid.ToString());
-            serviceNotification.Text = "";
+            //serviceNotification.Text = "";
+         
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
+
                 if (Convert.ToDateTime(dt2.Rows[i][2]) == DateTime.Today)
                 {
                     String service = dt2.Rows[i][0].ToString();
-                    serviceNotification.Text += "\n" + service + " needs to be completed by today at ";
-                    serviceNotification.Text += dt2.Rows[i][4].ToString() + ", " + dt2.Rows[i][5].ToString() + "\n";
+                    serviceNotification.Text += "\n" + service + " needs to be completed by today ";
+                    serviceNotification.Text += "location - " + dt2.Rows[i][5].ToString() + "\n";
                 }
+                
             }
-            if (serviceNotification.Text == "")
-                serviceNotification.Text = "None";
 
 
 
 
            DataTable dt = new Payment().getNotPaid(userid);
-           paymentNotification.Text = "";
+          // paymentNotification.Text = "";
            for (int i = 2; i < dt.Rows.Count; i++)
            {
                if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
@@ -114,8 +115,8 @@ namespace FAFOS
                        + " on invoice #" + dt.Rows[i][0].ToString()+"\n";
                }
            }
-           if (paymentNotification.Text == "")
-               paymentNotification.Text = "None";
+           //if (paymentNotification.Text == "")
+              // paymentNotification.Text = "None";
         }
 
 

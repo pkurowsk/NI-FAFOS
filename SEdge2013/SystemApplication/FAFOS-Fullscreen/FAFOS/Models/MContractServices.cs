@@ -61,15 +61,17 @@ namespace FAFOS
 
                         DateTime dueDate = Convert.ToDateTime(cells[i, 3]).AddDays(365 /
                             new Period().getPerYear(new Period().getName(cells[i, 2])));
+                        
 
                         //Set end dates
-                        DateTime endDate = end;//new ClientContract().getEndDate(new ServiceAddress().getContractID(cells[i,5]), userid);
+                        DateTime endDate = end;// new ClientContract().getEndDate(new ServiceAddress().getContractID(cells[i, 5]), userid);
 
                         while (dueDate <= endDate)
                         {
+                            dueDate = dueDate.AddDays(365 /
+                              new Period().getPerYear(new Period().getName(cells[i, 2])));
                             new Itinerary().set(Convert.ToInt32(cells[i, 0]), 0, userid, dueDate.ToShortDateString());
-                            dueDate = Convert.ToDateTime(dueDate).AddDays(365 /
-                            new Period().getPerYear(new Period().getName(cells[i, 2])));
+                           
                         }
                     }
                 }
@@ -109,6 +111,26 @@ namespace FAFOS
                                                                         " WHERE con_serv_id = " + cells[i, 0], con);
 
                         command.ExecuteNonQuery();
+                        DateTime dueDate = Convert.ToDateTime(cells[i, 3]);//.AddDays(365 /
+                          // new Period().getPerYear(new Period().getName(cells[i, 2])));
+
+                        //Set end dates
+                        DateTime endDate = end;// new ClientContract().getEndDate(new ServiceAddress().getContractID(cells[i, 5]), userid);
+                        
+                        if(i == 0){
+                        string sqlTrunc = "TRUNCATE TABLE " + "ServiceItinerary";
+                        SqlCommand cmd = new SqlCommand(sqlTrunc, con);
+                        cmd.ExecuteNonQuery(); 
+                        }
+                        //new Itinerary().set(0, 0, 0, dueDate.ToShortDateString(), true);
+                        while (dueDate <= endDate)
+                        {
+                            
+                            dueDate = dueDate.AddDays(365 /
+                            new Period().getPerYear(new Period().getName(cells[i, 2])));
+                            new Itinerary().set(Convert.ToInt32(cells[i, 0]), 0, userid, dueDate.ToShortDateString());
+                            
+                        }
                     }
                 }
                   
