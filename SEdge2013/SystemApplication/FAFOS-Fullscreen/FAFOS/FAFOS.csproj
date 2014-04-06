@@ -78,6 +78,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Map">
       <HintPath>..\..\Map\Map\Map\obj\Debug\Map.dll</HintPath>
     </Reference>
@@ -104,8 +113,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditSupplierForm.Designer.cs">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FromMobileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FromMobileView.designer.cs">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InspectionData.cs" />
     <Compile Include="Forms\NumericTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="syncController.cs" />
+    <Compile Include="Forms\SyncView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SyncView.designer.cs">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TCP_Model.cs" />
+    <Compile Include="Forms\ToMobileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToMobileView.designer.cs">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
     </Compile>
     <Compile Include="NumericTextBox.cs">
       <SubType>Component</SubType>
@@ -387,6 +423,12 @@
     <EmbeddedResource Include="Forms\Background.resx">
       <DependentUpon>Background.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditSupplierForm.resx">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FromMobileView.resx">
+      <DependentUpon>FromMobileView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HQUserForm.resx">
       <DependentUpon>HQUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,6 +473,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Statements.resx">
       <DependentUpon>Statements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SyncView.resx">
+      <DependentUpon>SyncView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToMobileView.resx">
+      <DependentUpon>ToMobileView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maps\BSE.Windows.Forms\Resources\Resources.resx">
       <SubType>Designer</SubType>
@@ -572,8 +620,6 @@
     <Content Include="Maps\BSE.Windows.Forms\Resources\Collapse_h.jpg" />
     <Content Include="Maps\BSE.Windows.Forms\Resources\Expand.jpg" />
     <Content Include="Maps\BSE.Windows.Forms\Resources\Expand_h.jpg" />
-    <Content Include="Resources\AddClient1.swf" />
-    <Content Include="Resources\AddContract1.swf" />
     <Content Include="Resources\Back2.png" />
     <Content Include="Resources\BackOver.png" />
     <Content Include="Resources\CompanyLogo.png" />
@@ -581,39 +627,20 @@
     <None Include="Resources\DefaultProPic.png" />
     <None Include="Resources\Logo-updated.png" />
     <None Include="Resources\page-panel-back.png" />
-    <Content Include="Resources\Payment1.swf" />
-    <Content Include="Resources\PurchaseRecord.swf" />
-    <Content Include="Resources\Quote1.swf" />
-    <Content Include="Resources\RevenueReports.swf" />
-    <Content Include="Resources\RoyaltyFee.swf" />
-    <Content Include="Resources\Statements.swf" />
     <None Include="Resources\team-logos.png" />
-    <Content Include="Resources\TotalRevenue.swf" />
     <None Include="Resources\Shades.jpg" />
     <None Include="Resources\ListViewItemSorter.bmp" />
-    <Content Include="Resources\ConvertSalesOrder1.swf" />
-    <Content Include="Resources\CreateSalesOrder1.swf" />
-    <Content Include="Resources\EditClient1.swf" />
-    <Content Include="Resources\EditContract1.swf" />
-    <Content Include="Resources\EditQuote.swf" />
-    <Content Include="Resources\EditSalesOrder1.swf" />
-    <Content Include="Resources\EditUser.swf" />
-    <Content Include="Resources\Inspection.swf" />
-    <Content Include="Resources\Inventory1.swf" />
-    <Content Include="Resources\Invoice1.swf" />
-    <Content Include="Resources\Itinerary1.swf" />
-    <Content Include="Resources\JobReports.swf" />
     <Content Include="Resources\logo.JPG" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="System.Data.SqlServerCe">
       <Visible>False</Visible>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

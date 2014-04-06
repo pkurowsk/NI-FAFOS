@@ -434,6 +434,7 @@ namespace FAFOS
 
         public void SetTotal(double total,double tax)
         {
+            total = total / (1 + tax);
             txtSub.Text = "$" + String.Format("{0:0.00}", Math.Round(total, 2));
             txtTax.Text = "$"+String.Format("{0:0.00}", Math.Round(total * tax,2));
             txtTotal.Text = "$"+String.Format("{0:0.00}", Math.Round(total * (1 + tax),2));

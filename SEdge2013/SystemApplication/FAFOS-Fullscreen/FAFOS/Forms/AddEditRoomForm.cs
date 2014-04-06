@@ -13,7 +13,8 @@ namespace FAFOS
     {
         MaintainClientController my_controller;
         public bool noChanges;
-        int currentRow, AddrRow;
+        int currentRow, currentEquipment, AddrRow;
+        char currentEqType;
         String AddressID;
         List<DataGridView> extViews = new List<DataGridView>();
         List<DataGridView> hoseViews = new List<DataGridView>();
@@ -27,6 +28,8 @@ namespace FAFOS
             AddressID = id;
             AddrRow = AddrIndex;
             noChanges = true;
+            DatePicker.Value = DateTime.Today;
+
             this.Ok_Button.Click += new EventHandler(my_controller.Room_Ok_Button_Click);
             this.Cancel_Button.Click += new EventHandler(my_controller.Room_Cancel_Button_Click);
             this.RoomGridView.CellContentClick += new DataGridViewCellEventHandler(my_controller.Room_Cell_Click);
@@ -35,25 +38,61 @@ namespace FAFOS
 
         }        
 /**************************************** Gets *******************************************/
+        public int GetRoomIndex()
+        {
+            int n = RoomGridView.Rows.Count;
+            return n;
+        }
+        
         public String[,] GetRooms()
         {
             int n = RoomGridView.Rows.Count;
+            
             String[,] rooms = new String[n,4];
             for (int i = 0; i < n; i++)
             {
-                rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
-                rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
-                rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
-                rooms[i, 3] = AddressID;
+                if (RoomGridView.Rows[i].Cells["idCol"].Value.ToString() == null)
+                {
+                    rooms[i, 0] = "null";
+                }
+                else
+                {
+                    rooms[i, 0] = RoomGridView.Rows[i].Cells["idCol"].Value.ToString();
+                }
+                if (RoomGridView.Rows[i].Cells["roomNum"].Value.ToString() == null)
+                {
+                    rooms[i,1] = "null";
+                }
+                else
+                {
+                    rooms[i, 1] = RoomGridView.Rows[i].Cells["roomNum"].Value.ToString();
+                }
+                if (RoomGridView.Rows[i].Cells["floor"].Equals(null))
+                {
+                    rooms[i, 2] = "null";
+                }
+                else
+                {
+                    rooms[i, 2] = RoomGridView.Rows[i].Cells["floor"].Value.ToString();
+                }
+                if (AddressID == null)
+                {
+                    rooms[i, 3] = "null";
+                }
+                else
+                {
+                    rooms[i, 3] = AddressID;
+                }
             }
             return rooms;
         }
         public String[,] GetExtinguishers(int index)
         {
             int n = extViews[index].Rows.Count;
-            String[,] extinguishers = new String[n, 7];
+            int m = extViews[index].Columns.Count - 1;
+            String[,] extinguishers = new String[n, m];
             for (int i = 0; i < n; i++)
-                for(int j = 0; j < 7;j++)
+                for(int j = 0; j < m;j++)
                 {
                     try { extinguishers[i, j] = extViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { extinguishers[i, j] = null; }
@@ -64,9 +103,10 @@ namespace FAFOS
         public String[,] GetHoses(int index)
         {
             int n = hoseViews[index].Rows.Count;
-            String[,] hoses = new String[n, 4];
+            int m = hoseViews[index].Columns.Count - 1;
+            String[,] hoses = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < m; j++)
                 {
                     try { hoses[i, j] = hoseViews[index].Rows[i].Cells[j].Value.ToString(); }
                     catch (NullReferenceException) { hoses[i, j] = null; }
@@ -77,11 +117,16 @@ namespace FAFOS
         public String[,] GetLights(int index)
         {
             int n = lightViews[index].Rows.Count;
-            String[,] lights = new String[n, 10];
+            int m = lightViews[index].Columns.Count - 1;
+            String[,] lights = new String[n, m];
             for (int i = 0; i < n; i++)
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < m; j++)
                 {
-                    try { lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString(); }
+                    try
+                    {
+                        lights[i, j] = lightViews[index].Rows[i].Cells[j].Value.ToString();
+                          
+                    }
                     catch (NullReferenceException) { lights[i, j] = null; }
                 }
 
@@ -117,12 +162,16 @@ namespace FAFOS
         {
 
             int n = extinguishers.Rows.Count;
+            int m = extinguishers.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddExtinguisher(index);
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < m; j++)
                 {
                     extViews[index].Rows[i].Cells[j].Value = extinguishers.Rows[i][j];
+
+                    if (j == 8) // Manufacturing date
+                        extViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(extinguishers.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -130,12 +179,15 @@ namespace FAFOS
         {
 
             int n = hoses.Rows.Count;
+            int m = hoses.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddHose(index);
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < m; j++)
                 {
                     hoseViews[index].Rows[i].Cells[j].Value = hoses.Rows[i][j];
+                    if (j == 5) // Manufacturing date
+                        hoseViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(hoses.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -143,12 +195,19 @@ namespace FAFOS
         {
 
             int n = lights.Rows.Count;
+            int m = lights.Columns.Count;
             for (int i = 0; i < n; i++)
             {
                 AddLight(index);
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < m; j++)
                 {
+                    if (j == 7) // Requires Service
+                        lights.Rows[i][j] = lights.Rows[i][j].Equals("T") ? lightViews[index].Rows[i].Cells[j].Value = "true" : lightViews[index].Rows[i].Cells[j].Value = "False";
+                    
                     lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+
+                    if (j == 11) // Manufacturing date
+                        lightViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(lights.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -158,6 +217,7 @@ namespace FAFOS
         {
             int i = RoomGridView.Rows.Add();
             MRoom.AddBlank();
+            RoomGridView.Rows[i].Cells["floor"].Value = "";
             RoomGridView.Rows[i].Cells["idCol"].Value = MRoom.AddBlank();
             RoomGridView.Rows[i].Cells["extCol"].Value = "0";
             RoomGridView.Rows[i].Cells["hoseCol"].Value = "0";
@@ -247,29 +307,41 @@ namespace FAFOS
         }
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            ShowPicker(false, 0, 0, 'n');
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 DecMetric("extinguisher", currentRow);
                 my_controller.ExtinguisherView_CellClick(sender, e);
             }
+            else if ((e.ColumnIndex == 8) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true, e.ColumnIndex, e.RowIndex, 'e');
+            }
         }
         public void hoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if ((e.ColumnIndex == 4) && (e.RowIndex > -1))
+            ShowPicker(false, 0, 0, 'n');
+            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
             {
                 DecMetric("hose", currentRow);
                 my_controller.HoseView_CellClick(sender, e);
             }
+            else if ((e.ColumnIndex == 5) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true, e.ColumnIndex, e.RowIndex, 'h');
+            }
         }
         public void lightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if ((e.ColumnIndex == 10) && (e.RowIndex > -1))
+            ShowPicker(false, 0, 0, 'n');
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))     // Delete
             {
                 DecMetric("light", currentRow);
                 my_controller.LightView_CellClick(sender, e);
+            }
+            else if ((e.ColumnIndex == 11) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true,e.ColumnIndex, e.RowIndex, 'l');
             }
         }
 
@@ -349,6 +421,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn eTypeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn eSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn eManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn eDel = new DataGridViewButtonColumn();
 
             eIDCol.HeaderText = "ID";
@@ -380,6 +454,14 @@ namespace FAFOS
             eSerial.Name = "eSerial";
             eSerial.Width = 150;
 
+            eBarCode.HeaderText = "Bar Code";
+            eBarCode.Name = "eBarCode";
+            eBarCode.Width = 80;
+
+            eManDate.HeaderText = "Manufacturing Date";
+            eManDate.Name = "eManDate";
+            eManDate.Width = 150;
+
             eDel.HeaderText = "Delete";
             eDel.Name = "eDel";
             eDel.Width = 40;
@@ -398,11 +480,13 @@ namespace FAFOS
             eModel,
             eSerial,
             eRoom,
+            eBarCode,
+            eManDate,
             eDel});
 
             ExtinguisherView.Location = new System.Drawing.Point(5, 220);
             ExtinguisherView.Name = "ExtinguisherView";
-            ExtinguisherView.Size = new System.Drawing.Size(525, 150);
+            ExtinguisherView.Size = new System.Drawing.Size(AddItemButton.Location.X - ExtinguisherView.Location.X - 10, 150);
             ExtinguisherView.TabIndex = 61;
             ExtinguisherView.Visible = false;
             
@@ -418,6 +502,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn hRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn hLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn hSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn hBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn hManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn hDel = new DataGridViewButtonColumn();
             
             hID.HeaderText = "ID";
@@ -436,6 +522,12 @@ namespace FAFOS
             hDel.HeaderText = "Delete";
             hDel.Name = "hDel";
             hDel.Width = 40;
+            hBarCode.HeaderText = "Bar Code";
+            hBarCode.Name = "hBarCode";
+            hBarCode.Width = 80;
+            hManDate.HeaderText = "Manufacturing Date";
+            hManDate.Name = "hManDate";
+            hManDate.Width = 150;
             #endregion
 
             HoseView.AllowUserToAddRows = false;
@@ -446,11 +538,13 @@ namespace FAFOS
             hLoc,
             hSerial,
             hRoom,
+            hBarCode,
+            hManDate,
             hDel});
 
             HoseView.Location = new System.Drawing.Point(5, 220);
             HoseView.Name = "HoseView";
-            HoseView.Size = new System.Drawing.Size(320, 150);
+            HoseView.Size = new System.Drawing.Size(AddItemButton.Location.X - HoseView.Location.X - 10, 150);
             HoseView.TabIndex = 65;
             HoseView.Visible = false;
 
@@ -472,6 +566,8 @@ namespace FAFOS
             DataGridViewTextBoxColumn lVolts= new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewCheckBoxColumn lReqServ = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             DataGridViewTextBoxColumn lSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn lBarCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn lManDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewButtonColumn lDel = new DataGridViewButtonColumn();
 
             lid.HeaderText = "ID";
@@ -505,6 +601,12 @@ namespace FAFOS
             lRoom.Name = "lRoom";
             lRoom.Visible = false;
             lRoom.Width = 60;
+            lBarCode.HeaderText = "Bar Code";
+            lBarCode.Name = "Bar Code";
+            lBarCode.Width = 80;
+            lManDate.HeaderText = "Manufacturing Date";
+            lManDate.Name = "lManDate";
+            lManDate.Width = 150;
             lDel.HeaderText = "Delete";
             lDel.Name = "lDel";
             lDel.Width = 40;
@@ -524,15 +626,60 @@ namespace FAFOS
             lReqServ,
             lSerial,
             lRoom,
+            lBarCode,
+            lManDate,
             lDel});
 
             LightView.Location = new System.Drawing.Point(5, 220);
             LightView.Name = "LightView";
-            LightView.Size = new System.Drawing.Size(710, 150);
+            LightView.Size = new System.Drawing.Size(AddItemButton.Location.X - LightView.Location.X - 10, 150);
             LightView.TabIndex = 66;
             LightView.Visible = false;
 
             return LightView;
         }
+
+        public void setDate(DateTime values)
+        {
+            DatePicker.Value = values;
+        }
+
+        public void ShowPicker(bool isShown, int colIndex, int rowIndex, char equipmentType)
+        {
+            currentEquipment = rowIndex;
+            currentEqType = equipmentType;
+            if (isShown)
+            {
+                try 
+                {
+                    if (equipmentType == 'l')
+                        DatePicker.Value = Convert.ToDateTime(lightViews[currentRow].Rows[rowIndex].Cells[11].Value);
+                    else if (equipmentType == 'e')
+                        DatePicker.Value = Convert.ToDateTime(extViews[currentRow].Rows[rowIndex].Cells[8].Value);
+                    else if (equipmentType == 'h')
+                        DatePicker.Value = Convert.ToDateTime(hoseViews[currentRow].Rows[rowIndex].Cells[5].Value);
+                }
+                catch (Exception) { }
+
+                DatePicker.Visible = true;
+            }
+            else
+                DatePicker.Visible = false;
+        }
+
+        private void DatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (DatePicker.Visible)
+            {
+                if (currentEqType == 'l')
+                    lightViews[currentRow].Rows[currentEquipment].Cells[11].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                else if (currentEqType == 'e')
+                    extViews[currentRow].Rows[currentEquipment].Cells[8].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                else if (currentEqType == 'h')
+                    hoseViews[currentRow].Rows[currentEquipment].Cells[5].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                noChanges = false;
+            }
+        }
+
     }
 }

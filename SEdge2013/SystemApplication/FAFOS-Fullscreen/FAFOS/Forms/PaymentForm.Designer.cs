@@ -141,6 +141,7 @@
             // 
             // txtAmount
             // 
+            this.txtAmount.AllowSpace = false;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtAmount.Location = new System.Drawing.Point(98, 59);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
@@ -224,6 +225,7 @@
             // 
             // txtBalance
             // 
+            this.txtBalance.AllowSpace = false;
             this.txtBalance.Enabled = false;
             this.txtBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.txtBalance.Location = new System.Drawing.Point(110, 198);
@@ -294,7 +296,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1244, 788);
+            this.ClientSize = new System.Drawing.Size(1244, 772);
             this.Controls.Add(this.Submit_btn);
             this.Controls.Add(this.InvoiceBox);
             this.Controls.Add(this.PaymentBox);

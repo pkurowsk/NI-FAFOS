@@ -36,7 +36,7 @@ namespace FAFOS
             Back_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             Back_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             */
-            this.contract_Button.Click += new EventHandler(my_controller.Client_Contract_Button_Click);
+           // this.contract_Button.Click += new EventHandler(my_controller.Client_Contract_Button_Click);
             this.Ok_Button.Click += new System.EventHandler(my_controller.Client_Ok_Button_Click);
            // this.Cancel_Button.Click += new System.EventHandler(my_controller.Client_Cancel_Button_Click);
             this.delete_Button.Click += new EventHandler(my_controller.Client_Delete_Button_Click);
@@ -125,12 +125,12 @@ namespace FAFOS
             this.PoBoxTextBox.Text = values[9];
             this.PrimContactTextBox.Text = values[10];
             
-            if (values[14] == "")
+          /*  if (values[14] == "")
                 contract_Button.Text = "<Click to Add>";
             else{
                 try { contract_Button.Text = MClientContract.GetName(values[14]); }
                 catch (Exception) { contract_Button.Text = "Error"; }
-                }
+                }*/
             noChanges = true;
 
         }
@@ -280,7 +280,7 @@ namespace FAFOS
             }
         }
 
-        public void DisableContract(String Contract)
+       /* public void DisableContract(String Contract)
         {
             this.contract_Button.Enabled = false;
             this.contract_Button.Text = Contract;
@@ -288,7 +288,9 @@ namespace FAFOS
         public void SetContractButton(String ContractName)
         {
             contract_Button.Text = ContractName;
-        }
+        }*/
+
+       
 
        /* void button1_MouseLeave(object sender, EventArgs e)
         {

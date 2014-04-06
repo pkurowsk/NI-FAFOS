@@ -42,7 +42,9 @@
             this.inspectionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inspectionType.FormattingEnabled = true;
             this.inspectionType.Items.AddRange(new object[] {
-            "Extinguisher Report"});
+            "Fire Extinguisher Inspection",
+            "Emergency Light Inspection",
+            "Fire Hose Cabinet Inspection"});
             this.inspectionType.Location = new System.Drawing.Point(25, 154);
             this.inspectionType.Name = "inspectionType";
             this.inspectionType.Size = new System.Drawing.Size(298, 25);
@@ -124,7 +126,6 @@
             this.pnlInspection.ResumeLayout(false);
             this.pnlInspection.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

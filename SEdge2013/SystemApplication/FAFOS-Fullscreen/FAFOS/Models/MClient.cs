@@ -49,7 +49,13 @@ namespace FAFOS
             cityID = null;
             contractID = null;
             Get();
-        }      
+        }
+
+        public override void Set(string[] values)
+        {
+            MessageBox.Show("change this to set 1");
+            throw new NotImplementedException();
+        }
 
         public override String[] Get() 
         {
@@ -66,12 +72,12 @@ namespace FAFOS
             else return null;
         }
 
-        public override void Set(String[] values)
+        public int Set1(String[] values)
         {
             String connString = Properties.Settings.Default.FAFOS;
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(connString);
-            
+            int temp = 1;
             
             for (int i = 0; i < values.Length;i++ )
                 if (values[i] == null)
@@ -79,9 +85,52 @@ namespace FAFOS
              
 
             con.Open();
-            if(old)
+            if (old)
             {
-
+                //int temp = 1;
+                if (values[1] == null)
+                {
+                    temp = 0;
+                }
+                if (values[2] == null)
+                {
+                    temp = 0;
+                }
+                if (values[3] == null)
+                {
+                    temp = 0;
+                }
+                if (values[5] == null)
+                {
+                    temp = 0;
+                }
+                if (values[6] == null)
+                {
+                    temp = 0;
+                }
+                if (values[10] == null)
+                {
+                    temp = 0;
+                }
+                if (countryID == null)
+                {
+                    temp = 0;
+                }
+                if (provStateID == null)
+                {
+                    temp = 0;
+                }
+                if (cityID == null)
+                {
+                    temp = 0;
+                }
+                if (temp == 0)
+                {
+                    MessageBox.Show("please fill in all required fields.");
+                }
+                else if (temp == 1)
+                {
+                    if (contractID == null || contractID == "") contractID = "NULL";
                     SqlCommand command = new SqlCommand("UPDATE Client SET account_name = '" + values[1] +
                                                                           "', type = '" + values[2] +
                                                                           "', address = '" + values[3] +
@@ -95,37 +144,82 @@ namespace FAFOS
                                                                           "', country_id = " + countryID +
                                                                           ", province_id = " + provStateID +
                                                                           ", city_id = " + cityID +
-                                                                          ", client_contract_id = "+ contractID +
+                                                                          ", client_contract_id = " + contractID +
                                                                           " WHERE client_id = " + clientID, con);
-                    
 
-                command.ExecuteNonQuery();
+
+                    command.ExecuteNonQuery();
+                }
             }
-            
             else //if(!old)
-            {                
+            {
                 clientID = FindID();
                 if (contractID == null) contractID = "NULL";
 
-                SqlCommand command = new SqlCommand("INSERT INTO Client VALUES ("+ clientID + ", '"
-                                                                                    + values[1] + "', '"
-                                                                                    + values[2] + "', '"
-                                                                                    + values[3] + "', '"
-                                                                                    + values[4] + "', '"
-                                                                                    + values[5] + "', '"
-                                                                                    + values[6] + "', '"
-                                                                                    + values[7] + "', '"
-                                                                                    + values[8] + "', '"
-                                                                                    + values[9] + "', '"
-                                                                                    + values[10] + "', "
-                                                                                    + countryID + ", "
-                                                                                    + provStateID + ", "
-                                                                                    + cityID + ", "
-                                                                                    + contractID + ")", con);
-                command.ExecuteNonQuery();           
+                
+                if (values[1] == null)
+                {
+                    temp = 0;
+                }
+                if (values[2] == null)
+                {
+                    temp = 0;
+                }
+                if (values[3] == null)
+                {
+                    temp = 0;
+                }
+                if (values[5] == null)
+                {
+                    temp = 0;
+                }
+                if (values[6] == null)
+                {
+                    temp = 0;
+                }
+                if (values[10] == null)
+                {
+                    temp = 0;
+                }
+                if (countryID == null)
+                {
+                    temp = 0;
+                }
+                if (provStateID == null)
+                {
+                    temp = 0;
+                }
+                if (cityID == null)
+                {
+                    temp = 0;
+                }
+                if (temp == 0)
+                {
+                    MessageBox.Show("please fill in all required fields.");
+                }
+                else if (temp == 1)
+                {
+
+                    SqlCommand command = new SqlCommand("INSERT INTO Client VALUES (" + clientID + ", '"
+                                                                                        + values[1] + "', '"
+                                                                                        + values[2] + "', '"
+                                                                                        + values[3] + "', '"
+                                                                                        + values[4] + "', '"
+                                                                                        + values[5] + "', '"
+                                                                                        + values[6] + "', '"
+                                                                                        + values[7] + "', '"
+                                                                                        + values[8] + "', '"
+                                                                                        + values[9] + "', '"
+                                                                                        + values[10] + "', "
+                                                                                        + countryID + ", "
+                                                                                        + provStateID + ", "
+                                                                                        + cityID + ", "
+                                                                                        + contractID + ")", con);
+                    command.ExecuteNonQuery();
+                }
             }
             con.Close();
-            return;
+            return temp;
         }
         public static void SetContract(String cliID, String conID)
         {
@@ -136,8 +230,8 @@ namespace FAFOS
             con.Open();
             SqlCommand command = new SqlCommand("UPDATE Client SET  client_contract_id = " + conID +
                                                                      " WHERE client_id = " + cliID, con);
-            SqlCommand command2 = new SqlCommand("UPDATE Client_Contract SET  client_id = " + conID +
-                                                                     " WHERE client_contract_id = " + cliID, con);
+            SqlCommand command2 = new SqlCommand("UPDATE Client_Contract SET  client_id = " + cliID +
+                                                                     " WHERE client_contract_id = " + conID, con);
 
             command.ExecuteNonQuery();
             command2.ExecuteNonQuery();

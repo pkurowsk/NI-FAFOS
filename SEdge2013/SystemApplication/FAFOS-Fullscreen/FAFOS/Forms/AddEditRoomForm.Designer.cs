@@ -41,6 +41,7 @@
             this.deleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addRoomButton = new System.Windows.Forms.Button();
             this.AddItemButton = new System.Windows.Forms.Button();
+            this.DatePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.RoomGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,10 +52,9 @@
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Cancel_Button.ForeColor = System.Drawing.Color.White;
-            this.Cancel_Button.Location = new System.Drawing.Point(796, 415);
-            this.Cancel_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancel_Button.Location = new System.Drawing.Point(904, 337);
             this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(131, 57);
+            this.Cancel_Button.Size = new System.Drawing.Size(98, 46);
             this.Cancel_Button.TabIndex = 59;
             this.Cancel_Button.Text = "Cancel";
             this.Cancel_Button.UseVisualStyleBackColor = false;
@@ -64,10 +64,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.label1.Location = new System.Drawing.Point(3, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 34;
             this.label1.Text = "Rooms:";
             // 
@@ -78,10 +77,9 @@
             this.Ok_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.Ok_Button.ForeColor = System.Drawing.Color.White;
-            this.Ok_Button.Location = new System.Drawing.Point(656, 415);
-            this.Ok_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.Ok_Button.Location = new System.Drawing.Point(799, 337);
             this.Ok_Button.Name = "Ok_Button";
-            this.Ok_Button.Size = new System.Drawing.Size(131, 57);
+            this.Ok_Button.Size = new System.Drawing.Size(98, 46);
             this.Ok_Button.TabIndex = 31;
             this.Ok_Button.Text = "Ok";
             this.Ok_Button.UseVisualStyleBackColor = false;
@@ -99,10 +97,9 @@
             this.hoseCol,
             this.lightCol,
             this.deleteButton});
-            this.RoomGridView.Location = new System.Drawing.Point(7, 36);
-            this.RoomGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.RoomGridView.Location = new System.Drawing.Point(5, 29);
             this.RoomGridView.Name = "RoomGridView";
-            this.RoomGridView.Size = new System.Drawing.Size(584, 178);
+            this.RoomGridView.Size = new System.Drawing.Size(554, 145);
             this.RoomGridView.TabIndex = 60;
             this.RoomGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.RoomGridView_RowsRemoved);
             // 
@@ -157,10 +154,9 @@
             this.addRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.addRoomButton.ForeColor = System.Drawing.Color.White;
-            this.addRoomButton.Location = new System.Drawing.Point(599, 36);
-            this.addRoomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addRoomButton.Location = new System.Drawing.Point(565, 29);
             this.addRoomButton.Name = "addRoomButton";
-            this.addRoomButton.Size = new System.Drawing.Size(135, 44);
+            this.addRoomButton.Size = new System.Drawing.Size(101, 36);
             this.addRoomButton.TabIndex = 64;
             this.addRoomButton.Text = "Add Room";
             this.addRoomButton.UseVisualStyleBackColor = false;
@@ -173,31 +169,40 @@
             this.AddItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.AddItemButton.ForeColor = System.Drawing.Color.White;
-            this.AddItemButton.Location = new System.Drawing.Point(7, 414);
-            this.AddItemButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AddItemButton.Location = new System.Drawing.Point(799, 274);
             this.AddItemButton.Name = "AddItemButton";
-            this.AddItemButton.Size = new System.Drawing.Size(169, 44);
+            this.AddItemButton.Size = new System.Drawing.Size(127, 36);
             this.AddItemButton.TabIndex = 67;
             this.AddItemButton.Text = "Add Extinguisher";
             this.AddItemButton.UseVisualStyleBackColor = false;
             this.AddItemButton.Visible = false;
             this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
+            // DatePicker
+            // 
+            this.DatePicker.Location = new System.Drawing.Point(436, 180);
+            this.DatePicker.Name = "DatePicker";
+            this.DatePicker.Size = new System.Drawing.Size(123, 20);
+            this.DatePicker.TabIndex = 68;
+            this.DatePicker.Value = new System.DateTime(2013, 4, 4, 0, 0, 0, 0);
+            this.DatePicker.Visible = false;
+            this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
+            // 
             // AddEditRoomForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(943, 486);
+            this.ClientSize = new System.Drawing.Size(1014, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.AddItemButton);
             this.Controls.Add(this.addRoomButton);
             this.Controls.Add(this.RoomGridView);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Ok_Button);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditRoomForm";
             this.ShowInTaskbar = false;
             this.Text = "Maintain Rooms For <unkown>";
@@ -223,5 +228,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn hoseCol;
         private System.Windows.Forms.DataGridViewButtonColumn lightCol;
         private System.Windows.Forms.DataGridViewButtonColumn deleteButton;
+        private System.Windows.Forms.DateTimePicker DatePicker;
     }
 }

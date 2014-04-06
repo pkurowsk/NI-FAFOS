@@ -134,7 +134,7 @@ namespace FAFOS
                 {
                     MClient.SetContract(_client.FindID(), _contract.FindID());
                     _client.changeContract(_contract.FindID());
-                    _clientForm.SetContractButton(MClientContract.GetName(_contract.FindID()));
+                   // _clientForm.SetContractButton(MClientContract.GetName(_contract.FindID()));
                 }
 
             }
@@ -204,9 +204,9 @@ namespace FAFOS
                     if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {// if we are good, submit changes to dataBase        
 
-                        _client.Set(values);
+                        int test = _client.Set1(values);
                         // _mainForm.SetClientBox(MClient.GetList());
-                       
+                       if(test == 1)
                         _clientForm.Close();
                     }
                 }
@@ -314,7 +314,7 @@ namespace FAFOS
             _clientForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             _clientForm.StartPosition = FormStartPosition.CenterScreen;
             _clientForm.Activate();
-            _clientForm.DisableContract(_contractForm.GetContractText());
+          //  _clientForm.DisableContract(_contractForm.GetContractText());
             _clientForm.ShowDialog();
 
             if (_client.GetID() == null)
@@ -345,24 +345,31 @@ namespace FAFOS
 
         public void Contract_Ok_Button_Click(object sender, EventArgs e)
         {
-            if (_contractForm.noChanges)
-                _contractForm.Close();
             
+            bool okToSubmit = true;
+            if (_contractForm.noChanges)
+            {
+                _contractForm.Close();
+               
+            }
             else
             {
+
                 if (_contract.getClientID() == "")
                 {
                     MessageBox.Show("A contract requires a Client to be created");
-                    return;
+                    okToSubmit = false;
+
                 }
 
                 String[] values = _contractForm.GetInputs();
                 String[,] srvAddrs = _contractForm.GetViewInputs();
 
-                bool okToSubmit = true;
+
                 for (int i = 0; i < values.Length; i++)
                     if (values[i] == "Fail")
                         okToSubmit = false;
+
 
                 if (okToSubmit)
                 {
@@ -370,18 +377,20 @@ namespace FAFOS
                     {
                         _contract.Set(values);// if we are good, submit changes to dataBase
                         NewSrvAddr();
-                        String[] row; 
-                        for (int i = 0; i < (srvAddrs.Length/10);i++)
+                        String[] row;
+                        int test = 1;
+                        for (int i = 0; i < (srvAddrs.Length / 10); i++)
                         {
                             row = new String[10];
                             for (int j = 0; j < 10; j++)
                                 row[j] = srvAddrs[i, j];
 
-                            _srvAddr.Set(row);
+                            test = _srvAddr.Set1(row);
                         }
                         OldClient(_contract.getClientID());
-                        MClient.SetContract(_contract.getClientID(),_contract.FindID());
+                        MClient.SetContract(_contract.getClientID(), _contract.FindID());
                         okDone = true;
+                        if(test==1)
                         _contractForm.Close();
 
 
@@ -390,12 +399,12 @@ namespace FAFOS
                     else
                         return;
                 }
-            }
+            } _mainForm.Notifications();
         }
 
         public void Contract_Closing(object sender, EventArgs e)
         {
-            if (!okDone && _contractForm.GetSelectedContract()!="")
+           /* if (!okDone && _contractForm.GetSelectedContract()!="")
             {
                 String name;
                 if (_contractForm.GetSelectedContract() != null)
@@ -422,7 +431,7 @@ namespace FAFOS
                     // _contractForm.Close(); 
                 }
             }
-            okDone = false;      
+            okDone = false;*/      
         }//make Cascade
 
         private void Populate_AddrGridView(String contractID)
@@ -503,6 +512,7 @@ namespace FAFOS
 
         public void SrvAddr_Ok_Button_Click(object sender, EventArgs e)
         {
+            int test = 1;
             if (_srvAddrForm.noChanges)
             {
                 _srvAddrForm.Close();
@@ -521,9 +531,10 @@ namespace FAFOS
                         MContractServices cs = new MContractServices();
                         try {
                             
-                            cs.SetMany(values, userID, _contractForm.GetEndDate()); 
+                            test = cs.SetMany(values, userID, _contractForm.GetEndDate()); 
                         }
                         catch (Exception) { MessageBox.Show("Error Updating Database"); }
+                        if(test == 1)
                         _srvAddrForm.Close();
 
 
@@ -578,12 +589,14 @@ namespace FAFOS
                 dgv.Rows.RemoveAt(e.RowIndex);                
                 _roomForm.noChanges = false;
             }
+            // Hide datepicker
+            _roomForm.ShowPicker(false, 0, 0, 'n');
         }
 
         public void ExtinguisherView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            if ((e.ColumnIndex == 7) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -602,7 +615,7 @@ namespace FAFOS
         public void HoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            if ((e.ColumnIndex == 4) && (e.RowIndex > -1))
+            if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -620,8 +633,8 @@ namespace FAFOS
 
         public void LightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if ((e.ColumnIndex == 10) && (e.RowIndex > -1))
+            Console.WriteLine("Click " + e.ColumnIndex);
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;
                 try
@@ -639,6 +652,9 @@ namespace FAFOS
 
         public void Room_Ok_Button_Click(object sender, EventArgs e)
         {
+            int test1=0;
+            int test2=0;
+            int test3=0;
             if (_roomForm.noChanges)
             {
                 _roomForm.Close();
@@ -646,8 +662,9 @@ namespace FAFOS
             }
             else
             {
-                String[,] rooms = _roomForm.GetRooms();
-                int nRooms = rooms.Length/4;
+               // String[,] rooms = _roomForm.GetRooms();
+               // int nRooms = rooms.Length/4;
+                int nRooms = _roomForm.GetRoomIndex();
 
                 bool okToSubmit = true;
                 /*
@@ -668,17 +685,24 @@ namespace FAFOS
                             */
                             if (okToSubmit)
                             {
-                                MRoom.SetExtinguishers(ext);
-                                MRoom.SetHoses(hoses);
-                                MRoom.SetLights(lights);
+                               test1 = MRoom.SetExtinguishers(ext);
+                               test2 = MRoom.SetHoses(hoses);
+                               test3 = MRoom.SetLights(lights);
+                              
+                                  
                             }
                             else
                                 return;
                         }
 
-                        MRoom.SetMany(rooms);
-                        _contractForm.noChanges = false;
-                        _roomForm.Close();
+                        if (okToSubmit)
+                        {
+                            String[,] rooms = _roomForm.GetRooms();
+                            int test4 = MRoom.SetMany(rooms);
+                            _contractForm.noChanges = false;
+                            if (test1 == 1 && test2 == 1 && test3 == 1 && test4 == 1)
+                                _roomForm.Close();
+                        }
                     }
                     else
                         return;                    

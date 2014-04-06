@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows;
-//using tiles;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -80,23 +79,26 @@ namespace FAFOS
         {
             DataTable dt2 = new ClientContract().getServices(userid.ToString());
             serviceNotification.Text = "";
+         
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
+
                 if (Convert.ToDateTime(dt2.Rows[i][2]) == DateTime.Today)
                 {
                     String service = dt2.Rows[i][0].ToString();
-                    serviceNotification.Text += "\n" + service + " needs to be completed by today at ";
-                    serviceNotification.Text += dt2.Rows[i][4].ToString() + ", " + dt2.Rows[i][5].ToString() + "\n";
+                    serviceNotification.Text += "\n" + service + " needs to be completed by today ";
+                    serviceNotification.Text += "location - " + dt2.Rows[i][5].ToString() + "\n";
                 }
-            }
+
+            } 
             if (serviceNotification.Text == "")
-                serviceNotification.Text = "None";
+             serviceNotification.Text = "";
 
 
 
 
            DataTable dt = new Payment().getNotPaid(userid);
-           paymentNotification.Text = "";
+          // paymentNotification.Text = "";
            for (int i = 2; i < dt.Rows.Count; i++)
            {
                if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
@@ -115,8 +117,8 @@ namespace FAFOS
                        + " on invoice #" + dt.Rows[i][0].ToString()+"\n";
                }
            }
-           if (paymentNotification.Text == "")
-               paymentNotification.Text = "None";
+           //if (paymentNotification.Text == "")
+              // paymentNotification.Text = "None";
         }
 
 
@@ -373,7 +375,6 @@ namespace FAFOS
 
             if (Login())
             {
-               // userid = 1;
                 pnlLogin.Visible = false;
                 this.Exit_btn.Focus();
                 /*quote.Visible = true;
@@ -402,6 +403,7 @@ namespace FAFOS
              //   allRevenue.Visible = true;
                 */
                 syncAndroid.Visible = true;
+                btnSyncFromAndroid.Visible = true;
                 syncHQ.Visible = true;
 
                 lblOperations.Visible = true;
@@ -417,10 +419,10 @@ namespace FAFOS
                 txtPassword.Visible = false;
                 Login_btn.Visible = false;
                 Logout_btn.Visible = true;
+                noteHideButton.Visible = true;
                 userSettings.Visible = true;
-                Notifications_button.Visible = true;
                 lblUserInfo.Visible = true;
-                notificationPanel.Visible = false;
+                notificationPanel.Visible = true;
                 profilePic.Visible = true;
                 pnlUser.Visible = true;
                 pnlPage.Visible = true;
@@ -539,7 +541,6 @@ namespace FAFOS
 
         private bool UserAuthenticated(string p, string p_2)
         {
-           
             if (user.check(p, p_2))
             {
                 userid = user.getId(p);
@@ -553,6 +554,7 @@ namespace FAFOS
             pnlPage.Controls.Clear();
             
             syncAndroid.Visible = false;
+            btnSyncFromAndroid.Visible = false;
             syncHQ.Visible = false;
 
             lblOperations.Visible = false;
@@ -579,7 +581,6 @@ namespace FAFOS
             Login_btn.Visible = true;
             Logout_btn.Visible = false;
             userSettings.Visible = false;
-            Notifications_button.Visible = false;
             lblUserInfo.Visible = false;
             profilePic.Visible = false;
             notificationPanel.Visible = false;
@@ -618,7 +619,7 @@ namespace FAFOS
                 pnlPage.Location = new Point(0, pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = ">";
+                btnMenu.Text = "Show";
             }
             else
             {
@@ -627,7 +628,7 @@ namespace FAFOS
                     pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = "<";
+                btnMenu.Text = "Hide";
             }
         }
 
@@ -758,6 +759,15 @@ namespace FAFOS
             payment_form.TopLevel = false;
             pnlPage.Controls.Add(payment_form);
             payment_form.Show();
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            SupplierForm supplier_form = new SupplierForm(userid);
+            supplier_form.TopLevel = false;
+            pnlPage.Controls.Add(supplier_form);
+            supplier_form.Show();
+        
         }
 
         #endregion
@@ -897,6 +907,28 @@ namespace FAFOS
         }
 
         #endregion
+
+        private void pnlPage_MouseEnter(object sender, EventArgs e)
+        {
+            // Set all panels invisible
+            pnlOps.Visible =
+                pnlDocs.Visible =
+                pnlReports.Visible =
+                pnlClients.Visible = false;
+        }
+
+        private void syncAndroid_Click(object sender, EventArgs e)
+        {
+            syncController my_sync_controller = new syncController(userid);
+            my_sync_controller.syncToAndroid_Click(sender, e);
+
+        }
+
+        private void btnSyncFromAndroid_Click(object sender, EventArgs e)
+        {
+            syncController my_sync_controller = new syncController(userid);
+            my_sync_controller.syncFromAndroid_Click(sender, e);
+        }
 
     }
 }

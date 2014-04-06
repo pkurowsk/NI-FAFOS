@@ -636,7 +636,7 @@ namespace FAFOS
 
                 for (int i = 0; i < workOrderTable.SelectedRows.Count; i++)
                 {
-                    MessageBox.Show(location[i].ToString());
+                    //MessageBox.Show(location[i].ToString());
                     PointLatLng? pos1 = GMapProviders.GoogleMap.GetPoint(location[i].ToString(), out status);
                     if (pos1 != null && status == GeoCoderStatusCode.G_GEO_SUCCESS)
                     {
