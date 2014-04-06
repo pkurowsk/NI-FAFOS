@@ -235,7 +235,14 @@ namespace FAFOS
                             addCell(addrTable, " ", 4, 4, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
                             string technicianID = c2.Attributes["InspectorID"].InnerText;
-                            string technicianName = new Users().getName(Convert.ToInt32(technicianID));
+
+                            string technicianName = "";
+                            try
+                            {
+                                technicianName = new Users().getName(Convert.ToInt32(technicianID));
+                            }
+                            catch   {}
+
                             if (technicianName == null || technicianName == "")
                                 technicianName = "Technician Not Found";
 

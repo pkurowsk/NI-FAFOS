@@ -643,7 +643,7 @@
             this.btnInvoice.BackColor = System.Drawing.Color.Transparent;
             this.btnInvoice.FlatAppearance.BorderSize = 0;
             this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.Location = new System.Drawing.Point(375, 0);
             this.btnInvoice.Name = "btnInvoice";
@@ -658,7 +658,7 @@
             this.btnEditSO.BackColor = System.Drawing.Color.Transparent;
             this.btnEditSO.FlatAppearance.BorderSize = 0;
             this.btnEditSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditSO.ForeColor = System.Drawing.Color.White;
             this.btnEditSO.Location = new System.Drawing.Point(300, 0);
             this.btnEditSO.Name = "btnEditSO";
@@ -673,7 +673,7 @@
             this.btnConvertSO.BackColor = System.Drawing.Color.Transparent;
             this.btnConvertSO.FlatAppearance.BorderSize = 0;
             this.btnConvertSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertSO.ForeColor = System.Drawing.Color.White;
             this.btnConvertSO.Location = new System.Drawing.Point(225, 0);
             this.btnConvertSO.Name = "btnConvertSO";
@@ -688,7 +688,7 @@
             this.btnCreateSO.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateSO.ForeColor = System.Drawing.Color.White;
             this.btnCreateSO.Location = new System.Drawing.Point(150, 0);
             this.btnCreateSO.Name = "btnCreateSO";
@@ -703,7 +703,7 @@
             this.btnEditQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnEditQuote.FlatAppearance.BorderSize = 0;
             this.btnEditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditQuote.ForeColor = System.Drawing.Color.White;
             this.btnEditQuote.Location = new System.Drawing.Point(75, 0);
             this.btnEditQuote.Name = "btnEditQuote";
@@ -718,7 +718,7 @@
             this.btnQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnQuote.FlatAppearance.BorderSize = 0;
             this.btnQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuote.ForeColor = System.Drawing.Color.White;
             this.btnQuote.Location = new System.Drawing.Point(0, 0);
             this.btnQuote.Name = "btnQuote";
@@ -751,7 +751,7 @@
             this.btnSupplier.BackColor = System.Drawing.Color.Transparent;
             this.btnSupplier.FlatAppearance.BorderSize = 0;
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Location = new System.Drawing.Point(375, 0);
             this.btnSupplier.Name = "btnSupplier";
@@ -767,7 +767,7 @@
             this.btnPurchase.BackColor = System.Drawing.Color.Transparent;
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPurchase.ForeColor = System.Drawing.Color.White;
             this.btnPurchase.Location = new System.Drawing.Point(225, 0);
             this.btnPurchase.Name = "btnPurchase";
@@ -783,7 +783,7 @@
             this.btnPayment.BackColor = System.Drawing.Color.Transparent;
             this.btnPayment.FlatAppearance.BorderSize = 0;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.Location = new System.Drawing.Point(300, 0);
             this.btnPayment.Name = "btnPayment";
@@ -798,7 +798,7 @@
             this.btnInventory.BackColor = System.Drawing.Color.Transparent;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Location = new System.Drawing.Point(150, 0);
             this.btnInventory.Name = "btnInventory";
@@ -826,7 +826,7 @@
             this.btnInspection.BackColor = System.Drawing.Color.Transparent;
             this.btnInspection.FlatAppearance.BorderSize = 0;
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInspection.ForeColor = System.Drawing.Color.White;
             this.btnInspection.Location = new System.Drawing.Point(75, 0);
             this.btnInspection.Name = "btnInspection";
@@ -842,7 +842,7 @@
             this.btnItinerary.BackColor = System.Drawing.Color.Transparent;
             this.btnItinerary.FlatAppearance.BorderSize = 0;
             this.btnItinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItinerary.ForeColor = System.Drawing.Color.White;
             this.btnItinerary.Location = new System.Drawing.Point(0, 0);
             this.btnItinerary.Name = "btnItinerary";
@@ -885,7 +885,7 @@
             this.btnEContract.BackColor = System.Drawing.Color.Transparent;
             this.btnEContract.FlatAppearance.BorderSize = 0;
             this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEContract.ForeColor = System.Drawing.Color.White;
             this.btnEContract.Location = new System.Drawing.Point(225, 0);
             this.btnEContract.Name = "btnEContract";
@@ -900,7 +900,7 @@
             this.btnAContract.BackColor = System.Drawing.Color.Transparent;
             this.btnAContract.FlatAppearance.BorderSize = 0;
             this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAContract.ForeColor = System.Drawing.Color.White;
             this.btnAContract.Location = new System.Drawing.Point(150, 0);
             this.btnAContract.Name = "btnAContract";
@@ -915,7 +915,7 @@
             this.btnEClient.BackColor = System.Drawing.Color.Transparent;
             this.btnEClient.FlatAppearance.BorderSize = 0;
             this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEClient.ForeColor = System.Drawing.Color.White;
             this.btnEClient.Location = new System.Drawing.Point(75, 0);
             this.btnEClient.Name = "btnEClient";
@@ -930,7 +930,7 @@
             this.btnAClient.BackColor = System.Drawing.Color.Transparent;
             this.btnAClient.FlatAppearance.BorderSize = 0;
             this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAClient.ForeColor = System.Drawing.Color.White;
             this.btnAClient.Location = new System.Drawing.Point(0, 0);
             this.btnAClient.Name = "btnAClient";
@@ -971,7 +971,7 @@
             this.btnRoyaltee.BackColor = System.Drawing.Color.Transparent;
             this.btnRoyaltee.FlatAppearance.BorderSize = 0;
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoyaltee.ForeColor = System.Drawing.Color.White;
             this.btnRoyaltee.Location = new System.Drawing.Point(150, 0);
             this.btnRoyaltee.Name = "btnRoyaltee";
@@ -986,7 +986,7 @@
             this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
             this.btnRevenue.FlatAppearance.BorderSize = 0;
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
             this.btnRevenue.Location = new System.Drawing.Point(75, 0);
             this.btnRevenue.Name = "btnRevenue";
@@ -1001,7 +1001,7 @@
             this.btnStatement.BackColor = System.Drawing.Color.Transparent;
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(0, 0);
             this.btnStatement.Name = "btnStatement";
