@@ -75,6 +75,7 @@ namespace FAFOS
             else
                 DatePicker.Visible = false;
         }
+
         public String[,] GetInputs()
         {
             int rows = TermsView.Rows.Count;

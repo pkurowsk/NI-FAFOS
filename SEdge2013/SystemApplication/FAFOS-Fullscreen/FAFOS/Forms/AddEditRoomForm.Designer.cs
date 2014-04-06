@@ -41,6 +41,7 @@
             this.deleteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addRoomButton = new System.Windows.Forms.Button();
             this.AddItemButton = new System.Windows.Forms.Button();
+            this.DatePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.RoomGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +178,16 @@
             this.AddItemButton.Visible = false;
             this.AddItemButton.Click += new System.EventHandler(this.AddItemButton_Click);
             // 
+            // DatePicker
+            // 
+            this.DatePicker.Location = new System.Drawing.Point(436, 180);
+            this.DatePicker.Name = "DatePicker";
+            this.DatePicker.Size = new System.Drawing.Size(123, 20);
+            this.DatePicker.TabIndex = 68;
+            this.DatePicker.Value = new System.DateTime(2013, 4, 4, 0, 0, 0, 0);
+            this.DatePicker.Visible = false;
+            this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged);
+            // 
             // AddEditRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +196,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1014, 395);
             this.ControlBox = false;
+            this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.AddItemButton);
             this.Controls.Add(this.addRoomButton);
             this.Controls.Add(this.RoomGridView);
@@ -216,5 +228,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn hoseCol;
         private System.Windows.Forms.DataGridViewButtonColumn lightCol;
         private System.Windows.Forms.DataGridViewButtonColumn deleteButton;
+        private System.Windows.Forms.DateTimePicker DatePicker;
     }
 }

@@ -589,6 +589,8 @@ namespace FAFOS
                 dgv.Rows.RemoveAt(e.RowIndex);                
                 _roomForm.noChanges = false;
             }
+            // Hide datepicker
+            _roomForm.ShowPicker(false, 0, 0, 'n');
         }
 
         public void ExtinguisherView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -631,7 +633,7 @@ namespace FAFOS
 
         public void LightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            Console.WriteLine("Click " + e.ColumnIndex);
             if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
             {
                 var dgv = sender as DataGridView;

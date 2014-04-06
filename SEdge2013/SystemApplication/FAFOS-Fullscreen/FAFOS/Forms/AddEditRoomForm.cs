@@ -13,7 +13,8 @@ namespace FAFOS
     {
         MaintainClientController my_controller;
         public bool noChanges;
-        int currentRow, AddrRow;
+        int currentRow, currentEquipment, AddrRow;
+        char currentEqType;
         String AddressID;
         List<DataGridView> extViews = new List<DataGridView>();
         List<DataGridView> hoseViews = new List<DataGridView>();
@@ -27,6 +28,8 @@ namespace FAFOS
             AddressID = id;
             AddrRow = AddrIndex;
             noChanges = true;
+            DatePicker.Value = DateTime.Today;
+
             this.Ok_Button.Click += new EventHandler(my_controller.Room_Ok_Button_Click);
             this.Cancel_Button.Click += new EventHandler(my_controller.Room_Cancel_Button_Click);
             this.RoomGridView.CellContentClick += new DataGridViewCellEventHandler(my_controller.Room_Cell_Click);
@@ -166,6 +169,9 @@ namespace FAFOS
                 for (int j = 0; j < m; j++)
                 {
                     extViews[index].Rows[i].Cells[j].Value = extinguishers.Rows[i][j];
+
+                    if (j == 8) // Manufacturing date
+                        extViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(extinguishers.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -180,6 +186,8 @@ namespace FAFOS
                 for (int j = 0; j < m; j++)
                 {
                     hoseViews[index].Rows[i].Cells[j].Value = hoses.Rows[i][j];
+                    if (j == 5) // Manufacturing date
+                        hoseViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(hoses.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -195,7 +203,11 @@ namespace FAFOS
                 {
                     if (j == 7) // Requires Service
                         lights.Rows[i][j] = lights.Rows[i][j].Equals("T") ? lightViews[index].Rows[i].Cells[j].Value = "true" : lightViews[index].Rows[i].Cells[j].Value = "False";
+                    
                     lightViews[index].Rows[i].Cells[j].Value = lights.Rows[i][j];
+
+                    if (j == 11) // Manufacturing date
+                        lightViews[index].Rows[i].Cells[j].Value = Convert.ToDateTime(lights.Rows[i][j]).ToString("MM/dd/yyyy");
                 }
             }
         }
@@ -295,29 +307,41 @@ namespace FAFOS
         }
         public void extView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            ShowPicker(false, 0, 0, 'n');
             if ((e.ColumnIndex == 9) && (e.RowIndex > -1))
             {
                 DecMetric("extinguisher", currentRow);
                 my_controller.ExtinguisherView_CellClick(sender, e);
             }
+            else if ((e.ColumnIndex == 8) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true, e.ColumnIndex, e.RowIndex, 'e');
+            }
         }
         public void hoseView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            ShowPicker(false, 0, 0, 'n');
             if ((e.ColumnIndex == 6) && (e.RowIndex > -1))
             {
                 DecMetric("hose", currentRow);
                 my_controller.HoseView_CellClick(sender, e);
             }
+            else if ((e.ColumnIndex == 5) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true, e.ColumnIndex, e.RowIndex, 'h');
+            }
         }
         public void lightView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))
+            ShowPicker(false, 0, 0, 'n');
+            if ((e.ColumnIndex == 12) && (e.RowIndex > -1))     // Delete
             {
                 DecMetric("light", currentRow);
                 my_controller.LightView_CellClick(sender, e);
+            }
+            else if ((e.ColumnIndex == 11) && (e.RowIndex > -1))    // Manufacturing Date
+            {
+                ShowPicker(true,e.ColumnIndex, e.RowIndex, 'l');
             }
         }
 
@@ -614,5 +638,48 @@ namespace FAFOS
 
             return LightView;
         }
+
+        public void setDate(DateTime values)
+        {
+            DatePicker.Value = values;
+        }
+
+        public void ShowPicker(bool isShown, int colIndex, int rowIndex, char equipmentType)
+        {
+            currentEquipment = rowIndex;
+            currentEqType = equipmentType;
+            if (isShown)
+            {
+                try 
+                {
+                    if (equipmentType == 'l')
+                        DatePicker.Value = Convert.ToDateTime(lightViews[currentRow].Rows[rowIndex].Cells[11].Value);
+                    else if (equipmentType == 'e')
+                        DatePicker.Value = Convert.ToDateTime(extViews[currentRow].Rows[rowIndex].Cells[8].Value);
+                    else if (equipmentType == 'h')
+                        DatePicker.Value = Convert.ToDateTime(hoseViews[currentRow].Rows[rowIndex].Cells[5].Value);
+                }
+                catch (Exception) { }
+
+                DatePicker.Visible = true;
+            }
+            else
+                DatePicker.Visible = false;
+        }
+
+        private void DatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (DatePicker.Visible)
+            {
+                if (currentEqType == 'l')
+                    lightViews[currentRow].Rows[currentEquipment].Cells[11].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                else if (currentEqType == 'e')
+                    extViews[currentRow].Rows[currentEquipment].Cells[8].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                else if (currentEqType == 'h')
+                    hoseViews[currentRow].Rows[currentEquipment].Cells[5].Value = DatePicker.Value.ToString("MM/dd/yyyy");
+                noChanges = false;
+            }
+        }
+
     }
 }

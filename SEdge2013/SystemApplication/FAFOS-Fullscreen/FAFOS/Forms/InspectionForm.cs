@@ -193,22 +193,28 @@ namespace FAFOS
                             XmlAttributeCollection billTo = c1.ParentNode.Attributes;
                             XmlAttributeCollection location = c2.Attributes;
 
-                            string[] ad = billTo["address"].InnerText.Split(',');
+                            string[] billToAddr = billTo["address"].InnerText.Split(',');
 
-                            addCell(addrTable, "Bill To:", 4, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, "Bill To:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, billTo["name"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
-                            addCell(addrTable, "Location:", 4, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, "Location:", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
 
                             addCell(addrTable, location["contact"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-                            addCell(addrTable, ad[0], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, billToAddr[0], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, location["address"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-                            addCell(addrTable, ad[2] + "," + ad[1], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, billToAddr[2] + "," + billToAddr[1], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, location["city"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
-                            addCell(addrTable, ad[3], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
+                            addCell(addrTable, billToAddr[3], 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
+                            addCell(addrTable, " ", 1, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, location["postalCode"].InnerText, 1, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
                             addCell(addrTable, "Tel:", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
@@ -228,8 +234,13 @@ namespace FAFOS
 
                             addCell(addrTable, " ", 4, 4, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
+                            string technicianID = c2.Attributes["InspectorID"].InnerText;
+                            string technicianName = new Users().getName(Convert.ToInt32(technicianID));
+                            if (technicianName == null || technicianName == "")
+                                technicianName = "Technician Not Found";
+
                             addCell(addrTable, "Technician: ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
-                            addCell(addrTable, new Users().getName(Convert.ToInt32(userid)), 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
+                            addCell(addrTable, technicianName, 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
 
                             addCell(addrTable, "Date: ", 2, 1, 0, BaseColor.WHITE, Times, PdfPCell.ALIGN_RIGHT);
                             addCell(addrTable, DateTime.Now.ToString("MMMM d, yyyy"), 2, 1, 0, BaseColor.WHITE, TimesRegular, PdfPCell.ALIGN_LEFT);
@@ -240,9 +251,9 @@ namespace FAFOS
                                     if (addrTable.Rows[i].GetCells()[j] == null)
                                         continue;
 
-                                    if (j % 2 != 0)
+                                    if (j % 2 != 0)     // Add bottom border to info cells
                                         addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.BOTTOM_BORDER;
-                                    else
+                                    else                // Remove bottom border from titles
                                         addrTable.Rows[i].GetCells()[j].Border = iTextSharp.text.Rectangle.NO_BORDER;
                                 }
 
@@ -254,15 +265,17 @@ namespace FAFOS
                             {
                                 foreach (XmlNode c4 in c3.ChildNodes)    //rooms
                                 {
-                                    bool first = true;
+                                    bool isFirstEquipment = true;
                                     int itemNum = 1;
                                     foreach (XmlNode c5 in c4.ChildNodes)    // equipment
                                     {
                                         if (c5.Name.Equals(equipmentName))
                                         {
-                                            if (first)
+                                            #region Set up header
+
+                                            if (isFirstEquipment)   // Set up table header based on first piece of equipment
                                             {
-                                                first = false;
+                                                isFirstEquipment = false;
 
                                                 inspectionTable = new PdfPTable(c5.Attributes.Count + c5.ChildNodes.Count + 1);
                                                 inspectionTable.HorizontalAlignment = 0;
@@ -282,6 +295,8 @@ namespace FAFOS
 
                                                 createHeader(inspectionTable, c5);
                                             }
+
+                                            #endregion
 
                                             addEquipmentRow(inspectionTable, c5, itemNum);
                                             itemNum++;
