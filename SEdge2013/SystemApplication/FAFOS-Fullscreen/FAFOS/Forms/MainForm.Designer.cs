@@ -59,6 +59,7 @@
             this.pbLogos = new System.Windows.Forms.PictureBox();
             this.pbFALogoLogin = new System.Windows.Forms.PictureBox();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.noteHideButton = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.pnlPage = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -74,10 +75,11 @@
             this.btnEditQuote = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.pnlOps = new System.Windows.Forms.Panel();
-            this.lblCloseOps = new System.Windows.Forms.Label();
-            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnSupplier = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
+            this.lblCloseOps = new System.Windows.Forms.Label();
             this.btnInspection = new System.Windows.Forms.Button();
             this.btnItinerary = new System.Windows.Forms.Button();
             this.pnlClients = new System.Windows.Forms.Panel();
@@ -91,7 +93,6 @@
             this.btnRoyaltee = new System.Windows.Forms.Button();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.btnStatement = new System.Windows.Forms.Button();
-            this.noteHideButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FireAlertLogo)).BeginInit();
             this.notificationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
@@ -500,6 +501,23 @@
             this.pnlUser.TabIndex = 56;
             this.pnlUser.Visible = false;
             // 
+            // noteHideButton
+            // 
+            this.noteHideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.noteHideButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.noteHideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noteHideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteHideButton.ForeColor = System.Drawing.Color.White;
+            this.noteHideButton.Location = new System.Drawing.Point(117, 115);
+            this.noteHideButton.Margin = new System.Windows.Forms.Padding(4);
+            this.noteHideButton.Name = "noteHideButton";
+            this.noteHideButton.Size = new System.Drawing.Size(80, 24);
+            this.noteHideButton.TabIndex = 60;
+            this.noteHideButton.Text = "Hide Notifications";
+            this.noteHideButton.UseVisualStyleBackColor = false;
+            this.noteHideButton.Visible = false;
+            this.noteHideButton.Click += new System.EventHandler(this.Notifications_button_Click);
+            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
@@ -713,47 +731,36 @@
             // pnlOps
             // 
             this.pnlOps.BackColor = System.Drawing.Color.DimGray;
-            this.pnlOps.Controls.Add(this.lblCloseOps);
-            this.pnlOps.Controls.Add(this.btnPayment);
+            this.pnlOps.Controls.Add(this.btnSupplier);
             this.pnlOps.Controls.Add(this.btnPurchase);
+            this.pnlOps.Controls.Add(this.btnPayment);
             this.pnlOps.Controls.Add(this.btnInventory);
+            this.pnlOps.Controls.Add(this.lblCloseOps);
             this.pnlOps.Controls.Add(this.btnInspection);
             this.pnlOps.Controls.Add(this.btnItinerary);
             this.pnlOps.Location = new System.Drawing.Point(225, 170);
             this.pnlOps.Name = "pnlOps";
-            this.pnlOps.Size = new System.Drawing.Size(410, 50);
+            this.pnlOps.Size = new System.Drawing.Size(485, 50);
             this.pnlOps.TabIndex = 57;
             this.pnlOps.Visible = false;
             this.pnlOps.VisibleChanged += new System.EventHandler(this.pnlOps_VisibleChanged);
             this.pnlOps.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
-            // lblCloseOps
+            // btnSupplier
             // 
-            this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseOps.Location = new System.Drawing.Point(375, 0);
-            this.lblCloseOps.Name = "lblCloseOps";
-            this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
-            this.lblCloseOps.TabIndex = 10;
-            this.lblCloseOps.Text = "X";
-            this.lblCloseOps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCloseOps.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.BackColor = System.Drawing.Color.Transparent;
-            this.btnPayment.FlatAppearance.BorderSize = 0;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.ForeColor = System.Drawing.Color.White;
-            this.btnPayment.Location = new System.Drawing.Point(300, 0);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(75, 50);
-            this.btnPayment.TabIndex = 9;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-            this.btnPayment.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.btnSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.btnSupplier.FlatAppearance.BorderSize = 0;
+            this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnSupplier.Location = new System.Drawing.Point(375, 0);
+            this.btnSupplier.Name = "btnSupplier";
+            this.btnSupplier.Size = new System.Drawing.Size(75, 50);
+            this.btnSupplier.TabIndex = 9;
+            this.btnSupplier.Text = "Add/Edit Supplier\r\n";
+            this.btnSupplier.UseVisualStyleBackColor = false;
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
+            this.btnSupplier.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
             // btnPurchase
             // 
@@ -771,6 +778,21 @@
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             this.btnPurchase.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
+            // btnPayment
+            // 
+            this.btnPayment.BackColor = System.Drawing.Color.Transparent;
+            this.btnPayment.FlatAppearance.BorderSize = 0;
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.ForeColor = System.Drawing.Color.White;
+            this.btnPayment.Location = new System.Drawing.Point(300, 0);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(75, 50);
+            this.btnPayment.TabIndex = 11;
+            this.btnPayment.Text = "Payment";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
+            // 
             // btnInventory
             // 
             this.btnInventory.BackColor = System.Drawing.Color.Transparent;
@@ -786,6 +808,18 @@
             this.btnInventory.UseVisualStyleBackColor = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             this.btnInventory.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            // 
+            // lblCloseOps
+            // 
+            this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseOps.Location = new System.Drawing.Point(450, 0);
+            this.lblCloseOps.Name = "lblCloseOps";
+            this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseOps.TabIndex = 10;
+            this.lblCloseOps.Text = "X";
+            this.lblCloseOps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseOps.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
             // 
             // btnInspection
             // 
@@ -977,23 +1011,6 @@
             this.btnStatement.UseVisualStyleBackColor = false;
             this.btnStatement.Click += new System.EventHandler(this.btnStatement_Click);
             // 
-            // noteHideButton
-            // 
-            this.noteHideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.noteHideButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.noteHideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noteHideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteHideButton.ForeColor = System.Drawing.Color.White;
-            this.noteHideButton.Location = new System.Drawing.Point(117, 115);
-            this.noteHideButton.Margin = new System.Windows.Forms.Padding(4);
-            this.noteHideButton.Name = "noteHideButton";
-            this.noteHideButton.Size = new System.Drawing.Size(80, 24);
-            this.noteHideButton.TabIndex = 60;
-            this.noteHideButton.Text = "Hide Notifications";
-            this.noteHideButton.UseVisualStyleBackColor = false;
-            this.noteHideButton.Visible = false;
-            this.noteHideButton.Click += new System.EventHandler(this.Notifications_button_Click);
-            // 
             // View
             // 
             this.AcceptButton = this.Login_btn;
@@ -1087,7 +1104,7 @@
         private System.Windows.Forms.Button btnEditQuote;
         private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.Button btnEditSO;
-        private System.Windows.Forms.Button btnPayment;
+        private System.Windows.Forms.Button btnSupplier;
         private System.Windows.Forms.Button btnPurchase;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnInspection;
@@ -1108,6 +1125,7 @@
         private System.Windows.Forms.PictureBox pbSNILogo;
         private System.Windows.Forms.Button btnSyncFromAndroid;
         private System.Windows.Forms.Button noteHideButton;
+        private System.Windows.Forms.Button btnPayment;
 
     }
 }

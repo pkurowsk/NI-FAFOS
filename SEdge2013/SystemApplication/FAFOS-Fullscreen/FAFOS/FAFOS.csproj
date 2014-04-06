@@ -113,6 +113,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditSupplierForm.Designer.cs">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FromMobileView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Background.resx">
       <DependentUpon>Background.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditSupplierForm.resx">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FromMobileView.resx">
       <DependentUpon>FromMobileView.cs</DependentUpon>
