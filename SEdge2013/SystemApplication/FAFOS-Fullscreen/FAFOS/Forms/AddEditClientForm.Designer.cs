@@ -412,6 +412,7 @@
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(217, 23);
             this.nameTxtBox.TabIndex = 38;
+            
             // 
             // typeTextBox
             // 

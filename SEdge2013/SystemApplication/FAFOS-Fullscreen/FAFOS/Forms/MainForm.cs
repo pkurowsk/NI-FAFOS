@@ -763,7 +763,8 @@ namespace FAFOS
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
-            SupplierForm supplier_form = new SupplierForm(userid);
+            MaintainClientController c = new MaintainClientController();
+            SupplierForm supplier_form = new SupplierForm(c);
             supplier_form.TopLevel = false;
             pnlPage.Controls.Add(supplier_form);
             supplier_form.Show();

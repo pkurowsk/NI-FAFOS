@@ -18,6 +18,8 @@ namespace FAFOS
         private static MClient _client;
         private static MClientContract _contract;
         private static MServiceAddress _srvAddr;
+        private static SupplierForm _supForm;
+        private static Supplier _supplier;
         private int userID;
         private bool okDone=false;
         public MaintainClientController() { }
@@ -726,5 +728,78 @@ namespace FAFOS
                 }
             }                
         }
+
+/**************************************************************supplier******************************/
+
+        public void Supplier_Changed(object sender, EventArgs e)
+        {
+            if (_supForm != null)
+                if (_supForm.GetSupplierBox() != "System.Data.DataRowView")
+                    if (_supForm.GetSupplierBox() != "-1")
+                    {
+                        String supID = _supForm.GetSupplierBox();
+                        if (supID != null)
+                        {
+                            Supplier _supplier = new Supplier();
+                            _supplier.changeSupplier(supID);
+                            
+                        }
+                    }
+        }
+
+       
+        public void add_supplier_btn_click(object sender, EventArgs e)
+         {
+            if (false)
+            {
+
+                _supForm.Close();
+            }
+            else
+            {
+
+
+               // SupplierForm _supForm = new SupplierForm(this); 
+                _supForm = (SupplierForm)((Button)(sender)).GetContainerControl();
+                String value = _supForm.GetInput1();
+                
+
+                bool okToSubmit = true;
+               
+                    if (value == null)
+                        okToSubmit = false;
+
+                if (okToSubmit)
+                {
+                    if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {// if we are good, submit changes to dataBase        
+
+                        Supplier _supplier = new Supplier();
+                        bool check = _supplier.Set1(value);
+                        // _mainForm.SetClientBox(MClient.GetList());
+                        if(check)
+                            _supForm.Close();
+                    }
+                }
+
+                else
+                    MessageBox.Show("Some Fields Have Errors", "Errors");
+            }     
+         
+        }
+
+        public void delete_supplier_btn_click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want Delete this Supplier", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                _supForm = (SupplierForm)((Button)(sender)).GetContainerControl();
+                String supID = _supForm.GetSupplierBox();
+                Supplier _supplier = new Supplier();
+                _supplier.Delete(supID);
+                _supForm.Close();
+            }
+        }
+
+        
     }
 }
