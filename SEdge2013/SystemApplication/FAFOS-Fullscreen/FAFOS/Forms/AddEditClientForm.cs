@@ -280,6 +280,7 @@ namespace FAFOS
             }
         }
 
+        
        /* public void DisableContract(String Contract)
         {
             this.contract_Button.Enabled = false;

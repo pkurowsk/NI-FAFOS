@@ -64,7 +64,7 @@
             this.txtCreatSupplier.Name = "txtCreatSupplier";
             this.txtCreatSupplier.Size = new System.Drawing.Size(214, 23);
             this.txtCreatSupplier.TabIndex = 42;
-            this.txtCreatSupplier.TextChanged += new System.EventHandler(this.txtCreatSupplier_TextChanged);
+            
             // 
             // lblAddSupplier
             // 

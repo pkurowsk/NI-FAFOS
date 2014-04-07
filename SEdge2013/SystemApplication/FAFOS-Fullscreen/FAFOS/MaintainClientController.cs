@@ -18,6 +18,8 @@ namespace FAFOS
         private static MClient _client;
         private static MClientContract _contract;
         private static MServiceAddress _srvAddr;
+        private static SupplierForm _supForm;
+        private static Supplier _supplier;
         private int userID;
         private bool okDone=false;
         public MaintainClientController() { }
@@ -724,5 +726,67 @@ namespace FAFOS
                 }
             }                
         }
+
+/**************************************************************supplier******************************/
+
+        public void Supplier_Changed(object sender, EventArgs e)
+        {
+            if (_supForm != null)
+                if (_supForm.GetSupplierBox() != "System.Data.DataRowView")
+                    if (_supForm.GetSupplierBox() != "-1")
+                    {
+                        String supID = _supForm.GetSupplierBox();
+                        if (supID != null)
+                        {
+                            _supplier.changeSupplier(supID);
+                            
+                        }
+                    }
+        }
+
+       
+        public void add_supplier_btn_click(object sender, EventArgs e)
+         {
+            if (false)
+            {
+
+                _supForm.Close();
+            }
+            else
+            {
+
+
+                SupplierForm _supForm = new SupplierForm(this); 
+                String value = _supForm.GetInput1();
+
+                bool okToSubmit = true;
+               
+                    if (value == null)
+                        okToSubmit = false;
+
+                if (okToSubmit)
+                {
+                    if (MessageBox.Show("Are you sure you want to submit these changes?", "Confirm Submission", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {// if we are good, submit changes to dataBase        
+
+                        Supplier _supplier = new Supplier();
+                        _supplier.Set1(value);
+                        // _mainForm.SetClientBox(MClient.GetList());
+                        
+                            _supForm.Close();
+                    }
+                }
+
+                else
+                    MessageBox.Show("Some Fields Have Errors", "Errors");
+            }     
+         
+        }
+
+        public void delete_supplier_btn_click()
+        {
+        }
+
+        
     }
 }
