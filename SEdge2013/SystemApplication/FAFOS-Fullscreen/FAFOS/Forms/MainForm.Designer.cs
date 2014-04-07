@@ -731,16 +731,16 @@
             // pnlOps
             // 
             this.pnlOps.BackColor = System.Drawing.Color.DimGray;
+            this.pnlOps.Controls.Add(this.lblCloseOps);
             this.pnlOps.Controls.Add(this.btnSupplier);
             this.pnlOps.Controls.Add(this.btnPurchase);
             this.pnlOps.Controls.Add(this.btnPayment);
             this.pnlOps.Controls.Add(this.btnInventory);
-            this.pnlOps.Controls.Add(this.lblCloseOps);
             this.pnlOps.Controls.Add(this.btnInspection);
             this.pnlOps.Controls.Add(this.btnItinerary);
             this.pnlOps.Location = new System.Drawing.Point(225, 170);
             this.pnlOps.Name = "pnlOps";
-            this.pnlOps.Size = new System.Drawing.Size(485, 50);
+            this.pnlOps.Size = new System.Drawing.Size(517, 50);
             this.pnlOps.TabIndex = 57;
             this.pnlOps.Visible = false;
             this.pnlOps.VisibleChanged += new System.EventHandler(this.pnlOps_VisibleChanged);
@@ -755,9 +755,9 @@
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Location = new System.Drawing.Point(375, 0);
             this.btnSupplier.Name = "btnSupplier";
-            this.btnSupplier.Size = new System.Drawing.Size(75, 50);
+            this.btnSupplier.Size = new System.Drawing.Size(107, 50);
             this.btnSupplier.TabIndex = 9;
-            this.btnSupplier.Text = "Add/Edit Supplier\r\n";
+            this.btnSupplier.Text = "Add/Remove Supplier\r\n";
             this.btnSupplier.UseVisualStyleBackColor = false;
             this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             this.btnSupplier.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -813,7 +813,7 @@
             // 
             this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
             this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseOps.Location = new System.Drawing.Point(450, 0);
+            this.lblCloseOps.Location = new System.Drawing.Point(482, -1);
             this.lblCloseOps.Name = "lblCloseOps";
             this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
             this.lblCloseOps.TabIndex = 10;

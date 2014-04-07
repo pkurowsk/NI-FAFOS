@@ -738,6 +738,7 @@ namespace FAFOS
                         String supID = _supForm.GetSupplierBox();
                         if (supID != null)
                         {
+                            Supplier _supplier = new Supplier();
                             _supplier.changeSupplier(supID);
                             
                         }
@@ -756,8 +757,10 @@ namespace FAFOS
             {
 
 
-                SupplierForm _supForm = new SupplierForm(this); 
+               // SupplierForm _supForm = new SupplierForm(this); 
+                _supForm = (SupplierForm)((Button)(sender)).GetContainerControl();
                 String value = _supForm.GetInput1();
+                
 
                 bool okToSubmit = true;
                
@@ -770,9 +773,9 @@ namespace FAFOS
                     {// if we are good, submit changes to dataBase        
 
                         Supplier _supplier = new Supplier();
-                        _supplier.Set1(value);
+                        bool check = _supplier.Set1(value);
                         // _mainForm.SetClientBox(MClient.GetList());
-                        
+                        if(check)
                             _supForm.Close();
                     }
                 }
@@ -783,8 +786,16 @@ namespace FAFOS
          
         }
 
-        public void delete_supplier_btn_click()
+        public void delete_supplier_btn_click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want Delete this Supplier", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                _supForm = (SupplierForm)((Button)(sender)).GetContainerControl();
+                String supID = _supForm.GetSupplierBox();
+                Supplier _supplier = new Supplier();
+                _supplier.Delete(supID);
+                _supForm.Close();
+            }
         }
 
         

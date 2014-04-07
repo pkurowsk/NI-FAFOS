@@ -84,7 +84,7 @@ namespace FAFOS
         }
        
 
-        public void Set1(String value)
+        public bool Set1(String value)
         {
               String connString = FAFOS.Properties.Settings.Default.FAFOS;
             int id = 1;
@@ -94,6 +94,8 @@ namespace FAFOS
             SqlConnection con = new SqlConnection(connString);
             bool result=true;
 
+            if (value == "")
+                result = false;
             if (result)
             {
                 con.Open();
@@ -109,21 +111,49 @@ namespace FAFOS
                 con.Close();
 
                 con.Open();
-                //command = new SqlCommand("INSERT INTO Supplier VALUES (" + id.ToString() + ",'" + value.ToString() + "," + ")", con);
+
+                command = new SqlCommand("INSERT INTO Supplier VALUES (" + id.ToString() + ",'" + value + "')", con);
                 try
                 {
-                    command = new SqlCommand("INSERT INTO Supplier VALUES (" + id.ToString() + "," + value  + ")", con);
-                    //command.ExecuteNonQuery();
+
+                    command.ExecuteNonQuery();
                 }
                 catch (SqlException e)
                 {
                     MessageBox.Show("Could Not Update Supplier");
                 }
                 con.Close();
+                return result;
+            }
+            else
+            {
+                MessageBox.Show("please enter a new supplier");
+                return result;
             }
             
 
             
+        }
+
+        public void Delete(String id)
+        {
+            int id2 = Convert.ToInt32(id);
+            String connString = Properties.Settings.Default.FAFOS;
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(connString);
+
+            con.Open();
+            SqlCommand command = new SqlCommand("DELETE FROM Supplier WHERE supplier_id = " + id, con);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                // MessageBox.Show(e.ToString());
+            }
+            con.Close();
+
         }
     
     }

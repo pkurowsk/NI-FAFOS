@@ -64,7 +64,6 @@
             this.txtCreatSupplier.Name = "txtCreatSupplier";
             this.txtCreatSupplier.Size = new System.Drawing.Size(214, 23);
             this.txtCreatSupplier.TabIndex = 42;
-            
             // 
             // lblAddSupplier
             // 
@@ -104,7 +103,7 @@
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(127, 70);
             this.btnAddSupplier.TabIndex = 45;
-            this.btnAddSupplier.Text = "Add/Edit Supplier";
+            this.btnAddSupplier.Text = "Add Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = false;
             // 
             // SupplierForm

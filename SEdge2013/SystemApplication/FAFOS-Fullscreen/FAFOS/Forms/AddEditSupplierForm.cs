@@ -31,6 +31,7 @@ namespace FAFOS
 
             this.txtSupplierSelect.SelectedValueChanged += new System.EventHandler(my_controller.Supplier_Changed);
             this.btnAddSupplier.Click += new System.EventHandler(my_controller.add_supplier_btn_click);
+            this.btnDeleteSupplier.Click += new System.EventHandler(my_controller.delete_supplier_btn_click);
             #endregion
 
         here: try { SetSupplierBox(Supplier.GetList(), "0"); }
@@ -53,7 +54,7 @@ namespace FAFOS
         {
             if (this.txtSupplierSelect.SelectedValue != null)
                 return this.txtSupplierSelect.SelectedValue.ToString();
-            else return null;
+            else return "1";
         }
         public void SetSupplierBox(DataTable supplier, String supplierID)
         {
@@ -68,7 +69,7 @@ namespace FAFOS
         {
             //if (txtCreatSupplier.Text != null)
            // this.txtCreatSupplier.Text = "hey";
-                return this.txtCreatSupplier.Text;
+                return txtCreatSupplier.Text;
            // else
                // return "hey";
         }
