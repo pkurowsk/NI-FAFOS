@@ -52,8 +52,6 @@
             this.lblReports = new System.Windows.Forms.Label();
             this.userSettings = new System.Windows.Forms.Button();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.lblSyncOpts = new System.Windows.Forms.Label();
-            this.syncHQ = new System.Windows.Forms.Button();
             this.syncAndroid = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.pbLogos = new System.Windows.Forms.PictureBox();
@@ -75,11 +73,11 @@
             this.btnEditQuote = new System.Windows.Forms.Button();
             this.btnQuote = new System.Windows.Forms.Button();
             this.pnlOps = new System.Windows.Forms.Panel();
+            this.lblCloseOps = new System.Windows.Forms.Label();
             this.btnSupplier = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.lblCloseOps = new System.Windows.Forms.Label();
             this.btnInspection = new System.Windows.Forms.Button();
             this.btnItinerary = new System.Windows.Forms.Button();
             this.pnlClients = new System.Windows.Forms.Panel();
@@ -111,15 +109,15 @@
             // 
             // Exit_btn
             // 
-            this.Exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.Exit_btn.BackColor = System.Drawing.Color.Gray;
             this.Exit_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit_btn.ForeColor = System.Drawing.Color.White;
-            this.Exit_btn.Location = new System.Drawing.Point(117, 521);
+            this.Exit_btn.ForeColor = System.Drawing.Color.Black;
+            this.Exit_btn.Location = new System.Drawing.Point(117, 530);
             this.Exit_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Exit_btn.Name = "Exit_btn";
-            this.Exit_btn.Size = new System.Drawing.Size(94, 40);
+            this.Exit_btn.Size = new System.Drawing.Size(94, 30);
             this.Exit_btn.TabIndex = 7;
             this.Exit_btn.Text = "Exit";
             this.Exit_btn.UseVisualStyleBackColor = false;
@@ -128,7 +126,7 @@
             // lblTitleFAFOS
             // 
             this.lblTitleFAFOS.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleFAFOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleFAFOS.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitleFAFOS.Location = new System.Drawing.Point(815, 0);
             this.lblTitleFAFOS.Name = "lblTitleFAFOS";
@@ -146,7 +144,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 30);
             this.txtUsername.TabIndex = 20;
-            this.txtUsername.Text = "bob";
             // 
             // lblUsername
             // 
@@ -185,7 +182,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(220, 26);
             this.txtPassword.TabIndex = 22;
-            this.txtPassword.Text = "pass";
             // 
             // lblPassword
             // 
@@ -203,7 +199,7 @@
             // 
             this.lblUserInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblUserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserInfo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUserInfo.ForeColor = System.Drawing.Color.Red;
             this.lblUserInfo.Location = new System.Drawing.Point(72, 10);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(125, 50);
@@ -212,15 +208,15 @@
             // 
             // Logout_btn
             // 
-            this.Logout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.Logout_btn.BackColor = System.Drawing.Color.Gray;
             this.Logout_btn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logout_btn.ForeColor = System.Drawing.Color.White;
-            this.Logout_btn.Location = new System.Drawing.Point(23, 62);
+            this.Logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Logout_btn.ForeColor = System.Drawing.Color.Black;
+            this.Logout_btn.Location = new System.Drawing.Point(10, 530);
             this.Logout_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Logout_btn.Name = "Logout_btn";
-            this.Logout_btn.Size = new System.Drawing.Size(174, 45);
+            this.Logout_btn.Size = new System.Drawing.Size(94, 30);
             this.Logout_btn.TabIndex = 24;
             this.Logout_btn.Text = "Logout";
             this.Logout_btn.UseVisualStyleBackColor = false;
@@ -249,8 +245,9 @@
             // 
             // notificationPanel
             // 
-            this.notificationPanel.BackColor = System.Drawing.Color.Black;
+            this.notificationPanel.BackColor = System.Drawing.Color.Transparent;
             this.notificationPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.notificationPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.notificationPanel.Controls.Add(this.paymentNotification);
             this.notificationPanel.Controls.Add(this.serviceNotification);
             this.notificationPanel.Controls.Add(this.lblNPaymentsDue);
@@ -266,7 +263,7 @@
             // 
             this.paymentNotification.BackColor = System.Drawing.Color.Transparent;
             this.paymentNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.paymentNotification.ForeColor = System.Drawing.Color.Black;
             this.paymentNotification.Location = new System.Drawing.Point(275, 49);
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 118);
@@ -276,7 +273,7 @@
             // 
             this.serviceNotification.BackColor = System.Drawing.Color.Transparent;
             this.serviceNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serviceNotification.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.serviceNotification.ForeColor = System.Drawing.Color.Black;
             this.serviceNotification.Location = new System.Drawing.Point(17, 49);
             this.serviceNotification.Name = "serviceNotification";
             this.serviceNotification.Size = new System.Drawing.Size(226, 118);
@@ -287,7 +284,7 @@
             this.lblNPaymentsDue.AutoSize = true;
             this.lblNPaymentsDue.BackColor = System.Drawing.Color.Transparent;
             this.lblNPaymentsDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNPaymentsDue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNPaymentsDue.ForeColor = System.Drawing.Color.Black;
             this.lblNPaymentsDue.Location = new System.Drawing.Point(275, 34);
             this.lblNPaymentsDue.Name = "lblNPaymentsDue";
             this.lblNPaymentsDue.Size = new System.Drawing.Size(90, 15);
@@ -299,7 +296,7 @@
             this.lblNServices.AutoSize = true;
             this.lblNServices.BackColor = System.Drawing.Color.Transparent;
             this.lblNServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNServices.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNServices.ForeColor = System.Drawing.Color.Black;
             this.lblNServices.Location = new System.Drawing.Point(12, 34);
             this.lblNServices.Name = "lblNServices";
             this.lblNServices.Size = new System.Drawing.Size(56, 15);
@@ -311,7 +308,7 @@
             this.lblTitleDayNotifications.AutoSize = true;
             this.lblTitleDayNotifications.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleDayNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleDayNotifications.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTitleDayNotifications.ForeColor = System.Drawing.Color.Black;
             this.lblTitleDayNotifications.Location = new System.Drawing.Point(11, 14);
             this.lblTitleDayNotifications.Name = "lblTitleDayNotifications";
             this.lblTitleDayNotifications.Size = new System.Drawing.Size(134, 20);
@@ -320,7 +317,7 @@
             // 
             // lblOperations
             // 
-            this.lblOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblOperations.BackColor = System.Drawing.Color.Gray;
             this.lblOperations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperations.ForeColor = System.Drawing.Color.White;
             this.lblOperations.Location = new System.Drawing.Point(0, 170);
@@ -334,7 +331,7 @@
             // 
             // lblDocs
             // 
-            this.lblDocs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblDocs.BackColor = System.Drawing.Color.Gray;
             this.lblDocs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDocs.ForeColor = System.Drawing.Color.White;
             this.lblDocs.Location = new System.Drawing.Point(0, 220);
@@ -348,7 +345,7 @@
             // 
             // lblClients
             // 
-            this.lblClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblClients.BackColor = System.Drawing.Color.Gray;
             this.lblClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClients.ForeColor = System.Drawing.Color.White;
             this.lblClients.Location = new System.Drawing.Point(0, 270);
@@ -362,7 +359,7 @@
             // 
             // lblReports
             // 
-            this.lblReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.lblReports.BackColor = System.Drawing.Color.Gray;
             this.lblReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReports.ForeColor = System.Drawing.Color.White;
             this.lblReports.Location = new System.Drawing.Point(0, 320);
@@ -376,12 +373,12 @@
             // 
             // userSettings
             // 
-            this.userSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.userSettings.BackColor = System.Drawing.Color.Gray;
             this.userSettings.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.userSettings.FlatAppearance.BorderSize = 0;
             this.userSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSettings.ForeColor = System.Drawing.Color.White;
+            this.userSettings.ForeColor = System.Drawing.Color.Black;
             this.userSettings.Location = new System.Drawing.Point(0, 370);
             this.userSettings.Margin = new System.Windows.Forms.Padding(4);
             this.userSettings.Name = "userSettings";
@@ -403,49 +400,20 @@
             this.profilePic.TabStop = false;
             this.profilePic.Visible = false;
             // 
-            // lblSyncOpts
-            // 
-            this.lblSyncOpts.AutoSize = true;
-            this.lblSyncOpts.BackColor = System.Drawing.Color.Transparent;
-            this.lblSyncOpts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSyncOpts.ForeColor = System.Drawing.Color.White;
-            this.lblSyncOpts.Location = new System.Drawing.Point(7, 445);
-            this.lblSyncOpts.Name = "lblSyncOpts";
-            this.lblSyncOpts.Size = new System.Drawing.Size(103, 20);
-            this.lblSyncOpts.TabIndex = 52;
-            this.lblSyncOpts.Text = "Sync Options";
-            this.lblSyncOpts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSyncOpts.Visible = false;
-            // 
-            // syncHQ
-            // 
-            this.syncHQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
-            this.syncHQ.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.syncHQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncHQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncHQ.ForeColor = System.Drawing.Color.White;
-            this.syncHQ.Location = new System.Drawing.Point(117, 473);
-            this.syncHQ.Margin = new System.Windows.Forms.Padding(4);
-            this.syncHQ.Name = "syncHQ";
-            this.syncHQ.Size = new System.Drawing.Size(94, 40);
-            this.syncHQ.TabIndex = 53;
-            this.syncHQ.Text = "To HQ";
-            this.syncHQ.UseVisualStyleBackColor = false;
-            this.syncHQ.Visible = false;
-            // 
             // syncAndroid
             // 
-            this.syncAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.syncAndroid.BackColor = System.Drawing.Color.Gray;
             this.syncAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.syncAndroid.FlatAppearance.BorderSize = 0;
             this.syncAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.syncAndroid.ForeColor = System.Drawing.Color.White;
-            this.syncAndroid.Location = new System.Drawing.Point(11, 473);
+            this.syncAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.syncAndroid.ForeColor = System.Drawing.Color.Black;
+            this.syncAndroid.Location = new System.Drawing.Point(0, 470);
             this.syncAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.syncAndroid.Name = "syncAndroid";
-            this.syncAndroid.Size = new System.Drawing.Size(101, 40);
+            this.syncAndroid.Size = new System.Drawing.Size(226, 50);
             this.syncAndroid.TabIndex = 54;
-            this.syncAndroid.Text = "To Android";
+            this.syncAndroid.Text = "Send to Android";
             this.syncAndroid.UseVisualStyleBackColor = false;
             this.syncAndroid.Visible = false;
             this.syncAndroid.Click += new System.EventHandler(this.syncAndroid_Click);
@@ -493,7 +461,6 @@
             this.pnlUser.Controls.Add(this.noteHideButton);
             this.pnlUser.Controls.Add(this.btnMenu);
             this.pnlUser.Controls.Add(this.lblUserInfo);
-            this.pnlUser.Controls.Add(this.Logout_btn);
             this.pnlUser.Controls.Add(this.profilePic);
             this.pnlUser.Location = new System.Drawing.Point(0, 0);
             this.pnlUser.Name = "pnlUser";
@@ -503,15 +470,16 @@
             // 
             // noteHideButton
             // 
-            this.noteHideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.noteHideButton.BackColor = System.Drawing.Color.Gray;
             this.noteHideButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.noteHideButton.FlatAppearance.BorderSize = 0;
             this.noteHideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noteHideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noteHideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteHideButton.ForeColor = System.Drawing.Color.White;
-            this.noteHideButton.Location = new System.Drawing.Point(117, 115);
+            this.noteHideButton.Location = new System.Drawing.Point(105, 142);
             this.noteHideButton.Margin = new System.Windows.Forms.Padding(4);
             this.noteHideButton.Name = "noteHideButton";
-            this.noteHideButton.Size = new System.Drawing.Size(80, 24);
+            this.noteHideButton.Size = new System.Drawing.Size(113, 24);
             this.noteHideButton.TabIndex = 60;
             this.noteHideButton.Text = "Hide Notifications";
             this.noteHideButton.UseVisualStyleBackColor = false;
@@ -526,13 +494,13 @@
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Location = new System.Drawing.Point(0, 146);
+            this.btnMenu.Location = new System.Drawing.Point(0, 142);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(226, 24);
+            this.btnMenu.Size = new System.Drawing.Size(104, 24);
             this.btnMenu.TabIndex = 59;
-            this.btnMenu.Text = "Hide";
+            this.btnMenu.Text = "Hide Menu";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Visible = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -552,16 +520,15 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.Black;
+            this.pnlMenu.BackColor = System.Drawing.Color.DarkGray;
             this.pnlMenu.Controls.Add(this.btnSyncFromAndroid);
             this.pnlMenu.Controls.Add(this.pbSNILogo);
             this.pnlMenu.Controls.Add(this.userSettings);
+            this.pnlMenu.Controls.Add(this.Logout_btn);
             this.pnlMenu.Controls.Add(this.pbFALogo);
             this.pnlMenu.Controls.Add(this.lblOperations);
             this.pnlMenu.Controls.Add(this.Exit_btn);
             this.pnlMenu.Controls.Add(this.syncAndroid);
-            this.pnlMenu.Controls.Add(this.syncHQ);
-            this.pnlMenu.Controls.Add(this.lblSyncOpts);
             this.pnlMenu.Controls.Add(this.lblReports);
             this.pnlMenu.Controls.Add(this.lblClients);
             this.pnlMenu.Controls.Add(this.lblDocs);
@@ -573,17 +540,18 @@
             // 
             // btnSyncFromAndroid
             // 
-            this.btnSyncFromAndroid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(23)))), ((int)(((byte)(49)))));
+            this.btnSyncFromAndroid.BackColor = System.Drawing.Color.Gray;
             this.btnSyncFromAndroid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSyncFromAndroid.FlatAppearance.BorderSize = 0;
             this.btnSyncFromAndroid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.White;
-            this.btnSyncFromAndroid.Location = new System.Drawing.Point(11, 521);
+            this.btnSyncFromAndroid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncFromAndroid.ForeColor = System.Drawing.Color.Black;
+            this.btnSyncFromAndroid.Location = new System.Drawing.Point(0, 420);
             this.btnSyncFromAndroid.Margin = new System.Windows.Forms.Padding(4);
             this.btnSyncFromAndroid.Name = "btnSyncFromAndroid";
-            this.btnSyncFromAndroid.Size = new System.Drawing.Size(101, 40);
+            this.btnSyncFromAndroid.Size = new System.Drawing.Size(226, 50);
             this.btnSyncFromAndroid.TabIndex = 59;
-            this.btnSyncFromAndroid.Text = "From Android";
+            this.btnSyncFromAndroid.Text = "Get from Android";
             this.btnSyncFromAndroid.UseVisualStyleBackColor = false;
             this.btnSyncFromAndroid.Visible = false;
             this.btnSyncFromAndroid.Click += new System.EventHandler(this.btnSyncFromAndroid_Click);
@@ -643,7 +611,7 @@
             this.btnInvoice.BackColor = System.Drawing.Color.Transparent;
             this.btnInvoice.FlatAppearance.BorderSize = 0;
             this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.Location = new System.Drawing.Point(375, 0);
             this.btnInvoice.Name = "btnInvoice";
@@ -658,7 +626,7 @@
             this.btnEditSO.BackColor = System.Drawing.Color.Transparent;
             this.btnEditSO.FlatAppearance.BorderSize = 0;
             this.btnEditSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditSO.ForeColor = System.Drawing.Color.White;
             this.btnEditSO.Location = new System.Drawing.Point(300, 0);
             this.btnEditSO.Name = "btnEditSO";
@@ -673,7 +641,7 @@
             this.btnConvertSO.BackColor = System.Drawing.Color.Transparent;
             this.btnConvertSO.FlatAppearance.BorderSize = 0;
             this.btnConvertSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvertSO.ForeColor = System.Drawing.Color.White;
             this.btnConvertSO.Location = new System.Drawing.Point(225, 0);
             this.btnConvertSO.Name = "btnConvertSO";
@@ -688,7 +656,7 @@
             this.btnCreateSO.BackColor = System.Drawing.Color.Transparent;
             this.btnCreateSO.FlatAppearance.BorderSize = 0;
             this.btnCreateSO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateSO.ForeColor = System.Drawing.Color.White;
             this.btnCreateSO.Location = new System.Drawing.Point(150, 0);
             this.btnCreateSO.Name = "btnCreateSO";
@@ -703,7 +671,7 @@
             this.btnEditQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnEditQuote.FlatAppearance.BorderSize = 0;
             this.btnEditQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditQuote.ForeColor = System.Drawing.Color.White;
             this.btnEditQuote.Location = new System.Drawing.Point(75, 0);
             this.btnEditQuote.Name = "btnEditQuote";
@@ -718,7 +686,7 @@
             this.btnQuote.BackColor = System.Drawing.Color.Transparent;
             this.btnQuote.FlatAppearance.BorderSize = 0;
             this.btnQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuote.ForeColor = System.Drawing.Color.White;
             this.btnQuote.Location = new System.Drawing.Point(0, 0);
             this.btnQuote.Name = "btnQuote";
@@ -746,12 +714,24 @@
             this.pnlOps.VisibleChanged += new System.EventHandler(this.pnlOps_VisibleChanged);
             this.pnlOps.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
+            // lblCloseOps
+            // 
+            this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
+            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloseOps.Location = new System.Drawing.Point(482, -1);
+            this.lblCloseOps.Name = "lblCloseOps";
+            this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
+            this.lblCloseOps.TabIndex = 10;
+            this.lblCloseOps.Text = "X";
+            this.lblCloseOps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCloseOps.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
+            // 
             // btnSupplier
             // 
             this.btnSupplier.BackColor = System.Drawing.Color.Transparent;
             this.btnSupplier.FlatAppearance.BorderSize = 0;
             this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSupplier.ForeColor = System.Drawing.Color.White;
             this.btnSupplier.Location = new System.Drawing.Point(375, 0);
             this.btnSupplier.Name = "btnSupplier";
@@ -767,7 +747,7 @@
             this.btnPurchase.BackColor = System.Drawing.Color.Transparent;
             this.btnPurchase.FlatAppearance.BorderSize = 0;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPurchase.ForeColor = System.Drawing.Color.White;
             this.btnPurchase.Location = new System.Drawing.Point(225, 0);
             this.btnPurchase.Name = "btnPurchase";
@@ -783,7 +763,7 @@
             this.btnPayment.BackColor = System.Drawing.Color.Transparent;
             this.btnPayment.FlatAppearance.BorderSize = 0;
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
             this.btnPayment.Location = new System.Drawing.Point(300, 0);
             this.btnPayment.Name = "btnPayment";
@@ -798,7 +778,7 @@
             this.btnInventory.BackColor = System.Drawing.Color.Transparent;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.ForeColor = System.Drawing.Color.White;
             this.btnInventory.Location = new System.Drawing.Point(150, 0);
             this.btnInventory.Name = "btnInventory";
@@ -809,24 +789,12 @@
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             this.btnInventory.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             // 
-            // lblCloseOps
-            // 
-            this.lblCloseOps.BackColor = System.Drawing.Color.Transparent;
-            this.lblCloseOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCloseOps.Location = new System.Drawing.Point(482, -1);
-            this.lblCloseOps.Name = "lblCloseOps";
-            this.lblCloseOps.Size = new System.Drawing.Size(35, 50);
-            this.lblCloseOps.TabIndex = 10;
-            this.lblCloseOps.Text = "X";
-            this.lblCloseOps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCloseOps.MouseEnter += new System.EventHandler(this.label5_MouseLeave);
-            // 
             // btnInspection
             // 
             this.btnInspection.BackColor = System.Drawing.Color.Transparent;
             this.btnInspection.FlatAppearance.BorderSize = 0;
             this.btnInspection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInspection.ForeColor = System.Drawing.Color.White;
             this.btnInspection.Location = new System.Drawing.Point(75, 0);
             this.btnInspection.Name = "btnInspection";
@@ -842,7 +810,7 @@
             this.btnItinerary.BackColor = System.Drawing.Color.Transparent;
             this.btnItinerary.FlatAppearance.BorderSize = 0;
             this.btnItinerary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItinerary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItinerary.ForeColor = System.Drawing.Color.White;
             this.btnItinerary.Location = new System.Drawing.Point(0, 0);
             this.btnItinerary.Name = "btnItinerary";
@@ -885,7 +853,7 @@
             this.btnEContract.BackColor = System.Drawing.Color.Transparent;
             this.btnEContract.FlatAppearance.BorderSize = 0;
             this.btnEContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEContract.ForeColor = System.Drawing.Color.White;
             this.btnEContract.Location = new System.Drawing.Point(225, 0);
             this.btnEContract.Name = "btnEContract";
@@ -900,7 +868,7 @@
             this.btnAContract.BackColor = System.Drawing.Color.Transparent;
             this.btnAContract.FlatAppearance.BorderSize = 0;
             this.btnAContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAContract.ForeColor = System.Drawing.Color.White;
             this.btnAContract.Location = new System.Drawing.Point(150, 0);
             this.btnAContract.Name = "btnAContract";
@@ -915,7 +883,7 @@
             this.btnEClient.BackColor = System.Drawing.Color.Transparent;
             this.btnEClient.FlatAppearance.BorderSize = 0;
             this.btnEClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEClient.ForeColor = System.Drawing.Color.White;
             this.btnEClient.Location = new System.Drawing.Point(75, 0);
             this.btnEClient.Name = "btnEClient";
@@ -930,7 +898,7 @@
             this.btnAClient.BackColor = System.Drawing.Color.Transparent;
             this.btnAClient.FlatAppearance.BorderSize = 0;
             this.btnAClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAClient.ForeColor = System.Drawing.Color.White;
             this.btnAClient.Location = new System.Drawing.Point(0, 0);
             this.btnAClient.Name = "btnAClient";
@@ -971,7 +939,7 @@
             this.btnRoyaltee.BackColor = System.Drawing.Color.Transparent;
             this.btnRoyaltee.FlatAppearance.BorderSize = 0;
             this.btnRoyaltee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoyaltee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoyaltee.ForeColor = System.Drawing.Color.White;
             this.btnRoyaltee.Location = new System.Drawing.Point(150, 0);
             this.btnRoyaltee.Name = "btnRoyaltee";
@@ -986,7 +954,7 @@
             this.btnRevenue.BackColor = System.Drawing.Color.Transparent;
             this.btnRevenue.FlatAppearance.BorderSize = 0;
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
             this.btnRevenue.Location = new System.Drawing.Point(75, 0);
             this.btnRevenue.Name = "btnRevenue";
@@ -1001,7 +969,7 @@
             this.btnStatement.BackColor = System.Drawing.Color.Transparent;
             this.btnStatement.FlatAppearance.BorderSize = 0;
             this.btnStatement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatement.ForeColor = System.Drawing.Color.White;
             this.btnStatement.Location = new System.Drawing.Point(0, 0);
             this.btnStatement.Name = "btnStatement";
@@ -1049,7 +1017,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogoLogin)).EndInit();
             this.pnlUser.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSNILogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFALogo)).EndInit();
             this.pnlDocs.ResumeLayout(false);
@@ -1084,8 +1051,6 @@
         private System.Windows.Forms.Label lblReports;
         private System.Windows.Forms.Button userSettings;
         private System.Windows.Forms.PictureBox profilePic;
-        private System.Windows.Forms.Label lblSyncOpts;
-        private System.Windows.Forms.Button syncHQ;
         private System.Windows.Forms.Button syncAndroid;
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Panel pnlUser;

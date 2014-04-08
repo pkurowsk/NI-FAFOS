@@ -404,15 +404,12 @@ namespace FAFOS
                 */
                 syncAndroid.Visible = true;
                 btnSyncFromAndroid.Visible = true;
-                syncHQ.Visible = true;
 
                 lblOperations.Visible = true;
                 lblDocs.Visible = true;
                 lblClients.Visible = true;
                 lblReports.Visible = true;
-                lblSyncOpts.Visible = true;
 
-                
                 lblUsername.Visible = false;
                 txtUsername.Visible = false;
                 lblPassword.Visible = false;
@@ -555,13 +552,13 @@ namespace FAFOS
             
             syncAndroid.Visible = false;
             btnSyncFromAndroid.Visible = false;
-            syncHQ.Visible = false;
+            //syncHQ.Visible = false;
 
             lblOperations.Visible = false;
             lblDocs.Visible = false;
             lblClients.Visible = false;
             lblReports.Visible = false;
-            lblSyncOpts.Visible = false;
+            //lblSyncOpts.Visible = false;
             pnlUser.Visible = false;
 
             pnlMenu.Visible = false;
@@ -600,6 +597,7 @@ namespace FAFOS
         private void Notifications_button_Click(object sender, EventArgs e)
         {
             notificationPanel.Visible = notificationPanel.Visible ? false : true;
+            noteHideButton.Text = notificationPanel.Visible ? "Hide Notifications" : "Show Notifications";
         }
 
         /// <summary>
@@ -619,7 +617,7 @@ namespace FAFOS
                 pnlPage.Location = new Point(0, pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = "Show";
+                btnMenu.Text = "Show Menu";
             }
             else
             {
@@ -628,7 +626,7 @@ namespace FAFOS
                     pnlPage.Location.Y);
                 pnlPage.Size = new System.Drawing.Size(pnlPage.Location.X + System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width,
                     pnlPage.Size.Height);
-                btnMenu.Text = "Hide";
+                btnMenu.Text = "Hide Menu";
             }
         }
 
