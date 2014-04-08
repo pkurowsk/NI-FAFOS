@@ -98,7 +98,7 @@ namespace FAFOS
 
 
            DataTable dt = new Payment().getNotPaid(userid);
-          // paymentNotification.Text = "";
+           paymentNotification.Text = "";
            for (int i = 2; i < dt.Rows.Count; i++)
            {
                if (Convert.ToDateTime(dt.Rows[i][2]) == DateTime.Today)
@@ -117,8 +117,8 @@ namespace FAFOS
                        + " on invoice #" + dt.Rows[i][0].ToString()+"\n";
                }
            }
-           //if (paymentNotification.Text == "")
-              // paymentNotification.Text = "None";
+           if (paymentNotification.Text == "")
+               paymentNotification.Text = "None";
         }
 
 

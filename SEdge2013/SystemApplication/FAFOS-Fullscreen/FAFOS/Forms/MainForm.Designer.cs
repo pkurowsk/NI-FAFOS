@@ -268,6 +268,7 @@
             this.paymentNotification.Name = "paymentNotification";
             this.paymentNotification.Size = new System.Drawing.Size(219, 118);
             this.paymentNotification.TabIndex = 5;
+            this.paymentNotification.Text = "None";
             // 
             // serviceNotification
             // 
@@ -278,6 +279,7 @@
             this.serviceNotification.Name = "serviceNotification";
             this.serviceNotification.Size = new System.Drawing.Size(226, 118);
             this.serviceNotification.TabIndex = 4;
+            this.serviceNotification.Text = "None";
             // 
             // lblNPaymentsDue
             // 
